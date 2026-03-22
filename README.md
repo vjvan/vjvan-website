@@ -6,7 +6,7 @@ Built with Next.js 16, Tailwind CSS 4, and MDX for content management.
 
 ## Live
 
-[vjvan-website.vercel.app](https://vjvan-website.vercel.app)
+[vjvan.com](https://vjvan.com)
 
 ## Features
 
