@@ -380,7 +380,7 @@ export default function Home() {
                 下一步
               </p>
               <h2 className="mt-4 text-3xl font-semibold tracking-tight text-stone-950">
-                如果你想把 AI 真的接進營運，不只是多裝幾個工具，我們可以先從一次對話開始
+                想把 AI 真正接進營運？我們可以先從一次對話開始
               </h2>
               <p className="mt-4 text-base leading-7 text-stone-600">
                 先聊清楚你現在的流程、資料與營運卡點，再決定該做系統重整、LIFF 前台、CRM 後台，還是先從 n8n 自動化切進去。

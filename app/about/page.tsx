@@ -16,7 +16,7 @@ const principles = [
   },
   {
     label: "系統視角",
-    title: "前台、後台、資料與自動化一起設計，串進 ERP 才是完整閉環",
+    title: "從前台到 ERP 一起設計，才是完整閉環",
     description:
       "真正能長期運作的系統，不是只把某個畫面做出來，而是讓 LINE 體驗、CRM 管理、n8n 自動化流程與既有 ERP 系統接在同一條營運線上。訂單、庫存、出貨資料能自動回寫 ERP，才是真正的商業化流程。",
   },
@@ -57,7 +57,8 @@ export default function AboutPage() {
                 About
               </p>
               <h1 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-stone-950 md:text-5xl">
-                我做的不是單點工具導入，而是把營運流程整理成真的能跑的系統
+                我做的不是單點工具導入，
+                <span className="block">而是把營運流程整理成真的能跑的系統</span>
               </h1>
             </div>
           </div>
@@ -107,7 +108,7 @@ export default function AboutPage() {
             方法
           </p>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-stone-950">
-            我看 AI 導入的方式，比起多裝工具，更像是在整理一家公司真正的作業邏輯
+            比起多裝工具，AI 導入更像是在整理一家公司真正的作業邏輯
           </h2>
         </div>
 
@@ -165,7 +166,7 @@ export default function AboutPage() {
                 下一步
               </p>
               <h2 className="mt-4 text-3xl font-semibold tracking-tight text-stone-950">
-                如果你正在想怎麼把 AI 接進實際營運，可以先從你的流程開始聊
+                想把 AI 接進實際營運？先從你的流程開始聊
               </h2>
               <p className="mt-4 text-base leading-7 text-stone-600">
                 不一定一開始就要做大系統。先把現在的作業方式看清楚，再決定該從哪個環節切入，通常會比直接堆功能有效很多。

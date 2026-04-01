@@ -147,7 +147,8 @@ export default function ServicesPage() {
                 Services
               </p>
               <h1 className="mt-4 text-4xl font-semibold tracking-tight text-stone-950 md:text-5xl">
-                服務不是把工具湊在一起，而是把你的營運流程接成一套能用的系統
+                服務不是把工具湊在一起，
+                <span className="block">而是把營運流程接成一套能用的系統</span>
               </h1>
               <p className="mt-6 text-lg leading-8 text-stone-700">
                 我目前的主軸聚焦在 LINE 前台、CRM 後台、n8n 自動化、ERP/POS 系統串接，以及 AI 系統規劃。
@@ -282,7 +283,7 @@ export default function ServicesPage() {
                   下一步
                 </p>
                 <h2 className="mt-4 text-3xl font-semibold tracking-tight text-stone-950">
-                  如果你已經知道流程有問題，但還不確定該先改哪裡，可以先來聊你的現況
+                  知道流程有問題，但不確定從哪裡開始？先來聊聊現況
                 </h2>
                 <p className="mt-4 text-base leading-7 text-stone-600">
                   我可以先陪你拆解現有流程，再一起判斷該先做 LIFF 前台、CRM 後台，還是先從自動化切入，避免一開始就走錯方向。
