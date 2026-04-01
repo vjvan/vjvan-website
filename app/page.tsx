@@ -146,7 +146,7 @@ export default function Home() {
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <Link
                 href="mailto:vjvan.n@gmail.com?subject=%E8%AB%AE%E8%A9%A2%20vjvan.com%20%E7%B3%BB%E7%B5%B1%E5%BB%BA%E7%BD%AE"
-                className="inline-flex items-center justify-center rounded-full bg-stone-950 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-stone-900/10 transition-transform duration-200 hover:-translate-y-0.5 hover:bg-stone-800"
+                className="inline-flex items-center justify-center rounded-full bg-amber-700 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-amber-900/15 transition-all duration-200 hover:-translate-y-0.5 hover:bg-amber-600"
               >
                 預約 30 分鐘諮詢
               </Link>

@@ -21,7 +21,7 @@ export default function Header() {
           <img
             src="/images/vjvan-portrait.jpg"
             alt="允雷"
-            className="h-11 w-11 rounded-full object-cover shadow-sm"
+            className="h-11 w-11 rounded-full object-cover object-[center_30%] shadow-sm"
           />
           <div>
             <p className="text-[0.65rem] uppercase tracking-[0.24em] text-stone-500">
@@ -46,7 +46,7 @@ export default function Header() {
           ))}
           <Link
             href="mailto:vjvan.n@gmail.com?subject=%E8%AB%AE%E8%A9%A2%20vjvan.com%20%E7%B3%BB%E7%B5%B1%E5%BB%BA%E7%BD%AE"
-            className="inline-flex items-center justify-center rounded-full bg-stone-950 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-stone-800"
+            className="inline-flex items-center justify-center rounded-full bg-amber-700 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-amber-600"
           >
             預約諮詢
           </Link>
@@ -99,7 +99,7 @@ export default function Header() {
             ))}
             <Link
               href="mailto:vjvan.n@gmail.com?subject=%E8%AB%AE%E8%A9%A2%20vjvan.com%20%E7%B3%BB%E7%B5%B1%E5%BB%BA%E7%BD%AE"
-              className="inline-flex w-full items-center justify-center rounded-full bg-stone-950 px-5 py-3 text-sm font-semibold text-white"
+              className="inline-flex w-full items-center justify-center rounded-full bg-amber-700 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-amber-600"
               onClick={() => setIsOpen(false)}
             >
               預約諮詢
