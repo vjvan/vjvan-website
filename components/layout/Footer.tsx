@@ -55,6 +55,8 @@ export default function Footer() {
                 CRM 管理後台
                 <br />
                 n8n / AI 自動化流程
+                <br />
+                ERP 系統串接
               </p>
             </div>
 
@@ -67,7 +69,7 @@ export default function Footer() {
                   首頁
                 </Link>
                 <Link href="/about" className="hover:text-stone-950">
-                  關於我
+                  關於允雷
                 </Link>
                 <Link href="/services" className="hover:text-stone-950">
                   服務項目

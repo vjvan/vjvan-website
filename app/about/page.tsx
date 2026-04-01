@@ -16,9 +16,9 @@ const principles = [
   },
   {
     label: "系統視角",
-    title: "前台、後台、資料與自動化一起設計",
+    title: "前台、後台、資料與自動化一起設計，串進 ERP 才是完整閉環",
     description:
-      "真正能長期運作的系統，不是只把某個畫面做出來，而是讓 LINE 體驗、CRM 管理與自動化流程接在同一條營運線上。",
+      "真正能長期運作的系統，不是只把某個畫面做出來，而是讓 LINE 體驗、CRM 管理、n8n 自動化流程與既有 ERP 系統接在同一條營運線上。訂單、庫存、出貨資料能自動回寫 ERP，才是真正的商業化流程。",
   },
   {
     label: "可維運",
@@ -31,7 +31,7 @@ const principles = [
 const fitCases = [
   "已經有 LINE、表單、試算表、人工訊息混在一起，流程越做越亂",
   "需要預約、訂單、會員、回購或分眾推播整合成同一套系統",
-  "想導入 AI 與自動化，但不希望最後變成更多零散工具",
+  "想導入 AI 與自動化並串接既有 ERP，讓數據真正回到營運核心",
   "希望先快速落地，再保留未來轉 App 或產品化的空間",
 ];
 
@@ -62,8 +62,8 @@ export default function AboutPage() {
             </div>
           </div>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-stone-700">
-            我是允雷，專注協助台灣中小企業把 LINE 前台、CRM 後台與 n8n 自動化流程串成一套可持續維運的營運系統。
-            從流程診斷、系統架構設計，到實際建置與上線後調整，我會一起把整條路走完。
+            我是允雷，專注協助台灣中小企業把 LINE 前台、CRM 後台、n8n 自動化流程與 ERP 系統串成一套可持續維運的營運系統。
+            從流程診斷、系統架構設計，到實際建置與 ERP 串接上線，我會一起把整條路走完。
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3 text-sm text-stone-600">
@@ -71,7 +71,7 @@ export default function AboutPage() {
               高雄 / 遠端服務全台
             </span>
             <span className="rounded-full border border-stone-200 bg-stone-50 px-4 py-2">
-              LINE LIFF / CRM / n8n
+              LINE LIFF / CRM / n8n / ERP 串接
             </span>
             <span className="rounded-full border border-stone-200 bg-stone-50 px-4 py-2">
               LIFF 先行，保留 App Ready 架構

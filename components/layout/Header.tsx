@@ -7,7 +7,7 @@ const navLinks = [
   { href: "/", label: "首頁" },
   { href: "/services", label: "服務項目" },
   { href: "/cases", label: "案例" },
-  { href: "/about", label: "關於我" },
+  { href: "/about", label: "關於允雷" },
   { href: "/blog", label: "觀點" },
 ];
 
