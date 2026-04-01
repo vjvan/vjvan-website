@@ -3,6 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Script from "next/script";
+import AuthorBox from "@/components/mdx/AuthorBox";
+import { mdxComponents } from "@/components/mdx";
 import { getAllPosts, getPostBySlug } from "@/lib/mdx";
 
 interface Props {
@@ -104,7 +106,11 @@ export default async function BlogPostPage({ params }: Props) {
         </header>
 
         <div className="article-content mt-8">
-          <MDXRemote source={post.content} />
+          <MDXRemote source={post.content} components={mdxComponents} />
+        </div>
+
+        <div className="article-content">
+          <AuthorBox />
         </div>
 
         <div className="mt-10 rounded-[1.5rem] border border-stone-200 bg-[#f8f3eb] p-6">
@@ -117,7 +123,7 @@ export default async function BlogPostPage({ params }: Props) {
           <div className="mt-5 flex flex-col gap-3 sm:flex-row">
             <a
               href="mailto:vjvan.n@gmail.com?subject=%E8%AB%AE%E8%A9%A2%20vjvan.com%20%E8%A7%80%E9%BB%9E%E6%96%87%E7%AB%A0"
-              className="inline-flex items-center justify-center rounded-full bg-amber-700 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-amber-800"
+              className="inline-flex items-center justify-center rounded-full bg-action px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-action-hover"
             >
               預約系統諮詢
             </a>

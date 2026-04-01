@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import BottomCTA from "@/components/BottomCTA";
 
 export const metadata: Metadata = {
   title: "服務項目",
@@ -275,31 +276,8 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <section className="mt-10 md:mt-14">
-          <div className="rounded-[2rem] border border-stone-200 bg-white/80 p-8 shadow-sm backdrop-blur md:p-10">
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
-              <div className="max-w-2xl">
-                <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-700">
-                  下一步
-                </p>
-                <h2 className="mt-4 text-3xl font-semibold tracking-tight text-stone-950">
-                  知道流程有問題，但不確定從哪裡開始？先來聊聊現況
-                </h2>
-                <p className="mt-4 text-base leading-7 text-stone-600">
-                  我可以先陪你拆解現有流程，再一起判斷該先做 LIFF 前台、CRM 後台，還是先從自動化切入，避免一開始就走錯方向。
-                </p>
-              </div>
-
-              <a
-                href="mailto:vjvan.n@gmail.com?subject=%E8%AB%AE%E8%A9%A2%20vjvan.com%20%E6%9C%8D%E5%8B%99"
-                className="inline-flex items-center justify-center rounded-full bg-amber-700 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-amber-800"
-              >
-                預約系統諮詢
-              </a>
-            </div>
-          </div>
-        </section>
       </div>
+      <BottomCTA />
     </>
   );
 }

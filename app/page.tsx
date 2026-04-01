@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BottomCTA from "@/components/BottomCTA";
 
 const heroStats = [
   {
@@ -146,7 +147,7 @@ export default function Home() {
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <Link
                 href="mailto:vjvan.n@gmail.com?subject=%E8%AB%AE%E8%A9%A2%20vjvan.com%20%E7%B3%BB%E7%B5%B1%E5%BB%BA%E7%BD%AE"
-                className="inline-flex items-center justify-center rounded-full bg-amber-700 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-amber-900/15 transition-all duration-200 hover:-translate-y-0.5 hover:bg-amber-600"
+                className="inline-flex items-center justify-center rounded-full bg-action px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-action/15 transition-all duration-200 hover:-translate-y-0.5 hover:bg-action-hover"
               >
                 預約 30 分鐘諮詢
               </Link>
@@ -372,38 +373,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 pt-10 pb-20 md:pt-14 md:pb-24">
-        <div className="rounded-[2rem] border border-stone-200 bg-white/80 p-8 shadow-sm backdrop-blur md:p-10">
-          <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
-            <div className="max-w-2xl">
-              <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-700">
-                下一步
-              </p>
-              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-stone-950">
-                想把 AI 真正接進營運？我們可以先從一次對話開始
-              </h2>
-              <p className="mt-4 text-base leading-7 text-stone-600">
-                先聊清楚你現在的流程、資料與營運卡點，再決定該做系統重整、LIFF 前台、CRM 後台，還是先從 n8n 自動化切進去。
-              </p>
-            </div>
-
-            <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
-              <Link
-                href="mailto:vjvan.n@gmail.com?subject=%E8%AB%AE%E8%A9%A2%20vjvan.com%20%E7%B3%BB%E7%B5%B1%E5%BB%BA%E7%BD%AE"
-                className="inline-flex items-center justify-center rounded-full bg-amber-700 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-amber-800"
-              >
-                預約系統諮詢
-              </Link>
-              <Link
-                href="/services"
-                className="inline-flex items-center justify-center rounded-full border border-stone-300 px-6 py-3 text-sm font-semibold text-stone-700 transition-colors hover:border-stone-400 hover:bg-stone-50"
-              >
-                查看完整服務
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <BottomCTA />
     </div>
   );
 }

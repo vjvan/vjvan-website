@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import BottomCTA from "@/components/BottomCTA";
 
 export const metadata: Metadata = {
   title: "關於允雷",
@@ -43,153 +43,123 @@ const workStyle = [
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-6xl px-6 py-14 md:py-18">
-      <section className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
-        <div className="rounded-[2rem] border border-stone-200 bg-white/80 p-8 shadow-sm backdrop-blur md:p-10">
-          <div className="flex items-start gap-6">
-            <img
-              src="/images/vjvan-portrait.jpg"
-              alt="允雷 - AI 商業系統架構師"
-              className="hidden h-28 w-28 rounded-2xl object-cover shadow-md sm:block"
-            />
-            <div>
-              <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-700">
-                About
-              </p>
-              <h1 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-stone-950 md:text-5xl">
-                我做的不是單點工具導入，
-                <span className="block">而是把營運流程整理成真的能跑的系統</span>
-              </h1>
+    <>
+      <div className="mx-auto max-w-6xl px-6 py-14 md:py-18">
+        <section className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+          <div className="rounded-[2rem] border border-stone-200 bg-white/80 p-8 shadow-sm backdrop-blur md:p-10">
+            <div className="flex items-start gap-6">
+              <img
+                src="/images/vjvan-portrait.jpg"
+                alt="允雷 - AI 商業系統架構師"
+                className="hidden h-28 w-28 rounded-2xl object-cover shadow-md sm:block"
+              />
+              <div>
+                <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-700">
+                  About
+                </p>
+                <h1 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-stone-950 md:text-5xl">
+                  我做的不是單點工具導入，
+                  <span className="block">而是把營運流程整理成真的能跑的系統</span>
+                </h1>
+              </div>
             </div>
-          </div>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-stone-700">
-            我是允雷，專注協助台灣中小企業把 LINE 前台、CRM 後台、n8n 自動化流程與 ERP 系統串成一套可持續維運的營運系統。
-            從流程診斷、系統架構設計，到實際建置與 ERP 串接上線，我會一起把整條路走完。
-          </p>
-
-          <div className="mt-8 flex flex-wrap gap-3 text-sm text-stone-600">
-            <span className="rounded-full border border-stone-200 bg-stone-50 px-4 py-2">
-              高雄 / 遠端服務全台
-            </span>
-            <span className="rounded-full border border-stone-200 bg-stone-50 px-4 py-2">
-              LINE LIFF / CRM / n8n / ERP 串接
-            </span>
-            <span className="rounded-full border border-stone-200 bg-stone-50 px-4 py-2">
-              LIFF 先行，保留 App Ready 架構
-            </span>
-          </div>
-        </div>
-
-        <div className="rounded-[2rem] border border-stone-200 bg-[#f8f3eb] p-8 md:p-10">
-          <p className="text-sm font-medium uppercase tracking-[0.28em] text-stone-500">
-            我特別適合的題目
-          </p>
-          <ul className="mt-6 space-y-4">
-            {fitCases.map((item) => (
-              <li key={item} className="flex gap-3 text-sm leading-7 text-stone-700">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-700" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-
-          <div className="mt-8 rounded-[1.5rem] border border-stone-200 bg-white/80 p-6">
-            <p className="text-sm font-medium text-stone-900">合作方式偏向小而深</p>
-            <p className="mt-3 text-sm leading-7 text-stone-600">
-              我不是大型 agency。好處是你能直接和負責規劃與實作的人討論，決策速度快，系統脈絡也不容易在溝通中失真。
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-stone-700">
+              我是允雷，專注協助台灣中小企業把 LINE 前台、CRM 後台、n8n 自動化流程與 ERP 系統串成一套可持續維運的營運系統。
+              從流程診斷、系統架構設計，到實際建置與 ERP 串接上線，我會一起把整條路走完。
             </p>
+
+            <div className="mt-8 flex flex-wrap gap-3 text-sm text-stone-600">
+              <span className="rounded-full border border-stone-200 bg-stone-50 px-4 py-2">
+                高雄 / 遠端服務全台
+              </span>
+              <span className="rounded-full border border-stone-200 bg-stone-50 px-4 py-2">
+                LINE LIFF / CRM / n8n / ERP 串接
+              </span>
+              <span className="rounded-full border border-stone-200 bg-stone-50 px-4 py-2">
+                LIFF 先行，保留 App Ready 架構
+              </span>
+            </div>
           </div>
-        </div>
-      </section>
 
-      <section className="mt-10 md:mt-14">
-        <div className="max-w-2xl">
-          <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-700">
-            方法
-          </p>
-          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-stone-950">
-            比起多裝工具，AI 導入更像是在整理一家公司真正的作業邏輯
-          </h2>
-        </div>
-
-        <div className="mt-8 grid gap-5 lg:grid-cols-3">
-          {principles.map((principle) => (
-            <div
-              key={principle.title}
-              className="rounded-[1.75rem] border border-stone-200 bg-white p-7 shadow-sm"
-            >
-              <p className="text-xs font-medium uppercase tracking-[0.26em] text-amber-700">
-                {principle.label}
-              </p>
-              <h3 className="mt-4 text-2xl font-semibold tracking-tight text-stone-950">
-                {principle.title}
-              </h3>
-              <p className="mt-4 text-sm leading-7 text-stone-600">
-                {principle.description}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="mt-10 md:mt-14">
-        <div className="rounded-[2rem] border border-stone-200 bg-stone-950 px-8 py-10 text-white md:px-10">
-          <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
-            <div>
-              <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-200/80">
-                工作方式
-              </p>
-              <h2 className="mt-4 text-3xl font-semibold tracking-tight">
-                我偏好的做法是，先把骨架搭穩，再把功能做對
-              </h2>
-            </div>
-
-            <div className="space-y-4">
-              {workStyle.map((item) => (
-                <div
-                  key={item}
-                  className="rounded-[1.5rem] border border-white/10 bg-white/5 p-5"
-                >
-                  <p className="text-sm leading-7 text-stone-300">{item}</p>
-                </div>
+          <div className="rounded-[2rem] border border-stone-200 bg-[#f8f3eb] p-8 md:p-10">
+            <p className="text-sm font-medium uppercase tracking-[0.28em] text-stone-500">
+              我特別適合的題目
+            </p>
+            <ul className="mt-6 space-y-4">
+              {fitCases.map((item) => (
+                <li key={item} className="flex gap-3 text-sm leading-7 text-stone-700">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-700" />
+                  <span>{item}</span>
+                </li>
               ))}
-            </div>
-          </div>
-        </div>
-      </section>
+            </ul>
 
-      <section className="mt-10 md:mt-14">
-        <div className="rounded-[2rem] border border-stone-200 bg-white/80 p-8 shadow-sm backdrop-blur md:p-10">
-          <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
-            <div className="max-w-2xl">
-              <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-700">
-                下一步
-              </p>
-              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-stone-950">
-                想把 AI 接進實際營運？先從你的流程開始聊
-              </h2>
-              <p className="mt-4 text-base leading-7 text-stone-600">
-                不一定一開始就要做大系統。先把現在的作業方式看清楚，再決定該從哪個環節切入，通常會比直接堆功能有效很多。
+            <div className="mt-8 rounded-[1.5rem] border border-stone-200 bg-white/80 p-6">
+              <p className="text-sm font-medium text-stone-900">合作方式偏向小而深</p>
+              <p className="mt-3 text-sm leading-7 text-stone-600">
+                我不是大型 agency。好處是你能直接和負責規劃與實作的人討論，決策速度快，系統脈絡也不容易在溝通中失真。
               </p>
             </div>
+          </div>
+        </section>
 
-            <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
-              <a
-                href="mailto:vjvan.n@gmail.com?subject=%E8%AB%AE%E8%A9%A2%20vjvan.com%20%E5%85%B3%E6%96%BC%E5%90%88%E4%BD%9C"
-                className="inline-flex items-center justify-center rounded-full bg-amber-700 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-amber-800"
+        <section className="mt-10 md:mt-14">
+          <div className="max-w-2xl">
+            <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-700">
+              方法
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-stone-950">
+              比起多裝工具，AI 導入更像是在整理一家公司真正的作業邏輯
+            </h2>
+          </div>
+
+          <div className="mt-8 grid gap-5 lg:grid-cols-3">
+            {principles.map((principle) => (
+              <div
+                key={principle.title}
+                className="rounded-[1.75rem] border border-stone-200 bg-white p-7 shadow-sm"
               >
-                預約系統諮詢
-              </a>
-              <Link
-                href="/services"
-                className="inline-flex items-center justify-center rounded-full border border-stone-300 px-6 py-3 text-sm font-semibold text-stone-700 transition-colors hover:border-stone-400 hover:bg-stone-50"
-              >
-                查看完整服務
-              </Link>
+                <p className="text-xs font-medium uppercase tracking-[0.26em] text-amber-700">
+                  {principle.label}
+                </p>
+                <h3 className="mt-4 text-2xl font-semibold tracking-tight text-stone-950">
+                  {principle.title}
+                </h3>
+                <p className="mt-4 text-sm leading-7 text-stone-600">
+                  {principle.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-10 md:mt-14">
+          <div className="rounded-[2rem] border border-stone-200 bg-stone-950 px-8 py-10 text-white md:px-10">
+            <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
+              <div>
+                <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-200/80">
+                  工作方式
+                </p>
+                <h2 className="mt-4 text-3xl font-semibold tracking-tight">
+                  我偏好的做法是，先把骨架搭穩，再把功能做對
+                </h2>
+              </div>
+
+              <div className="space-y-4">
+                {workStyle.map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-[1.5rem] border border-white/10 bg-white/5 p-5"
+                  >
+                    <p className="text-sm leading-7 text-stone-300">{item}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+      <BottomCTA />
+    </>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
+import BottomCTA from "@/components/BottomCTA";
 
 export const metadata: Metadata = {
   title: "成功案例",
@@ -224,7 +225,7 @@ export default function CasesPage() {
               <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
                 <a
                   href="mailto:vjvan.n@gmail.com?subject=%E8%AB%AE%E8%A9%A2%20vjvan.com%20%E6%A1%88%E4%BE%8B"
-                  className="inline-flex items-center justify-center rounded-full bg-amber-700 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-amber-800"
+                  className="inline-flex items-center justify-center rounded-full bg-action px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-action-hover"
                 >
                   預約系統諮詢
                 </a>
@@ -239,6 +240,7 @@ export default function CasesPage() {
           </div>
         </section>
       </div>
+      <BottomCTA />
     </>
   );
 }
