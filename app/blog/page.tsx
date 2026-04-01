@@ -88,7 +88,7 @@ export default function BlogPage() {
             </div>
             <Link
               href="/services"
-              className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-stone-950 transition-colors hover:bg-stone-100"
+              className="inline-flex items-center justify-center rounded-full bg-amber-700 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-amber-600"
             >
               查看服務內容
             </Link>
