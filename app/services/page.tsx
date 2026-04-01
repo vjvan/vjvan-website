@@ -4,103 +4,111 @@ import Script from "next/script";
 export const metadata: Metadata = {
   title: "服務項目",
   description:
-    "LINE LIFF 系統開發、CRM 管理後台建置、n8n 自動化流程設計、AI 商業架構顧問。台灣中小企業數位轉型首選。",
+    "LINE LIFF 前台、CRM 後台、n8n 自動化與 AI 系統規劃。為台灣中小企業建置真正能運轉的營運系統。",
 };
 
-const services = [
+const coreServices = [
   {
+    label: "Frontstage",
     title: "LINE LIFF 系統開發",
     description:
-      "在 LINE 內建置功能完整的 Web App，客戶不需下載額外 App，打開 LINE 就能預約、下單、查紀錄。",
+      "把預約、下單、查詢、會員互動放進客戶最熟悉的 LINE 使用情境，降低操作門檻，也讓流程更容易落地。",
     features: [
-      "預約系統（多門市、時段管理、自動提醒）",
-      "B2B 訂購系統（商品瀏覽、下單、訂單追蹤）",
-      "會員管理（消費紀錄、分群標籤）",
-      "前後端分離架構，未來轉 App 後端零重寫",
+      "預約系統、多門市時段管理與自動提醒",
+      "B2B 訂購流程、訂單追蹤與會員查詢",
+      "不額外下載 App，就能先快速驗證真實需求",
+      "前後端分離，未來轉 App 可延用原有後端與資料庫",
     ],
   },
   {
+    label: "Backstage",
     title: "CRM 管理後台建置",
     description:
-      "為企業主打造的經營管理儀表板，打開手機就能掌握營運全貌。",
+      "把訂單、客戶、門市與營運數據整理成管理者每天會打開的工作台，而不是只能展示的報表頁。",
     features: [
-      "即時營運數據與趨勢分析",
-      "客戶健康度追蹤、流失預警",
-      "多門市對比儀表板",
-      "訂單/預約/商品統一管理",
+      "訂單、預約、客戶與商品的統一管理",
+      "營運趨勢、客戶健康度與流失風險追蹤",
+      "多門市或多角色權限與資料檢視邏輯",
+      "以未來擴充與維運為前提規劃資料結構",
     ],
   },
   {
-    title: "n8n 自動化流程設計",
+    label: "Automation",
+    title: "n8n 與 AI 自動化流程",
     description:
-      "串接各種工具與服務，讓重複性工作自動完成，系統 24 小時幫你跑。",
+      "把通知、推播、喚回、報表與內部交辦這類規則明確的工作交給系統，讓團隊把時間留給更高價值的事情。",
     features: [
-      "預約確認與前日提醒通知",
-      "流失客戶自動喚回推播",
-      "精準分眾推播（降低 LINE 訊息費 40%+）",
-      "週報/月報自動生成",
+      "預約確認、前日提醒與週期性通知",
+      "流失客戶喚回、分群推播與再行銷流程",
+      "週報、月報與資料整理自動生成",
+      "不只堆節點，連例外情況與維運也一起設計",
     ],
   },
   {
-    title: "AI 商業架構顧問",
+    label: "Strategy",
+    title: "AI 商業系統規劃",
     description:
-      "從痛點分析、流程拆解，到系統設計與落地執行，為企業規劃最適合的 AI 導入策略。",
+      "適合在正式開發前，先把流程拆解、優先順序與系統邊界想清楚，避免一開始就做出又重又難維護的東西。",
     features: [
-      "企業 AI 導入策略規劃",
-      "數位轉型路線圖",
-      "自動化系統架構設計",
-      "系統建置與部署",
+      "流程診斷與 AI / 自動化導入優先順序",
+      "LIFF、CRM、資料模型與權限結構規劃",
+      "數位轉型路線圖與 MVP 定義",
+      "從顧問到落地建置可銜接，不會中途斷線",
     ],
   },
+];
+
+const engagementModes = [
   {
-    title: "Weavy.ai 影像生成教學",
+    title: "顧問診斷",
     description:
-      "節點式 AI 影像生成工作流教學，從基礎操作到進階應用，建立完整的 AI 影像生成能力。",
-    features: [
-      "節點式工作流設計",
-      "AI 影像生成實戰教學",
-      "工作流範本與最佳實踐",
-      "從入門到進階完整課程",
-    ],
+      "先釐清現況流程、資料散落點與哪些地方最值得自動化，適合還在評估從哪裡開始的團隊。",
   },
   {
-    title: "AI 影片製作",
+    title: "系統建置",
     description:
-      "快速產出品牌動畫、產品介紹、數據報告影片，批量客製化不需要逐支手動剪輯。",
-    features: [
-      "行銷影片快速產出",
-      "品牌形象動畫製作",
-      "數據驅動的報告影片",
-      "批量客製化影片產出",
-    ],
+      "把前台、後台、自動化與資料流整合成可實際上線的系統，適合已確認需求範圍並準備投入執行的團隊。",
+  },
+  {
+    title: "維運優化",
+    description:
+      "上線後依真實使用狀況修正流程、補強權限、微調自動化與報表，讓系統能真正長期被用下去。",
+  },
+];
+
+const secondaryServices = [
+  {
+    title: "內部工作坊與流程教學",
+    description:
+      "如果團隊需要把 AI / 自動化觀念帶進內部，我也提供以實際工作流為主的教學與工作坊。",
+  },
+  {
+    title: "影像與內容流程支援",
+    description:
+      "包含節點式 AI 影像生成工作流與內容製作相關支援，通常作為主系統專案的延伸項目處理。",
   },
 ];
 
 const faqs = [
   {
-    question: "LINE LIFF 系統建置費用大概多少？",
+    question: "專案通常需要多久？",
     answer:
-      "費用依功能範圍、門市數量、整合需求而定，每個專案都是客製化的。歡迎聯繫討論，我會根據你的需求提供詳細報價。",
+      "核心版本通常約 4-5 週，完整版本約 5-7 週。實際時程取決於需求複雜度、整合範圍與資料是否到位。",
   },
   {
-    question: "開發需要多久？",
+    question: "一定要先做 App 嗎？",
     answer:
-      "核心系統約 4-5 週，完整系統約 5-7 週（自需求確認完成起算）。實際時程視需求複雜度和資料到齊速度而定。",
+      "不一定。很多情況下先用 LINE LIFF 會更快驗證需求，也更容易讓客戶開始使用。若後續要轉成 App，後端可沿用，前端再另外調整。",
   },
   {
-    question: "客戶需要下載 App 嗎？",
+    question: "只有一部分流程想先自動化，也可以合作嗎？",
     answer:
-      "不需要。LINE LIFF 系統直接在 LINE 內開啟，客戶點選連結或圖文選單就能使用，零下載門檻。",
+      "可以。不是每次都要從整套系統開始。很多團隊會先從預約提醒、喚回推播、報表自動化或前台表單流程切入。",
   },
   {
-    question: "未來想轉成獨立 App 可以嗎？",
+    question: "上線後維護怎麼安排？",
     answer:
-      "可以。系統採前後端分離架構，後端 API 與資料庫在轉為 App 時完全不需要重寫，僅需調整前端介面，大幅降低轉換成本。",
-  },
-  {
-    question: "系統上線後誰來維護？",
-    answer:
-      "提供月維護方案，包含系統監控、Bug 修復、功能微調。緊急故障保證 4 小時內回應，確保系統穩定運作。",
+      "可依專案性質安排維護與微調，包含系統監控、Bug 修復、功能小幅調整與流程優化，避免系統上線後失去更新節奏。",
   },
 ];
 
@@ -126,50 +134,165 @@ export default function ServicesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
-      <section className="max-w-5xl mx-auto px-6 py-16">
-        <h1 className="text-3xl font-bold mb-4">服務項目</h1>
-        <p className="text-gray-600 mb-12">
-          從顧問諮詢到系統建置到持續維護，提供完整的 AI 導入與自動化服務。
-        </p>
-
-        <div className="grid md:grid-cols-2 gap-8">
-          {services.map((service) => (
-            <div
-              key={service.title}
-              className="p-8 border border-gray-200 rounded-xl"
-            >
-              <h2 className="text-xl font-semibold mb-3">{service.title}</h2>
-              <p className="text-sm text-gray-600 mb-6">
-                {service.description}
+      <div className="mx-auto max-w-6xl px-6 py-14 md:py-18">
+        <section className="rounded-[2rem] border border-stone-200 bg-white/80 p-8 shadow-sm backdrop-blur md:p-10">
+          <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+            <div className="max-w-3xl">
+              <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-700">
+                Services
               </p>
-              <ul className="space-y-2">
-                {service.features.map((feature) => (
-                  <li
-                    key={feature}
-                    className="text-sm text-gray-500 flex items-start gap-2"
-                  >
-                    <span className="text-gray-400 mt-0.5">-</span>
-                    {feature}
+              <h1 className="mt-4 text-4xl font-semibold tracking-tight text-stone-950 md:text-5xl">
+                服務不是把工具湊在一起，而是把你的營運流程接成一套能用的系統
+              </h1>
+              <p className="mt-6 text-lg leading-8 text-stone-700">
+                我目前的主軸聚焦在 LINE 前台、CRM 後台、n8n 自動化，以及 AI 系統規劃。
+                目標不是做出一堆功能，而是讓管理者和團隊真的能更快、更穩定地運作。
+              </p>
+            </div>
+
+            <div className="rounded-[1.75rem] border border-stone-200 bg-[#f8f3eb] p-7">
+              <p className="text-sm font-medium text-stone-900">適合這類需求</p>
+              <ul className="mt-4 space-y-3">
+                {[
+                  "預約、訂單、會員或客戶資料散在不同工具",
+                  "需要 LINE 入口，但不想一開始就投入 App 開發",
+                  "想把提醒、推播、報表或內部通知流程自動化",
+                  "已經導入很多工具，但沒有被整理成同一套系統",
+                ].map((item) => (
+                  <li key={item} className="flex gap-3 text-sm leading-6 text-stone-700">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-700" />
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        </section>
 
-      {/* FAQ */}
-      <section className="max-w-5xl mx-auto px-6 pb-16">
-        <h2 className="text-2xl font-bold mb-8">常見問題</h2>
-        <div className="space-y-6">
-          {faqs.map((faq) => (
-            <div key={faq.question} className="border-b border-gray-100 pb-6">
-              <h3 className="font-semibold mb-2">{faq.question}</h3>
-              <p className="text-sm text-gray-600">{faq.answer}</p>
+        <section className="mt-10 md:mt-14">
+          <div className="grid gap-5 lg:grid-cols-2">
+            {coreServices.map((service) => (
+              <div
+                key={service.title}
+                className="rounded-[1.75rem] border border-stone-200 bg-white p-8 shadow-sm"
+              >
+                <p className="text-xs font-medium uppercase tracking-[0.26em] text-amber-700">
+                  {service.label}
+                </p>
+                <h2 className="mt-4 text-2xl font-semibold tracking-tight text-stone-950">
+                  {service.title}
+                </h2>
+                <p className="mt-4 text-sm leading-7 text-stone-600">
+                  {service.description}
+                </p>
+                <ul className="mt-6 space-y-3">
+                  {service.features.map((feature) => (
+                    <li
+                      key={feature}
+                      className="flex gap-3 text-sm leading-6 text-stone-700"
+                    >
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-700" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-10 md:mt-14">
+          <div className="rounded-[2rem] border border-stone-200 bg-stone-950 px-8 py-10 text-white md:px-10">
+            <div className="max-w-2xl">
+              <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-200/80">
+                合作模式
+              </p>
+              <h2 className="mt-4 text-3xl font-semibold tracking-tight">
+                可以先從診斷開始，也可以直接進入系統建置
+              </h2>
             </div>
-          ))}
-        </div>
-      </section>
+
+            <div className="mt-8 grid gap-4 lg:grid-cols-3">
+              {engagementModes.map((mode) => (
+                <div
+                  key={mode.title}
+                  className="rounded-[1.5rem] border border-white/10 bg-white/5 p-6"
+                >
+                  <h3 className="text-lg font-semibold">{mode.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-stone-300">
+                    {mode.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="mt-10 md:mt-14">
+          <div className="grid gap-5 lg:grid-cols-2">
+            {secondaryServices.map((service) => (
+              <div
+                key={service.title}
+                className="rounded-[1.75rem] border border-stone-200 bg-[#f8f3eb] p-7"
+              >
+                <p className="text-xs font-medium uppercase tracking-[0.26em] text-stone-500">
+                  延伸支援
+                </p>
+                <h3 className="mt-4 text-xl font-semibold tracking-tight text-stone-950">
+                  {service.title}
+                </h3>
+                <p className="mt-4 text-sm leading-7 text-stone-600">
+                  {service.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-10 md:mt-14">
+          <div className="rounded-[2rem] border border-stone-200 bg-white/80 p-8 shadow-sm backdrop-blur md:p-10">
+            <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-700">
+              常見問題
+            </p>
+            <div className="mt-6 space-y-5">
+              {faqs.map((faq) => (
+                <div
+                  key={faq.question}
+                  className="rounded-[1.5rem] border border-stone-200 bg-stone-50/70 p-6"
+                >
+                  <h3 className="text-lg font-semibold text-stone-950">{faq.question}</h3>
+                  <p className="mt-3 text-sm leading-7 text-stone-600">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="mt-10 md:mt-14">
+          <div className="rounded-[2rem] border border-stone-200 bg-white/80 p-8 shadow-sm backdrop-blur md:p-10">
+            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
+              <div className="max-w-2xl">
+                <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-700">
+                  下一步
+                </p>
+                <h2 className="mt-4 text-3xl font-semibold tracking-tight text-stone-950">
+                  如果你已經知道流程有問題，但還不確定該先改哪裡，可以先來聊你的現況
+                </h2>
+                <p className="mt-4 text-base leading-7 text-stone-600">
+                  我可以先陪你拆解現有流程，再一起判斷該先做 LIFF 前台、CRM 後台，還是先從自動化切入，避免一開始就走錯方向。
+                </p>
+              </div>
+
+              <a
+                href="mailto:vjvan.n@gmail.com?subject=%E8%AB%AE%E8%A9%A2%20vjvan.com%20%E6%9C%8D%E5%8B%99"
+                className="inline-flex items-center justify-center rounded-full bg-amber-700 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-amber-800"
+              >
+                預約系統諮詢
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
     </>
   );
 }

@@ -15,6 +15,18 @@ export interface PostMeta {
   readingTime: string;
 }
 
+function formatDate(value: unknown) {
+  if (value instanceof Date) {
+    return value.toISOString().split("T")[0];
+  }
+
+  return String(value || "");
+}
+
+function formatReadingTime(minutes: number) {
+  return `${Math.max(1, Math.round(minutes))} 分鐘閱讀`;
+}
+
 export function getAllPosts(): PostMeta[] {
   if (!fs.existsSync(contentDir)) return [];
 
@@ -31,11 +43,11 @@ export function getAllPosts(): PostMeta[] {
       return {
         slug,
         title: data.title || slug,
-        date: data.date instanceof Date ? data.date.toISOString().split("T")[0] : String(data.date || ""),
+        date: formatDate(data.date),
         description: data.description || "",
         tags: data.tags || [],
         published: data.published !== false,
-        readingTime: stats.text,
+        readingTime: formatReadingTime(stats.minutes),
       };
     })
     .filter((post) => post.published)
@@ -56,11 +68,11 @@ export function getPostBySlug(slug: string) {
     meta: {
       slug,
       title: data.title || slug,
-      date: data.date instanceof Date ? data.date.toISOString().split("T")[0] : String(data.date || ""),
+      date: formatDate(data.date),
       description: data.description || "",
       tags: data.tags || [],
       published: data.published !== false,
-      readingTime: stats.text,
+      readingTime: formatReadingTime(stats.minutes),
     },
     content,
   };

@@ -7,17 +7,27 @@ const navLinks = [
   { href: "/", label: "首頁" },
   { href: "/about", label: "關於我" },
   { href: "/services", label: "服務項目" },
-  { href: "/blog", label: "部落格" },
+  { href: "/blog", label: "觀點" },
 ];
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
-      <nav className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="text-xl font-bold tracking-tight">
-          允雷
+    <header className="sticky top-0 z-50 border-b border-stone-200/80 bg-[rgba(247,241,232,0.86)] backdrop-blur-xl">
+      <nav className="mx-auto flex h-[4.5rem] max-w-6xl items-center justify-between px-6">
+        <Link href="/" className="flex items-center gap-3">
+          <span className="flex h-11 w-11 items-center justify-center rounded-full bg-stone-950 text-sm font-semibold text-white shadow-sm">
+            YL
+          </span>
+          <div>
+            <p className="text-[0.65rem] uppercase tracking-[0.24em] text-stone-500">
+              AI Systems
+            </p>
+            <p className="text-base font-semibold tracking-tight text-stone-950">
+              允雷
+            </p>
+          </div>
         </Link>
 
         {/* Desktop */}
@@ -26,16 +36,22 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+              className="text-sm font-medium text-stone-600 transition-colors hover:text-stone-950"
             >
               {link.label}
             </Link>
           ))}
+          <Link
+            href="mailto:vjvan.n@gmail.com?subject=%E8%AB%AE%E8%A9%A2%20vjvan.com%20%E7%B3%BB%E7%B5%B1%E5%BB%BA%E7%BD%AE"
+            className="inline-flex items-center justify-center rounded-full bg-stone-950 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-stone-800"
+          >
+            預約諮詢
+          </Link>
         </div>
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden p-2"
+          className="rounded-full border border-stone-200 bg-white/70 p-2 text-stone-700 md:hidden"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
@@ -66,18 +82,25 @@ export default function Header() {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden border-t border-gray-100 bg-white">
-          <div className="px-6 py-4 space-y-3">
+        <div className="border-t border-stone-200 bg-[rgba(247,241,232,0.94)] md:hidden">
+          <div className="space-y-3 px-6 py-5">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="block text-sm text-gray-600 hover:text-gray-900"
+                className="block text-sm font-medium text-stone-700 hover:text-stone-950"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
               </Link>
             ))}
+            <Link
+              href="mailto:vjvan.n@gmail.com?subject=%E8%AB%AE%E8%A9%A2%20vjvan.com%20%E7%B3%BB%E7%B5%B1%E5%BB%BA%E7%BD%AE"
+              className="inline-flex w-full items-center justify-center rounded-full bg-stone-950 px-5 py-3 text-sm font-semibold text-white"
+              onClick={() => setIsOpen(false)}
+            >
+              預約諮詢
+            </Link>
           </div>
         </div>
       )}

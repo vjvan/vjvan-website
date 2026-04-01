@@ -21,12 +21,12 @@ export const metadata: Metadata = {
     template: "%s | 允雷",
   },
   description:
-    "幫企業用AI建立自動化系統,解決重工、耗時、低效的工作。提供AI商業架構顧問、Weavy.ai教學、n8n自動化流程建立等服務。",
+    "幫台灣中小企業把 LINE、CRM 與 n8n 串成真正能運轉的 AI 自動化營運系統，從流程診斷、系統建置到上線維運。",
   metadataBase: new URL("https://vjvan.com"),
   openGraph: {
     title: "允雷 | AI商業系統架構師",
     description:
-      "幫企業用AI建立自動化系統,解決重工、耗時、低效的工作。",
+      "幫台灣中小企業把 LINE、CRM 與 n8n 串成真正能運轉的 AI 自動化營運系統。",
     url: "https://vjvan.com",
     siteName: "允雷",
     locale: "zh_TW",
@@ -130,10 +130,10 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-gray-900`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased text-stone-950`}
       >
         <Header />
-        <main className="min-h-screen">{children}</main>
+        <main className="min-h-screen overflow-x-clip">{children}</main>
         <Footer />
       </body>
     </html>

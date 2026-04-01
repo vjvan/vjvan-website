@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getAllPosts, getPostBySlug } from "@/lib/mdx";
@@ -29,29 +30,69 @@ export default async function BlogPostPage({ params }: Props) {
   if (!post) notFound();
 
   return (
-    <article className="max-w-3xl mx-auto px-6 py-16">
-      <header className="mb-12">
-        <h1 className="text-3xl font-bold">{post.meta.title}</h1>
-        <p className="mt-4 text-sm text-gray-500">
-          {post.meta.date} - {post.meta.readingTime}
-        </p>
-        {post.meta.tags.length > 0 && (
-          <div className="mt-4 flex gap-2">
-            {post.meta.tags.map((tag: string) => (
-              <span
-                key={tag}
-                className="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        )}
-      </header>
+    <div className="mx-auto max-w-4xl px-6 py-14 md:py-18">
+      <article className="rounded-[2rem] border border-stone-200 bg-white/85 p-8 shadow-sm backdrop-blur md:p-10">
+        <Link
+          href="/blog"
+          className="inline-flex items-center rounded-full border border-stone-200 bg-stone-50 px-4 py-2 text-sm font-medium text-stone-600 transition-colors hover:border-stone-300 hover:bg-white hover:text-stone-900"
+        >
+          返回觀點筆記
+        </Link>
 
-      <div className="prose prose-gray max-w-none">
-        <MDXRemote source={post.content} />
-      </div>
-    </article>
+        <header className="mt-6 border-b border-stone-200 pb-8">
+          <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-700">
+            Insight Note
+          </p>
+          <h1 className="mt-4 text-4xl font-semibold tracking-tight text-stone-950">
+            {post.meta.title}
+          </h1>
+          <p className="mt-4 text-sm text-stone-500">
+            {post.meta.date} | {post.meta.readingTime}
+          </p>
+          {post.meta.tags.length > 0 && (
+            <div className="mt-5 flex flex-wrap gap-2">
+              {post.meta.tags.map((tag: string) => (
+                <span
+                  key={tag}
+                  className="rounded-full border border-stone-200 bg-stone-50 px-3 py-1 text-xs text-stone-600"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+          <p className="mt-6 max-w-2xl text-base leading-7 text-stone-600">
+            {post.meta.description}
+          </p>
+        </header>
+
+        <div className="article-content mt-8">
+          <MDXRemote source={post.content} />
+        </div>
+
+        <div className="mt-10 rounded-[1.5rem] border border-stone-200 bg-[#f8f3eb] p-6">
+          <p className="text-sm font-medium uppercase tracking-[0.24em] text-amber-700">
+            延伸
+          </p>
+          <p className="mt-3 text-sm leading-7 text-stone-600">
+            如果你面對的不是內容問題，而是流程、資料和系統沒有接起來，可以直接從實際營運情境切入討論。
+          </p>
+          <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+            <a
+              href="mailto:vjvan.n@gmail.com?subject=%E8%AB%AE%E8%A9%A2%20vjvan.com%20%E8%A7%80%E9%BB%9E%E6%96%87%E7%AB%A0"
+              className="inline-flex items-center justify-center rounded-full bg-amber-700 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-amber-800"
+            >
+              預約系統諮詢
+            </a>
+            <Link
+              href="/services"
+              className="inline-flex items-center justify-center rounded-full border border-stone-300 px-5 py-3 text-sm font-semibold text-stone-700 transition-colors hover:border-stone-400 hover:bg-white"
+            >
+              查看服務內容
+            </Link>
+          </div>
+        </div>
+      </article>
+    </div>
   );
 }
