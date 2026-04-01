@@ -4,7 +4,7 @@ import Script from "next/script";
 export const metadata: Metadata = {
   title: "服務項目",
   description:
-    "LINE LIFF 前台、CRM 後台、n8n 自動化與 AI 系統規劃。為台灣中小企業建置真正能運轉的營運系統。",
+    "LINE LIFF 前台、CRM 後台、n8n 自動化、ERP/POS 串接與 AI 系統規劃。為台灣中小企業建置真正能運轉的營運系統。",
 };
 
 const coreServices = [
@@ -78,6 +78,11 @@ const engagementModes = [
 
 const secondaryServices = [
   {
+    title: "ERP / POS 系統串接",
+    description:
+      "把前台訂單、庫存異動與客戶資料自動回寫到既有的 ERP 或 POS 系統，讓線上線下數據同步，真正走完商業化流程的最後一哩路。",
+  },
+  {
     title: "內部工作坊與流程教學",
     description:
       "如果團隊需要把 AI / 自動化觀念帶進內部，我也提供以實際工作流為主的教學與工作坊。",
@@ -145,7 +150,7 @@ export default function ServicesPage() {
                 服務不是把工具湊在一起，而是把你的營運流程接成一套能用的系統
               </h1>
               <p className="mt-6 text-lg leading-8 text-stone-700">
-                我目前的主軸聚焦在 LINE 前台、CRM 後台、n8n 自動化，以及 AI 系統規劃。
+                我目前的主軸聚焦在 LINE 前台、CRM 後台、n8n 自動化、ERP/POS 系統串接，以及 AI 系統規劃。
                 目標不是做出一堆功能，而是讓管理者和團隊真的能更快、更穩定地運作。
               </p>
             </div>
@@ -158,6 +163,7 @@ export default function ServicesPage() {
                   "需要 LINE 入口，但不想一開始就投入 App 開發",
                   "想把提醒、推播、報表或內部通知流程自動化",
                   "已經導入很多工具，但沒有被整理成同一套系統",
+                  "有既有 ERP 或 POS，需要讓新系統的資料能自動回寫",
                 ].map((item) => (
                   <li key={item} className="flex gap-3 text-sm leading-6 text-stone-700">
                     <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-700" />
