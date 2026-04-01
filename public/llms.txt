@@ -15,7 +15,7 @@
 - 預約系統（多門市、時段管理、自動提醒）
 - B2B 訂購系統（商品瀏覽、下單、訂單追蹤）
 - 會員管理（客戶資料、消費紀錄、分群標籤）
-- 價格範圍：NT$150,000 - NT$250,000
+- 費用依功能範圍客製化報價
 
 ### CRM 管理後台建置
 為企業主打造的經營管理儀表板。
@@ -39,7 +39,7 @@
 
 ## 技術棧
 
-LINE LIFF, React, Next.js, TypeScript, Supabase (PostgreSQL), n8n, Vercel, Cloudflare, Tailwind CSS, Remotion
+LINE LIFF, React, Next.js, TypeScript, Supabase (PostgreSQL), n8n, Vercel, Cloudflare, Tailwind CSS
 
 ## 成功案例
 
@@ -60,14 +60,9 @@ LINE LIFF, React, Next.js, TypeScript, Supabase (PostgreSQL), n8n, Vercel, Cloud
 - 流失客戶自動喚回推播
 - 技術：LINE LIFF + Supabase + n8n + Next.js
 
-## 定價參考
+## 定價
 
-| 方案類型 | 價格範圍 |
-|---------|---------|
-| 核心系統（LIFF + 後台 + 自動化） | NT$150,000 - NT$200,000 |
-| 完整系統（核心 + 行銷整合 + 進階分析） | NT$200,000 - NT$250,000 |
-| 月維護 | NT$3,500 - NT$6,000/月 |
-| 額外門市擴充 | NT$15,000/間 |
+費用依功能範圍、門市數量、整合需求客製化報價。歡迎聯繫討論。
 
 ## 聯絡方式
 
