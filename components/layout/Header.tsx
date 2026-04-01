@@ -18,9 +18,11 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-stone-200/80 bg-[rgba(247,241,232,0.86)] backdrop-blur-xl">
       <nav className="mx-auto flex h-[4.5rem] max-w-6xl items-center justify-between px-6">
         <Link href="/" className="flex items-center gap-3">
-          <span className="flex h-11 w-11 items-center justify-center rounded-full bg-stone-950 text-sm font-semibold text-white shadow-sm">
-            YL
-          </span>
+          <img
+            src="/images/vjvan-portrait.jpg"
+            alt="允雷"
+            className="h-11 w-11 rounded-full object-cover shadow-sm"
+          />
           <div>
             <p className="text-[0.65rem] uppercase tracking-[0.24em] text-stone-500">
               AI Systems

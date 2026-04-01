@@ -59,6 +59,7 @@ export default function RootLayout({
     url: "https://vjvan.com",
     email: "vjvan.n@gmail.com",
     telephone: "+886988067272",
+    image: "https://vjvan.com/images/vjvan-portrait.jpg",
     address: {
       "@type": "PostalAddress",
       addressCountry: "TW",

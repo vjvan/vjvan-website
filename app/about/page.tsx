@@ -46,12 +46,21 @@ export default function AboutPage() {
     <div className="mx-auto max-w-6xl px-6 py-14 md:py-18">
       <section className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
         <div className="rounded-[2rem] border border-stone-200 bg-white/80 p-8 shadow-sm backdrop-blur md:p-10">
-          <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-700">
-            About
-          </p>
-          <h1 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-stone-950 md:text-5xl">
-            我做的不是單點工具導入，而是把營運流程整理成真的能跑的系統
-          </h1>
+          <div className="flex items-start gap-6">
+            <img
+              src="/images/vjvan-portrait.jpg"
+              alt="允雷 - AI 商業系統架構師"
+              className="hidden h-28 w-28 rounded-2xl object-cover shadow-md sm:block"
+            />
+            <div>
+              <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-700">
+                About
+              </p>
+              <h1 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-stone-950 md:text-5xl">
+                我做的不是單點工具導入，而是把營運流程整理成真的能跑的系統
+              </h1>
+            </div>
+          </div>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-stone-700">
             我是允雷，專注協助台灣中小企業把 LINE 前台、CRM 後台與 n8n 自動化流程串成一套可持續維運的營運系統。
             從流程診斷、系統架構設計，到實際建置與上線後調整，我會一起把整條路走完。
