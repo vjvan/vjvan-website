@@ -32,6 +32,18 @@ export const metadata: Metadata = {
     locale: "zh_TW",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "允雷 | AI商業系統架構師",
+    description:
+      "幫台灣中小企業把 LINE、CRM 與 n8n 串成真正能運轉的 AI 自動化營運系統。",
+  },
+  alternates: {
+    canonical: "https://vjvan.com",
+  },
+  other: {
+    "llms.txt": "https://vjvan.com/llms.txt",
+  },
 };
 
 export default function RootLayout({

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import Script from "next/script";
 import { getAllPosts, getPostBySlug } from "@/lib/mdx";
 
 interface Props {
@@ -29,8 +30,44 @@ export default async function BlogPostPage({ params }: Props) {
   const post = getPostBySlug(slug);
   if (!post) notFound();
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.meta.title,
+    description: post.meta.description,
+    datePublished: post.meta.date,
+    dateModified: post.meta.date,
+    url: `https://vjvan.com/blog/${slug}`,
+    author: {
+      "@type": "Person",
+      name: "允雷",
+      jobTitle: "AI 商業系統架構師",
+      url: "https://vjvan.com",
+      sameAs: [
+        "https://www.linkedin.com/in/vjvan",
+        "https://github.com/vjvan",
+      ],
+    },
+    publisher: {
+      "@type": "Person",
+      name: "允雷",
+      url: "https://vjvan.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://vjvan.com/blog/${slug}`,
+    },
+    keywords: post.meta.tags.join(", "),
+    inLanguage: "zh-TW",
+  };
+
   return (
     <div className="mx-auto max-w-4xl px-6 py-14 md:py-18">
+      <Script
+        id={`json-ld-article-${slug}`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <article className="rounded-[2rem] border border-stone-200 bg-white/85 p-8 shadow-sm backdrop-blur md:p-10">
         <Link
           href="/blog"
