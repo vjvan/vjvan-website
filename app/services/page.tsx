@@ -131,6 +131,15 @@ const faqJsonLd = {
   })),
 };
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "首頁", item: "https://vjvan.com" },
+    { "@type": "ListItem", position: 2, name: "服務項目", item: "https://vjvan.com/services" },
+  ],
+};
+
 export default function ServicesPage() {
   return (
     <>
@@ -138,6 +147,11 @@ export default function ServicesPage() {
         id="json-ld-faq"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <Script
+        id="json-ld-breadcrumb"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
       <div className="mx-auto max-w-6xl px-6 py-14 md:py-18">

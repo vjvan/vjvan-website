@@ -24,6 +24,32 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.meta.title,
     description: post.meta.description,
+    openGraph: {
+      title: post.meta.title,
+      description: post.meta.description,
+      url: `https://vjvan.com/blog/${slug}`,
+      type: "article",
+      publishedTime: post.meta.date,
+      authors: ["允雷"],
+      tags: post.meta.tags,
+      images: [
+        {
+          url: `https://vjvan.com/blog/${slug}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: post.meta.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.meta.title,
+      description: post.meta.description,
+      images: [`https://vjvan.com/blog/${slug}/opengraph-image`],
+    },
+    alternates: {
+      canonical: `https://vjvan.com/blog/${slug}`,
+    },
   };
 }
 
@@ -37,6 +63,7 @@ export default async function BlogPostPage({ params }: Props) {
     "@type": "Article",
     headline: post.meta.title,
     description: post.meta.description,
+    image: `https://vjvan.com/blog/${slug}/opengraph-image`,
     datePublished: post.meta.date,
     dateModified: post.meta.date,
     url: `https://vjvan.com/blog/${slug}`,
@@ -45,6 +72,7 @@ export default async function BlogPostPage({ params }: Props) {
       name: "允雷",
       jobTitle: "AI 商業系統架構師",
       url: "https://vjvan.com",
+      image: "https://vjvan.com/images/vjvan-portrait.jpg",
       sameAs: [
         "https://www.linkedin.com/in/vjvan",
         "https://github.com/vjvan",
@@ -63,12 +91,27 @@ export default async function BlogPostPage({ params }: Props) {
     inLanguage: "zh-TW",
   };
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "首頁", item: "https://vjvan.com" },
+      { "@type": "ListItem", position: 2, name: "觀點筆記", item: "https://vjvan.com/blog" },
+      { "@type": "ListItem", position: 3, name: post.meta.title, item: `https://vjvan.com/blog/${slug}` },
+    ],
+  };
+
   return (
     <div className="mx-auto max-w-4xl px-6 py-14 md:py-18">
       <Script
         id={`json-ld-article-${slug}`}
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <Script
+        id={`json-ld-breadcrumb-${slug}`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <article className="rounded-[2rem] border border-stone-200 bg-white/85 p-8 shadow-sm backdrop-blur md:p-10">
         <Link

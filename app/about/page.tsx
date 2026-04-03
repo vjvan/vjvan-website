@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import BottomCTA from "@/components/BottomCTA";
 
 export const metadata: Metadata = {
@@ -41,9 +42,23 @@ const workStyle = [
   "如果需求不適合做大系統，我會直接建議先做最小可用版本，不會為了案子把範圍灌大。",
 ];
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "首頁", item: "https://vjvan.com" },
+    { "@type": "ListItem", position: 2, name: "關於允雷", item: "https://vjvan.com/about" },
+  ],
+};
+
 export default function AboutPage() {
   return (
     <>
+      <Script
+        id="json-ld-breadcrumb"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <div className="mx-auto max-w-6xl px-6 py-14 md:py-18">
         <section className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
           <div className="rounded-[2rem] border border-stone-200 bg-white/80 p-8 shadow-sm backdrop-blur md:p-10">

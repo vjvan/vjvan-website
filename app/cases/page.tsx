@@ -72,6 +72,15 @@ const cases = [
   },
 ];
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "首頁", item: "https://vjvan.com" },
+    { "@type": "ListItem", position: 2, name: "成功案例", item: "https://vjvan.com/cases" },
+  ],
+};
+
 const caseStudiesJsonLd = cases.map((c) => ({
   "@context": "https://schema.org",
   "@type": "Article",
@@ -98,6 +107,11 @@ const caseStudiesJsonLd = cases.map((c) => ({
 export default function CasesPage() {
   return (
     <>
+      <Script
+        id="json-ld-breadcrumb"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       {caseStudiesJsonLd.map((jsonLd, i) => (
         <Script
           key={cases[i].id}

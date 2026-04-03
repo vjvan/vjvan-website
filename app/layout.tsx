@@ -37,12 +37,21 @@ export const metadata: Metadata = {
     siteName: "允雷",
     locale: "zh_TW",
     type: "website",
+    images: [
+      {
+        url: "https://vjvan.com/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "允雷 - AI 商業系統架構師 | LINE LIFF + CRM + n8n 自動化營運系統",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "允雷 | AI商業系統架構師",
     description:
       "幫台灣中小企業把 LINE、CRM 與 n8n 串成真正能運轉的 AI 自動化營運系統。",
+    images: ["https://vjvan.com/opengraph-image"],
   },
   alternates: {
     canonical: "https://vjvan.com",

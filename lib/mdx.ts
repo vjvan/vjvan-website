@@ -13,6 +13,7 @@ export interface PostMeta {
   tags: string[];
   published: boolean;
   readingTime: string;
+  image?: string;
 }
 
 function formatDate(value: unknown) {
@@ -48,6 +49,7 @@ export function getAllPosts(): PostMeta[] {
         tags: data.tags || [],
         published: data.published !== false,
         readingTime: formatReadingTime(stats.minutes),
+        image: data.image || undefined,
       };
     })
     .filter((post) => post.published)
@@ -73,6 +75,7 @@ export function getPostBySlug(slug: string) {
       tags: data.tags || [],
       published: data.published !== false,
       readingTime: formatReadingTime(stats.minutes),
+      image: data.image || undefined,
     },
     content,
   };
