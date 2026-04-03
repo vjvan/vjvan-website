@@ -94,6 +94,9 @@ export default function RootLayout({
     sameAs: [
       "https://www.linkedin.com/in/vjvan",
       "https://github.com/vjvan",
+      "https://x.com/vjvan_n",
+      "https://www.instagram.com/vjvan_n",
+      "https://www.threads.net/@vjvan",
     ],
   };
 
