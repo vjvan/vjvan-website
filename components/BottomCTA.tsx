@@ -1,3 +1,4 @@
+import Link from "next/link";
 import EmailSubscribe from "./EmailSubscribe";
 
 export default function BottomCTA() {
@@ -17,12 +18,12 @@ export default function BottomCTA() {
             </p>
           </div>
 
-          <a
-            href="mailto:vjvan.n@gmail.com?subject=%E8%AB%AE%E8%A9%A2%20vjvan.com%20%E7%B3%BB%E7%B5%B1%E5%BB%BA%E7%BD%AE"
+          <Link
+            href="/consult"
             className="inline-flex items-center justify-center rounded-full bg-action px-8 py-4 text-base font-semibold text-white shadow-lg shadow-action/15 transition-all duration-200 hover:-translate-y-0.5 hover:bg-action-hover"
           >
             預約 30 分鐘免費諮詢
-          </a>
+          </Link>
         </div>
       </div>
 

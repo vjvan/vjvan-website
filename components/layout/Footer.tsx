@@ -6,8 +6,8 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-14">
         <div className="grid gap-10 md:grid-cols-[1.2fr_0.8fr]">
           <div>
-            <p className="text-xs font-medium uppercase tracking-[0.28em] text-amber-800">
-              VJ VAN
+            <p className="text-xs font-medium tracking-[0.28em] text-amber-800">
+              vjvan
             </p>
             <p className="mt-4 text-2xl font-semibold tracking-tight text-stone-950">
               允雷
@@ -99,7 +99,7 @@ export default function Footer() {
                   服務項目
                 </Link>
                 <Link href="/blog" className="hover:text-stone-950">
-                  觀點
+                  商業觀點
                 </Link>
               </div>
             </div>

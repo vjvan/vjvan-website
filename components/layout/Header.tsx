@@ -45,7 +45,7 @@ export default function Header() {
             </Link>
           ))}
           <Link
-            href="mailto:vjvan.n@gmail.com?subject=%E8%AB%AE%E8%A9%A2%20vjvan.com%20%E7%B3%BB%E7%B5%B1%E5%BB%BA%E7%BD%AE"
+            href="/consult"
             className="hidden lg:inline-flex items-center justify-center rounded-full bg-action px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-action-hover"
           >
             預約諮詢
@@ -98,7 +98,7 @@ export default function Header() {
               </Link>
             ))}
             <Link
-              href="mailto:vjvan.n@gmail.com?subject=%E8%AB%AE%E8%A9%A2%20vjvan.com%20%E7%B3%BB%E7%B5%B1%E5%BB%BA%E7%BD%AE"
+              href="/consult"
               className="inline-flex w-full items-center justify-center rounded-full bg-action px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-action-hover"
               onClick={() => setIsOpen(false)}
             >

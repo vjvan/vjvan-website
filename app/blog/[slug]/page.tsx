@@ -172,12 +172,12 @@ export default async function BlogPostPage({ params }: Props) {
             如果你面對的不是內容問題，而是流程、資料和系統沒有接起來，可以直接從實際營運情境切入討論。
           </p>
           <div className="mt-5 flex flex-col gap-3 sm:flex-row">
-            <a
-              href="mailto:vjvan.n@gmail.com?subject=%E8%AB%AE%E8%A9%A2%20vjvan.com%20%E8%A7%80%E9%BB%9E%E6%96%87%E7%AB%A0"
+            <Link
+              href="/consult"
               className="inline-flex items-center justify-center rounded-full bg-action px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-action-hover"
             >
               預約系統諮詢
-            </a>
+            </Link>
             <Link
               href="/services"
               className="inline-flex items-center justify-center rounded-full border border-stone-300 px-5 py-3 text-sm font-semibold text-stone-700 transition-colors hover:border-stone-400 hover:bg-white"

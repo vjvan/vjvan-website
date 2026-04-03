@@ -237,12 +237,12 @@ export default function CasesPage() {
                 </p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
-                <a
-                  href="mailto:vjvan.n@gmail.com?subject=%E8%AB%AE%E8%A9%A2%20vjvan.com%20%E6%A1%88%E4%BE%8B"
+                <Link
+                  href="/consult"
                   className="inline-flex items-center justify-center rounded-full bg-action px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-action-hover"
                 >
                   預約系統諮詢
-                </a>
+                </Link>
                 <Link
                   href="/services"
                   className="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-white/40 hover:bg-white/5"
