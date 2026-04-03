@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import remarkGfm from "remark-gfm";
 import Script from "next/script";
 import AuthorBox from "@/components/mdx/AuthorBox";
 import { mdxComponents } from "@/components/mdx";
@@ -152,7 +153,11 @@ export default async function BlogPostPage({ params }: Props) {
         </header>
 
         <div className="article-content mt-8">
-          <MDXRemote source={post.content} components={mdxComponents} />
+          <MDXRemote
+            source={post.content}
+            components={mdxComponents}
+            options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+          />
         </div>
 
         <div className="article-content">
