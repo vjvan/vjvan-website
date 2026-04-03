@@ -96,7 +96,7 @@ export default function RootLayout({
       "https://github.com/vjvan",
       "https://x.com/vjvan_n",
       "https://www.instagram.com/vjvan_n",
-      "https://www.threads.net/@vjvan",
+      "https://www.threads.net/@vjvan_n",
     ],
   };
 

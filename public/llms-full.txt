@@ -118,5 +118,5 @@ LINE LIFF, React, Next.js, TypeScript, Supabase (PostgreSQL + RLS), n8n, Vercel,
 - LinkedIn: https://www.linkedin.com/in/vjvan
 - X / Twitter: https://x.com/vjvan_n
 - Instagram: https://www.instagram.com/vjvan_n
-- Threads: https://www.threads.net/@vjvan
+- Threads: https://www.threads.net/@vjvan_n
 - GitHub: https://github.com/vjvan
