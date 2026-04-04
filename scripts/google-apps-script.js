@@ -1,37 +1,44 @@
 /**
- * Google Apps Script - 諮詢表單後端
+ * Google Apps Script - 諮詢表單 + 電子報訂閱
  *
- * 設定步驟:
- * 1. 開一個新的 Google Sheets，第一列寫上欄位標題:
- *    送出時間 | 姓名 | 公司 | Email | 電話 | 諮詢方向 | 需求描述
+ * 同一個 Script 處理兩種表單:
+ * - type 未指定 → 諮詢表單，寫入第一個工作表
+ * - type = "newsletter" → 電子報訂閱，寫入「電子報訂閱」工作表
  *
- * 2. 在 Google Sheets 選 Extensions > Apps Script
- *
- * 3. 把這段程式碼貼上去，取代原本的 Code.gs 內容
- *
- * 4. 點 Deploy > New deployment
- *    - Type: Web app
- *    - Execute as: Me
- *    - Who has access: Anyone
- *
- * 5. 複製 deployment URL，貼到 .env.local 的 NEXT_PUBLIC_GOOGLE_SCRIPT_URL
- *
- * 6. 重新啟動 Next.js dev server (或重新部署)
+ * 更新步驟:
+ * 1. 在 Google Sheets 新增一個工作表，命名為「電子報訂閱」
+ * 2. 第一列填: 訂閱時間 | Email
+ * 3. 回到 Apps Script，用這段程式碼取代原本的 Code.gs
+ * 4. Deploy > Manage deployments > 編輯 > 選新版本 > Deploy
  */
 
 function doPost(e) {
-  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
   var data = JSON.parse(e.postData.contents);
 
-  sheet.appendRow([
-    data.submitted_at || new Date().toISOString(),
-    data.name || "",
-    data.company || "",
-    data.email || "",
-    data.phone || "",
-    data.topic || "",
-    data.description || "",
-  ]);
+  if (data.type === "newsletter") {
+    var nlSheet = ss.getSheetByName("電子報訂閱");
+    if (!nlSheet) {
+      nlSheet = ss.insertSheet("電子報訂閱");
+      nlSheet.appendRow(["訂閱時間", "Email"]);
+    }
+
+    nlSheet.appendRow([
+      data.submitted_at || new Date().toISOString(),
+      data.email || "",
+    ]);
+  } else {
+    var sheet = ss.getSheets()[0];
+    sheet.appendRow([
+      data.submitted_at || new Date().toISOString(),
+      data.name || "",
+      data.company || "",
+      data.email || "",
+      data.phone || "",
+      data.topic || "",
+      data.description || "",
+    ]);
+  }
 
   return ContentService.createTextOutput(
     JSON.stringify({ status: "ok" })

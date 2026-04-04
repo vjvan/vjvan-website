@@ -4,9 +4,9 @@ import { type FormEvent, useState } from "react";
 
 export default function EmailSubscribe() {
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
-    "idle"
-  );
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -14,22 +14,25 @@ export default function EmailSubscribe() {
 
     setStatus("loading");
 
-    try {
-      const res = await fetch("/api/subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
-
-      if (res.ok) {
-        setStatus("success");
-        setEmail("");
-      } else {
-        setStatus("error");
+    const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL;
+    if (scriptUrl) {
+      try {
+        await fetch(scriptUrl, {
+          method: "POST",
+          mode: "no-cors",
+          body: JSON.stringify({
+            type: "newsletter",
+            email,
+            submitted_at: new Date().toISOString(),
+          }),
+        });
+      } catch {
+        // no-cors 無法驗證回應，仍顯示成功
       }
-    } catch {
-      setStatus("error");
     }
+
+    setStatus("success");
+    setEmail("");
   };
 
   if (status === "success") {
