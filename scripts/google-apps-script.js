@@ -20,11 +20,12 @@ function doPost(e) {
     var nlSheet = ss.getSheetByName("電子報訂閱");
     if (!nlSheet) {
       nlSheet = ss.insertSheet("電子報訂閱");
-      nlSheet.appendRow(["訂閱時間", "Email"]);
+      nlSheet.appendRow(["訂閱時間", "稱呼", "Email"]);
     }
 
     nlSheet.appendRow([
       data.submitted_at || new Date().toISOString(),
+      data.name || "",
       data.email || "",
     ]);
   } else {

@@ -3,6 +3,7 @@
 import { type FormEvent, useState } from "react";
 
 export default function EmailSubscribe() {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
@@ -22,6 +23,7 @@ export default function EmailSubscribe() {
           mode: "no-cors",
           body: JSON.stringify({
             type: "newsletter",
+            name,
             email,
             submitted_at: new Date().toISOString(),
           }),
@@ -32,6 +34,7 @@ export default function EmailSubscribe() {
     }
 
     setStatus("success");
+    setName("");
     setEmail("");
   };
 
@@ -47,15 +50,25 @@ export default function EmailSubscribe() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-3 sm:flex-row">
-      <input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="輸入你的 Email"
-        required
-        className="flex-1 rounded-full border border-stone-300 bg-white px-5 py-3 text-sm text-stone-900 placeholder:text-stone-400 focus:border-action focus:outline-none focus:ring-2 focus:ring-action/20"
-      />
+    <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+      <div className="flex flex-col gap-3 sm:flex-row">
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="你的稱呼"
+          required
+          className="sm:w-36 rounded-full border border-stone-300 bg-white px-5 py-3 text-sm text-stone-900 placeholder:text-stone-400 focus:border-action focus:outline-none focus:ring-2 focus:ring-action/20"
+        />
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="輸入你的 Email"
+          required
+          className="flex-1 rounded-full border border-stone-300 bg-white px-5 py-3 text-sm text-stone-900 placeholder:text-stone-400 focus:border-action focus:outline-none focus:ring-2 focus:ring-action/20"
+        />
+      </div>
       <button
         type="submit"
         disabled={status === "loading"}
