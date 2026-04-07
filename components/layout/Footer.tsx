@@ -65,6 +65,14 @@ export default function Footer() {
               >
                 Threads
               </a>
+              <a
+                href="https://lin.ee/XjnkG91"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center rounded-full border border-stone-300 px-4 py-2 text-sm font-medium text-stone-700 transition-colors hover:border-stone-400 hover:bg-white/70"
+              >
+                LINE
+              </a>
             </div>
           </div>
 
