@@ -155,13 +155,13 @@ export default function ServicesPage() {
       />
 
       <div className="mx-auto max-w-6xl px-6 py-14 md:py-18">
-        <section className="rounded-[2rem] border border-stone-200 bg-white/80 p-8 shadow-sm backdrop-blur md:p-10">
+        <section className="rounded-[2rem] border border-whisper bg-white p-8 shadow-notion md:p-10">
           <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
             <div className="max-w-3xl">
               <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-700">
                 Services
               </p>
-              <h1 className="mt-4 text-4xl font-semibold tracking-tight text-stone-950 md:text-5xl">
+              <h1 className="mt-4 text-4xl font-semibold leading-[1.1] tracking-tight text-stone-950 md:text-5xl">
                 服務不是把工具湊在一起，
                 <span className="block">而是把營運流程接成一套能用的系統</span>
               </h1>
@@ -171,7 +171,7 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className="rounded-[1.75rem] border border-stone-200 bg-[#f8f3eb] p-7">
+            <div className="rounded-[1.75rem] border border-whisper bg-warm-white p-7">
               <p className="text-sm font-medium text-stone-900">適合這類需求</p>
               <ul className="mt-4 space-y-3">
                 {[
@@ -196,7 +196,7 @@ export default function ServicesPage() {
             {coreServices.map((service) => (
               <div
                 key={service.title}
-                className="rounded-[1.75rem] border border-stone-200 bg-white p-8 shadow-sm"
+                className="rounded-[1.75rem] border border-whisper bg-white p-8 shadow-notion"
               >
                 <p className="text-xs font-medium uppercase tracking-[0.26em] text-amber-700">
                   {service.label}
@@ -224,7 +224,7 @@ export default function ServicesPage() {
         </section>
 
         <section className="mt-10 md:mt-14">
-          <div className="rounded-[2rem] border border-stone-200 bg-stone-950 px-8 py-10 text-white md:px-10">
+          <div className="rounded-[2rem] border border-whisper bg-[#1a120e] px-8 py-10 text-white shadow-notion-lg md:px-10">
             <div className="max-w-2xl">
               <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-200/80">
                 合作模式
@@ -255,7 +255,7 @@ export default function ServicesPage() {
             {secondaryServices.map((service) => (
               <div
                 key={service.title}
-                className="rounded-[1.75rem] border border-stone-200 bg-[#f8f3eb] p-7"
+                className="rounded-[1.75rem] border border-whisper bg-warm-white p-7"
               >
                 <p className="text-xs font-medium uppercase tracking-[0.26em] text-stone-500">
                   延伸支援
@@ -272,7 +272,7 @@ export default function ServicesPage() {
         </section>
 
         <section className="mt-10 md:mt-14">
-          <div className="rounded-[2rem] border border-stone-200 bg-white/80 p-8 shadow-sm backdrop-blur md:p-10">
+          <div className="rounded-[2rem] border border-whisper bg-white p-8 shadow-notion md:p-10">
             <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-700">
               常見問題
             </p>
@@ -280,7 +280,7 @@ export default function ServicesPage() {
               {faqs.map((faq) => (
                 <div
                   key={faq.question}
-                  className="rounded-[1.5rem] border border-stone-200 bg-stone-50/70 p-6"
+                  className="rounded-[1.5rem] border border-whisper bg-warm-cream p-6"
                 >
                   <h3 className="text-lg font-semibold text-stone-950">{faq.question}</h3>
                   <p className="mt-3 text-sm leading-7 text-stone-600">{faq.answer}</p>

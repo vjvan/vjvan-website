@@ -4,7 +4,7 @@ import EmailSubscribe from "./EmailSubscribe";
 export default function BottomCTA() {
   return (
     <section className="mx-auto max-w-6xl px-6 pt-10 pb-20 md:pt-14 md:pb-24">
-      <div className="rounded-[2rem] border border-stone-200 bg-white/80 p-8 shadow-sm backdrop-blur md:p-10">
+      <div className="rounded-[2rem] border border-whisper bg-white p-8 shadow-notion md:p-10">
         <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
           <div className="max-w-2xl">
             <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-700">
@@ -27,7 +27,7 @@ export default function BottomCTA() {
         </div>
       </div>
 
-      <div className="mt-5 rounded-[2rem] border border-stone-200 bg-[#f8f3eb] p-8 md:p-10">
+      <div className="mt-5 rounded-[2rem] border border-whisper bg-warm-white p-8 md:p-10">
         <div className="grid gap-6 lg:grid-cols-[1fr_1fr] lg:items-center">
           <div>
             <p className="text-sm font-medium uppercase tracking-[0.28em] text-stone-500">

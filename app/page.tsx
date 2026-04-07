@@ -129,12 +129,12 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-6 pt-16 pb-12 md:pt-24">
         <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
           <div>
-            <div className="inline-flex items-center gap-3 rounded-full border border-stone-200 bg-white/80 px-4 py-2 text-xs font-medium tracking-[0.24em] text-stone-600 uppercase shadow-sm backdrop-blur">
+            <div className="inline-flex items-center gap-3 rounded-full border border-whisper bg-white px-4 py-2 text-xs font-medium tracking-[0.24em] text-stone-600 uppercase shadow-notion">
               <span className="h-2 w-2 rounded-full bg-amber-600" />
               AI Business Systems
             </div>
 
-            <h1 className="mt-8 max-w-3xl text-5xl font-semibold leading-tight tracking-tight text-stone-950 md:text-6xl">
+            <h1 className="mt-8 max-w-3xl text-5xl font-semibold leading-[1.08] tracking-tight text-stone-950 md:text-6xl">
               把 LINE、CRM 與 n8n
               <span className="block text-stone-700">串成真正能運轉的營運系統</span>
             </h1>
@@ -153,20 +153,20 @@ export default function Home() {
               </Link>
               <Link
                 href="/services"
-                className="inline-flex items-center justify-center rounded-full border border-stone-300 bg-white/70 px-6 py-3 text-sm font-semibold text-stone-700 transition-colors hover:border-stone-400 hover:bg-white"
+                className="inline-flex items-center justify-center rounded-full border border-whisper bg-white px-6 py-3 text-sm font-semibold text-stone-700 transition-colors hover:bg-stone-50"
               >
                 查看服務與交付範圍
               </Link>
             </div>
 
             <div className="mt-10 flex flex-wrap gap-3 text-sm text-stone-600">
-              <span className="rounded-full border border-stone-200 bg-white/75 px-4 py-2">
+              <span className="rounded-full border border-whisper bg-white px-4 py-2">
                 高雄 / 遠端服務全台
               </span>
-              <span className="rounded-full border border-stone-200 bg-white/75 px-4 py-2">
+              <span className="rounded-full border border-whisper bg-white px-4 py-2">
                 LIFF 先行，保留 App Ready 架構
               </span>
-              <span className="rounded-full border border-stone-200 bg-white/75 px-4 py-2">
+              <span className="rounded-full border border-whisper bg-white px-4 py-2">
                 流程診斷 → 建置整合 → 上線維運
               </span>
             </div>
@@ -176,7 +176,7 @@ export default function Home() {
             <div className="absolute -left-6 top-10 h-36 w-36 rounded-full bg-amber-200/50 blur-3xl" />
             <div className="absolute -right-2 bottom-10 h-32 w-32 rounded-full bg-stone-300/50 blur-3xl" />
 
-            <div className="relative overflow-hidden rounded-[2rem] border border-stone-200 bg-gradient-to-br from-stone-950 via-stone-900 to-stone-800 p-7 text-white shadow-[0_28px_80px_rgba(56,38,26,0.22)]">
+            <div className="relative overflow-hidden rounded-[2rem] border border-whisper bg-gradient-to-br from-[#1a120e] via-[#241710] to-[#3a2418] p-7 text-white shadow-notion-lg">
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <p className="text-xs uppercase tracking-[0.3em] text-amber-200/70">
@@ -248,7 +248,7 @@ export default function Home() {
           {heroStats.map((stat) => (
             <div
               key={stat.label}
-              className="rounded-[1.75rem] border border-stone-200/80 bg-white/80 p-6 shadow-sm backdrop-blur"
+              className="rounded-[1.75rem] border border-whisper bg-white p-6 shadow-notion"
             >
               <p className="text-3xl font-semibold tracking-tight text-stone-950">
                 {stat.value}
@@ -261,7 +261,7 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-10 md:py-14">
-        <div className="rounded-[2rem] border border-stone-200 bg-white/75 p-8 shadow-sm backdrop-blur md:p-10">
+        <div className="rounded-[2rem] border border-whisper bg-white p-8 shadow-notion md:p-10">
           <div className="max-w-2xl">
             <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-700">
               常見卡點
@@ -278,7 +278,7 @@ export default function Home() {
             {problems.map((problem) => (
               <div
                 key={problem.title}
-                className="rounded-[1.5rem] border border-stone-200 bg-stone-50/80 p-6"
+                className="rounded-[1.5rem] border border-whisper bg-warm-cream p-6"
               >
                 <h3 className="text-lg font-semibold text-stone-900">{problem.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-stone-600">
@@ -290,50 +290,52 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-10 md:py-14">
-        <div className="max-w-2xl">
-          <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-700">
-            核心服務
-          </p>
-          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-stone-950">
-            先把最重要的三個面向做好，系統才會真的開始產生營運價值
-          </h2>
-        </div>
+      <div className="mt-10 bg-warm-white md:mt-14">
+        <section className="mx-auto max-w-6xl px-6 py-14 md:py-20">
+          <div className="max-w-2xl">
+            <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-700">
+              核心服務
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-stone-950">
+              先把最重要的三個面向做好，系統才會真的開始產生營運價值
+            </h2>
+          </div>
 
-        <div className="mt-8 grid gap-5 lg:grid-cols-3">
-          {capabilities.map((capability) => (
-            <div
-              key={capability.title}
-              className="rounded-[1.75rem] border border-stone-200 bg-white p-7 shadow-sm"
-            >
-              <p className="text-xs font-medium uppercase tracking-[0.26em] text-amber-700">
-                {capability.eyebrow}
-              </p>
-              <h3 className="mt-4 text-2xl font-semibold tracking-tight text-stone-950">
-                {capability.title}
-              </h3>
-              <p className="mt-4 text-sm leading-7 text-stone-600">
-                {capability.description}
-              </p>
-              <ul className="mt-6 space-y-3">
-                {capability.points.map((point) => (
-                  <li key={point} className="flex gap-3 text-sm leading-6 text-stone-700">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-600" />
-                    <span>{point}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </section>
+          <div className="mt-8 grid gap-5 lg:grid-cols-3">
+            {capabilities.map((capability) => (
+              <div
+                key={capability.title}
+                className="rounded-[1.75rem] border border-whisper bg-white p-7 shadow-notion"
+              >
+                <p className="text-xs font-medium uppercase tracking-[0.26em] text-amber-700">
+                  {capability.eyebrow}
+                </p>
+                <h3 className="mt-4 text-2xl font-semibold tracking-tight text-stone-950">
+                  {capability.title}
+                </h3>
+                <p className="mt-4 text-sm leading-7 text-stone-600">
+                  {capability.description}
+                </p>
+                <ul className="mt-6 space-y-3">
+                  {capability.points.map((point) => (
+                    <li key={point} className="flex gap-3 text-sm leading-6 text-stone-700">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-600" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
 
       <section className="mx-auto max-w-6xl px-6 py-10 md:py-14">
         <div className="grid gap-5 lg:grid-cols-3">
           {standards.map((standard) => (
             <div
               key={standard.title}
-              className="rounded-[1.75rem] border border-stone-200 bg-[#f8f3eb] p-7"
+              className="rounded-[1.75rem] border border-whisper bg-white p-7 shadow-notion"
             >
               <p className="text-sm font-medium text-amber-800">{standard.label}</p>
               <h3 className="mt-3 text-xl font-semibold tracking-tight text-stone-950">
@@ -348,7 +350,7 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-10 md:py-14">
-        <div className="rounded-[2rem] border border-stone-200 bg-stone-950 px-8 py-10 text-white md:px-10">
+        <div className="rounded-[2rem] border border-whisper bg-[#1a120e] px-8 py-10 text-white shadow-notion-lg md:px-10">
           <div className="max-w-2xl">
             <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-200/80">
               合作方式
