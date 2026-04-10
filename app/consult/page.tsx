@@ -21,6 +21,7 @@ export default function ConsultPage() {
     phone: "",
     topic: "",
     description: "",
+    website: "", // honeypot
   });
   const [submitting, setSubmitting] = useState(false);
 
@@ -31,14 +32,21 @@ export default function ConsultPage() {
     e.preventDefault();
     setSubmitting(true);
 
+    // honeypot: bot 會填這個隱藏欄位,真人不會
+    if (form.website) {
+      window.location.href = LINE_URL;
+      return;
+    }
+
     const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL;
     if (scriptUrl) {
       try {
+        const { website: _hp, ...formData } = form;
         await fetch(scriptUrl, {
           method: "POST",
           mode: "no-cors",
           body: JSON.stringify({
-            ...form,
+            ...formData,
             submitted_at: new Date().toISOString(),
           }),
         });
@@ -70,6 +78,19 @@ export default function ConsultPage() {
         </p>
 
         <form onSubmit={handleSubmit} className="mt-10 space-y-5">
+          {/* honeypot field - hidden from real users, bots will fill it */}
+          <div className="absolute -left-[9999px]" aria-hidden="true">
+            <label htmlFor="website">Website</label>
+            <input
+              id="website"
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
+              value={form.website}
+              onChange={(e) => update("website", e.target.value)}
+            />
+          </div>
+
           <div>
             <label htmlFor="name" className={labelClass}>
               姓名
