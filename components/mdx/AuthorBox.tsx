@@ -1,9 +1,10 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function AuthorBox() {
   return (
     <div className="author-box">
-      <img src="/images/vjvan-portrait.jpg" alt="允雷" />
+      <Image src="/images/vjvan-portrait.jpg" alt="允雷 - AI 商業系統架構師,專注 LINE LIFF 與 n8n 自動化系統建置" width={64} height={64} />
       <div className="author-box-content">
         <p className="author-box-name">允雷</p>
         <p className="author-box-title">AI 商業系統架構師</p>

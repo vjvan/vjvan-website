@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -18,10 +19,13 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-stone-200/80 bg-[rgba(247,241,232,0.86)] backdrop-blur-xl">
       <nav className="mx-auto flex h-[4.5rem] max-w-6xl items-center justify-between px-6">
         <Link href="/" className="flex items-center gap-3">
-          <img
+          <Image
             src="/images/vjvan-portrait.jpg"
-            alt="允雷"
+            alt="允雷 - AI 商業系統架構師個人照片"
+            width={44}
+            height={44}
             className="h-11 w-11 rounded-full object-cover object-[center_30%] shadow-sm"
+            priority
           />
           <div>
             <p className="text-[0.65rem] uppercase tracking-[0.24em] text-stone-500">

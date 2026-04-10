@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Script from "next/script";
 import BottomCTA from "@/components/BottomCTA";
 
@@ -63,9 +64,11 @@ export default function AboutPage() {
         <section className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
           <div className="rounded-[2rem] border border-stone-200 bg-white/80 p-8 shadow-sm backdrop-blur md:p-10">
             <div className="flex items-start gap-6">
-              <img
+              <Image
                 src="/images/vjvan-portrait.jpg"
-                alt="允雷 - AI 商業系統架構師"
+                alt="允雷的工作照,專注於為中小企業規劃 AI 營運系統架構"
+                width={112}
+                height={112}
                 className="hidden h-28 w-28 rounded-2xl object-cover shadow-md sm:block"
               />
               <div>
