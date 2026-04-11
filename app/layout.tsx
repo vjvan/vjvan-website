@@ -5,6 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import SmoothScroll from "@/components/SmoothScroll";
 import Script from "next/script";
 
 const geistSans = Geist({
@@ -165,9 +166,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${notoSansTC.variable} antialiased text-stone-950`}
       >
-        <Header />
-        <main className="min-h-screen overflow-x-clip">{children}</main>
-        <Footer />
+        <SmoothScroll>
+          <Header />
+          <main className="min-h-screen overflow-x-clip">{children}</main>
+          <Footer />
+        </SmoothScroll>
         <Analytics />
         <SpeedInsights />
       </body>
