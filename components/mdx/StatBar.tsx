@@ -10,50 +10,76 @@ interface StatBarProps {
   title?: string;
 }
 
-const barColors = {
-  amber: "bg-amber-500",
-  teal: "bg-teal-500",
-  stone: "bg-stone-400",
-  red: "bg-red-400",
-};
-
-const valueTextColors = {
-  amber: "text-amber-700",
-  teal: "text-teal-700",
-  stone: "text-stone-600",
-  red: "text-red-600",
-};
-
 export default function StatBar({ data, title }: StatBarProps) {
   const items: StatItem[] = JSON.parse(data);
 
   return (
-    <div className="my-8 rounded-2xl border border-stone-200 bg-white p-6 sm:p-8">
+    <div
+      className="my-10 max-w-[640px]"
+      style={{
+        borderTop: "1px solid var(--rule)",
+        borderBottom: "1px solid var(--rule)",
+        padding: "1.75rem 0",
+      }}
+    >
       {title && (
-        <p className="mb-6 text-xs font-semibold uppercase tracking-[0.28em] text-amber-700">
+        <p
+          className="mb-6"
+          style={{
+            fontFamily: "var(--f-mono), monospace",
+            fontSize: 11,
+            letterSpacing: "0.18em",
+            textTransform: "uppercase",
+            color: "var(--signal)",
+            fontWeight: 500,
+          }}
+        >
           {title}
         </p>
       )}
-      <div className="space-y-5">
-        {items.map((item) => {
-          const color = item.color || "amber";
-          return (
-            <div key={item.label}>
-              <div className="flex items-baseline justify-between gap-4">
-                <p className="text-sm font-medium text-stone-800">{item.label}</p>
-                <p className={`text-lg font-bold tabular-nums ${valueTextColors[color]}`}>
-                  {item.value}
-                </p>
-              </div>
-              <div className="mt-2 h-2.5 w-full overflow-hidden rounded-full bg-stone-100">
-                <div
-                  className={`h-full rounded-full transition-all ${barColors[color]}`}
-                  style={{ width: `${Math.min(item.percent, 100)}%` }}
-                />
-              </div>
+      <div className="flex flex-col gap-5">
+        {items.map((item) => (
+          <div key={item.label}>
+            <div className="flex items-baseline justify-between gap-4">
+              <p
+                className="m-0"
+                style={{
+                  fontFamily: "var(--f-zh-body), sans-serif",
+                  fontSize: 14,
+                  color: "var(--ink-muted)",
+                }}
+              >
+                {item.label}
+              </p>
+              <p
+                className="m-0 tabular-nums"
+                style={{
+                  fontFamily: "var(--f-display), serif",
+                  fontSize: 28,
+                  lineHeight: 1,
+                  color: "var(--ink)",
+                  fontWeight: 400,
+                }}
+              >
+                {item.value}
+              </p>
             </div>
-          );
-        })}
+            <div
+              className="mt-2 h-px w-full overflow-hidden"
+              style={{ background: "var(--rule)" }}
+            >
+              <div
+                className="h-full"
+                style={{
+                  width: `${Math.min(item.percent, 100)}%`,
+                  background: "var(--signal)",
+                  height: 2,
+                  marginTop: -0.5,
+                }}
+              />
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

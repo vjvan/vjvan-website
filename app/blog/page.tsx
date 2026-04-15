@@ -1,104 +1,151 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllPosts } from "@/lib/mdx";
-import BottomCTA from "@/components/BottomCTA";
+import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "觀點筆記",
-  description: "關於 AI、自動化、系統架構與實務落地的精選觀點。",
+  title: "Writing｜VJVAN 唯捷允雷的文章",
+  description:
+    "VJVAN 唯捷允雷的觀點筆記。關於 AI 商業系統、LINE LIFF、SEO/GEO/AEO、自動化與系統架構的實戰書寫。",
+  alternates: { canonical: "https://www.vjvan.com/blog" },
+  openGraph: {
+    title: "Writing｜VJVAN · 唯捷允雷",
+    description: "AI 商業系統、LINE LIFF、自動化與系統架構的實戰書寫。",
+    url: "https://www.vjvan.com/blog",
+    type: "website",
+  },
 };
 
-export default function BlogPage() {
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "首頁", item: "https://www.vjvan.com" },
+    { "@type": "ListItem", position: 2, name: "Writing", item: "https://www.vjvan.com/blog" },
+  ],
+};
+
+export default function BlogIndexPage() {
   const posts = getAllPosts();
 
   return (
     <>
-      <div className="mx-auto max-w-5xl px-6 py-14 md:py-18">
-        <section className="rounded-[2rem] border border-stone-200 bg-white/80 p-8 shadow-sm backdrop-blur md:p-10">
-          <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-700">
-            Insights
-          </p>
-          <h1 className="mt-4 text-4xl font-semibold tracking-tight text-stone-950 md:text-5xl">
-            觀點筆記
-          </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-stone-700">
-            這裡不追求高頻更新，比較像精選發布。只整理我在 AI 導入、自動化與系統規劃上，對企業真正有用的觀察與拆解。
-          </p>
-        </section>
-
-        <section className="mt-10">
-          {posts.length === 0 ? (
-            <div className="rounded-[1.75rem] border border-stone-200 bg-[#f8f3eb] p-8">
-              <p className="text-lg font-medium text-stone-900">文章準備中</p>
-              <p className="mt-3 text-sm leading-7 text-stone-600">
-                目前採精選發布，數量不會很多，但每篇都會盡量回到真實營運問題與可執行做法。
-              </p>
+      <JsonLd id="json-ld-blog-breadcrumb" data={breadcrumbJsonLd} />
+      <div className="px-5 md:px-10">
+        <div className="mx-auto max-w-[1120px] py-14 md:py-24">
+          <div
+            className="pb-12 mb-4"
+            style={{ borderBottom: "1px solid var(--rule)" }}
+          >
+            <div
+              className="mb-6 text-[11px] tracking-[0.14em] uppercase"
+              style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)", fontWeight: 500 }}
+            >
+              Writing / Issue 01
             </div>
+            <h1
+              className="m-0 mb-10"
+              style={{
+                fontFamily: "var(--f-zh-display), serif",
+                fontWeight: 400,
+                fontSize: "clamp(44px, 6.5vw, 88px)",
+                lineHeight: 1.05,
+                letterSpacing: "0.01em",
+              }}
+            >
+              文章
+            </h1>
+            <p
+              className="m-0 max-w-[640px]"
+              style={{
+                fontFamily: "var(--f-zh-body), sans-serif",
+                fontSize: 18,
+                lineHeight: 1.8,
+                color: "var(--ink-muted)",
+              }}
+            >
+              不追求高頻更新，比較像精選發布。只整理我在 AI 導入、自動化與系統規劃上，對企業真正有用的觀察與拆解。
+            </p>
+          </div>
+
+          {posts.length === 0 ? (
+            <p
+              className="py-12 m-0"
+              style={{
+                fontFamily: "var(--f-zh-body), sans-serif",
+                color: "var(--ink-muted)",
+              }}
+            >
+              文章準備中。
+            </p>
           ) : (
-            <div className="space-y-5">
-              {posts.map((post, index) => (
+            <div>
+              {posts.map((post, i) => (
                 <article
                   key={post.slug}
-                  className={`rounded-[1.75rem] border border-stone-200 p-8 shadow-sm ${
-                    index === 0 ? "bg-white" : "bg-white/70"
-                  }`}
+                  className="grid gap-4 md:gap-12 md:grid-cols-[140px_1fr] py-9 items-baseline"
+                  style={{ borderBottom: "1px solid var(--rule)" }}
                 >
-                  <Link href={`/blog/${post.slug}`} className="group block">
-                    {index === 0 && (
-                      <p className="text-xs font-medium uppercase tracking-[0.26em] text-amber-700">
-                        Featured Note
-                      </p>
-                    )}
-                    <h2 className="mt-3 text-2xl font-semibold tracking-tight text-stone-950 transition-colors group-hover:text-amber-800">
-                      {post.title}
+                  <div
+                    className="text-[11px] tracking-[0.14em] uppercase"
+                    style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+                  >
+                    <span style={{ color: "var(--signal)" }}>
+                      N° {String(posts.length - i).padStart(3, "0")}
+                    </span>
+                    <br />
+                    {post.date}
+                  </div>
+                  <div>
+                    <h2
+                      className="m-0 mb-3"
+                      style={{
+                        fontFamily: "var(--f-zh-display), serif",
+                        fontSize: 28,
+                        lineHeight: 1.3,
+                        fontWeight: 400,
+                        letterSpacing: "0.01em",
+                      }}
+                    >
+                      <Link
+                        href={`/blog/${post.slug}`}
+                        className="pb-[2px] hover:[border-bottom:2px_solid_var(--signal)]"
+                      >
+                        {post.title}
+                      </Link>
                     </h2>
-                    <p className="mt-3 text-sm text-stone-500">
-                      {post.date} | {post.readingTime}
-                    </p>
-                    <p className="mt-4 max-w-2xl text-sm leading-7 text-stone-600">
+                    <p
+                      className="m-0 mb-4 max-w-[640px]"
+                      style={{
+                        fontFamily: "var(--f-zh-body), sans-serif",
+                        fontSize: 16,
+                        lineHeight: 1.7,
+                        color: "var(--ink-muted)",
+                      }}
+                    >
                       {post.description}
                     </p>
-                    {post.tags.length > 0 && (
-                      <div className="mt-5 flex flex-wrap gap-2">
-                        {post.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="rounded-full border border-stone-200 bg-stone-50 px-3 py-1 text-xs text-stone-600"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                  </Link>
+                    <div
+                      className="text-[11px] tracking-[0.12em] uppercase flex flex-wrap gap-4"
+                      style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+                    >
+                      <span>{post.readingTime.replace("分鐘閱讀", "MIN READ")}</span>
+                      {post.tags.length > 0 && (
+                        <span>
+                          {post.tags
+                            .slice(0, 3)
+                            .map((tag) => `#${tag.toUpperCase()}`)
+                            .join(" · ")}
+                        </span>
+                      )}
+                    </div>
+                  </div>
                 </article>
               ))}
             </div>
           )}
-        </section>
-
-        <section className="mt-10">
-          <div className="rounded-[1.75rem] border border-stone-200 bg-stone-950 px-8 py-9 text-white">
-            <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
-              <div className="max-w-2xl">
-                <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-200/80">
-                  比內容更急的是流程
-                </p>
-                <p className="mt-4 text-xl font-semibold leading-8">
-                  如果你現在最需要的不是文章，而是把 LINE、CRM 或自動化流程整理清楚，可以直接找我聊系統。
-                </p>
-              </div>
-              <Link
-                href="/services"
-                className="inline-flex items-center justify-center rounded-full bg-action px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-action-hover"
-              >
-                查看服務內容
-              </Link>
-            </div>
-          </div>
-        </section>
+        </div>
       </div>
-      <BottomCTA />
     </>
   );
 }

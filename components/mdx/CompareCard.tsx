@@ -12,62 +12,98 @@ interface CompareData {
   notRecommended: { title: string; items: CompareItem[] };
 }
 
+function Column({
+  title,
+  items,
+  kicker,
+  kickerColor,
+}: {
+  title: string;
+  items: CompareItem[];
+  kicker: string;
+  kickerColor: string;
+}) {
+  return (
+    <div>
+      <div
+        className="mb-5 pb-2"
+        style={{
+          borderBottom: "1px solid var(--rule)",
+        }}
+      >
+        <p
+          className="m-0 mb-1"
+          style={{
+            fontFamily: "var(--f-mono), monospace",
+            fontSize: 11,
+            letterSpacing: "0.18em",
+            textTransform: "uppercase",
+            color: kickerColor,
+          }}
+        >
+          {kicker}
+        </p>
+        <p
+          className="m-0"
+          style={{
+            fontFamily: "var(--f-zh-display), serif",
+            fontSize: 20,
+            fontWeight: 600,
+            color: "var(--ink)",
+          }}
+        >
+          {title}
+        </p>
+      </div>
+      <div className="flex flex-col gap-5">
+        {items.map((item) => (
+          <div key={item.name}>
+            <p
+              className="m-0"
+              style={{
+                fontFamily: "var(--f-zh-body), sans-serif",
+                fontSize: 15,
+                fontWeight: 600,
+                color: "var(--ink)",
+              }}
+            >
+              {item.name}
+            </p>
+            <p
+              className="m-0 mt-1"
+              style={{
+                fontFamily: "var(--f-zh-body), sans-serif",
+                fontSize: 14,
+                lineHeight: 1.7,
+                color: "var(--ink-muted)",
+              }}
+            >
+              {item.detail}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function CompareCard({ data }: CompareCardProps) {
   const { recommended, notRecommended }: CompareData = JSON.parse(data);
 
   return (
-    <div className="my-8 grid gap-4 lg:grid-cols-2">
-      <div className="rounded-2xl border-2 border-teal-200 bg-teal-50/50 p-6">
-        <div className="mb-4 flex items-center gap-2">
-          <span className="flex h-6 w-6 items-center justify-center rounded-full bg-teal-600 text-xs font-bold text-white">
-            O
-          </span>
-          <p className="text-base font-semibold text-teal-900">
-            {recommended.title}
-          </p>
-        </div>
-        <div className="space-y-3">
-          {recommended.items.map((item) => (
-            <div
-              key={item.name}
-              className="rounded-xl border border-teal-200 bg-white p-4"
-            >
-              <p className="text-sm font-semibold text-stone-900">
-                {item.name}
-              </p>
-              <p className="mt-1.5 text-xs leading-5 text-stone-600">
-                {item.detail}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="rounded-2xl border-2 border-stone-200 bg-stone-50/50 p-6">
-        <div className="mb-4 flex items-center gap-2">
-          <span className="flex h-6 w-6 items-center justify-center rounded-full bg-stone-400 text-xs font-bold text-white">
-            X
-          </span>
-          <p className="text-base font-semibold text-stone-700">
-            {notRecommended.title}
-          </p>
-        </div>
-        <div className="space-y-3">
-          {notRecommended.items.map((item) => (
-            <div
-              key={item.name}
-              className="rounded-xl border border-stone-200 bg-white p-4"
-            >
-              <p className="text-sm font-semibold text-stone-700">
-                {item.name}
-              </p>
-              <p className="mt-1.5 text-xs leading-5 text-stone-500">
-                {item.detail}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
+    <div className="my-10 grid gap-8 md:gap-12 md:grid-cols-2 max-w-[720px]">
+      <Column
+        title={recommended.title}
+        items={recommended.items}
+        kicker="RECOMMENDED"
+        kickerColor="var(--signal)"
+      />
+      <Column
+        title={notRecommended.title}
+        items={notRecommended.items}
+        kicker="AVOID"
+        kickerColor="var(--ink-muted)"
+      />
     </div>
   );
 }

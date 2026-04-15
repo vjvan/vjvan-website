@@ -1,23 +1,32 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f7f1e8;
-  --foreground: #201714;
+  --paper: #FAFAF7;
+  --ink: #0A0A0A;
+  --ink-muted: #5F5B57;
+  --rule: #E5E2DD;
+  --signal: #1F51FF;
+}
+
+[data-theme="dark"] {
+  --paper: #0A0A0A;
+  --ink: #F5F3EF;
+  --ink-muted: #8B8680;
+  --rule: #1F1C18;
+  --signal: #5EEDFF;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-noto-sans-tc), var(--font-geist-sans), system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono);
-  --color-brand: #b45309;
-  --color-brand-light: #d97706;
-  --color-brand-dark: #92400e;
-  --color-brand-surface: #fef3c7;
-  --color-action: #0d9488;
-  --color-action-hover: #0f766e;
-  --color-action-surface: #ccfbf1;
-  --color-signal: #e16b5a;
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-rule: var(--rule);
+  --color-signal: var(--signal);
+  --font-display: var(--f-display), "Noto Serif TC", Georgia, serif;
+  --font-body: var(--f-body), "Noto Sans TC", system-ui, sans-serif;
+  --font-mono: var(--f-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-zh-display: var(--f-zh-display), "Instrument Serif", serif;
+  --font-zh-body: var(--f-zh-body), system-ui, sans-serif;
 }
 
 html {
@@ -25,12 +34,13 @@ html {
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), sans-serif;
-  background-image:
-    radial-gradient(circle at top left, rgba(214, 145, 88, 0.14), transparent 30%),
-    linear-gradient(180deg, rgba(255, 251, 245, 0.88) 0%, rgba(247, 241, 232, 1) 100%);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--f-body), var(--f-zh-body), system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  transition: background 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -39,10 +49,10 @@ a {
 }
 
 ::selection {
-  background: rgba(185, 104, 54, 0.18);
+  background: var(--signal);
+  color: var(--paper);
 }
 
-/* 中文語意斷行優化 */
 h1, h2, h3 {
   text-wrap: balance;
 }
@@ -51,62 +61,108 @@ p, li {
   text-wrap: pretty;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Editorial eyebrow / mono utility ---------- */
+.eyebrow {
+  font-family: var(--f-mono), ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+
+.hairline {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 0;
+}
+
+/* ---------- Article content (MDX long-form) ---------- */
 .article-content {
-  color: #4b5563;
-  font-size: 1rem;
-  line-height: 1.95;
+  font-family: var(--f-zh-body), system-ui, sans-serif;
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1.9;
 }
 
 .article-content > :first-child {
   margin-top: 0;
 }
 
-/* 段落 */
 .article-content p {
-  margin: 1.5rem 0 0;
+  margin: 1.25rem 0 0;
+  max-width: 640px;
 }
 
-/* 標題 */
 .article-content h2 {
-  margin-top: 3rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid #e7e5e4;
-  font-size: 1.6rem;
-  line-height: 1.35;
-  font-weight: 650;
-  color: #1c1917;
+  margin-top: 3.5rem;
+  padding-top: 0;
+  border-top: 0;
+  font-family: var(--f-zh-display), serif;
+  font-size: 32px;
+  line-height: 1.3;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: 0.01em;
 }
 
 .article-content h3 {
   margin-top: 2.25rem;
-  font-size: 1.25rem;
-  line-height: 1.4;
+  font-family: var(--f-zh-display), serif;
+  font-size: 24px;
+  line-height: 1.35;
   font-weight: 600;
-  color: #1c1917;
+  color: var(--ink);
 }
 
 .article-content h4 {
   margin-top: 1.75rem;
-  font-size: 1.1rem;
+  font-family: var(--f-zh-body), sans-serif;
+  font-size: 18px;
   line-height: 1.5;
   font-weight: 600;
-  color: #1c1917;
+  color: var(--ink);
 }
 
-/* 列表 */
 .article-content ul,
 .article-content ol {
   margin: 1.25rem 0 0;
   padding-left: 1.5rem;
+  max-width: 640px;
 }
 
-.article-content ul {
-  list-style: disc;
-}
-
-.article-content ol {
-  list-style: decimal;
-}
+.article-content ul { list-style: disc; }
+.article-content ol { list-style: decimal; }
 
 .article-content li {
   margin-top: 0.5rem;
@@ -114,95 +170,87 @@ p, li {
 }
 
 .article-content li::marker {
-  color: #0d9488;
+  color: var(--signal);
 }
 
-/* 粗體 */
 .article-content strong {
-  color: #1c1917;
+  color: var(--ink);
   font-weight: 600;
 }
 
-/* 連結 */
 .article-content a {
-  color: #0d9488;
-  text-decoration: underline;
+  color: var(--ink);
+  border-bottom: 1px solid var(--signal);
   text-underline-offset: 0.2em;
-  text-decoration-thickness: 1px;
   transition: color 0.15s;
 }
 
 .article-content a:hover {
-  color: #0f766e;
+  color: var(--signal);
 }
 
-/* 引言區塊 */
 .article-content blockquote {
   margin: 2rem 0;
-  padding: 1rem 0 1rem 1.25rem;
-  border-left: 3px solid #0d9488;
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  border-left: 2px solid var(--signal);
   background: transparent;
-  font-style: italic;
+  font-family: var(--f-zh-display), serif;
+  font-size: 22px;
+  line-height: 1.5;
+  color: var(--ink);
+  max-width: 640px;
 }
 
 .article-content blockquote p {
   margin: 0;
-  color: #44403c;
-  font-size: 1.05rem;
-  line-height: 1.85;
+  max-width: none;
 }
 
-/* 分隔線 */
 .article-content hr {
   margin: 2.5rem 0;
-  border: none;
-  border-top: 1px solid #d6d3d1;
+  border: 0;
+  border-top: 1px solid var(--rule);
 }
 
-/* 行內程式碼 */
 .article-content :not(pre) > code {
   padding: 0.15em 0.45em;
-  border-radius: 0.3rem;
-  background: #f5f0eb;
-  color: #92400e;
+  background: var(--rule);
+  color: var(--ink);
   font-size: 0.88em;
-  font-family: var(--font-geist-mono), "Fira Code", Consolas, monospace;
+  font-family: var(--f-mono), monospace;
   word-break: break-word;
 }
 
-/* 程式碼區塊 */
 .article-content pre {
   margin: 1.75rem 0;
   padding: 1.25rem 1.5rem;
-  border-radius: 0.75rem;
-  background: #1c1917;
-  color: #e7e5e4;
+  background: var(--ink);
+  color: var(--paper);
   font-size: 0.875rem;
   line-height: 1.7;
-  font-family: var(--font-geist-mono), "Fira Code", Consolas, monospace;
+  font-family: var(--f-mono), monospace;
   overflow-x: auto;
+  max-width: 720px;
   -webkit-overflow-scrolling: touch;
 }
 
 .article-content pre code {
   padding: 0;
-  border-radius: 0;
   background: transparent;
   color: inherit;
   font-size: inherit;
 }
 
-/* 圖片與 figure */
 .article-content img {
   margin: 1.75rem 0;
   max-width: 100%;
   height: auto;
-  border-radius: 0.75rem;
-  border: 1px solid #e7e5e4;
+  border: 1px solid var(--rule);
 }
 
 .article-content figure {
   margin: 2rem 0;
+  max-width: 720px;
 }
 
 .article-content figure img {
@@ -210,14 +258,14 @@ p, li {
 }
 
 .article-content figcaption {
-  margin-top: 0.5rem;
-  text-align: center;
-  font-size: 0.85rem;
-  color: #a8a29e;
-  font-style: italic;
+  margin-top: 0.75rem;
+  font-family: var(--f-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
 }
 
-/* 表格 */
 .article-content table {
   margin: 1.75rem 0;
   width: 100%;
@@ -227,135 +275,141 @@ p, li {
   display: block;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  max-width: 720px;
 }
 
 .article-content thead {
-  border-bottom: 2px solid #1c1917;
+  border-bottom: 1px solid var(--ink);
 }
 
 .article-content th {
   padding: 0.6rem 0.75rem;
   text-align: left;
-  font-weight: 600;
-  color: #1c1917;
+  font-family: var(--f-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--ink);
   white-space: nowrap;
 }
 
 .article-content td {
   padding: 0.6rem 0.75rem;
-  border-bottom: 1px solid #e7e5e4;
-  color: #57534e;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
 }
 
 .article-content tbody tr:last-child td {
-  border-bottom: none;
+  border-bottom: 0;
 }
 
-/* Callout 提示框 (MDX 元件用) */
+/* ---------- MDX callout (retained for legacy usage) ---------- */
 .callout {
   margin: 1.75rem 0;
   padding: 1rem 1.25rem;
-  border-radius: 0.75rem;
-  border-left: 3px solid;
+  border-left: 2px solid var(--signal);
   font-size: 0.925rem;
   line-height: 1.75;
+  background: transparent;
+  max-width: 640px;
 }
 
-.callout p {
-  margin: 0;
-}
-
-.callout p + p {
-  margin-top: 0.5rem;
-}
+.callout p { margin: 0; }
+.callout p + p { margin-top: 0.5rem; }
 
 .callout-title {
   display: flex;
   align-items: center;
   gap: 0.4rem;
   margin-bottom: 0.35rem;
-  font-size: 0.875rem;
-  font-weight: 600;
+  font-family: var(--f-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--signal);
 }
 
-.callout-tip {
-  border-color: #0d9488;
-  background: #f0fdfa;
-}
+.callout-tip { border-color: var(--signal); }
+.callout-warning { border-color: var(--ink-muted); }
+.callout-warning .callout-title { color: var(--ink-muted); }
+.callout-info { border-color: var(--signal); }
 
-.callout-tip .callout-title {
-  color: #0d9488;
-}
-
-.callout-warning {
-  border-color: #d97706;
-  background: #fffbeb;
-}
-
-.callout-warning .callout-title {
-  color: #92400e;
-}
-
-.callout-info {
-  border-color: #6366f1;
-  background: #eef2ff;
-}
-
-.callout-info .callout-title {
-  color: #4f46e5;
-}
-
-/* 關於作者區塊 */
+/* ---------- AuthorBox (editorial strip) ---------- */
 .author-box {
   margin-top: 3rem;
-  padding: 1.5rem;
-  border-radius: 1rem;
-  border: 1px solid #e7e5e4;
-  background: #faf8f5;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
   display: flex;
   gap: 1.25rem;
   align-items: flex-start;
+  max-width: 640px;
 }
 
 .author-box img {
-  width: 4.5rem;
-  height: 4.5rem;
-  border-radius: 0.75rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
   object-fit: cover;
   margin: 0;
-  border: none;
+  border: 0;
   flex-shrink: 0;
 }
 
-.author-box-content {
-  flex: 1;
-  min-width: 0;
-}
+.author-box-content { flex: 1; min-width: 0; }
 
 .author-box-name {
-  font-size: 1rem;
+  font-family: var(--f-zh-display), serif;
+  font-size: 1.125rem;
   font-weight: 600;
-  color: #1c1917;
+  color: var(--ink);
 }
 
 .author-box-title {
-  font-size: 0.8rem;
-  color: #0d9488;
-  font-weight: 500;
-  margin-top: 0.15rem;
+  font-family: var(--f-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-top: 0.25rem;
 }
 
 .author-box-bio {
-  font-size: 0.875rem;
-  line-height: 1.7;
-  color: #57534e;
+  font-family: var(--f-zh-body), sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  color: var(--ink-muted);
   margin-top: 0.5rem;
 }
 
 @media (max-width: 480px) {
   .author-box {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
   }
+}
+
+/* ---------- Hover underline (for editorial links) ---------- */
+.link-underline {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 2px;
+}
+
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease-out;
+}
+
+.link-underline:hover::after {
+  transform: scaleX(1);
 }

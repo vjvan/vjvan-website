@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vjvan.com/sitemap.xml
+Sitemap: https://www.vjvan.com/sitemap.xml

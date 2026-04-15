@@ -1,180 +1,192 @@
 import type { Metadata } from "next";
-import Script from "next/script";
-import BottomCTA from "@/components/BottomCTA";
+import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "關於允雷",
+  title: "關於｜VJVAN 唯捷允雷有限公司",
   description:
-    "允雷專注於為台灣中小企業規劃與建置 LINE、CRM、n8n 串接的 AI 營運系統。",
+    "VJVAN 唯捷允雷有限公司由允雷創辦，專注把散在 LINE、Google Sheet、ERP、n8n 的營運流程整理成能長期跑的系統。",
+  alternates: { canonical: "https://www.vjvan.com/about" },
+  openGraph: {
+    title: "關於 VJVAN · 唯捷允雷",
+    description: "AI 商業系統架構師，一家位於屏東的顧問公司。",
+    url: "https://www.vjvan.com/about",
+    type: "profile",
+  },
 };
-
-const principles = [
-  {
-    label: "流程優先",
-    title: "先理解營運卡點，再決定技術組合",
-    description:
-      "我不會先丟一串工具名，而是先看你的前台、內部流程、資料流與人工作業，找出真正造成效率損耗的地方。",
-  },
-  {
-    label: "系統視角",
-    title: "從前台到 ERP 一起設計，才是完整閉環",
-    description:
-      "真正能長期運作的系統，不是只把某個畫面做出來，而是讓 LINE 體驗、CRM 管理、n8n 自動化流程與既有 ERP 系統接在同一條營運線上。訂單、庫存、出貨資料能自動回寫 ERP，才是真正的商業化流程。",
-  },
-  {
-    label: "可維運",
-    title: "上線之後，團隊真的用得下去",
-    description:
-      "我在意的是系統上線後能不能持續被使用、能不能被管理、能不能在未來擴充，而不是只完成 demo。",
-  },
-];
-
-const fitCases = [
-  "已經有 LINE、表單、試算表、人工訊息混在一起，流程越做越亂",
-  "需要預約、訂單、會員、回購或分眾推播整合成同一套系統",
-  "想導入 AI 與自動化並串接既有 ERP，讓數據真正回到營運核心",
-  "希望先快速落地，再保留未來轉 App 或產品化的空間",
-];
-
-const workStyle = [
-  "你會直接和實際規劃與建置的人討論，不是先經過業務再層層轉述。",
-  "我偏好先把系統骨架搭穩，再往上疊功能，而不是先把表面做滿。",
-  "如果需求不適合做大系統，我會直接建議先做最小可用版本，不會為了案子把範圍灌大。",
-];
 
 const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "首頁", item: "https://vjvan.com" },
-    { "@type": "ListItem", position: 2, name: "關於允雷", item: "https://vjvan.com/about" },
+    { "@type": "ListItem", position: 1, name: "首頁", item: "https://www.vjvan.com" },
+    { "@type": "ListItem", position: 2, name: "關於", item: "https://www.vjvan.com/about" },
   ],
 };
 
 export default function AboutPage() {
   return (
     <>
-      <Script
-        id="json-ld-breadcrumb"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
-      <div className="mx-auto max-w-6xl px-6 py-14 md:py-18">
-        <section className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
-          <div className="rounded-[2rem] border border-stone-200 bg-white/80 p-8 shadow-sm backdrop-blur md:p-10">
-            <div className="flex items-start gap-6">
-              <img
-                src="/images/vjvan-portrait.jpg"
-                alt="允雷 - AI 商業系統架構師"
-                className="hidden h-28 w-28 rounded-2xl object-cover shadow-md sm:block"
-              />
-              <div>
-                <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-700">
-                  About
-                </p>
-                <h1 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-stone-950 md:text-5xl">
-                  我做的不是單點工具導入，
-                  <span className="block">而是把營運流程整理成真的能跑的系統</span>
-                </h1>
+      <JsonLd id="json-ld-about-breadcrumb" data={breadcrumbJsonLd} />
+      <div className="px-5 md:px-10">
+        <div className="mx-auto max-w-[1120px] py-14 md:py-24">
+          <section className="grid gap-10 md:gap-[72px] md:grid-cols-[0.7fr_2fr]">
+            <aside>
+              <div
+                className="mb-8 text-[11px] tracking-[0.14em] uppercase"
+                style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)", fontWeight: 500 }}
+              >
+                About the Author
               </div>
-            </div>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-stone-700">
-              我是允雷，專注協助台灣中小企業把 LINE 前台、CRM 後台、n8n 自動化流程與 ERP 系統串成一套可持續維運的營運系統。
-              從流程診斷、系統架構設計，到實際建置與 ERP 串接上線，我會一起把整條路走完。
-            </p>
+              <dl className="m-0 flex flex-col gap-6">
+                <div>
+                  <dt
+                    className="mb-[6px] text-[10px] tracking-[0.18em] uppercase"
+                    style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+                  >
+                    Name
+                  </dt>
+                  <dd className="m-0" style={{ fontFamily: "var(--f-body), sans-serif", fontSize: 16, lineHeight: 1.55 }}>
+                    VJVAN
+                  </dd>
+                </div>
+                <div>
+                  <dt
+                    className="mb-[6px] text-[10px] tracking-[0.18em] uppercase"
+                    style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+                  >
+                    Company
+                  </dt>
+                  <dd className="m-0" style={{ fontFamily: "var(--f-zh-body), sans-serif", fontSize: 16, lineHeight: 1.55 }}>
+                    唯捷允雷有限公司
+                  </dd>
+                </div>
+                <div>
+                  <dt
+                    className="mb-[6px] text-[10px] tracking-[0.18em] uppercase"
+                    style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+                  >
+                    Practice
+                  </dt>
+                  <dd className="m-0" style={{ fontFamily: "var(--f-zh-body), sans-serif", fontSize: 16, lineHeight: 1.55 }}>
+                    AI 商業系統設計、LINE LIFF、SEO/GEO/AEO 顧問
+                  </dd>
+                </div>
+                <div>
+                  <dt
+                    className="mb-[6px] text-[10px] tracking-[0.18em] uppercase"
+                    style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+                  >
+                    Working with
+                  </dt>
+                  <dd className="m-0" style={{ fontFamily: "var(--f-zh-body), sans-serif", fontSize: 16, lineHeight: 1.55 }}>
+                    台灣中小企業、B2B 批發、餐飲供應鏈、個人品牌
+                  </dd>
+                </div>
+                <div>
+                  <dt
+                    className="mb-[6px] text-[10px] tracking-[0.18em] uppercase"
+                    style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+                  >
+                    Also on
+                  </dt>
+                  <dd className="m-0 flex flex-wrap gap-x-3 gap-y-1" style={{ fontFamily: "var(--f-body), sans-serif", fontSize: 16, lineHeight: 1.55 }}>
+                    <a
+                      href="https://www.threads.net/@vjvan_n"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="pb-[1px]"
+                      style={{ borderBottom: "1px solid var(--rule)" }}
+                    >
+                      Threads
+                    </a>
+                    <span style={{ color: "var(--ink-muted)" }}>·</span>
+                    <a
+                      href="https://www.youtube.com/@vjvan"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="pb-[1px]"
+                      style={{ borderBottom: "1px solid var(--rule)" }}
+                    >
+                      YouTube
+                    </a>
+                    <span style={{ color: "var(--ink-muted)" }}>·</span>
+                    <a
+                      href="https://www.linkedin.com/in/vjvan"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="pb-[1px]"
+                      style={{ borderBottom: "1px solid var(--rule)" }}
+                    >
+                      LinkedIn
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+            </aside>
 
-            <div className="mt-8 flex flex-wrap gap-3 text-sm text-stone-600">
-              <span className="rounded-full border border-stone-200 bg-stone-50 px-4 py-2">
-                高雄 / 遠端服務全台
-              </span>
-              <span className="rounded-full border border-stone-200 bg-stone-50 px-4 py-2">
-                LINE LIFF / CRM / n8n / ERP 串接
-              </span>
-              <span className="rounded-full border border-stone-200 bg-stone-50 px-4 py-2">
-                LIFF 先行，保留 App Ready 架構
-              </span>
-            </div>
-          </div>
-
-          <div className="rounded-[2rem] border border-stone-200 bg-[#f8f3eb] p-8 md:p-10">
-            <p className="text-sm font-medium uppercase tracking-[0.28em] text-stone-500">
-              我特別適合的題目
-            </p>
-            <ul className="mt-6 space-y-4">
-              {fitCases.map((item) => (
-                <li key={item} className="flex gap-3 text-sm leading-7 text-stone-700">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-700" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-8 rounded-[1.5rem] border border-stone-200 bg-white/80 p-6">
-              <p className="text-sm font-medium text-stone-900">合作方式偏向小而深</p>
-              <p className="mt-3 text-sm leading-7 text-stone-600">
-                我不是大型 agency。好處是你能直接和負責規劃與實作的人討論，決策速度快，系統脈絡也不容易在溝通中失真。
+            <div>
+              <h1
+                className="m-0 mb-10"
+                style={{
+                  fontFamily: "var(--f-zh-display), serif",
+                  fontWeight: 400,
+                  fontSize: "clamp(40px, 5.2vw, 72px)",
+                  lineHeight: 1.12,
+                  letterSpacing: "0.01em",
+                }}
+              >
+                我做的是把營運
+                <br />
+                變成一套能跑的系統
+              </h1>
+              <p
+                className="m-0 mb-6 max-w-[640px]"
+                style={{
+                  fontFamily: "var(--f-zh-body), sans-serif",
+                  fontSize: 19,
+                  lineHeight: 1.85,
+                  color: "var(--ink)",
+                }}
+              >
+                有些公司買了很多 SaaS，還是每天被訂單淹沒。不是工具不夠多，是沒人把它們接起來。
+              </p>
+              <p
+                className="m-0 mb-6 max-w-[640px]"
+                style={{
+                  fontFamily: "var(--f-zh-body), sans-serif",
+                  fontSize: 19,
+                  lineHeight: 1.85,
+                  color: "var(--ink-muted)",
+                }}
+              >
+                過去十年我做過行銷、拍過片、寫過程式、碰過 ERP。兜了一圈，回到最根本的事：幫一家公司把「智慧」從腦袋裡拆出來，寫進可以自動運行的工作流。這是 AI 時代真正值錢的東西。
+              </p>
+              <p
+                className="m-0 mb-6 max-w-[640px]"
+                style={{
+                  fontFamily: "var(--f-zh-body), sans-serif",
+                  fontSize: 19,
+                  lineHeight: 1.85,
+                  color: "var(--ink-muted)",
+                }}
+              >
+                2026 年，唯捷允雷（VJVAN）成為一家專注 AI 商業系統的顧問公司。這個網站是我工作的索引、寫字的地方，也是我對「一家公司應該長什麼樣」的長期思考。
+              </p>
+              <p
+                className="m-0 max-w-[640px]"
+                style={{
+                  fontFamily: "var(--f-zh-body), sans-serif",
+                  fontSize: 19,
+                  lineHeight: 1.85,
+                  color: "var(--ink-muted)",
+                }}
+              >
+                工作上我偏好小而深。你會直接和實際規劃與建置的人討論，不是先經過業務再層層轉述。需求不適合做大系統，我會直接建議先做最小可用版本。
               </p>
             </div>
-          </div>
-        </section>
-
-        <section className="mt-10 md:mt-14">
-          <div className="max-w-2xl">
-            <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-700">
-              方法
-            </p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-stone-950">
-              比起多裝工具，AI 導入更像是在整理一家公司真正的作業邏輯
-            </h2>
-          </div>
-
-          <div className="mt-8 grid gap-5 lg:grid-cols-3">
-            {principles.map((principle) => (
-              <div
-                key={principle.title}
-                className="rounded-[1.75rem] border border-stone-200 bg-white p-7 shadow-sm"
-              >
-                <p className="text-xs font-medium uppercase tracking-[0.26em] text-amber-700">
-                  {principle.label}
-                </p>
-                <h3 className="mt-4 text-2xl font-semibold tracking-tight text-stone-950">
-                  {principle.title}
-                </h3>
-                <p className="mt-4 text-sm leading-7 text-stone-600">
-                  {principle.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="mt-10 md:mt-14">
-          <div className="rounded-[2rem] border border-stone-200 bg-stone-950 px-8 py-10 text-white md:px-10">
-            <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
-              <div>
-                <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-200/80">
-                  工作方式
-                </p>
-                <h2 className="mt-4 text-3xl font-semibold tracking-tight">
-                  我偏好的做法是，先把骨架搭穩，再把功能做對
-                </h2>
-              </div>
-
-              <div className="space-y-4">
-                {workStyle.map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-[1.5rem] border border-white/10 bg-white/5 p-5"
-                  >
-                    <p className="text-sm leading-7 text-stone-300">{item}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
-      <BottomCTA />
     </>
   );
 }

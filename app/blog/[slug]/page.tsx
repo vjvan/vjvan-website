@@ -3,10 +3,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
-import Script from "next/script";
 import AuthorBox from "@/components/mdx/AuthorBox";
 import { mdxComponents } from "@/components/mdx";
 import { getAllPosts, getPostBySlug } from "@/lib/mdx";
+import JsonLd from "@/components/JsonLd";
+import DateRail from "@/components/blog/DateRail";
+import TableOfContents from "@/components/blog/TableOfContents";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -23,19 +25,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return {};
 
   return {
-    title: post.meta.title,
+    title: `${post.meta.title}｜VJVAN 唯捷允雷`,
     description: post.meta.description,
     openGraph: {
       title: post.meta.title,
       description: post.meta.description,
-      url: `https://vjvan.com/blog/${slug}`,
+      url: `https://www.vjvan.com/blog/${slug}`,
       type: "article",
       publishedTime: post.meta.date,
-      authors: ["允雷"],
+      authors: ["允雷 (VJVAN)"],
       tags: post.meta.tags,
+      siteName: "VJVAN · 唯捷允雷",
+      locale: "zh_TW",
       images: [
         {
-          url: `https://vjvan.com/blog/${slug}/opengraph-image`,
+          url: `/blog/${slug}/opengraph-image`,
           width: 1200,
           height: 630,
           alt: post.meta.title,
@@ -46,10 +50,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title: post.meta.title,
       description: post.meta.description,
-      images: [`https://vjvan.com/blog/${slug}/opengraph-image`],
+      creator: "@vjvan",
+      images: [`/blog/${slug}/opengraph-image`],
     },
     alternates: {
-      canonical: `https://vjvan.com/blog/${slug}`,
+      canonical: `https://www.vjvan.com/blog/${slug}`,
     },
   };
 }
@@ -64,32 +69,38 @@ export default async function BlogPostPage({ params }: Props) {
     "@type": "Article",
     headline: post.meta.title,
     description: post.meta.description,
-    image: `https://vjvan.com/blog/${slug}/opengraph-image`,
+    image: `https://www.vjvan.com/blog/${slug}/opengraph-image`,
     datePublished: post.meta.date,
     dateModified: post.meta.date,
-    url: `https://vjvan.com/blog/${slug}`,
+    url: `https://www.vjvan.com/blog/${slug}`,
     author: {
       "@type": "Person",
       name: "允雷",
-      jobTitle: "AI 商業系統架構師",
-      url: "https://vjvan.com",
-      image: "https://vjvan.com/images/vjvan-portrait.jpg",
+      alternateName: ["VJVAN", "唯捷允雷"],
+      url: "https://www.vjvan.com",
+      image: "https://www.vjvan.com/portrait.png",
       sameAs: [
+        "https://www.threads.net/@vjvan_n",
+        "https://www.youtube.com/@vjvan",
         "https://www.linkedin.com/in/vjvan",
         "https://github.com/vjvan",
         "https://x.com/vjvan_n",
         "https://www.instagram.com/vjvan_n",
-        "https://www.threads.net/@vjvan_n",
       ],
     },
     publisher: {
-      "@type": "Person",
-      name: "允雷",
-      url: "https://vjvan.com",
+      "@type": "Organization",
+      name: "唯捷允雷有限公司",
+      alternateName: "VJVAN",
+      url: "https://www.vjvan.com",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.vjvan.com/portrait.png",
+      },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://vjvan.com/blog/${slug}`,
+      "@id": `https://www.vjvan.com/blog/${slug}`,
     },
     keywords: post.meta.tags.join(", "),
     inLanguage: "zh-TW",
@@ -99,94 +110,123 @@ export default async function BlogPostPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "首頁", item: "https://vjvan.com" },
-      { "@type": "ListItem", position: 2, name: "觀點筆記", item: "https://vjvan.com/blog" },
-      { "@type": "ListItem", position: 3, name: post.meta.title, item: `https://vjvan.com/blog/${slug}` },
+      { "@type": "ListItem", position: 1, name: "首頁", item: "https://www.vjvan.com" },
+      { "@type": "ListItem", position: 2, name: "Writing", item: "https://www.vjvan.com/blog" },
+      { "@type": "ListItem", position: 3, name: post.meta.title, item: `https://www.vjvan.com/blog/${slug}` },
     ],
   };
 
+  const readingTimeShort = post.meta.readingTime.replace("分鐘閱讀", "MIN");
+
   return (
-    <div className="mx-auto max-w-4xl px-6 py-14 md:py-18">
-      <Script
-        id={`json-ld-article-${slug}`}
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
-      />
-      <Script
-        id={`json-ld-breadcrumb-${slug}`}
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
-      <article className="rounded-[2rem] border border-stone-200 bg-white/85 p-8 shadow-sm backdrop-blur md:p-10">
-        <Link
-          href="/blog"
-          className="inline-flex items-center rounded-full border border-stone-200 bg-stone-50 px-4 py-2 text-sm font-medium text-stone-600 transition-colors hover:border-stone-300 hover:bg-white hover:text-stone-900"
-        >
-          返回觀點筆記
-        </Link>
-
-        <header className="mt-6 border-b border-stone-200 pb-8">
-          <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-700">
-            Insight Note
-          </p>
-          <h1 className="mt-4 text-4xl font-semibold tracking-tight text-stone-950">
-            {post.meta.title}
-          </h1>
-          <p className="mt-4 text-sm text-stone-500">
-            {post.meta.date} | {post.meta.readingTime}
-          </p>
-          {post.meta.tags.length > 0 && (
-            <div className="mt-5 flex flex-wrap gap-2">
-              {post.meta.tags.map((tag: string) => (
-                <span
-                  key={tag}
-                  className="rounded-full border border-stone-200 bg-stone-50 px-3 py-1 text-xs text-stone-600"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          )}
-          <p className="mt-6 max-w-2xl text-base leading-7 text-stone-600">
-            {post.meta.description}
-          </p>
-        </header>
-
-        <div className="article-content mt-8">
-          <MDXRemote
-            source={post.content}
-            components={mdxComponents}
-            options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
-          />
-        </div>
-
-        <div className="article-content">
-          <AuthorBox />
-        </div>
-
-        <div className="mt-10 rounded-[1.5rem] border border-stone-200 bg-[#f8f3eb] p-6">
-          <p className="text-sm font-medium uppercase tracking-[0.24em] text-amber-700">
-            延伸
-          </p>
-          <p className="mt-3 text-sm leading-7 text-stone-600">
-            如果你面對的不是內容問題，而是流程、資料和系統沒有接起來，可以直接從實際營運情境切入討論。
-          </p>
-          <div className="mt-5 flex flex-col gap-3 sm:flex-row">
-            <a
-              href="mailto:vjvan.n@gmail.com?subject=%E8%AB%AE%E8%A9%A2%20vjvan.com%20%E8%A7%80%E9%BB%9E%E6%96%87%E7%AB%A0"
-              className="inline-flex items-center justify-center rounded-full bg-action px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-action-hover"
-            >
-              預約系統諮詢
-            </a>
+    <>
+      <JsonLd id={`json-ld-article-${slug}`} data={articleJsonLd} />
+      <JsonLd id={`json-ld-breadcrumb-${slug}`} data={breadcrumbJsonLd} />
+      <div className="px-5 md:px-10">
+        <div className="mx-auto max-w-[1120px] py-14 md:py-24">
+          <div
+            className="mb-12 text-[11px] tracking-[0.14em] uppercase"
+            style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+          >
             <Link
-              href="/services"
-              className="inline-flex items-center justify-center rounded-full border border-stone-300 px-5 py-3 text-sm font-semibold text-stone-700 transition-colors hover:border-stone-400 hover:bg-white"
+              href="/blog"
+              className="pb-[1px]"
+              style={{ borderBottom: "1px solid var(--rule)" }}
             >
-              查看服務內容
+              ← BACK TO WRITING
             </Link>
           </div>
+
+          <div className="grid gap-8 md:gap-12 md:grid-cols-[100px_1fr_200px]">
+            <DateRail
+              date={post.meta.date}
+              readingTime={post.meta.readingTime}
+              tags={post.meta.tags}
+            />
+
+            <article>
+              <h1
+                className="m-0 mb-8"
+                style={{
+                  fontFamily: "var(--f-zh-display), serif",
+                  fontWeight: 400,
+                  fontSize: "clamp(36px, 5.5vw, 72px)",
+                  lineHeight: 1.1,
+                  letterSpacing: "0.01em",
+                }}
+              >
+                {post.meta.title}
+              </h1>
+              <div
+                className="mb-12 pb-5 flex flex-wrap gap-5 text-[11px] tracking-[0.14em] uppercase"
+                style={{
+                  fontFamily: "var(--f-mono), monospace",
+                  color: "var(--ink-muted)",
+                  borderBottom: "1px solid var(--rule)",
+                }}
+              >
+                <span>ESSAY</span>
+                <span>{post.meta.date}</span>
+                <span>{readingTimeShort} READ</span>
+                <span>BY VJVAN</span>
+              </div>
+
+              <p
+                className="m-0 mb-12 max-w-[640px]"
+                style={{
+                  fontFamily: "var(--f-zh-body), sans-serif",
+                  fontSize: 19,
+                  lineHeight: 1.85,
+                  color: "var(--ink-muted)",
+                }}
+              >
+                {post.meta.description}
+              </p>
+
+              <div className="article-content">
+                <MDXRemote
+                  source={post.content}
+                  components={mdxComponents}
+                  options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+                />
+                <AuthorBox />
+              </div>
+
+              <div
+                className="mt-16 pt-10 flex flex-wrap gap-7 text-[12px] tracking-[0.12em] uppercase"
+                style={{
+                  fontFamily: "var(--f-mono), monospace",
+                  borderTop: "1px solid var(--rule)",
+                }}
+              >
+                <a
+                  href="mailto:vjvan.n@gmail.com?subject=%E8%AB%AE%E8%A9%A2%20vjvan.com"
+                  className="pb-[2px]"
+                  style={{ color: "var(--signal)", borderBottom: "1px solid currentColor" }}
+                >
+                  預約諮詢 →
+                </a>
+                <Link
+                  href="/services"
+                  className="pb-[2px]"
+                  style={{ color: "var(--ink)", borderBottom: "1px solid currentColor" }}
+                >
+                  看服務
+                </Link>
+                <Link
+                  href="/blog"
+                  className="pb-[2px]"
+                  style={{ color: "var(--ink)", borderBottom: "1px solid currentColor" }}
+                >
+                  看更多文章
+                </Link>
+              </div>
+            </article>
+
+            <TableOfContents />
+          </div>
         </div>
-      </article>
-    </div>
+      </div>
+    </>
   );
 }

@@ -10,38 +10,55 @@ interface FlowDiagramProps {
   data: string;
 }
 
-const nodeColors = {
-  dark: "bg-stone-950 text-white border-stone-700",
-  amber: "bg-amber-50 text-amber-900 border-amber-300",
-  teal: "bg-teal-50 text-teal-900 border-teal-300",
-  stone: "bg-stone-100 text-stone-800 border-stone-300",
-};
-
 function Node({ node, isRoot }: { node: FlowNode; isRoot?: boolean }) {
-  const color = node.color || (isRoot ? "dark" : "stone");
   const hasChildren = node.children && node.children.length > 0;
 
   return (
     <div className="flex flex-col items-center">
       <div
-        className={`rounded-xl border-2 px-5 py-3 text-center shadow-sm ${nodeColors[color]}`}
+        className="px-4 py-2 text-center"
+        style={{
+          border: "1px solid var(--rule)",
+          background: isRoot ? "var(--ink)" : "var(--paper)",
+          color: isRoot ? "var(--paper)" : "var(--ink)",
+          minWidth: isRoot ? 160 : 120,
+        }}
       >
-        <p className={`font-semibold ${isRoot ? "text-base" : "text-sm"}`}>
+        <p
+          className="m-0"
+          style={{
+            fontFamily: "var(--f-zh-body), sans-serif",
+            fontSize: isRoot ? 15 : 13,
+            fontWeight: 500,
+          }}
+        >
           {node.label}
         </p>
         {node.sub && (
-          <p className="mt-0.5 text-xs opacity-70">{node.sub}</p>
+          <p
+            className="m-0 mt-1"
+            style={{
+              fontFamily: "var(--f-mono), monospace",
+              fontSize: 10,
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              opacity: 0.7,
+            }}
+          >
+            {node.sub}
+          </p>
         )}
       </div>
 
       {hasChildren && (
         <>
-          <div className="h-6 w-px bg-stone-300" />
+          <div className="h-6 w-px" style={{ background: "var(--rule)" }} />
           <div className="relative flex items-start gap-4 sm:gap-6">
             {node.children!.length > 1 && (
               <div
-                className="absolute top-0 h-px bg-stone-300"
+                className="absolute top-0 h-px"
                 style={{
+                  background: "var(--rule)",
                   left: `${100 / (2 * node.children!.length)}%`,
                   right: `${100 / (2 * node.children!.length)}%`,
                 }}
@@ -49,7 +66,7 @@ function Node({ node, isRoot }: { node: FlowNode; isRoot?: boolean }) {
             )}
             {node.children!.map((child, i) => (
               <div key={i} className="flex flex-col items-center">
-                <div className="h-6 w-px bg-stone-300" />
+                <div className="h-6 w-px" style={{ background: "var(--rule)" }} />
                 <Node node={child} />
               </div>
             ))}
@@ -63,9 +80,25 @@ function Node({ node, isRoot }: { node: FlowNode; isRoot?: boolean }) {
 export default function FlowDiagram({ title, data }: FlowDiagramProps) {
   const tree: FlowNode = JSON.parse(data);
   return (
-    <div className="my-8 overflow-x-auto rounded-2xl border border-stone-200 bg-white p-6 sm:p-8">
+    <div
+      className="my-10 overflow-x-auto py-8"
+      style={{
+        borderTop: "1px solid var(--rule)",
+        borderBottom: "1px solid var(--rule)",
+      }}
+    >
       {title && (
-        <p className="mb-6 text-xs font-semibold uppercase tracking-[0.28em] text-amber-700">
+        <p
+          className="m-0 mb-6"
+          style={{
+            fontFamily: "var(--f-mono), monospace",
+            fontSize: 11,
+            letterSpacing: "0.18em",
+            textTransform: "uppercase",
+            color: "var(--signal)",
+            fontWeight: 500,
+          }}
+        >
           {title}
         </p>
       )}

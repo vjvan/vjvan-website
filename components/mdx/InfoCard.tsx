@@ -9,43 +9,72 @@ interface InfoCardProps {
   variant?: "dark" | "light" | "accent";
 }
 
-const variants = {
-  dark: "bg-stone-950 text-white border-stone-800",
-  light: "bg-stone-50 text-stone-950 border-stone-200",
-  accent: "bg-amber-50 text-stone-950 border-amber-200",
-};
-
-const valueColors = {
-  dark: "text-amber-300",
-  light: "text-stone-950",
-  accent: "text-amber-700",
-};
-
-const detailColors = {
-  dark: "text-stone-400",
-  light: "text-stone-500",
-  accent: "text-stone-600",
-};
-
-export default function InfoCard({ data, variant = "dark" }: InfoCardProps) {
+export default function InfoCard({ data }: InfoCardProps) {
   const items: Item[] = JSON.parse(data);
-  const cols = items.length <= 3 ? `sm:grid-cols-${items.length}` : "sm:grid-cols-2 lg:grid-cols-4";
   return (
-    <div className={`my-8 grid gap-3 ${cols}`}>
-      {items.map((item) => (
+    <div
+      className="my-10 max-w-[720px]"
+      style={{
+        borderTop: "1px solid var(--rule)",
+        borderBottom: "1px solid var(--rule)",
+      }}
+    >
+      {items.map((item, i) => (
         <div
           key={item.label}
-          className={`rounded-2xl border p-5 ${variants[variant]}`}
+          className="grid gap-4 items-baseline py-5 md:grid-cols-[90px_1fr_2fr]"
+          style={{
+            borderTop: i === 0 ? "none" : "1px solid var(--rule)",
+          }}
         >
-          <p className={`text-2xl font-semibold ${valueColors[variant]}`}>
+          <div
+            style={{
+              fontFamily: "var(--f-mono), monospace",
+              fontSize: 11,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              color: "var(--signal)",
+            }}
+          >
+            N° {String(i + 1).padStart(2, "0")}
+          </div>
+          <div
+            style={{
+              fontFamily: "var(--f-display), serif",
+              fontSize: 36,
+              lineHeight: 1,
+              color: "var(--ink)",
+              letterSpacing: "-0.01em",
+            }}
+          >
             {item.value}
-          </p>
-          <p className="mt-1.5 text-sm font-medium">{item.label}</p>
-          {item.detail && (
-            <p className={`mt-2 text-xs leading-5 ${detailColors[variant]}`}>
-              {item.detail}
+          </div>
+          <div>
+            <p
+              className="m-0"
+              style={{
+                fontFamily: "var(--f-zh-body), sans-serif",
+                fontSize: 15,
+                fontWeight: 500,
+                color: "var(--ink)",
+              }}
+            >
+              {item.label}
             </p>
-          )}
+            {item.detail && (
+              <p
+                className="m-0 mt-1"
+                style={{
+                  fontFamily: "var(--f-zh-body), sans-serif",
+                  fontSize: 13,
+                  lineHeight: 1.6,
+                  color: "var(--ink-muted)",
+                }}
+              >
+                {item.detail}
+              </p>
+            )}
+          </div>
         </div>
       ))}
     </div>

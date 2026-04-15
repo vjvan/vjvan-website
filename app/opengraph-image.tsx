@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "允雷 - AI 商業系統架構師";
+export const alt = "VJVAN 唯捷允雷 — AI 商業系統架構師";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -14,109 +14,84 @@ export default function OgImage() {
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "center",
-          padding: "80px",
-          background: "linear-gradient(135deg, #1c1917 0%, #292524 50%, #1c1917 100%)",
-          fontFamily: "sans-serif",
+          justifyContent: "space-between",
+          padding: "72px 80px",
+          background: "#FAFAF7",
+          fontFamily: "serif",
+          position: "relative",
         }}
       >
         <div
           style={{
             display: "flex",
-            alignItems: "center",
-            gap: "16px",
-            marginBottom: "24px",
+            justifyContent: "space-between",
+            alignItems: "baseline",
+            fontSize: 14,
+            letterSpacing: "0.18em",
+            textTransform: "uppercase",
+            color: "#5F5B57",
+            fontFamily: "monospace",
           }}
         >
-          <div
-            style={{
-              width: "12px",
-              height: "12px",
-              borderRadius: "50%",
-              backgroundColor: "#d97706",
-            }}
-          />
-          <span
-            style={{
-              fontSize: "16px",
-              letterSpacing: "0.3em",
-              textTransform: "uppercase" as const,
-              color: "#d4a574",
-            }}
-          >
-            AI Business Systems
-          </span>
+          <span>ISSUE № 01 · EST. 2026 · PINGTUNG</span>
+          <span style={{ color: "#1F51FF" }}>VJVAN · 唯捷允雷</span>
         </div>
 
-        <h1
-          style={{
-            fontSize: "56px",
-            fontWeight: 700,
-            color: "#fafaf9",
-            lineHeight: 1.2,
-            margin: 0,
-            maxWidth: "900px",
-          }}
-        >
-          允雷
-        </h1>
-        <h2
-          style={{
-            fontSize: "36px",
-            fontWeight: 600,
-            color: "#a8a29e",
-            lineHeight: 1.3,
-            margin: "16px 0 0 0",
-            maxWidth: "900px",
-          }}
-        >
-          AI 商業系統架構師
-        </h2>
-        <p
-          style={{
-            fontSize: "22px",
-            color: "#78716c",
-            lineHeight: 1.6,
-            margin: "24px 0 0 0",
-            maxWidth: "800px",
-          }}
-        >
-          LINE LIFF + CRM + n8n 自動化營運系統
-        </p>
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <h1
+            style={{
+              fontSize: 128,
+              fontWeight: 400,
+              color: "#0A0A0A",
+              lineHeight: 0.95,
+              letterSpacing: "-0.02em",
+              margin: 0,
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <span>唯捷允雷</span>
+            <span
+              style={{
+                fontStyle: "italic",
+                color: "#1F51FF",
+                fontFamily: "serif",
+              }}
+            >
+              VJVAN
+            </span>
+          </h1>
+          <p
+            style={{
+              fontSize: 30,
+              fontWeight: 400,
+              color: "#0A0A0A",
+              lineHeight: 1.35,
+              margin: "28px 0 0 0",
+              fontFamily: "serif",
+              letterSpacing: "0.02em",
+            }}
+          >
+            AI 商業系統架構師
+          </p>
+        </div>
 
         <div
           style={{
             display: "flex",
-            gap: "12px",
-            marginTop: "40px",
+            justifyContent: "space-between",
+            alignItems: "baseline",
+            borderTop: "1px solid #E5E2DD",
+            paddingTop: 24,
+            fontSize: 14,
+            letterSpacing: "0.14em",
+            textTransform: "uppercase",
+            color: "#5F5B57",
+            fontFamily: "monospace",
           }}
         >
-          {["LINE LIFF", "CRM", "n8n", "Supabase", "Next.js"].map((tech) => (
-            <span
-              key={tech}
-              style={{
-                fontSize: "14px",
-                color: "#a8a29e",
-                border: "1px solid rgba(255,255,255,0.15)",
-                borderRadius: "9999px",
-                padding: "8px 16px",
-              }}
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-
-        <div
-          style={{
-            position: "absolute",
-            bottom: "40px",
-            right: "80px",
-            fontSize: "18px",
-            color: "#57534e",
-          }}
-        >
-          vjvan.com
+          <span>LINE LIFF · SUPABASE · N8N · NEXT.JS</span>
+          <span>www.vjvan.com</span>
         </div>
       </div>
     ),

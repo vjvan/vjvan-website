@@ -1,297 +1,175 @@
 import type { Metadata } from "next";
-import Script from "next/script";
-import BottomCTA from "@/components/BottomCTA";
+import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "服務項目",
+  title: "Services｜VJVAN 唯捷允雷服務項目",
   description:
-    "LINE LIFF 前台、CRM 後台、n8n 自動化、ERP/POS 串接與 AI 系統規劃。為台灣中小企業建置真正能運轉的營運系統。",
+    "VJVAN 唯捷允雷的服務項目：LINE LIFF B2B 補貨系統、AI 商業系統架構、SEO/GEO/AEO 顧問、個人品牌網站與內容引擎、季度顧問合作。",
+  alternates: { canonical: "https://www.vjvan.com/services" },
+  openGraph: {
+    title: "Services｜VJVAN · 唯捷允雷",
+    description: "AI 商業系統設計、LINE LIFF、SEO/GEO/AEO 顧問。",
+    url: "https://www.vjvan.com/services",
+    type: "website",
+  },
 };
 
-const coreServices = [
+const services = [
   {
-    label: "Frontstage",
-    title: "LINE LIFF 系統開發",
-    description:
-      "把預約、下單、查詢、會員互動放進客戶最熟悉的 LINE 使用情境，降低操作門檻，也讓流程更容易落地。",
-    features: [
-      "預約系統、多門市時段管理與自動提醒",
-      "B2B 訂購流程、訂單追蹤與會員查詢",
-      "不額外下載 App，就能先快速驗證真實需求",
-      "前後端分離，未來轉 App 可延用原有後端與資料庫",
-    ],
+    num: "N° 01",
+    titleZh: "LINE LIFF B2B 補貨系統",
+    titleEn: null,
+    desc: "幫批發、供應鏈、經銷體系把訂單從 LINE 群裡收乾淨，串 ERP、自動化補貨預測、出貨提醒。已有多家食品批發實戰案例。",
   },
   {
-    label: "Backstage",
-    title: "CRM 管理後台建置",
-    description:
-      "把訂單、客戶、門市與營運數據整理成管理者每天會打開的工作台，而不是只能展示的報表頁。",
-    features: [
-      "訂單、預約、客戶與商品的統一管理",
-      "營運趨勢、客戶健康度與流失風險追蹤",
-      "多門市或多角色權限與資料檢視邏輯",
-      "以未來擴充與維運為前提規劃資料結構",
-    ],
+    num: "N° 02",
+    titleZh: "AI 商業系統",
+    titleEn: "architecture",
+    desc: "替中小企業盤點營運流程，設計自動化工作流、資料層、權限模型。產出可執行的 blueprint，不只是 PPT。",
   },
   {
-    label: "Automation",
-    title: "n8n 與 AI 自動化流程",
-    description:
-      "把通知、推播、喚回、報表與內部交辦這類規則明確的工作交給系統，讓團隊把時間留給更高價值的事情。",
-    features: [
-      "預約確認、前日提醒與週期性通知",
-      "流失客戶喚回、分群推播與再行銷流程",
-      "週報、月報與資料整理自動生成",
-      "不只堆節點，連例外情況與維運也一起設計",
-    ],
+    num: "N° 03",
+    titleZh: "SEO · GEO · AEO",
+    titleEn: "consulting",
+    desc: "針對 ChatGPT / Perplexity 時代的搜尋，重構網站的 llms.txt、結構化資料、內容策略。你的公司要能被 AI 引用。",
   },
   {
-    label: "Strategy",
-    title: "AI 商業系統規劃",
-    description:
-      "適合在正式開發前，先把流程拆解、優先順序與系統邊界想清楚，避免一開始就做出又重又難維護的東西。",
-    features: [
-      "流程診斷與 AI / 自動化導入優先順序",
-      "LIFF、CRM、資料模型與權限結構規劃",
-      "數位轉型路線圖與 MVP 定義",
-      "從顧問到落地建置可銜接，不會中途斷線",
-    ],
+    num: "N° 04",
+    titleZh: "個人品牌網站 + 內容引擎",
+    titleEn: null,
+    desc: "替專業工作者建立一套可長期發佈內容的基礎建設：網站、部落格、電子報、AI 驅動的內容產線。",
+  },
+  {
+    num: "N° 05",
+    titleZh: "季度顧問合作（Retainer）",
+    titleEn: null,
+    desc: "每月固定 8 至 12 小時深度諮詢 + 系統調整，適合已經上線但需要持續優化的客戶。",
   },
 ];
-
-const engagementModes = [
-  {
-    title: "顧問診斷",
-    description:
-      "先釐清現況流程、資料散落點與哪些地方最值得自動化，適合還在評估從哪裡開始的團隊。",
-  },
-  {
-    title: "系統建置",
-    description:
-      "把前台、後台、自動化與資料流整合成可實際上線的系統，適合已確認需求範圍並準備投入執行的團隊。",
-  },
-  {
-    title: "維運優化",
-    description:
-      "上線後依真實使用狀況修正流程、補強權限、微調自動化與報表，讓系統能真正長期被用下去。",
-  },
-];
-
-const secondaryServices = [
-  {
-    title: "ERP / POS 系統串接",
-    description:
-      "把前台訂單、庫存異動與客戶資料自動回寫到既有的 ERP 或 POS 系統，讓線上線下數據同步，真正走完商業化流程的最後一哩路。",
-  },
-  {
-    title: "內部工作坊與流程教學",
-    description:
-      "如果團隊需要把 AI / 自動化觀念帶進內部，我也提供以實際工作流為主的教學與工作坊。",
-  },
-  {
-    title: "影像與內容流程支援",
-    description:
-      "包含節點式 AI 影像生成工作流與內容製作相關支援，通常作為主系統專案的延伸項目處理。",
-  },
-];
-
-const faqs = [
-  {
-    question: "專案通常需要多久？",
-    answer:
-      "核心版本通常約 4-5 週，完整版本約 5-7 週。實際時程取決於需求複雜度、整合範圍與資料是否到位。",
-  },
-  {
-    question: "一定要先做 App 嗎？",
-    answer:
-      "不一定。很多情況下先用 LINE LIFF 會更快驗證需求，也更容易讓客戶開始使用。若後續要轉成 App，後端可沿用，前端再另外調整。",
-  },
-  {
-    question: "只有一部分流程想先自動化，也可以合作嗎？",
-    answer:
-      "可以。不是每次都要從整套系統開始。很多團隊會先從預約提醒、喚回推播、報表自動化或前台表單流程切入。",
-  },
-  {
-    question: "上線後維護怎麼安排？",
-    answer:
-      "可依專案性質安排維護與微調，包含系統監控、Bug 修復、功能小幅調整與流程優化，避免系統上線後失去更新節奏。",
-  },
-];
-
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((faq) => ({
-    "@type": "Question",
-    name: faq.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: faq.answer,
-    },
-  })),
-};
 
 const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "首頁", item: "https://vjvan.com" },
-    { "@type": "ListItem", position: 2, name: "服務項目", item: "https://vjvan.com/services" },
+    { "@type": "ListItem", position: 1, name: "首頁", item: "https://www.vjvan.com" },
+    { "@type": "ListItem", position: 2, name: "服務", item: "https://www.vjvan.com/services" },
   ],
 };
 
 export default function ServicesPage() {
   return (
     <>
-      <Script
-        id="json-ld-faq"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
-      <Script
-        id="json-ld-breadcrumb"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
-
-      <div className="mx-auto max-w-6xl px-6 py-14 md:py-18">
-        <section className="rounded-[2rem] border border-stone-200 bg-white/80 p-8 shadow-sm backdrop-blur md:p-10">
-          <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
-            <div className="max-w-3xl">
-              <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-700">
-                Services
-              </p>
-              <h1 className="mt-4 text-4xl font-semibold tracking-tight text-stone-950 md:text-5xl">
-                服務不是把工具湊在一起，
-                <span className="block">而是把營運流程接成一套能用的系統</span>
-              </h1>
-              <p className="mt-6 text-lg leading-8 text-stone-700">
-                我目前的主軸聚焦在 LINE 前台、CRM 後台、n8n 自動化、ERP/POS 系統串接，以及 AI 系統規劃。
-                目標不是做出一堆功能，而是讓管理者和團隊真的能更快、更穩定地運作。
-              </p>
+      <JsonLd id="json-ld-services-breadcrumb" data={breadcrumbJsonLd} />
+      <div className="px-5 md:px-10">
+        <div className="mx-auto max-w-[1120px] py-14 md:py-24">
+          <div
+            className="pb-12 md:pb-12"
+            style={{ borderBottom: "1px solid var(--rule)", marginBottom: 12 }}
+          >
+            <div
+              className="mb-7 text-[11px] tracking-[0.14em] uppercase"
+              style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)", fontWeight: 500 }}
+            >
+              Services / 2026
             </div>
-
-            <div className="rounded-[1.75rem] border border-stone-200 bg-[#f8f3eb] p-7">
-              <p className="text-sm font-medium text-stone-900">適合這類需求</p>
-              <ul className="mt-4 space-y-3">
-                {[
-                  "預約、訂單、會員或客戶資料散在不同工具",
-                  "需要 LINE 入口，但不想一開始就投入 App 開發",
-                  "想把提醒、推播、報表或內部通知流程自動化",
-                  "已經導入很多工具，但沒有被整理成同一套系統",
-                  "有既有 ERP 或 POS，需要讓新系統的資料能自動回寫",
-                ].map((item) => (
-                  <li key={item} className="flex gap-3 text-sm leading-6 text-stone-700">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-700" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+            <h1
+              className="m-0 mb-12 max-w-full"
+              style={{
+                fontFamily: "var(--f-zh-display), serif",
+                fontWeight: 400,
+                fontSize: "clamp(44px, 7vw, 96px)",
+                lineHeight: 1.08,
+                letterSpacing: "0.01em",
+              }}
+            >
+              我做這些事，每一件
+              <br />
+              都能長成系統。
+            </h1>
+            <div className="grid gap-12 md:grid-cols-2">
+              <div />
+              <p
+                className="m-0 max-w-[520px]"
+                style={{
+                  fontFamily: "var(--f-zh-body), sans-serif",
+                  fontSize: 18,
+                  lineHeight: 1.8,
+                  color: "var(--ink-muted)",
+                }}
+              >
+                我不做單件事的外包。每個服務都以「客戶三年後還在跑」為標準設計，而不是交付後就失聯。一次接 3 至 4 個專案，品質優於數量。
+              </p>
             </div>
           </div>
-        </section>
 
-        <section className="mt-10 md:mt-14">
-          <div className="grid gap-5 lg:grid-cols-2">
-            {coreServices.map((service) => (
-              <div
-                key={service.title}
-                className="rounded-[1.75rem] border border-stone-200 bg-white p-8 shadow-sm"
+          <div>
+            {services.map((s) => (
+              <article
+                key={s.num}
+                className="grid gap-6 md:gap-12 md:grid-cols-[80px_2fr_1.2fr] py-9 items-baseline"
+                style={{ borderBottom: "1px solid var(--rule)" }}
               >
-                <p className="text-xs font-medium uppercase tracking-[0.26em] text-amber-700">
-                  {service.label}
-                </p>
-                <h2 className="mt-4 text-2xl font-semibold tracking-tight text-stone-950">
-                  {service.title}
+                <div
+                  className="text-[12px] tracking-[0.18em]"
+                  style={{ fontFamily: "var(--f-mono), monospace", color: "var(--signal)" }}
+                >
+                  {s.num}
+                </div>
+                <h2
+                  className="m-0"
+                  style={{
+                    fontFamily: "var(--f-zh-display), serif",
+                    fontSize: 28,
+                    lineHeight: 1.3,
+                    letterSpacing: "0.01em",
+                    fontWeight: 400,
+                  }}
+                >
+                  {s.titleZh}
+                  {s.titleEn && (
+                    <>
+                      {" "}
+                      <em
+                        style={{
+                          fontFamily: "var(--f-display), serif",
+                          fontStyle: "italic",
+                        }}
+                      >
+                        {s.titleEn}
+                      </em>
+                    </>
+                  )}
                 </h2>
-                <p className="mt-4 text-sm leading-7 text-stone-600">
-                  {service.description}
+                <p
+                  className="m-0"
+                  style={{
+                    fontFamily: "var(--f-zh-body), sans-serif",
+                    fontSize: 15,
+                    lineHeight: 1.6,
+                    color: "var(--ink-muted)",
+                  }}
+                >
+                  {s.desc}
                 </p>
-                <ul className="mt-6 space-y-3">
-                  {service.features.map((feature) => (
-                    <li
-                      key={feature}
-                      className="flex gap-3 text-sm leading-6 text-stone-700"
-                    >
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-700" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              </article>
             ))}
           </div>
-        </section>
 
-        <section className="mt-10 md:mt-14">
-          <div className="rounded-[2rem] border border-stone-200 bg-stone-950 px-8 py-10 text-white md:px-10">
-            <div className="max-w-2xl">
-              <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-200/80">
-                合作模式
-              </p>
-              <h2 className="mt-4 text-3xl font-semibold tracking-tight">
-                可以先從診斷開始，也可以直接進入系統建置
-              </h2>
-            </div>
-
-            <div className="mt-8 grid gap-4 lg:grid-cols-3">
-              {engagementModes.map((mode) => (
-                <div
-                  key={mode.title}
-                  className="rounded-[1.5rem] border border-white/10 bg-white/5 p-6"
-                >
-                  <h3 className="text-lg font-semibold">{mode.title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-stone-300">
-                    {mode.description}
-                  </p>
-                </div>
-              ))}
-            </div>
+          <div className="mt-12 flex flex-wrap gap-7">
+            <a
+              href="mailto:vjvan.n@gmail.com?subject=%E8%AB%AE%E8%A9%A2%20vjvan.com%20%E6%9C%8D%E5%8B%99"
+              className="pb-[2px] text-[12px] tracking-[0.12em] uppercase"
+              style={{
+                fontFamily: "var(--f-mono), monospace",
+                color: "var(--signal)",
+                borderBottom: "1px solid currentColor",
+              }}
+            >
+              預約諮詢 →
+            </a>
           </div>
-        </section>
-
-        <section className="mt-10 md:mt-14">
-          <div className="grid gap-5 lg:grid-cols-2">
-            {secondaryServices.map((service) => (
-              <div
-                key={service.title}
-                className="rounded-[1.75rem] border border-stone-200 bg-[#f8f3eb] p-7"
-              >
-                <p className="text-xs font-medium uppercase tracking-[0.26em] text-stone-500">
-                  延伸支援
-                </p>
-                <h3 className="mt-4 text-xl font-semibold tracking-tight text-stone-950">
-                  {service.title}
-                </h3>
-                <p className="mt-4 text-sm leading-7 text-stone-600">
-                  {service.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="mt-10 md:mt-14">
-          <div className="rounded-[2rem] border border-stone-200 bg-white/80 p-8 shadow-sm backdrop-blur md:p-10">
-            <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-700">
-              常見問題
-            </p>
-            <div className="mt-6 space-y-5">
-              {faqs.map((faq) => (
-                <div
-                  key={faq.question}
-                  className="rounded-[1.5rem] border border-stone-200 bg-stone-50/70 p-6"
-                >
-                  <h3 className="text-lg font-semibold text-stone-950">{faq.question}</h3>
-                  <p className="mt-3 text-sm leading-7 text-stone-600">{faq.answer}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
+        </div>
       </div>
-      <BottomCTA />
     </>
   );
 }
