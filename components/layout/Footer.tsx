@@ -41,6 +41,24 @@ export default function Footer() {
             Threads
           </a>
           <a
+            href="https://www.instagram.com/vjvan_n"
+            target="_blank"
+            rel="noreferrer"
+            className="pb-[1px]"
+            style={{ borderBottom: "1px solid var(--rule)" }}
+          >
+            Instagram
+          </a>
+          <a
+            href="https://x.com/vjvan_n"
+            target="_blank"
+            rel="noreferrer"
+            className="pb-[1px]"
+            style={{ borderBottom: "1px solid var(--rule)" }}
+          >
+            X
+          </a>
+          <a
             href="https://www.linkedin.com/in/vjvan"
             target="_blank"
             rel="noreferrer"
