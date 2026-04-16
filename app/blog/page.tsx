@@ -4,7 +4,7 @@ import { getAllPosts } from "@/lib/mdx";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Writing · 文章",
+  title: "Writing · 觀點",
   description:
     "VJVAN 唯捷允雷的觀點筆記。關於 AI 商業系統、LINE LIFF、SEO/GEO/AEO、自動化與系統架構的實戰書寫。",
   alternates: { canonical: "https://www.vjvan.com/blog" },
@@ -53,7 +53,7 @@ export default function BlogIndexPage() {
                 letterSpacing: "0.01em",
               }}
             >
-              文章
+              觀點
             </h1>
             <p
               className="m-0 max-w-[640px]"
@@ -76,7 +76,7 @@ export default function BlogIndexPage() {
                 color: "var(--ink-muted)",
               }}
             >
-              文章準備中。
+              觀點準備中。
             </p>
           ) : (
             <div>

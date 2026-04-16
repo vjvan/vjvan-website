@@ -1,4 +1,4 @@
-import Link from "next/link";
+import CtaLink from "@/components/CtaLink";
 
 const LINE_URL = "https://lin.ee/XjnkG91";
 
@@ -15,13 +15,9 @@ export default function Footer() {
           className="flex flex-wrap gap-x-6 gap-y-3 text-[11px] tracking-[0.14em] uppercase"
           style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
         >
-          <Link
-            href="/consult"
-            className="pb-[1px]"
-            style={{ color: "var(--signal)", borderBottom: "1px solid currentColor" }}
-          >
-            預約諮詢 →
-          </Link>
+          <CtaLink href="/consult" variant="primary">
+            預約諮詢
+          </CtaLink>
           <a
             href={LINE_URL}
             target="_blank"

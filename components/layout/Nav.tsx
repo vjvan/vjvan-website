@@ -6,7 +6,7 @@ import ThemeToggle from "@/components/ThemeToggle";
 
 const navLinks = [
   { href: "/about", zh: "關於", en: "About" },
-  { href: "/blog", zh: "文章", en: "Writing" },
+  { href: "/blog", zh: "觀點", en: "Writing" },
   { href: "/services", zh: "服務", en: "Services" },
   { href: "/cases", zh: "案例", en: "Cases" },
   { href: "/consult", zh: "諮詢", en: "Consult" },

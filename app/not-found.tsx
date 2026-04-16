@@ -1,4 +1,4 @@
-import Link from "next/link";
+import CtaLink from "@/components/CtaLink";
 
 export default function NotFound() {
   return (
@@ -31,33 +31,21 @@ export default function NotFound() {
             color: "var(--ink-muted)",
           }}
         >
-          這個網址不存在，或是文章被重新整理過了。可以從下面的連結繼續逛。
+          這個網址不存在，或是頁面被重新整理過了。可以從下面的連結繼續逛。
         </p>
         <div
           className="flex flex-wrap gap-7 text-[12px] tracking-[0.12em] uppercase"
           style={{ fontFamily: "var(--f-mono), monospace" }}
         >
-          <Link
-            href="/"
-            className="pb-[2px]"
-            style={{ color: "var(--signal)", borderBottom: "1px solid currentColor" }}
-          >
-            回首頁 →
-          </Link>
-          <Link
-            href="/blog"
-            className="pb-[2px]"
-            style={{ color: "var(--ink)", borderBottom: "1px solid currentColor" }}
-          >
-            看文章
-          </Link>
-          <Link
-            href="/services"
-            className="pb-[2px]"
-            style={{ color: "var(--ink)", borderBottom: "1px solid currentColor" }}
-          >
+          <CtaLink href="/" variant="primary">
+            回首頁
+          </CtaLink>
+          <CtaLink href="/blog" arrow="none">
+            看觀點
+          </CtaLink>
+          <CtaLink href="/services" arrow="none">
             看服務
-          </Link>
+          </CtaLink>
         </div>
       </div>
     </div>

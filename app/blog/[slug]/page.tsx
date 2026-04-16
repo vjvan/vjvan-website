@@ -9,6 +9,7 @@ import { getAllPosts, getPostBySlug } from "@/lib/mdx";
 import JsonLd from "@/components/JsonLd";
 import DateRail from "@/components/blog/DateRail";
 import TableOfContents from "@/components/blog/TableOfContents";
+import CtaLink from "@/components/CtaLink";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -128,13 +129,9 @@ export default async function BlogPostPage({ params }: Props) {
             className="mb-12 text-[11px] tracking-[0.14em] uppercase"
             style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
           >
-            <Link
-              href="/blog"
-              className="pb-[1px]"
-              style={{ borderBottom: "1px solid var(--rule)" }}
-            >
-              ← BACK TO WRITING
-            </Link>
+            <CtaLink href="/blog" arrow="left">
+              回觀點列表
+            </CtaLink>
           </div>
 
           <div className="grid gap-8 md:gap-12 md:grid-cols-[100px_1fr_200px]">
@@ -199,27 +196,15 @@ export default async function BlogPostPage({ params }: Props) {
                   borderTop: "1px solid var(--rule)",
                 }}
               >
-                <Link
-                  href="/consult"
-                  className="pb-[2px]"
-                  style={{ color: "var(--signal)", borderBottom: "1px solid currentColor" }}
-                >
-                  預約諮詢 →
-                </Link>
-                <Link
-                  href="/services"
-                  className="pb-[2px]"
-                  style={{ color: "var(--ink)", borderBottom: "1px solid currentColor" }}
-                >
+                <CtaLink href="/consult" variant="primary">
+                  預約諮詢
+                </CtaLink>
+                <CtaLink href="/services" arrow="none">
                   看服務
-                </Link>
-                <Link
-                  href="/blog"
-                  className="pb-[2px]"
-                  style={{ color: "var(--ink)", borderBottom: "1px solid currentColor" }}
-                >
-                  看更多文章
-                </Link>
+                </CtaLink>
+                <CtaLink href="/blog" arrow="none">
+                  看更多觀點
+                </CtaLink>
               </div>
             </article>
 

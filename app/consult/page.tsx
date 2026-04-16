@@ -333,33 +333,53 @@ export default function ConsultPage() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="pb-[2px] disabled:opacity-50"
+                  className="disabled:opacity-50"
                   style={{
                     background: "transparent",
                     border: "0",
-                    borderBottom: "1px solid currentColor",
                     color: "var(--signal)",
-                    padding: "2px 0",
+                    padding: 0,
                     cursor: submitting ? "not-allowed" : "pointer",
                     fontFamily: "var(--f-mono), monospace",
                     fontSize: 12,
                     letterSpacing: "0.12em",
                     textTransform: "uppercase",
+                    display: "inline-flex",
+                    alignItems: "baseline",
                   }}
                 >
-                  {submitting ? "SUBMITTING..." : "SUBMIT & 加入 LINE →"}
+                  <span
+                    style={{
+                      borderBottom: "1px solid currentColor",
+                      paddingBottom: 2,
+                    }}
+                  >
+                    {submitting ? "送出中..." : "送出並加入 LINE"}
+                  </span>
+                  {!submitting && (
+                    <span aria-hidden="true" style={{ marginLeft: 6 }}>
+                      →
+                    </span>
+                  )}
                 </button>
                 <a
                   href={LINE_URL}
                   target="_blank"
                   rel="noreferrer"
-                  className="pb-[2px]"
                   style={{
                     color: "var(--ink)",
-                    borderBottom: "1px solid currentColor",
+                    display: "inline-flex",
+                    alignItems: "baseline",
                   }}
                 >
-                  直接加 LINE
+                  <span
+                    style={{
+                      borderBottom: "1px solid currentColor",
+                      paddingBottom: 2,
+                    }}
+                  >
+                    直接加 LINE
+                  </span>
                 </a>
               </div>
 

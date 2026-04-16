@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
+import CtaLink from "@/components/CtaLink";
 
 export const metadata: Metadata = {
   title: "Services · 服務項目",
@@ -156,29 +156,16 @@ export default function ServicesPage() {
             ))}
           </div>
 
-          <div className="mt-12 flex flex-wrap gap-7">
-            <Link
-              href="/consult"
-              className="pb-[2px] text-[12px] tracking-[0.12em] uppercase"
-              style={{
-                fontFamily: "var(--f-mono), monospace",
-                color: "var(--signal)",
-                borderBottom: "1px solid currentColor",
-              }}
-            >
-              預約諮詢 →
-            </Link>
-            <Link
-              href="/cases"
-              className="pb-[2px] text-[12px] tracking-[0.12em] uppercase"
-              style={{
-                fontFamily: "var(--f-mono), monospace",
-                color: "var(--ink)",
-                borderBottom: "1px solid currentColor",
-              }}
-            >
+          <div
+            className="mt-12 flex flex-wrap gap-7 text-[12px] tracking-[0.12em] uppercase"
+            style={{ fontFamily: "var(--f-mono), monospace" }}
+          >
+            <CtaLink href="/consult" variant="primary">
+              預約諮詢
+            </CtaLink>
+            <CtaLink href="/cases" arrow="none">
               看案例
-            </Link>
+            </CtaLink>
           </div>
         </div>
       </div>

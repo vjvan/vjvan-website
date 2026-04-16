@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
+import CtaLink from "@/components/CtaLink";
 
 export const metadata: Metadata = {
   title: "Cases · 系統導入案例",
@@ -390,27 +390,15 @@ export default function CasesPage() {
           <div className="mt-16 flex flex-wrap gap-8 items-center text-[12px] tracking-[0.12em] uppercase"
             style={{ fontFamily: "var(--f-mono), monospace" }}
           >
-            <Link
-              href="/consult"
-              className="pb-[2px]"
-              style={{ color: "var(--signal)", borderBottom: "1px solid currentColor" }}
-            >
-              預約諮詢 →
-            </Link>
-            <Link
-              href="/services"
-              className="pb-[2px]"
-              style={{ color: "var(--ink)", borderBottom: "1px solid currentColor" }}
-            >
+            <CtaLink href="/consult" variant="primary">
+              預約諮詢
+            </CtaLink>
+            <CtaLink href="/services" arrow="none">
               看服務
-            </Link>
-            <Link
-              href="/blog"
-              className="pb-[2px]"
-              style={{ color: "var(--ink)", borderBottom: "1px solid currentColor" }}
-            >
-              看更多文章
-            </Link>
+            </CtaLink>
+            <CtaLink href="/blog" arrow="none">
+              看更多觀點
+            </CtaLink>
           </div>
         </div>
       </div>
