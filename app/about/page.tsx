@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "關於｜VJVAN 唯捷允雷有限公司",
+  title: "About · 關於",
   description:
     "VJVAN 唯捷允雷有限公司由允雷創辦，專注把散在 LINE、Google Sheet、ERP、n8n 的營運流程整理成能長期跑的系統。",
   alternates: { canonical: "https://www.vjvan.com/about" },

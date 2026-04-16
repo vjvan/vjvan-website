@@ -73,13 +73,13 @@ export default function Home() {
               className="flex flex-wrap gap-7 items-center text-[12px] tracking-[0.12em] uppercase"
               style={{ fontFamily: "var(--f-mono), monospace" }}
             >
-              <a
-                href="mailto:vjvan.n@gmail.com?subject=%E8%AB%AE%E8%A9%A2%20vjvan.com"
+              <Link
+                href="/consult"
                 className="pb-[2px]"
                 style={{ color: "var(--signal)", borderBottom: "1px solid currentColor" }}
               >
                 預約諮詢 →
-              </a>
+              </Link>
               <Link
                 href="/blog"
                 className="pb-[2px]"

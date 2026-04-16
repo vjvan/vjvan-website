@@ -8,7 +8,8 @@ const navLinks = [
   { href: "/about", zh: "關於", en: "About" },
   { href: "/blog", zh: "文章", en: "Writing" },
   { href: "/services", zh: "服務", en: "Services" },
-  { href: "/contact", zh: "聯絡", en: "Contact" },
+  { href: "/cases", zh: "案例", en: "Cases" },
+  { href: "/consult", zh: "諮詢", en: "Consult" },
 ];
 
 export default function Nav() {

@@ -4,7 +4,7 @@ import { getAllPosts } from "@/lib/mdx";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Writing｜VJVAN 唯捷允雷的文章",
+  title: "Writing · 文章",
   description:
     "VJVAN 唯捷允雷的觀點筆記。關於 AI 商業系統、LINE LIFF、SEO/GEO/AEO、自動化與系統架構的實戰書寫。",
   alternates: { canonical: "https://www.vjvan.com/blog" },

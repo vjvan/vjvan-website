@@ -1,26 +1,50 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Script from "next/script";
-import BottomCTA from "@/components/BottomCTA";
+import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "成功案例",
+  title: "Cases · 系統導入案例",
   description:
-    "LINE LIFF + CRM + n8n 自動化系統的實際導入成果。訂單處理時間減少 75%、客戶自主下單 83%、每週省 15 小時。",
+    "VJVAN 唯捷允雷實際落地的 B2B 補貨、預約、CRM、n8n 自動化案例。同一套 LINE LIFF + Supabase + n8n 架構，不同產業的業務邏輯。",
+  alternates: { canonical: "https://www.vjvan.com/cases" },
+  openGraph: {
+    title: "Cases｜VJVAN · 唯捷允雷",
+    description: "同一套技術底，不同產業的業務邏輯。",
+    url: "https://www.vjvan.com/cases",
+    type: "website",
+  },
 };
 
-const cases = [
+type Metric = { value: string; label: string; detail: string };
+type Case = {
+  id: string;
+  num: string;
+  industry: string;
+  titleZh: string;
+  titleEn?: string;
+  subtitle: string;
+  description: string;
+  metrics: Metric[];
+  techStack: string[];
+  timeline: string;
+  before: string[];
+  after: string[];
+};
+
+const cases: Case[] = [
   {
     id: "b2b-replenishment",
+    num: "N° 01",
     industry: "食品批發",
-    title: "B2B 補貨系統",
-    subtitle: "從電話抄單到 LINE 自助下單，訂單處理效率提升 4 倍",
+    titleZh: "B2B 補貨系統",
+    titleEn: "replenishment",
+    subtitle: "從電話抄單到 LINE 自助下單，訂單處理效率提升 4 倍。",
     description:
       "食品批發業者原本靠電話和 LINE 文字訊息接單，人工抄寫容易出錯，每週花大量時間處理訂單。導入 LINE LIFF 訂購系統 + CRM 管理後台 + n8n 自動化後，客戶可以在 LINE 內直接瀏覽商品、選規格、下單，後台即時同步。",
     metrics: [
       { value: "-75%", label: "訂單處理時間", detail: "從人工抄寫到系統自動記錄" },
       { value: "83%", label: "客戶自主下單", detail: "從電話+文字到 LIFF 自助" },
-      { value: "15hr", label: "每週省下人力", detail: "減少重複性接單與通知工作" },
+      { value: "15 hr", label: "每週省下人力", detail: "減少重複性接單與通知工作" },
       { value: "0", label: "人為訂單錯誤", detail: "客戶自行選品確認，系統自動記錄" },
     ],
     techStack: ["LINE LIFF", "Supabase", "n8n", "Next.js"],
@@ -30,7 +54,7 @@ const cases = [
       "手動登記訂單，容易遺漏或出錯",
       "紙本 + 記憶管理客戶，無法追蹤消費數據",
       "人工逐一通知出貨與確認",
-      "每週 2-3 筆訂單出錯（聽錯品項、數量寫錯）",
+      "每週 2 至 3 筆訂單出錯（聽錯品項、數量寫錯）",
     ],
     after: [
       "LINE 內直接瀏覽商品、選規格、下單",
@@ -42,9 +66,11 @@ const cases = [
   },
   {
     id: "auto-beauty-booking",
+    num: "N° 02",
     industry: "汽車美容",
-    title: "三門市預約系統 + 行銷整合",
-    subtitle: "把散在 Google 表單和電話的預約流程，整理成一套能自動運轉的營運系統",
+    titleZh: "三門市預約系統",
+    titleEn: "booking",
+    subtitle: "把散在 Google 表單和電話的預約流程，整理成能自動運轉的營運系統。",
     description:
       "三間門市的汽車美容業者，預約靠電話和 Google 表單，客戶管理靠試算表，推播靠群發。導入 LINE LIFF 預約系統 + CRM 後台 + n8n 自動化 + 行銷整合模組，讓預約、管理、提醒、喚回全部系統化。",
     metrics: [
@@ -54,7 +80,7 @@ const cases = [
       { value: "自動", label: "流失客戶喚回", detail: "超過設定天數未回訪自動推播" },
     ],
     techStack: ["LINE LIFF", "Supabase", "n8n", "Next.js"],
-    timeline: "5-7 週（建置中）",
+    timeline: "5 至 7 週",
     before: [
       "電話預約，容易撞時段或漏接",
       "Google 表單 + 試算表手動維護客戶資料",
@@ -76,30 +102,31 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "首頁", item: "https://vjvan.com" },
-    { "@type": "ListItem", position: 2, name: "成功案例", item: "https://vjvan.com/cases" },
+    { "@type": "ListItem", position: 1, name: "首頁", item: "https://www.vjvan.com" },
+    { "@type": "ListItem", position: 2, name: "Cases", item: "https://www.vjvan.com/cases" },
   ],
 };
 
-const caseStudiesJsonLd = cases.map((c) => ({
+const caseArticles = cases.map((c) => ({
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: `${c.industry} ${c.title}`,
+  headline: `${c.industry}｜${c.titleZh}`,
   description: c.description,
   author: {
     "@type": "Person",
     name: "允雷",
-    jobTitle: "AI 商業系統架構師",
-    url: "https://vjvan.com",
+    alternateName: ["VJVAN", "唯捷允雷"],
+    url: "https://www.vjvan.com",
   },
   publisher: {
-    "@type": "Person",
-    name: "允雷",
-    url: "https://vjvan.com",
+    "@type": "Organization",
+    name: "唯捷允雷有限公司",
+    alternateName: "VJVAN",
+    url: "https://www.vjvan.com",
   },
   mainEntityOfPage: {
     "@type": "WebPage",
-    "@id": `https://vjvan.com/cases#${c.id}`,
+    "@id": `https://www.vjvan.com/cases#${c.id}`,
   },
   inLanguage: "zh-TW",
 }));
@@ -107,154 +134,286 @@ const caseStudiesJsonLd = cases.map((c) => ({
 export default function CasesPage() {
   return (
     <>
-      <Script
-        id="json-ld-breadcrumb"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
-      {caseStudiesJsonLd.map((jsonLd, i) => (
-        <Script
-          key={cases[i].id}
-          id={`json-ld-case-${cases[i].id}`}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+      <JsonLd id="json-ld-cases-breadcrumb" data={breadcrumbJsonLd} />
+      {caseArticles.map((ld, i) => (
+        <JsonLd key={cases[i].id} id={`json-ld-case-${cases[i].id}`} data={ld} />
       ))}
 
-      <div className="mx-auto max-w-6xl px-6 py-14 md:py-18">
-        <section className="rounded-[2rem] border border-stone-200 bg-white/80 p-8 shadow-sm backdrop-blur md:p-10">
-          <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-700">
-            Case Studies
-          </p>
-          <h1 className="mt-4 text-4xl font-semibold tracking-tight text-stone-950 md:text-5xl">
-            不只是做出來，而是真的被用起來
-          </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-stone-700">
-            以下是同一套技術架構（LINE LIFF + Supabase + n8n）在不同產業場景的導入成果。
-            每個案例的核心邏輯相同，但業務流程各自不同。
-          </p>
-        </section>
+      <div className="px-5 md:px-10">
+        <div className="mx-auto max-w-[1120px] py-14 md:py-24">
+          <div
+            className="pb-12 mb-4"
+            style={{ borderBottom: "1px solid var(--rule)" }}
+          >
+            <div
+              className="mb-6 text-[11px] tracking-[0.14em] uppercase"
+              style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)", fontWeight: 500 }}
+            >
+              Cases / 2026
+            </div>
+            <h1
+              className="m-0 mb-10"
+              style={{
+                fontFamily: "var(--f-zh-display), serif",
+                fontWeight: 400,
+                fontSize: "clamp(44px, 6.5vw, 88px)",
+                lineHeight: 1.05,
+                letterSpacing: "0.01em",
+              }}
+            >
+              同一套底，
+              <br />
+              不同產業的業務邏輯。
+            </h1>
+            <p
+              className="m-0 max-w-[640px]"
+              style={{
+                fontFamily: "var(--f-zh-body), sans-serif",
+                fontSize: 18,
+                lineHeight: 1.8,
+                color: "var(--ink-muted)",
+              }}
+            >
+              以下是 LINE LIFF + Supabase + n8n 架構在不同產業場景的導入成果。核心技術相同，差異在於業務流程怎麼設計。客戶名以產業類別代稱，細節可在諮詢時逐步展開。
+            </p>
+          </div>
 
-        {cases.map((c) => (
-          <section key={c.id} id={c.id} className="mt-10 md:mt-14">
-            <div className="rounded-[2rem] border border-stone-200 bg-white p-8 shadow-sm md:p-10">
-              <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-start">
+          {cases.map((c) => (
+            <article
+              key={c.id}
+              id={c.id}
+              className="py-16 scroll-mt-24"
+              style={{ borderBottom: "1px solid var(--rule)" }}
+            >
+              <div className="grid gap-6 md:gap-12 md:grid-cols-[80px_1fr] mb-10">
+                <div
+                  className="text-[12px] tracking-[0.18em]"
+                  style={{ fontFamily: "var(--f-mono), monospace", color: "var(--signal)" }}
+                >
+                  {c.num}
+                </div>
                 <div>
-                  <p className="text-xs font-medium uppercase tracking-[0.26em] text-amber-700">
-                    {c.industry}
-                  </p>
-                  <h2 className="mt-4 text-3xl font-semibold tracking-tight text-stone-950">
-                    {c.title}
+                  <div
+                    className="mb-3 flex flex-wrap items-baseline gap-x-4 gap-y-1 text-[11px] tracking-[0.14em] uppercase"
+                    style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+                  >
+                    <span style={{ color: "var(--signal)" }}>{c.industry}</span>
+                    <span>·</span>
+                    <span>{c.timeline}</span>
+                    <span>·</span>
+                    <span>{c.techStack.join(" · ")}</span>
+                  </div>
+                  <h2
+                    className="m-0 mb-4"
+                    style={{
+                      fontFamily: "var(--f-zh-display), serif",
+                      fontSize: "clamp(32px, 4.5vw, 56px)",
+                      lineHeight: 1.15,
+                      letterSpacing: "0.01em",
+                      fontWeight: 400,
+                    }}
+                  >
+                    {c.titleZh}
+                    {c.titleEn && (
+                      <>
+                        {" "}
+                        <em
+                          style={{
+                            fontFamily: "var(--f-display), serif",
+                            fontStyle: "italic",
+                            color: "var(--signal)",
+                          }}
+                        >
+                          {c.titleEn}
+                        </em>
+                      </>
+                    )}
                   </h2>
-                  <p className="mt-2 text-base text-stone-600">{c.subtitle}</p>
-                  <p className="mt-4 max-w-2xl text-sm leading-7 text-stone-600">
+                  <p
+                    className="m-0 mb-2 max-w-[720px]"
+                    style={{
+                      fontFamily: "var(--f-zh-body), sans-serif",
+                      fontSize: 20,
+                      lineHeight: 1.6,
+                      color: "var(--ink)",
+                      fontWeight: 500,
+                    }}
+                  >
+                    {c.subtitle}
+                  </p>
+                  <p
+                    className="m-0 max-w-[720px]"
+                    style={{
+                      fontFamily: "var(--f-zh-body), sans-serif",
+                      fontSize: 16,
+                      lineHeight: 1.8,
+                      color: "var(--ink-muted)",
+                    }}
+                  >
                     {c.description}
                   </p>
                 </div>
-                <div className="flex flex-wrap gap-2">
-                  {c.techStack.map((tech) => (
-                    <span
-                      key={tech}
-                      className="rounded-full border border-stone-200 bg-stone-50 px-3 py-1 text-xs text-stone-600"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                  <span className="rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-xs font-medium text-amber-800">
-                    {c.timeline}
-                  </span>
-                </div>
               </div>
 
-              {/* Metrics */}
-              <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                {c.metrics.map((metric) => (
-                  <div
-                    key={metric.label}
-                    className="rounded-[1.5rem] border border-stone-200 bg-stone-950 p-6 text-white"
-                  >
-                    <p className="text-3xl font-semibold">{metric.value}</p>
-                    <p className="mt-2 text-sm font-medium">{metric.label}</p>
-                    <p className="mt-2 text-xs leading-5 text-stone-400">
-                      {metric.detail}
-                    </p>
+              {/* Metrics - editorial strip */}
+              <div
+                className="grid gap-x-8 gap-y-8 md:grid-cols-4 mb-14 py-8"
+                style={{
+                  borderTop: "1px solid var(--rule)",
+                  borderBottom: "1px solid var(--rule)",
+                }}
+              >
+                {c.metrics.map((m) => (
+                  <div key={m.label}>
+                    <div
+                      className="mb-2"
+                      style={{
+                        fontFamily: "var(--f-display), serif",
+                        fontSize: 48,
+                        lineHeight: 1,
+                        letterSpacing: "-0.02em",
+                        color: "var(--ink)",
+                      }}
+                    >
+                      {m.value}
+                    </div>
+                    <div
+                      className="mb-1"
+                      style={{
+                        fontFamily: "var(--f-zh-body), sans-serif",
+                        fontSize: 14,
+                        fontWeight: 500,
+                        color: "var(--ink)",
+                      }}
+                    >
+                      {m.label}
+                    </div>
+                    <div
+                      style={{
+                        fontFamily: "var(--f-zh-body), sans-serif",
+                        fontSize: 13,
+                        lineHeight: 1.6,
+                        color: "var(--ink-muted)",
+                      }}
+                    >
+                      {m.detail}
+                    </div>
                   </div>
                 ))}
               </div>
 
               {/* Before / After */}
-              <div className="mt-8 grid gap-5 lg:grid-cols-2">
-                <div className="rounded-[1.5rem] border border-stone-200 bg-stone-50/80 p-6">
-                  <p className="text-sm font-medium uppercase tracking-[0.24em] text-stone-500">
-                    導入前
-                  </p>
-                  <ul className="mt-4 space-y-3">
+              <div className="grid gap-10 md:gap-16 md:grid-cols-2 max-w-[920px]">
+                <div>
+                  <div
+                    className="mb-5 pb-2 text-[11px] tracking-[0.18em] uppercase"
+                    style={{
+                      fontFamily: "var(--f-mono), monospace",
+                      color: "var(--ink-muted)",
+                      borderBottom: "1px solid var(--rule)",
+                    }}
+                  >
+                    Before
+                  </div>
+                  <ul className="m-0 p-0 list-none flex flex-col gap-3">
                     {c.before.map((item) => (
                       <li
                         key={item}
-                        className="flex gap-3 text-sm leading-6 text-stone-600"
+                        style={{
+                          fontFamily: "var(--f-zh-body), sans-serif",
+                          fontSize: 15,
+                          lineHeight: 1.7,
+                          color: "var(--ink-muted)",
+                          paddingLeft: 16,
+                          position: "relative",
+                        }}
                       >
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-stone-400" />
-                        <span>{item}</span>
+                        <span
+                          style={{
+                            position: "absolute",
+                            left: 0,
+                            top: "0.7em",
+                            width: 8,
+                            height: 1,
+                            background: "var(--ink-muted)",
+                          }}
+                        />
+                        {item}
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div className="rounded-[1.5rem] border border-stone-200 bg-[#f8f3eb] p-6">
-                  <p className="text-sm font-medium uppercase tracking-[0.24em] text-amber-700">
-                    導入後
-                  </p>
-                  <ul className="mt-4 space-y-3">
+                <div>
+                  <div
+                    className="mb-5 pb-2 text-[11px] tracking-[0.18em] uppercase"
+                    style={{
+                      fontFamily: "var(--f-mono), monospace",
+                      color: "var(--signal)",
+                      borderBottom: "1px solid var(--rule)",
+                    }}
+                  >
+                    After
+                  </div>
+                  <ul className="m-0 p-0 list-none flex flex-col gap-3">
                     {c.after.map((item) => (
                       <li
                         key={item}
-                        className="flex gap-3 text-sm leading-6 text-stone-700"
+                        style={{
+                          fontFamily: "var(--f-zh-body), sans-serif",
+                          fontSize: 15,
+                          lineHeight: 1.7,
+                          color: "var(--ink)",
+                          paddingLeft: 16,
+                          position: "relative",
+                        }}
                       >
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-600" />
-                        <span>{item}</span>
+                        <span
+                          style={{
+                            position: "absolute",
+                            left: 0,
+                            top: "0.7em",
+                            width: 8,
+                            height: 1,
+                            background: "var(--signal)",
+                          }}
+                        />
+                        {item}
                       </li>
                     ))}
                   </ul>
                 </div>
               </div>
-            </div>
-          </section>
-        ))}
+            </article>
+          ))}
 
-        {/* CTA */}
-        <section className="mt-10 md:mt-14">
-          <div className="rounded-[2rem] border border-stone-200 bg-stone-950 px-8 py-10 text-white md:px-10">
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
-              <div className="max-w-2xl">
-                <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-200/80">
-                  你的場景也適用
-                </p>
-                <h2 className="mt-4 text-3xl font-semibold tracking-tight">
-                  同一套架構，不同的業務邏輯。先從你的流程開始聊。
-                </h2>
-                <p className="mt-4 text-base leading-7 text-stone-300">
-                  不管是預約、訂購、會員管理還是內部流程自動化，核心技術棧是相同的。差異在於你的業務流程怎麼設計。
-                </p>
-              </div>
-              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
-                <Link
-                  href="/consult"
-                  className="inline-flex items-center justify-center rounded-full bg-action px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-action-hover"
-                >
-                  預約系統諮詢
-                </Link>
-                <Link
-                  href="/services"
-                  className="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-white/40 hover:bg-white/5"
-                >
-                  查看服務內容
-                </Link>
-              </div>
-            </div>
+          {/* CTA */}
+          <div className="mt-16 flex flex-wrap gap-8 items-center text-[12px] tracking-[0.12em] uppercase"
+            style={{ fontFamily: "var(--f-mono), monospace" }}
+          >
+            <Link
+              href="/consult"
+              className="pb-[2px]"
+              style={{ color: "var(--signal)", borderBottom: "1px solid currentColor" }}
+            >
+              預約諮詢 →
+            </Link>
+            <Link
+              href="/services"
+              className="pb-[2px]"
+              style={{ color: "var(--ink)", borderBottom: "1px solid currentColor" }}
+            >
+              看服務
+            </Link>
+            <Link
+              href="/blog"
+              className="pb-[2px]"
+              style={{ color: "var(--ink)", borderBottom: "1px solid currentColor" }}
+            >
+              看更多文章
+            </Link>
           </div>
-        </section>
+        </div>
       </div>
-      <BottomCTA />
     </>
   );
 }

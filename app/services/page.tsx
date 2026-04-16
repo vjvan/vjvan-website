@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Services｜VJVAN 唯捷允雷服務項目",
+  title: "Services · 服務項目",
   description:
     "VJVAN 唯捷允雷的服務項目：LINE LIFF B2B 補貨系統、AI 商業系統架構、SEO/GEO/AEO 顧問、個人品牌網站與內容引擎、季度顧問合作。",
   alternates: { canonical: "https://www.vjvan.com/services" },
@@ -156,8 +157,8 @@ export default function ServicesPage() {
           </div>
 
           <div className="mt-12 flex flex-wrap gap-7">
-            <a
-              href="mailto:vjvan.n@gmail.com?subject=%E8%AB%AE%E8%A9%A2%20vjvan.com%20%E6%9C%8D%E5%8B%99"
+            <Link
+              href="/consult"
               className="pb-[2px] text-[12px] tracking-[0.12em] uppercase"
               style={{
                 fontFamily: "var(--f-mono), monospace",
@@ -166,7 +167,18 @@ export default function ServicesPage() {
               }}
             >
               預約諮詢 →
-            </a>
+            </Link>
+            <Link
+              href="/cases"
+              className="pb-[2px] text-[12px] tracking-[0.12em] uppercase"
+              style={{
+                fontFamily: "var(--f-mono), monospace",
+                color: "var(--ink)",
+                borderBottom: "1px solid currentColor",
+              }}
+            >
+              看案例
+            </Link>
           </div>
         </div>
       </div>

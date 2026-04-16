@@ -29,60 +29,8 @@
   --font-zh-body: var(--f-zh-body), system-ui, sans-serif;
 }
 
-/* Notion 風格 utilities (vjvan 暖色調適配版) */
-.shadow-notion {
-  box-shadow:
-    0 4px 18px rgba(60, 40, 20, 0.04),
-    0 2px 8px rgba(60, 40, 20, 0.027),
-    0 1px 3px rgba(60, 40, 20, 0.02);
-}
-
-.shadow-notion-lg {
-  box-shadow:
-    0 1px 3px rgba(60, 40, 20, 0.02),
-    0 3px 7px rgba(60, 40, 20, 0.025),
-    0 7px 15px rgba(60, 40, 20, 0.03),
-    0 14px 28px rgba(60, 40, 20, 0.04),
-    0 23px 52px rgba(60, 40, 20, 0.05);
-}
-
-.border-whisper {
-  border-color: rgba(32, 23, 20, 0.08);
-}
-
-.bg-warm-cream {
-  background-color: #f7f1e8;
-}
-
-.bg-warm-white {
-  background-color: #efe5d9;
-}
-
 html {
   scroll-behavior: smooth;
-}
-
-/* Accessibility: respect reduced motion preference */
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-/* Focus visible: keyboard navigation indicator */
-*:focus-visible {
-  outline: 2px solid var(--color-action);
-  outline-offset: 2px;
-  border-radius: 4px;
 }
 
 body {

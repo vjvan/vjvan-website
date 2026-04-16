@@ -32,7 +32,7 @@ export default function ConsultPage() {
     e.preventDefault();
     setSubmitting(true);
 
-    // honeypot: bot 會填這個隱藏欄位,真人不會
+    // honeypot: bot 會填這個隱藏欄位，真人不會
     if (form.website) {
       window.location.href = LINE_URL;
       return;
@@ -42,6 +42,7 @@ export default function ConsultPage() {
     if (scriptUrl) {
       try {
         const { website: _hp, ...formData } = form;
+        void _hp;
         await fetch(scriptUrl, {
           method: "POST",
           mode: "no-cors",
@@ -58,150 +59,324 @@ export default function ConsultPage() {
     window.location.href = LINE_URL;
   };
 
-  const inputClass =
-    "w-full rounded-2xl border border-stone-200 bg-white px-4 py-3 text-sm text-stone-900 placeholder:text-stone-400 focus:border-action focus:outline-none focus:ring-1 focus:ring-action transition-colors";
-  const labelClass = "block text-sm font-medium text-stone-700 mb-2";
+  const labelStyle: React.CSSProperties = {
+    display: "block",
+    marginBottom: 8,
+    fontFamily: "var(--f-mono), monospace",
+    fontSize: 10,
+    letterSpacing: "0.18em",
+    textTransform: "uppercase",
+    color: "var(--ink-muted)",
+  };
+
+  const inputStyle: React.CSSProperties = {
+    width: "100%",
+    padding: "10px 0 10px 0",
+    background: "transparent",
+    border: "0",
+    borderBottom: "1px solid var(--rule)",
+    color: "var(--ink)",
+    fontFamily: "var(--f-zh-body), sans-serif",
+    fontSize: 17,
+    lineHeight: 1.5,
+    outline: "none",
+    transition: "border-color 0.2s ease",
+  };
 
   return (
-    <div className="relative overflow-hidden">
-      <div className="absolute inset-x-0 top-0 -z-10 h-[32rem] bg-[radial-gradient(circle_at_top_left,rgba(214,145,88,0.22),transparent_42%),radial-gradient(circle_at_top_right,rgba(120,83,57,0.12),transparent_30%)]" />
-
-      <section className="mx-auto max-w-xl px-6 pt-16 pb-20 md:pt-24">
-        <p className="text-sm font-medium uppercase tracking-[0.28em] text-amber-700">
-          預約諮詢
-        </p>
-        <h1 className="mt-4 text-3xl font-semibold tracking-tight text-stone-950 md:text-4xl">
-          預約 30 分鐘免費諮詢
-        </h1>
-        <p className="mt-4 text-base leading-7 text-stone-600">
-          填寫以下資訊，我會在一個工作天內透過 LINE 與你聯繫，安排諮詢時段。
-        </p>
-
-        <form onSubmit={handleSubmit} className="mt-10 space-y-5">
-          {/* honeypot field - hidden from real users, bots will fill it */}
-          <div className="absolute -left-[9999px]" aria-hidden="true">
-            <label htmlFor="website">Website</label>
-            <input
-              id="website"
-              type="text"
-              tabIndex={-1}
-              autoComplete="off"
-              value={form.website}
-              onChange={(e) => update("website", e.target.value)}
-            />
-          </div>
-
-          <div>
-            <label htmlFor="name" className={labelClass}>
-              姓名
-            </label>
-            <input
-              id="name"
-              type="text"
-              required
-              value={form.name}
-              onChange={(e) => update("name", e.target.value)}
-              placeholder="你的姓名"
-              className={inputClass}
-            />
-          </div>
-
-          <div>
-            <label htmlFor="company" className={labelClass}>
-              公司 / 品牌名稱
-            </label>
-            <input
-              id="company"
-              type="text"
-              required
-              value={form.company}
-              onChange={(e) => update("company", e.target.value)}
-              placeholder="公司或品牌名稱"
-              className={inputClass}
-            />
-          </div>
-
-          <div className="grid gap-5 sm:grid-cols-2">
-            <div>
-              <label htmlFor="email" className={labelClass}>
-                Email
-              </label>
-              <input
-                id="email"
-                type="email"
-                required
-                value={form.email}
-                onChange={(e) => update("email", e.target.value)}
-                placeholder="your@email.com"
-                className={inputClass}
-              />
-            </div>
-            <div>
-              <label htmlFor="phone" className={labelClass}>
-                電話
-              </label>
-              <input
-                id="phone"
-                type="tel"
-                required
-                value={form.phone}
-                onChange={(e) => update("phone", e.target.value)}
-                placeholder="0912-345-678"
-                className={inputClass}
-              />
-            </div>
-          </div>
-
-          <div>
-            <label htmlFor="topic" className={labelClass}>
-              想諮詢的方向
-            </label>
-            <select
-              id="topic"
-              required
-              value={form.topic}
-              onChange={(e) => update("topic", e.target.value)}
-              className={`${inputClass} appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%2378716c%22%20stroke-width%3D%222%22%3E%3Cpath%20d%3D%22m6%209%206%206%206-6%22%2F%3E%3C%2Fsvg%3E')] bg-[length:1.25rem] bg-[right_0.75rem_center] bg-no-repeat pr-10`}
+    <div className="px-5 md:px-10">
+      <div className="mx-auto max-w-[1120px] py-14 md:py-24">
+        <div className="grid gap-10 md:gap-[72px] md:grid-cols-[0.7fr_2fr]">
+          <aside>
+            <div
+              className="mb-8 text-[11px] tracking-[0.14em] uppercase"
+              style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)", fontWeight: 500 }}
             >
-              <option value="" disabled>
-                請選擇
-              </option>
-              {TOPICS.map((t) => (
-                <option key={t} value={t}>
-                  {t}
-                </option>
-              ))}
-            </select>
-          </div>
+              Consult / Intake
+            </div>
+            <dl className="m-0 flex flex-col gap-6">
+              <div>
+                <dt
+                  className="mb-[6px] text-[10px] tracking-[0.18em] uppercase"
+                  style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+                >
+                  Session
+                </dt>
+                <dd className="m-0" style={{ fontFamily: "var(--f-zh-body), sans-serif", fontSize: 16 }}>
+                  30 分鐘免費視訊
+                </dd>
+              </div>
+              <div>
+                <dt
+                  className="mb-[6px] text-[10px] tracking-[0.18em] uppercase"
+                  style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+                >
+                  Response
+                </dt>
+                <dd className="m-0" style={{ fontFamily: "var(--f-zh-body), sans-serif", fontSize: 16 }}>
+                  一個工作天內 LINE 回覆
+                </dd>
+              </div>
+              <div>
+                <dt
+                  className="mb-[6px] text-[10px] tracking-[0.18em] uppercase"
+                  style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+                >
+                  Based in
+                </dt>
+                <dd className="m-0" style={{ fontFamily: "var(--f-zh-body), sans-serif", fontSize: 16 }}>
+                  屏東 / Pingtung, Taiwan
+                </dd>
+              </div>
+              <div>
+                <dt
+                  className="mb-[6px] text-[10px] tracking-[0.18em] uppercase"
+                  style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+                >
+                  Direct
+                </dt>
+                <dd className="m-0" style={{ fontFamily: "var(--f-body), sans-serif", fontSize: 16 }}>
+                  <a
+                    href="mailto:vjvan.n@gmail.com"
+                    className="pb-[1px]"
+                    style={{ borderBottom: "1px solid var(--signal)" }}
+                  >
+                    vjvan.n@gmail.com
+                  </a>
+                </dd>
+              </div>
+              <div>
+                <dt
+                  className="mb-[6px] text-[10px] tracking-[0.18em] uppercase"
+                  style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+                >
+                  Prefer LINE
+                </dt>
+                <dd className="m-0" style={{ fontFamily: "var(--f-body), sans-serif", fontSize: 16 }}>
+                  <a
+                    href={LINE_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="pb-[1px]"
+                    style={{ borderBottom: "1px solid var(--rule)" }}
+                  >
+                    加 LINE 官方帳號
+                  </a>
+                </dd>
+              </div>
+            </dl>
+          </aside>
 
           <div>
-            <label htmlFor="description" className={labelClass}>
-              簡述你的需求{" "}
-              <span className="font-normal text-stone-400">(選填)</span>
-            </label>
-            <textarea
-              id="description"
-              rows={4}
-              value={form.description}
-              onChange={(e) => update("description", e.target.value)}
-              placeholder="目前遇到什麼問題？希望系統幫你解決什麼？"
-              className={`${inputClass} resize-none`}
-            />
+            <h1
+              className="m-0 mb-10"
+              style={{
+                fontFamily: "var(--f-zh-display), serif",
+                fontWeight: 400,
+                fontSize: "clamp(40px, 5.2vw, 72px)",
+                lineHeight: 1.12,
+                letterSpacing: "0.01em",
+              }}
+            >
+              告訴我你的
+              <br />
+              營運卡在哪裡
+            </h1>
+            <p
+              className="m-0 mb-6 max-w-[640px]"
+              style={{
+                fontFamily: "var(--f-zh-body), sans-serif",
+                fontSize: 19,
+                lineHeight: 1.85,
+                color: "var(--ink)",
+              }}
+            >
+              填完下面，一個工作天內我會從 LINE 主動聯繫你，約 30 分鐘線上諮詢。不收費，也不綁單。
+            </p>
+            <p
+              className="m-0 mb-12 max-w-[640px]"
+              style={{
+                fontFamily: "var(--f-zh-body), sans-serif",
+                fontSize: 19,
+                lineHeight: 1.85,
+                color: "var(--ink-muted)",
+              }}
+            >
+              如果你還沒想清楚，在「簡述你的需求」直接寫「我們是做什麼的、一天幾筆訂單、誰在處理」也可以。
+            </p>
+
+            <form onSubmit={handleSubmit} className="max-w-[640px]">
+              {/* honeypot field */}
+              <div className="absolute -left-[9999px]" aria-hidden="true">
+                <label htmlFor="website">Website</label>
+                <input
+                  id="website"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={form.website}
+                  onChange={(e) => update("website", e.target.value)}
+                />
+              </div>
+
+              <div className="mb-7">
+                <label htmlFor="name" style={labelStyle}>
+                  Name · 姓名
+                </label>
+                <input
+                  id="name"
+                  type="text"
+                  required
+                  value={form.name}
+                  onChange={(e) => update("name", e.target.value)}
+                  style={inputStyle}
+                />
+              </div>
+
+              <div className="mb-7">
+                <label htmlFor="company" style={labelStyle}>
+                  Company · 公司 / 品牌
+                </label>
+                <input
+                  id="company"
+                  type="text"
+                  required
+                  value={form.company}
+                  onChange={(e) => update("company", e.target.value)}
+                  style={inputStyle}
+                />
+              </div>
+
+              <div className="grid gap-7 md:grid-cols-2 mb-7">
+                <div>
+                  <label htmlFor="email" style={labelStyle}>
+                    Email
+                  </label>
+                  <input
+                    id="email"
+                    type="email"
+                    required
+                    value={form.email}
+                    onChange={(e) => update("email", e.target.value)}
+                    style={inputStyle}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="phone" style={labelStyle}>
+                    Phone · 電話
+                  </label>
+                  <input
+                    id="phone"
+                    type="tel"
+                    required
+                    value={form.phone}
+                    onChange={(e) => update("phone", e.target.value)}
+                    style={inputStyle}
+                  />
+                </div>
+              </div>
+
+              <div className="mb-7">
+                <label htmlFor="topic" style={labelStyle}>
+                  Topic · 想諮詢的方向
+                </label>
+                <select
+                  id="topic"
+                  required
+                  value={form.topic}
+                  onChange={(e) => update("topic", e.target.value)}
+                  style={{
+                    ...inputStyle,
+                    appearance: "none",
+                    backgroundImage:
+                      "url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%235F5B57%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m6%209%206%206%206-6%22%2F%3E%3C%2Fsvg%3E')",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "right 4px center",
+                    backgroundSize: "16px",
+                    paddingRight: 28,
+                  }}
+                >
+                  <option value="" disabled>
+                    請選擇
+                  </option>
+                  {TOPICS.map((t) => (
+                    <option key={t} value={t}>
+                      {t}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="mb-10">
+                <label htmlFor="description" style={labelStyle}>
+                  Description · 簡述你的需求（選填）
+                </label>
+                <textarea
+                  id="description"
+                  rows={4}
+                  value={form.description}
+                  onChange={(e) => update("description", e.target.value)}
+                  placeholder="目前遇到什麼問題？希望系統幫你解決什麼？"
+                  style={{
+                    ...inputStyle,
+                    resize: "vertical",
+                    padding: "10px 0",
+                    fontFamily: "var(--f-zh-body), sans-serif",
+                  }}
+                />
+              </div>
+
+              <div
+                className="flex flex-wrap gap-8 items-center text-[12px] tracking-[0.12em] uppercase"
+                style={{ fontFamily: "var(--f-mono), monospace" }}
+              >
+                <button
+                  type="submit"
+                  disabled={submitting}
+                  className="pb-[2px] disabled:opacity-50"
+                  style={{
+                    background: "transparent",
+                    border: "0",
+                    borderBottom: "1px solid currentColor",
+                    color: "var(--signal)",
+                    padding: "2px 0",
+                    cursor: submitting ? "not-allowed" : "pointer",
+                    fontFamily: "var(--f-mono), monospace",
+                    fontSize: 12,
+                    letterSpacing: "0.12em",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  {submitting ? "SUBMITTING..." : "SUBMIT & 加入 LINE →"}
+                </button>
+                <a
+                  href={LINE_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="pb-[2px]"
+                  style={{
+                    color: "var(--ink)",
+                    borderBottom: "1px solid currentColor",
+                  }}
+                >
+                  直接加 LINE
+                </a>
+              </div>
+
+              <p
+                className="mt-8 text-[13px]"
+                style={{
+                  fontFamily: "var(--f-zh-body), sans-serif",
+                  color: "var(--ink-muted)",
+                  lineHeight: 1.7,
+                }}
+              >
+                送出後會自動跳轉到 LINE。一個工作天內我會主動聯絡你。
+              </p>
+            </form>
           </div>
-
-          <button
-            type="submit"
-            disabled={submitting}
-            className="w-full rounded-full bg-action px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-action/15 transition-all duration-200 hover:-translate-y-0.5 hover:bg-action-hover disabled:opacity-50 disabled:hover:translate-y-0"
-          >
-            {submitting ? "送出中..." : "送出並加入 LINE 諮詢"}
-          </button>
-
-          <p className="text-center text-xs leading-5 text-stone-500">
-            送出後會自動跳轉到 LINE，我會在一個工作天內回覆你。
-          </p>
-        </form>
-      </section>
+        </div>
+      </div>
     </div>
   );
 }

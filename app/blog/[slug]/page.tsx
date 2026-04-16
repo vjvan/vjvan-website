@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return {};
 
   return {
-    title: `${post.meta.title}｜VJVAN 唯捷允雷`,
+    title: post.meta.title,
     description: post.meta.description,
     openGraph: {
       title: post.meta.title,
@@ -199,13 +199,13 @@ export default async function BlogPostPage({ params }: Props) {
                   borderTop: "1px solid var(--rule)",
                 }}
               >
-                <a
-                  href="mailto:vjvan.n@gmail.com?subject=%E8%AB%AE%E8%A9%A2%20vjvan.com"
+                <Link
+                  href="/consult"
                   className="pb-[2px]"
                   style={{ color: "var(--signal)", borderBottom: "1px solid currentColor" }}
                 >
                   預約諮詢 →
-                </a>
+                </Link>
                 <Link
                   href="/services"
                   className="pb-[2px]"
