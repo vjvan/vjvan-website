@@ -101,13 +101,43 @@ export default function AboutPage() {
                     </a>
                     <span style={{ color: "var(--ink-muted)" }}>·</span>
                     <a
-                      href="https://www.youtube.com/@vjvan"
+                      href="https://www.youtube.com/@%E5%85%81%E9%9B%B7"
                       target="_blank"
                       rel="noreferrer"
                       className="pb-[1px]"
                       style={{ borderBottom: "1px solid var(--rule)" }}
                     >
                       YouTube
+                    </a>
+                    <span style={{ color: "var(--ink-muted)" }}>·</span>
+                    <a
+                      href="https://www.instagram.com/vjvan_n"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="pb-[1px]"
+                      style={{ borderBottom: "1px solid var(--rule)" }}
+                    >
+                      Instagram
+                    </a>
+                    <span style={{ color: "var(--ink-muted)" }}>·</span>
+                    <a
+                      href="https://x.com/vjvan_n"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="pb-[1px]"
+                      style={{ borderBottom: "1px solid var(--rule)" }}
+                    >
+                      X
+                    </a>
+                    <span style={{ color: "var(--ink-muted)" }}>·</span>
+                    <a
+                      href="https://www.facebook.com/vjvan"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="pb-[1px]"
+                      style={{ borderBottom: "1px solid var(--rule)" }}
+                    >
+                      Facebook
                     </a>
                     <span style={{ color: "var(--ink-muted)" }}>·</span>
                     <a

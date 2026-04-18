@@ -98,11 +98,12 @@ const personJsonLd = {
   email: "vjvan.n@gmail.com",
   sameAs: [
     "https://www.threads.net/@vjvan_n",
-    "https://www.youtube.com/@vjvan",
+    "https://www.youtube.com/@%E5%85%81%E9%9B%B7",
     "https://www.linkedin.com/in/vjvan",
     "https://github.com/vjvan",
     "https://x.com/vjvan_n",
     "https://www.instagram.com/vjvan_n",
+    "https://www.facebook.com/vjvan",
   ],
   knowsAbout: [
     "AI 商業系統",

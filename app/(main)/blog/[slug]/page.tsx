@@ -83,11 +83,12 @@ export default async function BlogPostPage({ params }: Props) {
       image: "https://www.vjvan.com/portrait.png",
       sameAs: [
         "https://www.threads.net/@vjvan_n",
-        "https://www.youtube.com/@vjvan",
+        "https://www.youtube.com/@%E5%85%81%E9%9B%B7",
         "https://www.linkedin.com/in/vjvan",
         "https://github.com/vjvan",
         "https://x.com/vjvan_n",
         "https://www.instagram.com/vjvan_n",
+        "https://www.facebook.com/vjvan",
       ],
     },
     publisher: {
