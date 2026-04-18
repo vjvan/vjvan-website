@@ -137,7 +137,10 @@ export default function PromptToPixelZhPage() {
               </div>
 
               <h1 className="display">
-                一個人也能跑完 <em>整條 AI</em> 影片產線
+                一個人<br />
+                也能跑完<br />
+                <em>整條 AI</em><br />
+                影片產線
               </h1>
 
               <p className="hero-sub-zh">
