@@ -50,6 +50,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.8,
     },
+    {
+      url: `${BASE}/courses/prompt-to-pixel`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+      alternates: {
+        languages: {
+          "zh-TW": `${BASE}/courses/prompt-to-pixel`,
+          en: `${BASE}/en/courses/prompt-to-pixel`,
+          "x-default": `${BASE}/courses/prompt-to-pixel`,
+        },
+      },
+    },
+    {
+      url: `${BASE}/en/courses/prompt-to-pixel`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+      alternates: {
+        languages: {
+          "zh-TW": `${BASE}/courses/prompt-to-pixel`,
+          en: `${BASE}/en/courses/prompt-to-pixel`,
+          "x-default": `${BASE}/courses/prompt-to-pixel`,
+        },
+      },
+    },
     ...blogEntries,
   ];
 }
