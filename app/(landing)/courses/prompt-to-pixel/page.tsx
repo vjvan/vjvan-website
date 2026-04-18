@@ -468,7 +468,8 @@ export default function PromptToPixelZhPage() {
               </div>
               <div>
                 <h2 className="display">
-                  這條產線 <em>是我自己每天在用的</em>
+                  這條產線<br />
+                  <em>是我自己每天在用的</em>
                 </h2>
               </div>
               <p className="sub tc-serif">
@@ -654,7 +655,9 @@ export default function PromptToPixelZhPage() {
             <header className="terms-head">
               <span className="eyebrow">§ 09 — Founding Offer</span>
               <h2 className="display">
-                前 100 位 <em>Founding Member</em> 終身鎖價
+                前 100 位<br />
+                <em>Founding Member</em><br />
+                終身鎖價
               </h2>
             </header>
 
