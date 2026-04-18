@@ -4,8 +4,6 @@ import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
-import Nav from "@/components/layout/Nav";
-import Footer from "@/components/layout/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
 
 const display = Instrument_Serif({
@@ -175,11 +173,7 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
-        <SmoothScroll>
-          <Nav />
-          <main className="min-h-screen">{children}</main>
-          <Footer />
-        </SmoothScroll>
+        <SmoothScroll>{children}</SmoothScroll>
         <Analytics />
         <SpeedInsights />
       </body>
