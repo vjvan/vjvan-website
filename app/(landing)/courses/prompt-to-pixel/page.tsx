@@ -203,7 +203,7 @@ export default function PromptToPixelZhPage() {
           <div className="wrap">
             <span className="label">By the editor</span>
             <span className="body-line">
-              背後是 988 廚房 B2B、萊克靚汽車美容、電商多平台整合等正在付費的真實客戶案。
+              背後是食品批發 B2B、汽車美容預約、電商多平台整合等真實產業付費客戶案。
             </span>
             <span className="byline">Built by vjvan.com</span>
           </div>
@@ -276,12 +276,12 @@ export default function PromptToPixelZhPage() {
               <div className="chapter-body">
                 <div className="eyebrow">把靜態動起來</div>
                 <h3>
-                  Video <em>— fal.ai · Veo 3.1 · Remotion · video-cut</em>
+                  Video <em>— fal.ai · Veo 3.1 · Remotion · auto-edit</em>
                 </h3>
                 <p className="zh-title">用 code 跑，不是用滑鼠拖。</p>
                 <p className="body tc">
                   用 fal.ai 串 Veo 3.1 把靜態影像動起來，用 Remotion 程式化疊層字卡與轉場，
-                  用自建的 video-cut skill 自動剪接口播內容。每一環節都有 code 可跑、有 workflow 可複製。
+                  用自動化流程剪接口播內容。每一環節都有 code 可跑、有 workflow 可複製。
                 </p>
               </div>
             </article>
@@ -380,7 +380,7 @@ export default function PromptToPixelZhPage() {
                     每一個 skill，都是允雷自己在服務付費客戶時正在用的真實資產。
                   </p>
                   <p className="clause-body zh-only">
-                    988 廚房、萊克靚汽車美容、電商多平台整合背後的技術，都是這條產線的一部分。
+                    食品批發 B2B、汽車美容預約、電商多平台整合背後的技術,都是這條產線的一部分。
                   </p>
                 </div>
                 <div className="terms">
@@ -472,12 +472,12 @@ export default function PromptToPixelZhPage() {
                 </h2>
               </div>
               <p className="sub tc-serif">
-                不是把公開資訊整理一下的通用 AI 課，是 vjvan.com、988 廚房與顧問業務背後那條實際在跑的產線。
+                不是把公開資訊整理一下的通用 AI 課,是 vjvan.com 與顧問業務背後那條實際在跑的產線。
               </p>
             </header>
             <p className="body tc" style={{ maxWidth: "64ch" }}>
-              我花了六個月，把 Claude Code、Weavy.ai、fal.ai、Veo 3.1、Remotion、以及自建的
-              video-cut skill 整合在一起，做出一條 Prompt 進去、Pixel 出來的自動化產線。
+              我花了六個月，把 Claude Code、Weavy.ai、fal.ai、Veo 3.1、Remotion 整合在一起，
+              做出一條 Prompt 進去、Pixel 出來的自動化產線。
             </p>
             <p className="body tc" style={{ maxWidth: "64ch" }}>
               現在我把整條產線打開給你看。不是理論，是真實可跑的 code、真實可複製的 workflow、真實已經發佈的成品。
@@ -503,8 +503,8 @@ export default function PromptToPixelZhPage() {
             </header>
             <ul className="bullets">
               <li>一個可跑通的 AI 影片工作環境（Claude Code、ffmpeg、fal.ai、Notion DB）</li>
-              <li>一套 video-cut skill 自動剪接流程，78 秒口播 20 秒內剪成 51 秒成品</li>
-              <li>自動中文字幕 + 專有名詞字典修正 + 硬燒字幕的完整流程</li>
+              <li>一套口播自動剪接流程，讓長口播秒變成品</li>
+              <li>自動中英字幕工作流，含專有名詞修正</li>
               <li>AI 貼紙 B-roll 疊圖工作流，讓口播影片自帶視覺裝飾</li>
               <li>Weavy.ai 節點式角色一致性工作流，一次產 10 到 20 張成套素材</li>
               <li>Veo 3.1 image to video 的 prompt 系統</li>
@@ -567,18 +567,17 @@ export default function PromptToPixelZhPage() {
             <div className="list-grid">
               <article className="list-card">
                 <div className="k">Case 01 · Skill</div>
-                <div className="t">video-cut skill</div>
+                <div className="t">口播自動剪接流程</div>
                 <div className="d">
-                  自建口播自動剪接 skill。78 秒啤酒品嚐剪成 51 秒，剪除率 34.8%。
-                  ffmpeg silencedetect 雙路偵測、字典修正、libass 硬燒字幕、AI 貼紙 B-roll 三階段全鏈完成。
+                  自動剪除靜音、修正字幕專有名詞、字幕燒錄、AI 貼紙 B-roll 的端到端流程。
                 </div>
               </article>
               <article className="list-card">
                 <div className="k">Case 02 · Client</div>
-                <div className="t">988 廚房 B2B 補貨系統</div>
+                <div className="t">B2B 補貨系統(食品批發)</div>
                 <div className="d">
-                  LINE LIFF + Supabase + Edge Function + n8n，含管理後台、推薦引擎、AI 智慧補貨。
-                  目前客戶實機測試中。
+                  LINE 內自助下單 + 管理後台 + 自動化通知,含補貨建議模組。
+                  客戶實機測試中。
                 </div>
               </article>
               <article className="list-card">

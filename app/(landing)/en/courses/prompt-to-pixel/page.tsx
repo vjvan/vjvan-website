@@ -194,8 +194,8 @@ export default function PromptToPixelEnPage() {
           <div className="wrap">
             <span className="label">By the editor</span>
             <span className="body-line">
-              The same pipeline behind 988 Kitchen B2B, Laikijing Auto Detailing and multi-platform
-              e-commerce — all live, paying engagements.
+              The same pipeline behind food-wholesale B2B, auto-detailing booking and multi-platform
+              e-commerce — real paying engagements.
             </span>
             <span className="byline">Built by vjvan.com</span>
           </div>
@@ -268,12 +268,12 @@ export default function PromptToPixelEnPage() {
               <div className="chapter-body">
                 <div className="eyebrow">Animate, edit, overlay — in code</div>
                 <h3>
-                  Video <em>— fal.ai · Veo 3.1 · Remotion · video-cut</em>
+                  Video <em>— fal.ai · Veo 3.1 · Remotion · auto-edit</em>
                 </h3>
                 <p className="body">
                   fal.ai brings Veo 3.1 to life by animating your Weavy assets. Remotion handles
-                  programmatic titles, transitions and brand overlays. The custom video-cut skill
-                  auto-edits your voice-over. Every step is runnable code. Every workflow is copyable.
+                  programmatic titles, transitions and brand overlays. An automated pipeline
+                  edits your voice-over. Every step is runnable code. Every workflow is copyable.
                 </p>
               </div>
             </article>
@@ -371,7 +371,7 @@ export default function PromptToPixelEnPage() {
                     paying clients.
                   </p>
                   <p className="clause-body">
-                    988 Kitchen, Laikijing Auto Detailing, multi-platform e-commerce — real engagements.
+                    Food-wholesale B2B, auto-detailing booking, multi-platform e-commerce — real engagements.
                     The pipeline you learn is the same pipeline powering them.
                   </p>
                 </div>
@@ -465,13 +465,13 @@ export default function PromptToPixelEnPage() {
               </div>
               <p className="sub">
                 Not a course stitched from public blog posts — the actual video production line behind
-                vjvan.com, 988 Kitchen and my consulting work.
+                vjvan.com and my consulting work.
               </p>
             </header>
             <p className="body" style={{ maxWidth: "64ch" }}>
-              I spent six months integrating Claude Code, Weavy.ai, fal.ai, Veo 3.1, Remotion and a
-              custom-built video-cut skill into a single automated pipeline. Raw prompt goes in. A
-              publishable short video comes out.
+              I spent six months integrating Claude Code, Weavy.ai, fal.ai, Veo 3.1 and Remotion
+              into a single automated pipeline. Raw prompt goes in. A publishable short video
+              comes out.
             </p>
             <p className="body" style={{ maxWidth: "64ch" }}>
               Now I am opening the entire pipeline to you inside P2P AI Lab. Not theory — real code,
@@ -498,8 +498,8 @@ export default function PromptToPixelEnPage() {
             </header>
             <ul className="bullets">
               <li className="en">A fully working AI video environment with Claude Code, ffmpeg, fal.ai, Notion DB.</li>
-              <li className="en">A video-cut flow that turns a 78s voice-over into a 51s polished cut in under 20s.</li>
-              <li className="en">An automatic bilingual subtitle pipeline with dictionary correction and hard-burn.</li>
+              <li className="en">A voice-over auto-edit flow that turns long-form recordings into polished cuts.</li>
+              <li className="en">An automatic bilingual subtitle pipeline with proper-noun correction.</li>
               <li className="en">An AI sticker B-roll workflow that auto-generates visual overlays from your script.</li>
               <li className="en">A Weavy.ai node workflow producing 10–20 reference images per run.</li>
               <li className="en">A Veo 3.1 image-to-video prompt system that animates Weavy assets.</li>
@@ -562,19 +562,18 @@ export default function PromptToPixelEnPage() {
             <div className="list-grid">
               <article className="list-card">
                 <div className="k">Case 01 · Skill</div>
-                <div className="t en">video-cut skill</div>
+                <div className="t en">Voice-over auto-edit pipeline</div>
                 <div className="d en">
-                  Custom voice-over auto-editing skill. Live test: 78s → 51s (34.8% reduction). ffmpeg
-                  silence detection + SRT gap union, dictionary correction, libass hard-burn, AI
-                  sticker B-roll — all shipped and in daily use.
+                  End-to-end flow: auto-trim silence, fix subtitle proper nouns, burn subtitles,
+                  AI sticker B-roll — shipped and in daily use.
                 </div>
               </article>
               <article className="list-card">
                 <div className="k">Case 02 · Client</div>
-                <div className="t en">988 Kitchen B2B Restock</div>
+                <div className="t en">B2B Restock (Food Wholesale)</div>
                 <div className="d en">
-                  LINE LIFF + Supabase + Edge Function + n8n. Admin dashboard, recommendation engine,
-                  AI restocking intelligence. Currently in live client testing.
+                  LINE in-app self-serve ordering + admin dashboard + automated notifications,
+                  including restocking suggestion module. Currently in live client testing.
                 </div>
               </article>
               <article className="list-card">
