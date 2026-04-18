@@ -131,7 +131,7 @@ export default function AboutPage() {
                     </a>
                     <span style={{ color: "var(--ink-muted)" }}>·</span>
                     <a
-                      href="https://www.facebook.com/vvstw/"
+                      href="https://www.facebook.com/vjvan.tw"
                       target="_blank"
                       rel="noreferrer"
                       className="pb-[1px]"

@@ -103,7 +103,7 @@ const personJsonLd = {
     "https://github.com/vjvan",
     "https://x.com/vjvan_n",
     "https://www.instagram.com/vjvan_n",
-    "https://www.facebook.com/vvstw/",
+    "https://www.facebook.com/vjvan.tw",
   ],
   knowsAbout: [
     "AI 商業系統",
