@@ -15,8 +15,9 @@
 }
 
 .landing-root {
-  --lp-display: var(--lp-display), var(--f-zh-display), "Noto Serif TC", Georgia, serif;
-  --lp-body: var(--lp-body), var(--f-zh-body), "Noto Sans TC", system-ui, sans-serif;
+  --lp-display: var(--f-zh-display), var(--f-display), "Noto Serif TC", Georgia, serif;
+  --lp-display-en: var(--f-display), var(--f-zh-display), "Noto Serif TC", Georgia, serif;
+  --lp-body: var(--f-zh-body), var(--f-body), "Noto Sans TC", system-ui, sans-serif;
   background: var(--paper);
   color: var(--ink);
   font-family: var(--lp-body);
@@ -52,9 +53,14 @@
 
 .landing-root .display {
   font-family: var(--lp-display);
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-weight: 400;
+  letter-spacing: -0.005em;
   line-height: 0.98;
+}
+
+.landing-root .display em {
+  font-family: var(--lp-display-en);
+  font-style: italic;
 }
 
 .landing-root .display-tc {
