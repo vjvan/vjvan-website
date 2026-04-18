@@ -24,6 +24,7 @@
   line-height: 1.55;
   font-feature-settings: "ss01", "cv11";
   letter-spacing: -0.005em;
+  font-synthesis-style: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -686,7 +687,7 @@
 .landing-root .terms-foot .signature small {
   display: block;
   font-family: var(--f-mono);
-  font-style: normal;
+  font-style: italic;
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
