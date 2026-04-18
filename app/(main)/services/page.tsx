@@ -32,7 +32,7 @@ const services = [
     num: "N° 03",
     titleZh: "SEO · GEO · AEO",
     titleEn: "consulting",
-    desc: "針對 ChatGPT / Perplexity 時代的搜尋，重構網站的 llms.txt、結構化資料、內容策略。你的公司要能被 AI 引用。",
+    desc: "當客戶用 AI 搜尋你的產業時，你的公司要是第一個被引用的答案。",
   },
   {
     num: "N° 04",
