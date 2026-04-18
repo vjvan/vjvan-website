@@ -6,6 +6,7 @@ import remarkGfm from "remark-gfm";
 import AuthorBox from "@/components/mdx/AuthorBox";
 import { mdxComponents } from "@/components/mdx";
 import { getAllPosts, getPostBySlug } from "@/lib/mdx";
+import type { FAQItem } from "@/lib/mdx";
 import JsonLd from "@/components/JsonLd";
 import DateRail from "@/components/blog/DateRail";
 import TableOfContents from "@/components/blog/TableOfContents";
@@ -119,10 +120,40 @@ export default async function BlogPostPage({ params }: Props) {
 
   const readingTimeShort = post.meta.readingTime.replace("分鐘閱讀", "MIN");
 
+  const faqJsonLd = post.meta.faq && post.meta.faq.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: post.meta.faq.map((item: FAQItem) => ({
+          "@type": "Question",
+          name: item.q,
+          acceptedAnswer: { "@type": "Answer", text: item.a },
+        })),
+      }
+    : null;
+
+  const howToJsonLd = post.meta.howTo
+    ? {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        name: post.meta.howTo.name,
+        step: post.meta.howTo.steps.map(
+          (step: { name: string; text: string }, index: number) => ({
+            "@type": "HowToStep",
+            position: index + 1,
+            name: step.name,
+            text: step.text,
+          })
+        ),
+      }
+    : null;
+
   return (
     <>
       <JsonLd id={`json-ld-article-${slug}`} data={articleJsonLd} />
       <JsonLd id={`json-ld-breadcrumb-${slug}`} data={breadcrumbJsonLd} />
+      {faqJsonLd && <JsonLd id={`json-ld-faq-${slug}`} data={faqJsonLd} />}
+      {howToJsonLd && <JsonLd id={`json-ld-howto-${slug}`} data={howToJsonLd} />}
       <div className="px-5 md:px-10">
         <div className="mx-auto max-w-[1120px] py-14 md:py-24">
           <div

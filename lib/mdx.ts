@@ -5,6 +5,11 @@ import readingTime from "reading-time";
 
 const contentDir = path.join(process.cwd(), "content/blog");
 
+export interface FAQItem {
+  q: string;
+  a: string;
+}
+
 export interface PostMeta {
   slug: string;
   title: string;
@@ -14,6 +19,11 @@ export interface PostMeta {
   published: boolean;
   readingTime: string;
   image?: string;
+  faq?: FAQItem[];
+  howTo?: {
+    name: string;
+    steps: { name: string; text: string }[];
+  };
 }
 
 function formatDate(value: unknown) {
@@ -50,6 +60,8 @@ export function getAllPosts(): PostMeta[] {
         published: data.published !== false,
         readingTime: formatReadingTime(stats.minutes),
         image: data.image || undefined,
+        faq: data.faq || undefined,
+        howTo: data.howTo || undefined,
       };
     })
     .filter((post) => post.published)
@@ -76,6 +88,8 @@ export function getPostBySlug(slug: string) {
       published: data.published !== false,
       readingTime: formatReadingTime(stats.minutes),
       image: data.image || undefined,
+      faq: data.faq || undefined,
+      howTo: data.howTo || undefined,
     },
     content,
   };
