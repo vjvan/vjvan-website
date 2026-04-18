@@ -5,11 +5,11 @@ import CtaLink from "@/components/CtaLink";
 export const metadata: Metadata = {
   title: "Cases · 系統導入案例",
   description:
-    "VJVAN 唯捷允雷實際落地的 B2B 補貨、預約、CRM、n8n 自動化案例。同一套 LINE LIFF + Supabase + n8n 架構，不同產業的業務邏輯。",
+    "VJVAN 唯捷允雷實際落地的系統導入案例，涵蓋食品批發 B2B 補貨、汽車美容預約、多門市 CRM 與自動化通知。",
   alternates: { canonical: "https://www.vjvan.com/cases" },
   openGraph: {
     title: "Cases｜VJVAN · 唯捷允雷",
-    description: "同一套技術底，不同產業的業務邏輯。",
+    description: "不同產業，同一種執行力。",
     url: "https://www.vjvan.com/cases",
     type: "website",
   },
@@ -161,9 +161,9 @@ export default function CasesPage() {
                 letterSpacing: "0.01em",
               }}
             >
-              同一套底，
+              不同產業，
               <br />
-              不同產業的業務邏輯。
+              同一種執行力。
             </h1>
             <p
               className="m-0 max-w-[640px]"
@@ -174,7 +174,7 @@ export default function CasesPage() {
                 color: "var(--ink-muted)",
               }}
             >
-              以下是 LINE LIFF + Supabase + n8n 架構在不同產業場景的導入成果。核心技術相同，差異在於業務流程怎麼設計。客戶名以產業類別代稱，細節可在諮詢時逐步展開。
+              以下是不同產業場景的導入成果。客戶名以產業類別代稱，細節可在諮詢時逐步展開。
             </p>
           </div>
 
@@ -200,8 +200,6 @@ export default function CasesPage() {
                     <span style={{ color: "var(--signal)" }}>{c.industry}</span>
                     <span>·</span>
                     <span>{c.timeline}</span>
-                    <span>·</span>
-                    <span>{c.techStack.join(" · ")}</span>
                   </div>
                   <h2
                     className="m-0 mb-4"

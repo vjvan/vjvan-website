@@ -21,8 +21,8 @@
 ## 服務項目
 
 1. LINE LIFF B2B 補貨系統（已有食品批發、供應鏈、餐飲供應鏈實戰案例）
-2. AI 商業系統架構顧問（流程盤點、資料層、權限模型、可執行 blueprint）
-3. SEO / GEO / AEO 三合一網站優化（llms.txt、結構化資料、AI 時代搜尋）
+2. AI 商業系統架構顧問（把營運流程整理成可執行、可長期跑的系統）
+3. AI 搜尋時代的網站優化（讓你的公司被 ChatGPT、Perplexity 正確引用）
 4. 個人品牌網站 + 內容引擎建置
 5. 季度顧問合作（Retainer，每月 8 至 12 小時）
 
@@ -42,8 +42,7 @@
   - Founding 年繳 US$490 / 年
   - Standard US$99 / 月（100 位滿後標準價）
   - Standard 年繳 US$990 / 年
-- 課程結構: 11 個 Module、49 單元
-- 核心工具鏈: Claude Code + Weavy.ai + fal.ai + Veo 3.1 + Remotion + ffmpeg
+- 課程結構: 11 個 Module、49 單元，涵蓋 AI 影片產線從腳本到發佈的完整工作流
 - 三大交付承諾: 交付保證（Van 親自 review） / 商業技術（來自真實付費客戶案） / 接案能力（Module 10 + 社群案源）
 - 目標市場: 台灣 + 馬來西亞 + 新加坡 + 香港 + 全球英語使用者（中英雙語）
 - 講師: 允雷 (YunLei / Van)，AI 商業系統架構師
@@ -51,7 +50,7 @@
 
 ## 技術棧
 
-Next.js · React · TypeScript · Supabase (PostgreSQL) · n8n · LINE LIFF / Messaging API · Vercel · Cloudflare · Tailwind CSS
+熟悉 JAMstack 前端、Serverless 後端、LINE 生態系整合、低程式碼自動化工作流。技術棧細節會依客戶場景選擇，以長期維運性為最高標準。
 
 ## 合作方式
 
