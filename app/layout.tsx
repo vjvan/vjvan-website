@@ -106,15 +106,11 @@ const personJsonLd = {
     "https://www.facebook.com/vjvan.tw",
   ],
   knowsAbout: [
-    "AI 商業系統",
-    "LINE LIFF 開發",
+    "AI 商業系統架構",
+    "LINE LIFF 自動化",
     "SEO",
     "GEO (Generative Engine Optimization)",
     "AEO (Answer Engine Optimization)",
-    "n8n 自動化",
-    "B2B 補貨系統",
-    "Supabase",
-    "Next.js",
   ],
   address: {
     "@type": "PostalAddress",
