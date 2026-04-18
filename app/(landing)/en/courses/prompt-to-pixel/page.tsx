@@ -7,7 +7,7 @@ const SITE_URL = "https://www.vjvan.com";
 const PATH = "/courses/prompt-to-pixel";
 
 export const metadata: Metadata = {
-  title: "P2P AI Lab — Prompt to Pixel, the One-Person AI Video Pipeline",
+  title: "P2P AI Lab · Prompt to Pixel — One-Person AI Pipeline",
   description:
     "A premium business technology academy for turning AI video into a real commercial asset. Claude Code + Weavy.ai + fal.ai + Veo 3.1 + Remotion. Founding Member US$49/mo, locked for life. Taught by YunLei, AI Business Systems Architect.",
   alternates: {
@@ -23,9 +23,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: `${SITE_URL}/en${PATH}`,
     siteName: "vjvan.com",
-    title: "P2P AI Lab — Prompt to Pixel, the One-Person AI Video Pipeline",
+    title: "P2P AI Lab · Prompt to Pixel — One-Person AI Pipeline",
     description:
-      "A full commercial pipeline for Prompt to Pixel. Founding Member US$49/mo, locked for life. Taught by YunLei.",
+      "A premium academy for turning AI video into a commercial asset. Claude Code + Weavy.ai + fal.ai + Veo 3.1 + Remotion. Founding Member US$49/mo, locked for life.",
   },
   twitter: {
     card: "summary_large_image",

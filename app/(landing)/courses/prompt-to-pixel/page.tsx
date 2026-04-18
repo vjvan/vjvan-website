@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     siteName: "vjvan.com",
     title: "P2P AI Lab | Prompt to Pixel — 一人公司的 AI 影片產線",
     description:
-      "Claude Code + Weavy.ai + fal.ai + Veo 3.1 + Remotion 的完整產線。允雷親授，前 100 位 Founding Member 終身 US$49 / 月。",
+      "Claude Code + Weavy.ai + fal.ai + Veo 3.1 + Remotion 的完整 AI 影片產線，一條可直接變現的商業資產。允雷親授，前 100 位 Founding Member 終身鎖 US$49 / 月。",
   },
   twitter: {
     card: "summary_large_image",
