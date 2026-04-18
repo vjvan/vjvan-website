@@ -154,7 +154,7 @@ export default function Home() {
                     Stack
                   </dt>
                   <dd className="m-0" style={{ fontFamily: "var(--f-body), sans-serif", fontSize: 15, lineHeight: 1.5 }}>
-                    Next.js · Supabase · n8n · LINE LIFF
+                    JAMstack · Serverless · 自動化 · LINE 生態系
                   </dd>
                 </div>
                 <div>

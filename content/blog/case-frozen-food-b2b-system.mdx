@@ -28,9 +28,9 @@ published: true
 
 用一套 LINE LIFF B2B 補貨系統，把接單、管理、通知、分析全部串起來。
 
-<FlowDiagram title="系統架構全景圖" data='{"label":"B2B 補貨系統","color":"dark","children":[{"label":"LINE LIFF 前台","sub":"客戶自助下單","color":"teal","children":[{"label":"商品瀏覽","sub":"分類 + 圖片 + 規格","color":"stone"},{"label":"一鍵重複訂購","sub":"從歷史訂單快速下單","color":"stone"}]},{"label":"CRM 管理後台","sub":"老闆即時掌握","color":"amber","children":[{"label":"訂單 + 客戶","sub":"即時同步、健康度追蹤","color":"stone"},{"label":"營運儀表板","sub":"商品排行、營收趨勢","color":"stone"}]},{"label":"n8n 自動化","sub":"重複工作交給系統","color":"teal","children":[{"label":"訂單通知","sub":"確認 + 出貨 + 到貨","color":"stone"},{"label":"智慧推薦","sub":"補貨提醒 + 流失喚回","color":"stone"}]}]}' />
+<FlowDiagram title="系統架構全景圖" data='{"label":"B2B 補貨系統","color":"dark","children":[{"label":"客戶端入口","sub":"LINE 內自助下單","color":"teal","children":[{"label":"商品瀏覽","sub":"分類 + 圖片 + 規格","color":"stone"},{"label":"一鍵重複訂購","sub":"從歷史訂單快速下單","color":"stone"}]},{"label":"管理後台","sub":"老闆即時掌握","color":"amber","children":[{"label":"訂單 + 客戶","sub":"即時同步、健康度追蹤","color":"stone"},{"label":"營運儀表板","sub":"商品排行、營收趨勢","color":"stone"}]},{"label":"自動化引擎","sub":"重複工作交給系統","color":"teal","children":[{"label":"訂單通知","sub":"確認 + 出貨 + 到貨","color":"stone"},{"label":"智慧推薦","sub":"補貨提醒 + 流失喚回","color":"stone"}]}]}' />
 
-### 前台：LINE LIFF 自助下單
+### 前台:LINE 內自助下單
 
 客戶打開 LINE 就能看到完整商品目錄（冷凍魚片、丸類、火鍋料、醬料等），選好品項、規格、數量，一鍵送出訂單。
 
@@ -49,7 +49,7 @@ published: true
 - **營收趨勢**：月對月比較，不用等月底手算
 - **客戶健康度**：紅黃綠燈標示流失風險，一目了然
 
-### 自動化：n8n 流程引擎
+### 自動化:流程引擎
 
 <Timeline title="自動化流程" data='[{"label":"即時","title":"訂單確認","detail":"客戶下單後自動推播確認通知，包含品項明細和預計出貨時間。","color":"teal"},{"label":"出貨時","title":"出貨提醒","detail":"備貨完成自動通知客戶預計到貨時間，不用人工逐一發訊。","color":"amber"},{"label":"週期性","title":"補貨提醒","detail":"根據客戶購買週期，系統自動推播「該補貨了」，附帶推薦品項。","color":"teal"},{"label":"14天+","title":"流失喚回","detail":"超過設定天數未下單的客戶，自動發送喚回訊息，挽回流失。","color":"amber"}]' />
 
@@ -68,17 +68,11 @@ published: true
 | 通知機制 | 人工逐一通知 | 自動推播訂單確認、出貨提醒、補貨提醒 |
 | 營運數據 | 月底手算 | 即時儀表板，隨時掌握 |
 
-## 這套系統的技術架構是什麼？
+## 這套系統的架構原則是什麼？
 
-| 層級 | 技術 | 角色 |
-|------|------|------|
-| 前台 | LINE LIFF (React) | 客戶自助下單介面 |
-| 資料庫 | Supabase (PostgreSQL) | 訂單、客戶、商品資料，含 Row Level Security |
-| 後台 | Next.js | CRM 管理儀表板 |
-| 自動化 | n8n | 通知推播、補貨提醒、流失喚回 |
-| 部署 | Vercel + Cloudflare | 全球 CDN、自動部署 |
+整套系統圍繞 LINE 生態系打造,採雲原生 + 前後端分離架構,資料層含細粒度權限控制。技術選型依客戶需求、預算與維運能力彈性調整,以「三年後還能跑」為最高標準。
 
-整套系統的月維護成本極低：Supabase 免費方案可涵蓋初期用量，Vercel 靜態部署免費，LINE 基本方案 NT$800/月 含 3,000 則推播。
+月維護成本極低,適合中小企業長期負擔,不會因為系統導入就扛起重成本。
 
 ## 為什麼選擇 LINE LIFF 而不是獨立 App？
 

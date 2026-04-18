@@ -4,7 +4,7 @@ import JsonLd from "@/components/JsonLd";
 export const metadata: Metadata = {
   title: "About · 關於",
   description:
-    "VJVAN 唯捷允雷有限公司由允雷創辦，專注把散在 LINE、Google Sheet、ERP、n8n 的營運流程整理成能長期跑的系統。",
+    "VJVAN 唯捷允雷有限公司由允雷創辦,專注把中小企業散落在不同工具與對話裡的營運流程,整理成能長期自動運行的系統。",
   alternates: { canonical: "https://www.vjvan.com/about" },
   openGraph: {
     title: "關於 VJVAN · 唯捷允雷",
@@ -68,7 +68,7 @@ export default function AboutPage() {
                     Practice
                   </dt>
                   <dd className="m-0" style={{ fontFamily: "var(--f-zh-body), sans-serif", fontSize: 16, lineHeight: 1.55 }}>
-                    AI 商業系統設計、LINE LIFF、SEO/GEO/AEO 顧問
+                    AI 商業系統設計、LINE 生態整合、AI 搜尋時代網站顧問
                   </dd>
                 </div>
                 <div>

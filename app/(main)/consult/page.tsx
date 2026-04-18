@@ -5,7 +5,7 @@ import { useState } from "react";
 const TOPICS = [
   "LINE LIFF 系統建置",
   "CRM 管理後台",
-  "n8n 自動化流程",
+  "自動化流程",
   "AI 導入策略",
   "多平台整合",
   "其他",

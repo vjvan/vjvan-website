@@ -6,11 +6,11 @@ import JsonLd from "@/components/JsonLd";
 export const metadata: Metadata = {
   title: "Writing · 觀點",
   description:
-    "VJVAN 唯捷允雷的觀點筆記。關於 AI 商業系統、LINE LIFF、SEO/GEO/AEO、自動化與系統架構的實戰書寫。",
+    "VJVAN 唯捷允雷的觀點筆記。關於中小企業 AI 系統、LINE 生態、AI 搜尋時代與自動化架構的實戰書寫。",
   alternates: { canonical: "https://www.vjvan.com/blog" },
   openGraph: {
     title: "Writing｜VJVAN · 唯捷允雷",
-    description: "AI 商業系統、LINE LIFF、自動化與系統架構的實戰書寫。",
+    description: "AI 商業系統、LINE 生態與自動化架構的實戰書寫。",
     url: "https://www.vjvan.com/blog",
     type: "website",
   },
