@@ -708,8 +708,8 @@ export default function PromptToPixelEnPage() {
                     <dd>Skool community + Van Q&amp;A</dd>
                   </div>
                   <div>
-                    <dt>06 · Refund</dt>
-                    <dd>7-day no-questions refund</dd>
+                    <dt>06 · Cancel</dt>
+                    <dd>Cancel anytime · Skool no-refund policy</dd>
                   </div>
                 </dl>
               </div>
@@ -870,8 +870,12 @@ const FAQS_EN: { q: string; a: string }[] = [
     a: "Yes. Demos use macOS, but Claude Code, ffmpeg and Python all run on Windows via WSL. You may need to handle small environment differences yourself.",
   },
   {
-    q: "Refund policy?",
-    a: "Seven-day no-questions-asked refund. DM me within seven days — full refund, no reason needed.",
+    q: "Refunds and cancellation?",
+    a: "Skool doesn't support refunds — you can only cancel future billing. After cancellation you keep full access until the current period ends. To help you decide before paying, Module 0 (3 units) is free — join the waitlist to get the preview link, then decide.",
+  },
+  {
+    q: "Does the Founding Member price stay locked forever?",
+    a: "As long as you remain subscribed, US$49 / month or US$490 / year stays valid. If you cancel and re-join later, you'll pay the standard price (US$99 / month or US$990 / year) at that time — the Founding seat is not reserved. This is Skool's grandfather pricing mechanism; it's not something I can override.",
   },
   {
     q: "Will the course be updated?",

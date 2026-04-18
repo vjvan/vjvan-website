@@ -144,12 +144,14 @@ export default function PromptToPixelZhPage() {
               </h1>
 
               <p className="hero-sub-zh">
-                Prompt to Pixel — 從文字到影像，一人公司的 AI 影片產線
+                Prompt to Pixel —<br />
+                從文字到影像<br />
+                一人公司的 AI 影片產線
               </p>
 
               <p className="lede hero-lede">
-                P2P AI Lab 是為專業創作者、行銷代理、個人品牌與顧問打造的 AI
-                影片商業技術學院。允雷親自交付一整條可商用、可接案、可變現的 Prompt to Pixel
+                <span style={{ whiteSpace: "nowrap" }}>P2P AI Lab</span> 是為專業創作者、行銷代理、個人品牌與顧問打造的 AI
+                影片商業技術學院。允雷親自交付一整條可商用、可接案、可變現的 <span style={{ whiteSpace: "nowrap" }}>Prompt to Pixel</span>
                 產線。
               </p>
 
@@ -224,7 +226,7 @@ export default function PromptToPixelZhPage() {
                 </h2>
               </div>
               <p className="sub tc-serif">
-                P2P 不只是縮寫。它代表 AI 影片生產的完整鏈路，也是 P2P AI Lab 的教學主軸。
+                P2P 不只是縮寫。它代表 AI 影片生產的完整鏈路，也是 <span style={{ whiteSpace: "nowrap" }}>P2P AI Lab</span> 的教學主軸。
               </p>
             </header>
 
@@ -309,7 +311,7 @@ export default function PromptToPixelZhPage() {
               <p>
                 你不是在看教學。你是在學會跑一條屬於你自己的 AI 影片產線，並把它變成能幫你賺錢的商業資產。
               </p>
-              <div className="attribution">— 允雷 · P2P AI Lab, Editor</div>
+              <div className="attribution">— 允雷 · <span style={{ whiteSpace: "nowrap" }}>P2P AI Lab</span>, Editor</div>
             </blockquote>
           </div>
         </section>
@@ -325,7 +327,7 @@ export default function PromptToPixelZhPage() {
               </div>
               <div>
                 <h2 className="display">
-                  為什麼 P2P AI Lab <em>值得 US$99</em>
+                  為什麼 <span style={{ whiteSpace: "nowrap" }}>P2P AI Lab</span> <em>值得 US$99</em>
                 </h2>
               </div>
               <p className="sub tc-serif">
@@ -345,7 +347,7 @@ export default function PromptToPixelZhPage() {
                   </h3>
                   <p className="clause-zh">交付保證 — 我們不只教，我們確保你會。</p>
                   <p className="clause-body zh-only">
-                    P2P AI Lab 不接受「我看完了但還不會」這種結果。每個模組都有實戰作業，
+                    <span style={{ whiteSpace: "nowrap" }}>P2P AI Lab</span> 不接受「我看完了但還不會」這種結果。每個模組都有實戰作業，
                     每個作業都有允雷親自 review 加社群 peer review。
                   </p>
                   <p className="clause-body zh-only">
@@ -531,7 +533,7 @@ export default function PromptToPixelZhPage() {
                 </h2>
               </div>
               <p className="sub tc-serif">
-                所有課程分階段上架，P2P AI Lab Founding Member 可第一時間看到新內容。
+                所有課程分階段上架，<span style={{ whiteSpace: "nowrap" }}>P2P AI Lab</span> <span style={{ whiteSpace: "nowrap" }}>Founding Member</span> 可第一時間看到新內容。
               </p>
             </header>
             <div className="list-grid">
@@ -724,10 +726,10 @@ export default function PromptToPixelZhPage() {
                     </dd>
                   </div>
                   <div>
-                    <dt>06 · Refund</dt>
+                    <dt>06 · Cancel</dt>
                     <dd>
-                      7-day no-questions refund
-                      <span className="zh">7 天內無條件退費</span>
+                      Cancel anytime · Skool no-refund policy
+                      <span className="zh">隨時可取消 · Skool 平台不支援退費</span>
                     </dd>
                   </div>
                 </dl>
@@ -832,11 +834,15 @@ export default function PromptToPixelZhPage() {
         <section className="final-band">
           <div className="wrap">
             <h2>
-              準備好跑你的 <em>Prompt to Pixel</em> 產線了嗎
+              準備好跑你的<br />
+              <em style={{ whiteSpace: "nowrap" }}>Prompt to Pixel</em> <span style={{ whiteSpace: "nowrap" }}>產線了嗎</span>
             </h2>
-            <p className="sub-zh">Founding Member 只有 100 位。加入 Waitlist，開站第一時間通知你。</p>
+            <p className="sub-zh">
+              <span style={{ whiteSpace: "nowrap" }}>Founding Member</span> 只有 <span style={{ whiteSpace: "nowrap" }}>100 位</span>。<br />
+              加入 Waitlist，<span style={{ whiteSpace: "nowrap" }}>開站第一時間通知你</span>。
+            </p>
             <a className="cta accent" href="#waitlist">
-              加入 P2P AI Lab Waitlist <span className="arrow">→</span>
+              加入 <span style={{ whiteSpace: "nowrap" }}>P2P AI Lab</span> Waitlist <span className="arrow">→</span>
             </a>
           </div>
         </section>
@@ -899,7 +905,7 @@ const FAQS_ZH: { q: string; a: string }[] = [
   },
   {
     q: "這門課需要哪些付費工具",
-    a: "fal.ai（依使用量計費，一般學員每月 5 到 20 美元）、Claude 訂閱、Weavy.ai 訂閱、Notion（免費版夠用）、ffmpeg（免費）、Remotion（免費版夠用）。P2P AI Lab 的會員費不含在這些工具之內。",
+    a: "fal.ai（依使用量計費，一般學員每月 5 到 20 美元）、Claude 訂閱、Weavy.ai 訂閱、Notion（免費版夠用）、ffmpeg（免費）、Remotion（免費版夠用）。P2P\u00A0AI\u00A0Lab 的會員費不含在這些工具之內。",
   },
   {
     q: "課程會一次全部上架嗎",
@@ -907,15 +913,19 @@ const FAQS_ZH: { q: string; a: string }[] = [
   },
   {
     q: "我已經會用 CapCut 了還需要這門課嗎",
-    a: "CapCut 解決的是單支影片，P2P AI Lab 解決的是整條產線。一週只做一支 CapCut 夠用；想一週做 3 到 5 支而且不想被剪接綁住，這條產線就是為你設計的。",
+    a: "CapCut 解決的是單支影片，P2P\u00A0AI\u00A0Lab 解決的是整條產線。一週只做一支 CapCut 夠用；想一週做 3 到 5 支而且不想被剪接綁住，這條產線就是為你設計的。",
   },
   {
     q: "我可以用 Windows 嗎",
     a: "可以，但主要示範環境是 macOS。Claude Code、ffmpeg、Python 在 Windows WSL 都能跑，你需要自己處理少量環境差異。",
   },
   {
-    q: "退費政策",
-    a: "7 天無條件退費。如果你在 7 天內發現這不是你要的，直接私訊我，全額退款，不需要理由。",
+    q: "退費政策 / 退訂規則",
+    a: "Skool 平台不支援退費，只能取消未來訂閱。取消後當期訂閱維持完整存取權，到期停止扣款。為了讓你加入前就能判斷是不是自己要的，Module 0 三個單元完全免費試看，加入 Waitlist 即可拿到連結，先看再決定。",
+  },
+  {
+    q: "Founding Member 價格能一直鎖住嗎",
+    a: "只要持續訂閱，US$49 / 月或 US$490 / 年就一直有效。如果中途退訂，再次加入會以當時的標準價（US$99 / 月 / US$990 / 年）計算，Founding 名額不會保留。這是 Skool 平台的 grandfather pricing 機制，允雷無法繞過。加入前請先評估節奏。",
   },
   {
     q: "課程會更新嗎",
@@ -927,7 +937,7 @@ const FAQS_ZH: { q: string; a: string }[] = [
   },
   {
     q: "我在馬新港 / 海外可以加入嗎",
-    a: "當然可以。P2P AI Lab 本來就是為國際華語圈 + 全球英語使用者設計。所有教學內容中英雙語支援，Skool 社群也有中英雙語討論區。定價以 USD 為主，方便國際刷卡。",
+    a: "當然可以。P2P\u00A0AI\u00A0Lab 本來就是為國際華語圈 + 全球英語使用者設計。所有教學內容中英雙語支援，Skool 社群也有中英雙語討論區。定價以 USD 為主，方便國際刷卡。",
   },
   {
     q: "我學完真的能接到案嗎",
