@@ -56,11 +56,13 @@
   font-weight: 400;
   letter-spacing: -0.005em;
   line-height: 0.98;
+  text-wrap: balance;
 }
 
 .landing-root .display em {
   font-family: var(--lp-display-en);
   font-style: italic;
+  white-space: nowrap;
 }
 
 .landing-root .display-tc {
