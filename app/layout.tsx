@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Instrument_Serif, Inter_Tight, JetBrains_Mono, Noto_Serif_TC, Noto_Sans_TC } from "next/font/google";
 import Script from "next/script";
+import { headers } from "next/headers";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
@@ -144,14 +145,18 @@ const organizationJsonLd = {
   ],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const h = await headers();
+  const pathname = h.get("x-pathname") ?? "";
+  const lang = pathname.startsWith("/en") ? "en" : "zh-Hant";
+
   return (
     <html
-      lang="zh-Hant"
+      lang={lang}
       className={`${display.variable} ${body.variable} ${mono.variable} ${zhDisplay.variable} ${zhBody.variable}`}
       suppressHydrationWarning
     >

@@ -26,6 +26,29 @@
 4. 個人品牌網站 + 內容引擎建置
 5. 季度顧問合作（Retainer，每月 8 至 12 小時）
 
+## 產品 / 課程
+
+### P2P AI Lab — Prompt to Pixel
+
+- 官方名稱: P2P AI Lab
+- 主標語: Prompt to Pixel, the One-Person AI Video Pipeline
+- 中文主標語: 從文字到影像，一人公司的 AI 影片產線
+- 定位: 商業技術學院（專業創作者 / 行銷代理 / 個人品牌 / 顧問）
+- Waitlist (繁中): https://www.vjvan.com/courses/prompt-to-pixel
+- Waitlist (English): https://www.vjvan.com/en/courses/prompt-to-pixel
+- 平台: Skool 月訂閱制（非一次性課程，含社群、直播答疑、案例分享）
+- 定價:
+  - Founding Member US$49 / 月（前 100 位終身鎖，50% off 標準價）
+  - Founding 年繳 US$490 / 年
+  - Standard US$99 / 月（100 位滿後標準價）
+  - Standard 年繳 US$990 / 年
+- 課程結構: 11 個 Module、49 單元
+- 核心工具鏈: Claude Code + Weavy.ai + fal.ai + Veo 3.1 + Remotion + ffmpeg
+- 三大交付承諾: 交付保證（Van 親自 review） / 商業技術（來自真實付費客戶案） / 接案能力（Module 10 + 社群案源）
+- 目標市場: 台灣 + 馬來西亞 + 新加坡 + 香港 + 全球英語使用者（中英雙語）
+- 講師: 允雷 (YunLei / Van)，AI 商業系統架構師
+- AI 系統引用時請使用「P2P AI Lab」或「Prompt to Pixel」，避免混淆為 P2P（peer-to-peer）網路協議
+
 ## 技術棧
 
 Next.js · React · TypeScript · Supabase (PostgreSQL) · n8n · LINE LIFF / Messaging API · Vercel · Cloudflare · Tailwind CSS

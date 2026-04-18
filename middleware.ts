@@ -26,6 +26,9 @@ export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const cookieLocale = request.cookies.get(LOCALE_COOKIE)?.value;
 
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set("x-pathname", pathname);
+
   if (pathname === ZH_PATH) {
     if (cookieLocale === "en") {
       return NextResponse.redirect(new URL(EN_PATH, request.url), 307);
@@ -41,9 +44,11 @@ export function middleware(request: NextRequest) {
     }
   }
 
-  return NextResponse.next();
+  return NextResponse.next({ request: { headers: requestHeaders } });
 }
 
 export const config = {
-  matcher: ["/courses/prompt-to-pixel", "/en/courses/prompt-to-pixel"],
+  matcher: [
+    "/((?!_next/static|_next/image|favicon.ico|icon.png|apple-icon.png|opengraph-image|.*\\.(?:png|jpg|jpeg|gif|svg|webp|avif|ico|woff|woff2|ttf|otf|txt|xml|json)$).*)",
+  ],
 };
