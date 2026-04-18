@@ -444,7 +444,7 @@ export default function PromptToPixelZhPage() {
                 </h2>
               </div>
               <p className="sub tc-serif">
-                如果你正在想「我到底要不要放棄做內容算了」，P2P AI Lab 就是為你設計的那條產線。
+                如果你正在想「我到底要不要放棄做內容算了」，<span style={{ whiteSpace: "nowrap" }}>P2P AI Lab</span> 就是為你設計的那條產線。
               </p>
             </header>
             <ul className="bullets">
