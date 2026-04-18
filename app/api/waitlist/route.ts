@@ -12,6 +12,7 @@ const ALLOWED_ROLES = new Set([
   "agency",
   "consultant",
   "marketer",
+  "freelancer",
   "other",
 ]);
 

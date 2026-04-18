@@ -505,10 +505,9 @@ export default function PromptToPixelZhPage() {
               <li>一個可跑通的 AI 影片工作環境（Claude Code、ffmpeg、fal.ai、Notion DB）</li>
               <li>一套口播自動剪接流程，讓長口播秒變成品</li>
               <li>自動中英字幕工作流，含專有名詞修正</li>
-              <li>AI 貼紙 B-roll 疊圖工作流，讓口播影片自帶視覺裝飾</li>
               <li>Weavy.ai 節點式角色一致性工作流，一次產 10 到 20 張成套素材</li>
               <li>Veo 3.1 image to video 的 prompt 系統</li>
-              <li>Remotion 程式化品牌開場動畫模組，可重複使用</li>
+              <li>一套可復用的品牌視覺模組（開場、片尾、轉場、字卡）</li>
               <li>從 Notion 新增一列到 Telegram 收到成片的全自動 pipeline</li>
               <li>一份可執行的週發佈計畫</li>
               <li>接案、產品化、教學三條商業化路線</li>
@@ -680,7 +679,7 @@ export default function PromptToPixelZhPage() {
                 <div className="seats" aria-label="Founding seats">
                   <span>Seats</span>
                   <span className="bar" aria-hidden />
-                  <span className="count">83 / 100 left</span>
+                  <span className="count">前 100 位限定</span>
                 </div>
               </div>
 
@@ -781,9 +780,9 @@ export default function PromptToPixelZhPage() {
                     </dd>
                   </div>
                   <div>
-                    <dt className="count">Seats left</dt>
+                    <dt className="count">Seats</dt>
                     <dd className="count">
-                      <b>83</b> / 100
+                      <b>前 100 位</b>
                       <span className="zh">Founding Member 名額</span>
                     </dd>
                   </div>

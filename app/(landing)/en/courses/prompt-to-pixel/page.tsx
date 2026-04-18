@@ -500,10 +500,9 @@ export default function PromptToPixelEnPage() {
               <li className="en">A fully working AI video environment with Claude Code, ffmpeg, fal.ai, Notion DB.</li>
               <li className="en">A voice-over auto-edit flow that turns long-form recordings into polished cuts.</li>
               <li className="en">An automatic bilingual subtitle pipeline with proper-noun correction.</li>
-              <li className="en">An AI sticker B-roll workflow that auto-generates visual overlays from your script.</li>
               <li className="en">A Weavy.ai node workflow producing 10–20 reference images per run.</li>
               <li className="en">A Veo 3.1 image-to-video prompt system that animates Weavy assets.</li>
-              <li className="en">A reusable Remotion module for programmatic brand intros and transitions.</li>
+              <li className="en">A reusable brand visual kit — intros, outros, transitions, lower-thirds.</li>
               <li className="en">A Notion → Telegram automation pipeline orchestrated by Claude Code.</li>
               <li className="en">A weekly publishing plan — 3 to 5 publishable shorts per week.</li>
               <li className="en">Three monetization paths: client services, productization, teaching.</li>
@@ -678,7 +677,7 @@ export default function PromptToPixelEnPage() {
                 <div className="seats" aria-label="Founding seats">
                   <span>Seats</span>
                   <span className="bar" aria-hidden />
-                  <span className="count">83 / 100 left</span>
+                  <span className="count">First 100 only</span>
                 </div>
               </div>
 
@@ -759,9 +758,9 @@ export default function PromptToPixelEnPage() {
                     <dd>Module 0 — 3 units on waitlist join</dd>
                   </div>
                   <div>
-                    <dt className="count">Seats left</dt>
+                    <dt className="count">Seats</dt>
                     <dd className="count">
-                      <b>83</b> / 100
+                      <b>First 100</b>
                     </dd>
                   </div>
                 </dl>

@@ -620,15 +620,6 @@
 .landing-root .offer-col .seats .bar {
   height: 1px;
   background: var(--hairline);
-  position: relative;
-}
-.landing-root .offer-col .seats .bar::before {
-  content: "";
-  position: absolute;
-  left: 0; top: -1px;
-  height: 3px;
-  width: 17%;
-  background: var(--ink);
 }
 .landing-root .offer-col .seats .count { color: var(--ink); }
 
