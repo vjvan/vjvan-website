@@ -68,7 +68,7 @@ export default function AboutPage() {
                     Practice
                   </dt>
                   <dd className="m-0" style={{ fontFamily: "var(--f-zh-body), sans-serif", fontSize: 16, lineHeight: 1.55 }}>
-                    AI 商業系統設計、LINE 生態整合、AI 搜尋時代網站顧問
+                    LINE LIFF 自動化、AI 商業系統架構
                   </dd>
                 </div>
                 <div>
@@ -79,7 +79,7 @@ export default function AboutPage() {
                     Working with
                   </dt>
                   <dd className="m-0" style={{ fontFamily: "var(--f-zh-body), sans-serif", fontSize: 16, lineHeight: 1.55 }}>
-                    台灣中小企業、B2B 批發、餐飲供應鏈、個人品牌
+                    台灣中小企業、個人品牌
                   </dd>
                 </div>
                 <div>
@@ -159,7 +159,7 @@ export default function AboutPage() {
                   color: "var(--ink-muted)",
                 }}
               >
-                過去十年我做過行銷、拍過片、寫過程式、碰過 ERP。兜了一圈，回到最根本的事：幫一家公司把「智慧」從腦袋裡拆出來，寫進可以自動運行的工作流。這是 AI 時代真正值錢的東西。
+                過去十年我做過行銷、拍過片、寫過程式、做過系統。兜了一圈,回到最根本的事:幫一家公司把「智慧」從腦袋裡拆出來,寫進可以自動運行的工作流。這是 AI 時代真正值錢的東西。
               </p>
               <p
                 className="m-0 mb-6 max-w-[640px]"

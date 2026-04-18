@@ -5,7 +5,7 @@ import CtaLink from "@/components/CtaLink";
 export const metadata: Metadata = {
   title: "Cases · 系統導入案例",
   description:
-    "VJVAN 唯捷允雷實際落地的系統導入案例，涵蓋食品批發 B2B 補貨、汽車美容預約、多門市 CRM 與自動化通知。",
+    "VJVAN 唯捷允雷實際落地的系統導入案例,涵蓋 LINE LIFF 自動化與 AI 商業系統架構在不同產業的應用成果。",
   alternates: { canonical: "https://www.vjvan.com/cases" },
   openGraph: {
     title: "Cases｜VJVAN · 唯捷允雷",
@@ -40,14 +40,14 @@ const cases: Case[] = [
     titleEn: "replenishment",
     subtitle: "從電話抄單到 LINE 自助下單，訂單處理效率提升 4 倍。",
     description:
-      "食品批發業者原本靠電話和 LINE 文字訊息接單，人工抄寫容易出錯，每週花大量時間處理訂單。導入 LINE LIFF 訂購系統 + CRM 管理後台 + n8n 自動化後，客戶可以在 LINE 內直接瀏覽商品、選規格、下單，後台即時同步。",
+      "食品批發業者原本靠電話和 LINE 文字訊息接單,人工抄寫容易出錯,每週花大量時間處理訂單。導入 LINE 內自助下單系統 + 管理後台 + 自動化通知後,客戶可以在 LINE 內直接瀏覽商品、選規格、下單,後台即時同步。",
     metrics: [
       { value: "-75%", label: "訂單處理時間", detail: "從人工抄寫到系統自動記錄" },
       { value: "83%", label: "客戶自主下單", detail: "從電話+文字到 LIFF 自助" },
       { value: "15 hr", label: "每週省下人力", detail: "減少重複性接單與通知工作" },
       { value: "0", label: "人為訂單錯誤", detail: "客戶自行選品確認，系統自動記錄" },
     ],
-    techStack: ["LINE LIFF", "Supabase", "n8n", "Next.js"],
+    techStack: [],
     timeline: "4 週上線",
     before: [
       "電話 + LINE 文字訊息接單，人工抄寫",
@@ -72,14 +72,14 @@ const cases: Case[] = [
     titleEn: "booking",
     subtitle: "把散在 Google 表單和電話的預約流程，整理成能自動運轉的營運系統。",
     description:
-      "三間門市的汽車美容業者，預約靠電話和 Google 表單，客戶管理靠試算表，推播靠群發。導入 LINE LIFF 預約系統 + CRM 後台 + n8n 自動化 + 行銷整合模組，讓預約、管理、提醒、喚回全部系統化。",
+      "三間門市的汽車美容業者,預約靠電話和 Google 表單,客戶管理靠試算表,推播靠群發。導入 LINE 內預約系統 + 管理後台 + 自動化通知 + 行銷整合模組,讓預約、管理、提醒、喚回全部系統化。",
     metrics: [
       { value: "3 間", label: "門市統一管理", detail: "各店獨立排班，老闆看合併報表" },
       { value: "40%+", label: "預估訊息費節省", detail: "精準分眾取代群發推播" },
       { value: "自動", label: "洗車週期提醒", detail: "依鍍膜方案計算下次建議時間" },
       { value: "自動", label: "流失客戶喚回", detail: "超過設定天數未回訪自動推播" },
     ],
-    techStack: ["LINE LIFF", "Supabase", "n8n", "Next.js"],
+    techStack: [],
     timeline: "5 至 7 週",
     before: [
       "電話預約，容易撞時段或漏接",

@@ -5,11 +5,11 @@ import CtaLink from "@/components/CtaLink";
 export const metadata: Metadata = {
   title: "Services · 服務項目",
   description:
-    "VJVAN 唯捷允雷的服務項目：LINE LIFF B2B 補貨系統、AI 商業系統架構、SEO/GEO/AEO 顧問、個人品牌網站與內容引擎、季度顧問合作。",
+    "VJVAN 唯捷允雷的服務項目:LINE LIFF 自動化、AI 商業系統架構、個人品牌網站、季度顧問合作。",
   alternates: { canonical: "https://www.vjvan.com/services" },
   openGraph: {
     title: "Services｜VJVAN · 唯捷允雷",
-    description: "AI 商業系統設計、LINE LIFF、SEO/GEO/AEO 顧問。",
+    description: "LINE LIFF 自動化、AI 商業系統架構。",
     url: "https://www.vjvan.com/services",
     type: "website",
   },
@@ -18,33 +18,33 @@ export const metadata: Metadata = {
 const services = [
   {
     num: "N° 01",
-    titleZh: "LINE LIFF B2B 補貨系統",
+    titleZh: "LINE LIFF 自動化系統",
     titleEn: null,
-    desc: "幫批發、供應鏈、經銷體系把訂單從 LINE 群裡收乾淨，串 ERP、自動化補貨預測、出貨提醒。已有多家食品批發實戰案例。",
+    desc: "把原本散在訊息、表單、電話裡的營運流程,整理成客戶可以在 LINE 內自助完成的一條線。重點不是功能多,是能長期自動運轉。",
   },
   {
     num: "N° 02",
     titleZh: "AI 商業系統",
     titleEn: "architecture",
-    desc: "替中小企業盤點營運流程，設計自動化工作流、資料層、權限模型。產出可執行的 blueprint，不只是 PPT。",
+    desc: "替中小企業盤點營運流程,設計可執行的系統藍圖。產出可落地的 blueprint,不只是 PPT。",
   },
   {
     num: "N° 03",
-    titleZh: "SEO · GEO · AEO",
-    titleEn: "consulting",
-    desc: "當客戶用 AI 搜尋你的產業時，你的公司要是第一個被引用的答案。",
+    titleZh: "AI 搜尋時代",
+    titleEn: "visibility",
+    desc: "當客戶用 AI 搜尋你的產業時,你的公司要是第一個被引用的答案。",
   },
   {
     num: "N° 04",
     titleZh: "個人品牌網站 + 內容引擎",
     titleEn: null,
-    desc: "替專業工作者建立可長期發佈內容的基礎建設，讓你的名字在產業裡累積。",
+    desc: "替專業工作者建立可長期發佈內容的基礎建設,讓你的名字在產業裡累積。",
   },
   {
     num: "N° 05",
-    titleZh: "季度顧問合作（Retainer）",
+    titleZh: "季度顧問合作(Retainer)",
     titleEn: null,
-    desc: "每月固定 8 至 12 小時深度諮詢 + 系統調整，適合已經上線但需要持續優化的客戶。",
+    desc: "每月固定 8 至 12 小時深度諮詢 + 系統調整,適合已經上線但需要持續優化的客戶。",
   },
 ];
 

@@ -68,7 +68,7 @@ export default function Home() {
             >
               我不是「做工具導入」
               <strong style={{ color: "var(--ink)", fontWeight: 500 }}>的顧問</strong>
-              。我把散在 LINE、Google Sheet、ERP、n8n、客戶對話裡的營運流程，整理成一套能真的跑、能長期自動補血的系統。寫字、寫系統、寫 SEO，都是同一件事：讓一家公司的智慧可以被複製。
+              。我幫中小企業把散落在不同工具與對話裡的營運流程,整理成一套能真的跑、能長期自動補血的系統。寫字、寫系統,都是同一件事:讓一家公司的智慧可以被複製。
             </p>
             <div
               className="flex flex-wrap gap-7 items-center text-[12px] tracking-[0.12em] uppercase"
