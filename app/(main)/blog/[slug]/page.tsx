@@ -88,7 +88,7 @@ export default async function BlogPostPage({ params }: Props) {
         "https://github.com/vjvan",
         "https://x.com/vjvan_n",
         "https://www.instagram.com/vjvan_n",
-        "https://www.facebook.com/vjvan",
+        "https://www.facebook.com/vvstw/",
       ],
     },
     publisher: {

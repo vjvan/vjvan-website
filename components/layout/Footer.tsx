@@ -73,7 +73,7 @@ export default function Footer() {
             YouTube
           </a>
           <a
-            href="https://www.facebook.com/vjvan"
+            href="https://www.facebook.com/vvstw/"
             target="_blank"
             rel="noreferrer"
             className="pb-[1px]"
