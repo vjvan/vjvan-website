@@ -58,6 +58,18 @@ export default function Home() {
               AI 商業系統架構師
             </p>
             <p
+              className="m-0 mb-7 max-w-[560px]"
+              style={{
+                fontFamily: "var(--f-zh-body), sans-serif",
+                fontSize: 14,
+                lineHeight: 1.6,
+                letterSpacing: "0.04em",
+                color: "var(--ink-muted)",
+              }}
+            >
+              專注 AI 與商業邏輯的系統整合・社群亦稱 AI 系統架構師
+            </p>
+            <p
               className="m-0 mb-11 max-w-[560px]"
               style={{
                 fontFamily: "var(--f-zh-body), sans-serif",
@@ -66,9 +78,9 @@ export default function Home() {
                 color: "var(--ink-muted)",
               }}
             >
-              我不是「做工具導入」
-              <strong style={{ color: "var(--ink)", fontWeight: 500 }}>的顧問</strong>
-              。我幫中小企業把散落在不同工具與對話裡的營運流程,整理成一套能真的跑、能長期自動補血的系統。寫字、寫系統,都是同一件事:讓一家公司的智慧可以被複製。
+              多數中小企業不缺 AI 工具,缺的是
+              <strong style={{ color: "var(--ink)", fontWeight: 500 }}>讓工具替你工作的系統</strong>
+              。我把散在 LINE、Excel、門市的流程,重組為能自動跑、能長期累積的營運資產。餐飲補貨、汽車美容預約、電商訂單整合,原理都一樣。
             </p>
             <div
               className="flex flex-wrap gap-7 items-center text-[12px] tracking-[0.12em] uppercase"
