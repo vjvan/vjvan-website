@@ -167,7 +167,7 @@ export default function PromptToPixelZhPage() {
               <dl>
                 <dt>Editor</dt>
                 <dd>
-                  YunLei (Van)
+                  允雷 (Van)
                   <small>AI 商業系統架構師</small>
                 </dd>
                 <dt>Format</dt>
@@ -306,7 +306,7 @@ export default function PromptToPixelZhPage() {
               <p>
                 你不是在看教學。你是在學會跑一條屬於你自己的 AI 影片產線，並把它變成能幫你賺錢的商業資產。
               </p>
-              <div className="attribution">— YunLei · P2P AI Lab, Editor</div>
+              <div className="attribution">— 允雷 · P2P AI Lab, Editor</div>
             </blockquote>
           </div>
         </section>
@@ -732,7 +732,7 @@ export default function PromptToPixelZhPage() {
 
             <div className="terms-foot">
               <div className="signature">
-                YunLei · vjvan.com
+                允雷 · vjvan.com
                 <small>Editor · AI Business Systems Architect</small>
               </div>
               <a className="cta accent" href="#waitlist">
@@ -841,7 +841,7 @@ export default function PromptToPixelZhPage() {
       <LandingColophon
         leftLines={[
           "P2P AI Lab · Issue 01 · Founding Press Run",
-          "Edited and engineered by YunLei (Van) at vjvan.com.",
+          "Edited and engineered by 允雷 (Van) at vjvan.com.",
           "Typeset in Instrument Serif, Noto Serif TC, Inter Tight and JetBrains Mono.",
         ]}
         rightLinks={[
