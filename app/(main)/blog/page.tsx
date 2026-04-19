@@ -64,7 +64,7 @@ export default function BlogIndexPage() {
                 color: "var(--ink-muted)",
               }}
             >
-              不追求高頻更新，比較像精選發布。只整理我在 AI 導入、自動化與系統規劃上，對企業真正有用的觀察與拆解。
+              只整理我在 AI 導入、自動化與系統規劃上，對企業真正有用的觀察與拆解。
             </p>
           </div>
 
