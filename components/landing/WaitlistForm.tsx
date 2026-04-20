@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { gaEvent } from "@/lib/gtag";
 
 type Copy = {
   emailLabel: string;
@@ -51,6 +52,7 @@ export default function WaitlistForm({ locale, copy }: Props) {
         const body = await res.json().catch(() => ({}));
         throw new Error(body?.error || copy.errorFallback);
       }
+      gaEvent("p2p_signup_click", { locale });
       setState("success");
       form.reset();
     } catch (err) {

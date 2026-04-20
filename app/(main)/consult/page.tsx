@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { gaEvent } from "@/lib/gtag";
 
 const TOPICS = [
   "LINE LIFF 系統建置",
@@ -56,6 +57,7 @@ export default function ConsultPage() {
       }
     }
 
+    gaEvent("consult_form_submit", { topic: form.topic });
     window.location.href = LINE_URL;
   };
 

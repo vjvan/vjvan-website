@@ -6,6 +6,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const display = Instrument_Serif({
   subsets: ["latin"],
@@ -178,6 +179,7 @@ export default async function RootLayout({
         <SmoothScroll>{children}</SmoothScroll>
         <Analytics />
         <SpeedInsights />
+        <GoogleAnalytics />
       </body>
     </html>
   );
