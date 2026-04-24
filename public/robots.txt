@@ -4,6 +4,9 @@
 
 User-agent: *
 Allow: /
+Disallow: /tmp/
+Disallow: /_preview/
+Disallow: /api/
 
 # LLM / AI Search crawlers (明確允許引用與即時搜尋)
 User-agent: GPTBot
