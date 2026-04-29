@@ -384,6 +384,84 @@ export default function CasesPage() {
             </article>
           ))}
 
+          {/* Cloud Integration entry */}
+          <section
+            id="cloud-integration"
+            className="py-16 scroll-mt-24"
+            style={{ borderBottom: "1px solid var(--rule)" }}
+          >
+            <div className="grid gap-6 md:gap-12 md:grid-cols-[80px_1fr]">
+              <div
+                className="text-[12px] tracking-[0.18em]"
+                style={{ fontFamily: "var(--f-mono), monospace", color: "var(--signal)" }}
+              >
+                N° 03
+              </div>
+              <div>
+                <div
+                  className="mb-3 flex flex-wrap items-baseline gap-x-4 gap-y-1 text-[11px] tracking-[0.14em] uppercase"
+                  style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+                >
+                  <span style={{ color: "var(--signal)" }}>Capability Portfolio</span>
+                  <span>·</span>
+                  <span>5 cases</span>
+                </div>
+                <h2
+                  className="m-0 mb-4"
+                  style={{
+                    fontFamily: "var(--f-zh-display), serif",
+                    fontSize: "clamp(32px, 4.5vw, 56px)",
+                    lineHeight: 1.15,
+                    letterSpacing: "0.01em",
+                    fontWeight: 400,
+                  }}
+                >
+                  雲端整合實戰{" "}
+                  <em
+                    style={{
+                      fontFamily: "var(--f-display), serif",
+                      fontStyle: "italic",
+                      color: "var(--signal)",
+                    }}
+                  >
+                    cloud
+                  </em>
+                </h2>
+                <p
+                  className="m-0 mb-4 max-w-[720px]"
+                  style={{
+                    fontFamily: "var(--f-zh-body), sans-serif",
+                    fontSize: 20,
+                    lineHeight: 1.6,
+                    color: "var(--ink)",
+                    fontWeight: 500,
+                  }}
+                >
+                  把散在多個雲端的服務，整理成會自己跑的 pipeline。
+                </p>
+                <p
+                  className="m-0 mb-6 max-w-[720px]"
+                  style={{
+                    fontFamily: "var(--f-zh-body), sans-serif",
+                    fontSize: 16,
+                    lineHeight: 1.8,
+                    color: "var(--ink-muted)",
+                  }}
+                >
+                  從公司級 Cloud Identity 組織骨架建構、五雲混合架構的 production B2B 系統、OAuth 跨平台自動化 pipeline、Gmail API inbox 分類，到多客戶 Service Account Impersonation 身份隔離架構，五個案例呈現跨平台 AI 應用與任務流程整合能力。
+                </p>
+                <div
+                  className="text-[12px] tracking-[0.12em] uppercase"
+                  style={{ fontFamily: "var(--f-mono), monospace" }}
+                >
+                  <CtaLink href="/cases/cloud-integration" variant="primary">
+                    閱讀完整 portfolio
+                  </CtaLink>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* CTA */}
           <div className="mt-16 flex flex-wrap gap-8 items-center text-[12px] tracking-[0.12em] uppercase"
             style={{ fontFamily: "var(--f-mono), monospace" }}

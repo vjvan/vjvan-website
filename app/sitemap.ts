@@ -33,6 +33,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${BASE}/cases/cloud-integration`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.85,
+      alternates: {
+        languages: {
+          "zh-TW": `${BASE}/cases/cloud-integration`,
+          en: `${BASE}/en/cases/cloud-integration`,
+          "x-default": `${BASE}/cases/cloud-integration`,
+        },
+      },
+    },
+    {
+      url: `${BASE}/en/cases/cloud-integration`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+      alternates: {
+        languages: {
+          "zh-TW": `${BASE}/cases/cloud-integration`,
+          en: `${BASE}/en/cases/cloud-integration`,
+          "x-default": `${BASE}/cases/cloud-integration`,
+        },
+      },
+    },
+    {
       url: `${BASE}/consult`,
       lastModified: new Date(),
       changeFrequency: "monthly",
