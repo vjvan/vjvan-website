@@ -42,6 +42,13 @@ const services = [
   },
   {
     num: "N° 05",
+    titleZh: "ERP-Lite 自家進銷存",
+    titleEn: "system",
+    desc: "為中小企業量身打造屬於自己的進貨、銷貨、庫存與客戶系統，不必每年付授權費、不必綁外部 ERP 廠商。一次建好長在自家伺服器，跟現有 LIFF / CRM 共用一套資料庫。",
+    href: "/services/erp-lite",
+  },
+  {
+    num: "N° 06",
     titleZh: "季度顧問合作(Retainer)",
     titleEn: null,
     desc: "每月固定 8 至 12 小時深度諮詢 + 系統調整,適合已經上線但需要持續優化的客戶。",
@@ -151,6 +158,23 @@ export default function ServicesPage() {
                   }}
                 >
                   {s.desc}
+                  {"href" in s && s.href && (
+                    <>
+                      {" "}
+                      <a
+                        href={s.href}
+                        className="inline-block text-[11px] tracking-[0.12em] uppercase pb-[1px]"
+                        style={{
+                          fontFamily: "var(--f-mono), monospace",
+                          color: "var(--signal)",
+                          borderBottom: "1px solid var(--signal)",
+                          marginLeft: 6,
+                        }}
+                      >
+                        詳情 →
+                      </a>
+                    </>
+                  )}
                 </p>
               </article>
             ))}
