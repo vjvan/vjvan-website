@@ -52,6 +52,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     },
     {
+      url: `${BASE}/cases/988-kitchen-b2b`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
       url: `${BASE}/en/cases/cloud-integration`,
       lastModified: new Date(),
       changeFrequency: "monthly",

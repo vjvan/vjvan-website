@@ -385,6 +385,84 @@ export default function CasesPage() {
             </article>
           ))}
 
+          {/* 988 Kitchen B2B entry */}
+          <section
+            id="case-988-kitchen-b2b"
+            className="py-16 scroll-mt-24"
+            style={{ borderBottom: "1px solid var(--rule)" }}
+          >
+            <div className="grid gap-6 md:gap-12 md:grid-cols-[80px_1fr]">
+              <div
+                className="text-[12px] tracking-[0.18em]"
+                style={{ fontFamily: "var(--f-mono), monospace", color: "var(--signal)" }}
+              >
+                N° 03
+              </div>
+              <div>
+                <div
+                  className="mb-3 flex flex-wrap items-baseline gap-x-4 gap-y-1 text-[11px] tracking-[0.14em] uppercase"
+                  style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+                >
+                  <span style={{ color: "var(--signal)" }}>Case Study</span>
+                  <span>·</span>
+                  <span>1 year production</span>
+                </div>
+                <h2
+                  className="m-0 mb-4"
+                  style={{
+                    fontFamily: "var(--f-zh-display), serif",
+                    fontSize: "clamp(32px, 4.5vw, 56px)",
+                    lineHeight: 1.15,
+                    letterSpacing: "0.01em",
+                    fontWeight: 400,
+                  }}
+                >
+                  南台灣冷凍食品 B2B 訂單流{" "}
+                  <em
+                    style={{
+                      fontFamily: "var(--f-display), serif",
+                      fontStyle: "italic",
+                      color: "var(--signal)",
+                    }}
+                  >
+                    automation
+                  </em>
+                </h2>
+                <p
+                  className="m-0 mb-4 max-w-[720px]"
+                  style={{
+                    fontFamily: "var(--f-zh-body), sans-serif",
+                    fontSize: 20,
+                    lineHeight: 1.6,
+                    color: "var(--ink)",
+                    fontWeight: 500,
+                  }}
+                >
+                  把訂單流變成全自動的一年。
+                </p>
+                <p
+                  className="m-0 mb-6 max-w-[720px]"
+                  style={{
+                    fontFamily: "var(--f-zh-body), sans-serif",
+                    fontSize: 16,
+                    lineHeight: 1.8,
+                    color: "var(--ink-muted)",
+                  }}
+                >
+                  客戶是南台灣冷凍食品 B2B 批發商，原本下單散在 LINE 群組、Excel、電話三個地方。LIFF + Supabase + n8n 整合成一條自動產線，1 年 production 連續穩定運轉，客戶下單到三向通知 0 分鐘，三層補單機制零靜默掉單。
+                </p>
+                <div
+                  className="text-[12px] tracking-[0.12em] uppercase"
+                  style={{ fontFamily: "var(--f-mono), monospace" }}
+                >
+                  <CtaLink href="/cases/988-kitchen-b2b" variant="primary">
+                    閱讀完整案例
+                  </CtaLink>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* Cloud Integration entry */}
           <section
             id="cloud-integration"
@@ -396,7 +474,7 @@ export default function CasesPage() {
                 className="text-[12px] tracking-[0.18em]"
                 style={{ fontFamily: "var(--f-mono), monospace", color: "var(--signal)" }}
               >
-                N° 03
+                N° 04
               </div>
               <div>
                 <div
