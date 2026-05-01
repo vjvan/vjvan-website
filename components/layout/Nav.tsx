@@ -8,6 +8,7 @@ const navLinks = [
   { href: "/about", zh: "關於", en: "About" },
   { href: "/blog", zh: "觀點", en: "Writing" },
   { href: "/services", zh: "服務", en: "Services" },
+  { href: "/courses/prompt-to-pixel", zh: "課程", en: "Courses" },
   { href: "/cases", zh: "案例", en: "Cases" },
   { href: "/consult", zh: "諮詢", en: "Consult" },
 ];
@@ -39,7 +40,7 @@ export default function Nav() {
         </Link>
 
         {/* Desktop */}
-        <ul className="hidden items-baseline gap-8 md:flex">
+        <ul className="hidden items-baseline gap-7 md:flex">
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link
