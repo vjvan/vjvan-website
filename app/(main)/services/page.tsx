@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import JsonLd from "@/components/JsonLd";
 import CtaLink from "@/components/CtaLink";
+import HeroVideo from "@/components/HeroVideo";
 
 export const metadata: Metadata = {
   title: "Services · 服務項目",
@@ -13,6 +14,23 @@ export const metadata: Metadata = {
     url: "https://www.vjvan.com/services",
     type: "website",
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Services｜VJVAN · 唯捷允雷" }],
+  },
+};
+
+const servicesVideoLd = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: "VJVAN 服務體系六大項目 Cover Film",
+  description: "VJVAN 唯捷允雷六大服務體系 (LINE LIFF / AI 商業系統 / AI 搜尋 / 個人品牌 / ERP-Lite / 季度顧問) 編輯式總覽。",
+  thumbnailUrl: "https://www.vjvan.com/services-hero/services-poster.jpg",
+  uploadDate: "2026-05-01",
+  duration: "PT10S",
+  contentUrl: "https://www.vjvan.com/services-hero/services-1600.mp4",
+  embedUrl: "https://www.vjvan.com/services",
+  publisher: {
+    "@type": "Organization",
+    name: "唯捷允雷 VJVAN",
+    url: "https://www.vjvan.com/",
   },
 };
 
@@ -69,6 +87,7 @@ export default function ServicesPage() {
   return (
     <>
       <JsonLd id="json-ld-services-breadcrumb" data={breadcrumbJsonLd} />
+      <JsonLd id="json-ld-services-video" data={servicesVideoLd} />
       <div className="px-5 md:px-10">
         <div className="mx-auto max-w-[1120px] py-14 md:py-24">
           <div
@@ -110,6 +129,33 @@ export default function ServicesPage() {
               </p>
             </div>
           </div>
+
+          <section
+            className="py-9 md:py-12"
+            aria-label="服務體系總覽影片"
+          >
+            <div className="grid gap-6 md:gap-20 md:grid-cols-[1fr_2fr] items-baseline mb-7">
+              <div
+                className="text-[11px] tracking-[0.18em] uppercase"
+                style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+              >
+                COVER FILM ↓
+              </div>
+              <div
+                className="text-[11px] tracking-[0.12em] uppercase"
+                style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+              >
+                10 SEC · NO SOUND · LOOP
+              </div>
+            </div>
+            <HeroVideo
+              poster="/services-hero/services-poster.jpg"
+              webmSrc="/services-hero/services-1600.webm"
+              mp4Src="/services-hero/services-1600.mp4"
+              mp4MobileSrc="/services-hero/services-1280.mp4"
+              ariaLabel="VJVAN 六大服務體系 Cover Film"
+            />
+          </section>
 
           <div>
             {services.map((s) => (
