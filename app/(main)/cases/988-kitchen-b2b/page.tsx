@@ -6,12 +6,12 @@ import HeroVideo from "@/components/HeroVideo";
 export const metadata: Metadata = {
   title: "Case · 南台灣冷凍食品 B2B 訂單流自動化",
   description:
-    "VJVAN 唯捷允雷實戰案例：南台灣冷凍食品 B2B 批發商，把散在 LINE 群組、Excel、電話的訂單流，整理成 LIFF + Supabase + n8n 自動產線。1 年 production 連續穩定運轉，客戶下單到通知 0 分鐘，三層補單機制零靜默掉單。",
+    "VJVAN 唯捷允雷實戰案例：南台灣冷凍食品 B2B 批發商，把散在 LINE 群組、Excel、電話的訂單流，整理成一條會自己跑的訂單系統。3 個月 production 連續穩定運轉，客戶下單到通知 0 分鐘，零資料遺失。",
   alternates: { canonical: "https://www.vjvan.com/cases/988-kitchen-b2b" },
   openGraph: {
     title: "南台灣冷凍食品 B2B 訂單流自動化｜VJVAN · 唯捷允雷",
     description:
-      "把散在 LINE / Excel / 電話的訂單流，整理成一條 LIFF + Supabase + n8n 自動跑的產線。1 年 production 連續穩定運轉。",
+      "把散在 LINE / Excel / 電話的訂單流，整理成一條會自己跑的訂單系統。3 個月 production 連續穩定運轉。",
     url: "https://www.vjvan.com/cases/988-kitchen-b2b",
     type: "article",
     locale: "zh_TW",
@@ -34,7 +34,7 @@ const caseStudyJsonLd = {
   "@type": "Article",
   headline: "南台灣冷凍食品 B2B 訂單流自動化",
   description:
-    "把散在 LINE 群組、Excel、電話的訂單流，整理成一條 LIFF + Supabase + n8n 自動跑的產線。1 年 production 連續穩定運轉。",
+    "把散在 LINE 群組、Excel、電話的訂單流，整理成一條會自己跑的訂單系統。3 個月 production 連續穩定運轉。",
   author: {
     "@type": "Person",
     name: "允雷 (Van)",
@@ -56,7 +56,7 @@ const caseVideoLd = {
   "@context": "https://schema.org",
   "@type": "VideoObject",
   name: "南台灣冷凍食品 B2B 訂單流自動化 Cover Film",
-  description: "22 秒視覺敘事:從 BEFORE (訂單散三處) 到 AFTER (LIFF + Supabase + n8n 一條產線),最後展示 1 年 production 質化成績單。純視覺無聲。",
+  description: "22 秒視覺敘事:從 BEFORE (訂單散三處) 到 AFTER (一條會自己跑的訂單系統),最後展示 3 個月 production 質化成績單。純視覺無聲。",
   thumbnailUrl: "https://www.vjvan.com/cases-hero/case-988-poster.jpg",
   uploadDate: "2026-05-01",
   duration: "PT22S",
@@ -70,21 +70,29 @@ const caseVideoLd = {
 };
 
 const kpis = [
-  { value: "1 年", label: "production 連續穩定運轉", detail: "2025 至今" },
+  { value: "3 個月", label: "production 連續穩定運轉", detail: "持續中" },
   { value: "99%+", label: "訂單通知準時送達", detail: "客戶 / 司機 / 老闆三向通知" },
-  { value: "0 分", label: "人工抄單時間", detail: "n8n 自動扁平化訂單" },
-  { value: "3 層", label: "補單機制零靜默掉單", detail: "Webhook / Schedule / Error Hook" },
-  { value: "0 次", label: "production 資料遺失事件", detail: "outbox + integration_jobs 雙保險" },
-  { value: "10K+", label: "訂單流經系統", detail: "n8n workflow 累積觸發次數" },
+  { value: "0 分", label: "人工抄單時間", detail: "每筆訂單系統自動處理" },
+  { value: "0 次", label: "資料遺失事件", detail: "後備機制讓掉單不發生" },
 ];
 
-const stack = [
-  { name: "LIFF", desc: "LINE Front-end Framework", role: "客戶端商品瀏覽 + 下單 + 一鍵回購" },
-  { name: "Supabase", desc: "Postgres + Edge Function", role: "DB / API / Auth / RLS 一站式後端" },
-  { name: "n8n", desc: "workflow 自動化", role: "訂單扁平化 / Sheet 寫入 / LINE 三向推播" },
-  { name: "LINE Messaging API", desc: "推播通知", role: "客戶確認 + 司機派單 + 老闆即時看單" },
-  { name: "Google Sheets", desc: "訂單管理", role: "老闆熟悉的 UI，n8n 自動寫入" },
-  { name: "Cloudflare Tunnel", desc: "n8n 對外 webhook", role: "Mac mini 自架 n8n 外露安全通道" },
+const platformLayers = [
+  {
+    name: "客戶端",
+    desc: "客戶在 LINE 內就完成整個下單流程，不用裝 App、不用註冊新帳號。",
+  },
+  {
+    name: "後端與資料層",
+    desc: "雲端原生服務承載訂單資料，可信儲存 + 即時可查。",
+  },
+  {
+    name: "自動化層",
+    desc: "訂單一進系統，後續通知、紀錄、派單都自動處理，沒有人工抄單。",
+  },
+  {
+    name: "操作介面",
+    desc: "老闆熟悉的工作面板，不需學新工具，每天看訂單跟改商品照舊。",
+  },
 ];
 
 const beforeList = [
@@ -95,10 +103,10 @@ const beforeList = [
 ];
 
 const afterList = [
-  "客戶在 LIFF 內瀏覽商品 + 加購物車 + 確認下單",
-  "Supabase Edge Function 即時把訂單寫進 DB",
-  "n8n webhook 接收後扁平化資料、寫進 Google Sheet、發三向 LINE 通知",
-  "若主流程失敗，三層補單機制 (即時 webhook / 10 分 schedule / error hook) 自動補送",
+  "客戶在 LINE 內瀏覽商品、加購物車、確認下單",
+  "訂單即時進入後端，資料可信儲存",
+  "後續通知 / 紀錄 / 派單由系統自動處理",
+  "三層後備機制確保訂單不掉，老闆隨時看得到當日訂單全貌",
 ];
 
 export default function Case988Page() {
@@ -123,7 +131,7 @@ export default function Case988Page() {
               <span>·</span>
               <span>南台灣冷凍食品 B2B</span>
               <span>·</span>
-              <span>2025 - PRESENT</span>
+              <span>3 MONTHS IN PROD</span>
             </div>
             <h1
               className="m-0 mb-10"
@@ -157,7 +165,7 @@ export default function Case988Page() {
                 color: "var(--ink-muted)",
               }}
             >
-              客戶是南台灣的冷凍食品 B2B 批發商，年訂單上萬筆。原本下單流程散在 LINE 群組、Excel、電話三個地方，老闆每天花幾個小時抄單對帳，司機等老闆通知才知道要送哪幾家，月結要熬夜結到深夜。
+              客戶是南台灣的冷凍食品 B2B 批發商，每月穩定上單。原本下單流程散在 LINE 群組、Excel、電話三個地方，老闆每天花幾個小時抄單對帳，司機等老闆通知才知道要送哪幾家，月結要熬夜結到深夜。
             </p>
             <p
               className="m-0 max-w-[720px]"
@@ -168,7 +176,7 @@ export default function Case988Page() {
                 color: "var(--ink-muted)",
               }}
             >
-              我們用 LIFF + Supabase + n8n 把這條流程整理成一條會自己跑的產線。客戶下單到三向通知送達 0 分鐘，1 年 production 連續穩定運轉，三層補單機制零靜默掉單。
+              我們把這條流程整理成一條會自己跑的訂單系統。客戶下單到三向通知送達 0 分鐘，3 個月 production 連續穩定運轉，零資料遺失。
             </p>
           </div>
 
@@ -206,7 +214,7 @@ export default function Case988Page() {
               Results · 跑了一年的成績單
             </div>
             <div
-              className="grid gap-x-12 gap-y-10 md:grid-cols-3 py-8"
+              className="grid gap-x-12 gap-y-10 md:grid-cols-2 py-8"
               style={{ borderTop: "1px solid var(--rule)", borderBottom: "1px solid var(--rule)" }}
             >
               {kpis.map((k) => (
@@ -321,42 +329,33 @@ export default function Case988Page() {
             </div>
           </section>
 
-          {/* Tech Stack */}
+          {/* System Architecture (護城河保護版,只寫角色不寫品牌) */}
           <section className="py-12">
             <div
               className="mb-8 text-[11px] tracking-[0.18em] uppercase"
               style={{ fontFamily: "var(--f-mono), monospace", color: "var(--signal)", fontWeight: 500 }}
             >
-              Stack · 整條產線用了什麼
+              System · 系統由四層構成
             </div>
             <div className="grid gap-y-8 max-w-[920px]">
-              {stack.map((s, i) => (
+              {platformLayers.map((s, i) => (
                 <article
                   key={s.name}
                   className="grid gap-4 md:grid-cols-[200px_1fr] py-6"
                   style={{ borderTop: i === 0 ? "1px solid var(--rule)" : "none", borderBottom: "1px solid var(--rule)" }}
                 >
-                  <div>
-                    <h3
-                      className="m-0"
-                      style={{
-                        fontFamily: "var(--f-display), serif",
-                        fontStyle: "italic",
-                        fontSize: 32,
-                        lineHeight: 1.1,
-                        color: "var(--signal)",
-                        letterSpacing: "-0.01em",
-                      }}
-                    >
-                      {s.name}
-                    </h3>
-                    <div
-                      className="mt-1 text-[11px] tracking-[0.14em] uppercase"
-                      style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
-                    >
-                      {s.desc}
-                    </div>
-                  </div>
+                  <h3
+                    className="m-0"
+                    style={{
+                      fontFamily: "var(--f-zh-display), serif",
+                      fontWeight: 400,
+                      fontSize: 26,
+                      lineHeight: 1.2,
+                      color: "var(--ink)",
+                    }}
+                  >
+                    {s.name}
+                  </h3>
                   <p
                     className="m-0"
                     style={{
@@ -366,7 +365,7 @@ export default function Case988Page() {
                       color: "var(--ink)",
                     }}
                   >
-                    {s.role}
+                    {s.desc}
                   </p>
                 </article>
               ))}
@@ -387,7 +386,7 @@ export default function Case988Page() {
                 lineHeight: 1.2,
               }}
             >
-              這套系統不是 demo，是一年沒掉的 production。
+              這套系統不是 demo，是真的在跑的 production。
             </h2>
             <p
               className="m-0 mb-10 max-w-[680px]"
@@ -398,7 +397,7 @@ export default function Case988Page() {
                 color: "var(--ink-muted)",
               }}
             >
-              如果你也是 B2B 補貨型的批發商、餐廳、食材供應商，正在用 LINE 群組接訂單、Excel 抄單對帳，這條產線可以複製。聊聊你的場景。
+              如果你也是 B2B 補貨型的批發商、餐廳、食材供應商，正在用 LINE 群組接訂單、Excel 抄單對帳，這條產線可以複製到你的場景。一起聊聊。
             </p>
             <div
               className="flex flex-wrap gap-7 items-center text-[12px] tracking-[0.12em] uppercase"

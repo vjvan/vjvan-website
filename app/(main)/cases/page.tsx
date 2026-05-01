@@ -405,7 +405,7 @@ export default function CasesPage() {
                 >
                   <span style={{ color: "var(--signal)" }}>Case Study</span>
                   <span>·</span>
-                  <span>1 year production</span>
+                  <span>3 months in prod</span>
                 </div>
                 <h2
                   className="m-0 mb-4"
@@ -438,7 +438,7 @@ export default function CasesPage() {
                     fontWeight: 500,
                   }}
                 >
-                  把訂單流變成全自動的一年。
+                  把訂單流變成會自己跑的系統。
                 </p>
                 <p
                   className="m-0 mb-6 max-w-[720px]"
@@ -449,7 +449,7 @@ export default function CasesPage() {
                     color: "var(--ink-muted)",
                   }}
                 >
-                  客戶是南台灣冷凍食品 B2B 批發商，原本下單散在 LINE 群組、Excel、電話三個地方。LIFF + Supabase + n8n 整合成一條自動產線，1 年 production 連續穩定運轉，客戶下單到三向通知 0 分鐘，三層補單機制零靜默掉單。
+                  客戶是南台灣冷凍食品 B2B 批發商，原本下單散在 LINE 群組、Excel、電話三個地方。整理成一條會自己跑的訂單系統後，3 個月 production 連續穩定運轉，客戶下單到三向通知 0 分鐘，零資料遺失。
                 </p>
                 <div
                   className="text-[12px] tracking-[0.12em] uppercase"
