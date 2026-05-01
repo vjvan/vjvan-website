@@ -153,7 +153,7 @@ export default function Case988Page() {
                   color: "var(--signal)",
                 }}
               >
-                全自動的一年。
+                會自己跑的系統。
               </em>
             </h1>
             <p
