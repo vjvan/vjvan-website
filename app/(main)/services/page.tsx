@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     description: "LINE LIFF 自動化、AI 商業系統架構。",
     url: "https://www.vjvan.com/services",
     type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Services｜VJVAN · 唯捷允雷" }],
   },
 };
 

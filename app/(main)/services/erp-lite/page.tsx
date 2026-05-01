@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     url: "https://www.vjvan.com/services/erp-lite",
     type: "website",
     locale: "zh_TW",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "ERP-Lite｜VJVAN · 唯捷允雷" }],
   },
 };
 

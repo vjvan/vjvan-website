@@ -11,11 +11,13 @@ export const metadata: Metadata = {
     siteName: "VJVAN · 唯捷允雷",
     locale: "zh_TW",
     type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Consult｜VJVAN · 唯捷允雷" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Consult｜VJVAN · 唯捷允雷",
     description: "預約 30 分鐘免費諮詢，討論系統建置需求。",
+    images: ["/opengraph-image"],
   },
   alternates: {
     canonical: "https://www.vjvan.com/consult",

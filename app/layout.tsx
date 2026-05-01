@@ -13,7 +13,7 @@ const display = Instrument_Serif({
   weight: ["400"],
   style: ["normal", "italic"],
   variable: "--f-display",
-  display: "swap",
+  display: "optional",
   preload: true,
 });
 
@@ -21,7 +21,7 @@ const body = Inter_Tight({
   subsets: ["latin"],
   weight: ["400", "500"],
   variable: "--f-body",
-  display: "swap",
+  display: "optional",
   preload: true,
 });
 
@@ -29,7 +29,7 @@ const mono = JetBrains_Mono({
   subsets: ["latin"],
   weight: ["400", "500"],
   variable: "--f-mono",
-  display: "swap",
+  display: "optional",
   preload: false,
 });
 

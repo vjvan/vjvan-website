@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: "允雷原創定位詞,AI 驅動、可被訂閱購買的商業系統完整定義。",
     url: "https://www.vjvan.com/glossary/ai-business-system",
     type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "AI 商業系統是什麼｜VJVAN" }],
   },
 };
 

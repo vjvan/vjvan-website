@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     description: "AI 商業系統架構師，一家位於屏東的顧問公司。",
     url: "https://www.vjvan.com/about",
     type: "profile",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "關於 VJVAN · 唯捷允雷" }],
   },
 };
 

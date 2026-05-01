@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: "LINE Front-end Framework 完整定義 + 與 Mini App 的差別 + 實務應用場景。",
     url: "https://www.vjvan.com/glossary/liff",
     type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "LIFF 是什麼｜VJVAN" }],
   },
 };
 

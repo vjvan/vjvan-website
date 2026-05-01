@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "zh_TW",
     alternateLocale: ["en_US"],
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Cloud Integration｜VJVAN" }],
   },
 };
 

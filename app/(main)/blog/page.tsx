@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: "AI 商業系統、LINE 生態與自動化架構的實戰書寫。",
     url: "https://www.vjvan.com/blog",
     type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Writing｜VJVAN · 唯捷允雷" }],
   },
 };
 

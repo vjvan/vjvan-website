@@ -1,9 +1,17 @@
+import Image from "next/image";
 import CtaLink from "@/components/CtaLink";
 
 export default function AuthorBox() {
   return (
     <div className="author-box">
-      <img src="/portrait.png" alt="允雷 VJVAN" />
+      <Image
+        src="/portrait.png"
+        alt="允雷 VJVAN"
+        width={120}
+        height={120}
+        loading="lazy"
+        sizes="120px"
+      />
       <div className="author-box-content">
         <p className="author-box-name">允雷 · VJVAN</p>
         <p className="author-box-title">AI SYSTEMS ARCHITECT</p>

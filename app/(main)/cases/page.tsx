@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     description: "不同產業，同一種執行力。",
     url: "https://www.vjvan.com/cases",
     type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Cases｜VJVAN · 唯捷允雷" }],
   },
 };
 
