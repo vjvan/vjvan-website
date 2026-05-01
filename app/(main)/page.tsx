@@ -276,6 +276,59 @@ export default function Home() {
           </div>
         </section>
       )}
+
+      <section
+        className="mx-auto max-w-[1120px] py-9 md:py-12"
+        style={{ borderTop: "1px solid var(--rule)" }}
+        aria-label="目前開設的課程"
+      >
+        <div className="grid gap-6 md:gap-20 md:grid-cols-[1fr_2fr] items-baseline">
+          <div
+            className="text-[11px] tracking-[0.18em] uppercase"
+            style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+          >
+            NOW TEACHING →
+          </div>
+          <div>
+            <h2
+              className="m-0 mb-[10px]"
+              style={{
+                fontFamily: "var(--f-zh-display), serif",
+                fontSize: 28,
+                lineHeight: 1.35,
+                fontWeight: 400,
+                letterSpacing: "0.01em",
+              }}
+            >
+              <Link
+                href="/courses/prompt-to-pixel"
+                className="pb-[3px]"
+                style={{ borderBottom: "2px solid var(--signal)" }}
+              >
+                Prompt to Pixel
+              </Link>
+              <span
+                className="ml-3"
+                style={{
+                  fontFamily: "var(--f-display), serif",
+                  fontStyle: "italic",
+                  fontSize: 26,
+                  color: "var(--ink-muted)",
+                  letterSpacing: "-0.005em",
+                }}
+              >
+                the One-Person AI Video Pipeline
+              </span>
+            </h2>
+            <div
+              className="text-[11px] tracking-[0.12em] uppercase"
+              style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+            >
+              COURSE · MONTHLY · FOUNDING MEMBER US$49/MO
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
