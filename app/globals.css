@@ -6,6 +6,8 @@
   --ink-muted: #5F5B57;
   --rule: #E5E2DD;
   --signal: #1F51FF;
+  --f-zh-display: "Noto Serif TC", "Songti TC", "Source Han Serif TC", "PMingLiU", Georgia, serif;
+  --f-zh-body: "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", "Heiti TC", system-ui, sans-serif;
 }
 
 [data-theme="dark"] {

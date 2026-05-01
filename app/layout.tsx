@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Inter_Tight, JetBrains_Mono, Noto_Serif_TC, Noto_Sans_TC } from "next/font/google";
+import { Instrument_Serif, Inter_Tight, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
 import { headers } from "next/headers";
 import { Analytics } from "@vercel/analytics/next";
@@ -14,13 +14,15 @@ const display = Instrument_Serif({
   style: ["normal", "italic"],
   variable: "--f-display",
   display: "swap",
+  preload: true,
 });
 
 const body = Inter_Tight({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500"],
   variable: "--f-body",
   display: "swap",
+  preload: true,
 });
 
 const mono = JetBrains_Mono({
@@ -28,20 +30,7 @@ const mono = JetBrains_Mono({
   weight: ["400", "500"],
   variable: "--f-mono",
   display: "swap",
-});
-
-const zhDisplay = Noto_Serif_TC({
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
-  variable: "--f-zh-display",
-  display: "swap",
-});
-
-const zhBody = Noto_Sans_TC({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--f-zh-body",
-  display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -155,7 +144,7 @@ export default async function RootLayout({
   return (
     <html
       lang={lang}
-      className={`${display.variable} ${body.variable} ${mono.variable} ${zhDisplay.variable} ${zhBody.variable}`}
+      className={`${display.variable} ${body.variable} ${mono.variable}`}
       suppressHydrationWarning
     >
       <head>
