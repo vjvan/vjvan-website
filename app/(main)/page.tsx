@@ -2,10 +2,30 @@ import Link from "next/link";
 import Image from "next/image";
 import { getAllPosts } from "@/lib/mdx";
 import CtaLink from "@/components/CtaLink";
+import HeroVideo from "@/components/HeroVideo";
+import JsonLd from "@/components/JsonLd";
 
 export default function Home() {
   const posts = getAllPosts();
   const latest = posts[0];
+
+  const heroVideoLd = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: "唯捷允雷 VJVAN — AI 商業系統架構師品牌片頭",
+    description:
+      "唯捷允雷 / VJVAN 品牌片頭。AI 商業系統架構師，把散在 LINE、Excel、門市的流程重組為能自動跑、能長期累積的營運資產。",
+    thumbnailUrl: "https://www.vjvan.com/hero/hero-poster.jpg",
+    uploadDate: "2026-04-30",
+    duration: "PT8S",
+    contentUrl: "https://www.vjvan.com/hero/hero-1600.mp4",
+    embedUrl: "https://www.vjvan.com/",
+    publisher: {
+      "@type": "Organization",
+      name: "唯捷允雷 VJVAN",
+      url: "https://www.vjvan.com/",
+    },
+  };
 
   return (
     <div className="px-5 md:px-10">
@@ -184,6 +204,35 @@ export default function Home() {
             </div>
           </aside>
         </div>
+      </section>
+
+      <section
+        className="mx-auto max-w-[1120px] py-9 md:py-12"
+        style={{ borderTop: "1px solid var(--rule)" }}
+        aria-label="品牌片頭"
+      >
+        <div className="grid gap-6 md:gap-20 md:grid-cols-[1fr_2fr] items-baseline mb-7">
+          <div
+            className="text-[11px] tracking-[0.18em] uppercase"
+            style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+          >
+            COVER FILM ↓
+          </div>
+          <div
+            className="text-[11px] tracking-[0.12em] uppercase"
+            style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+          >
+            08 SEC · NO SOUND · LOOP
+          </div>
+        </div>
+        <HeroVideo
+          poster="/hero/hero-poster.jpg"
+          webmSrc="/hero/hero-1600.webm"
+          mp4Src="/hero/hero-1600.mp4"
+          mp4MobileSrc="/hero/hero-1280.mp4"
+          ariaLabel="唯捷允雷 VJVAN 品牌片頭"
+        />
+        <JsonLd id="hero-video-jsonld" data={heroVideoLd} />
       </section>
 
       {latest && (
