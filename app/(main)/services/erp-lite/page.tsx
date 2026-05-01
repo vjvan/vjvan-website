@@ -1,6 +1,24 @@
 import type { Metadata } from "next";
 import JsonLd from "@/components/JsonLd";
 import CtaLink from "@/components/CtaLink";
+import HeroVideo from "@/components/HeroVideo";
+
+const erpLiteVideoLd = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: "ERP-Lite 自家進銷存系統 Hero Film",
+  description: "VJVAN 唯捷允雷 ERP-Lite 自家進銷存系統 hero teaser。涵蓋進貨/銷貨/庫存/CRM/財務報表/電子發票六模組,3 至 4 個月上線。",
+  thumbnailUrl: "https://www.vjvan.com/services-hero/erp-lite-poster.jpg",
+  uploadDate: "2026-05-01",
+  duration: "PT9S",
+  contentUrl: "https://www.vjvan.com/services-hero/erp-lite-1600.mp4",
+  embedUrl: "https://www.vjvan.com/services/erp-lite",
+  publisher: {
+    "@type": "Organization",
+    name: "唯捷允雷 VJVAN",
+    url: "https://www.vjvan.com/",
+  },
+};
 
 export const metadata: Metadata = {
   title: "ERP-Lite 自家進銷存｜中小企業專屬 ERP",
@@ -128,6 +146,7 @@ export default function ErpLitePage() {
     <>
       <JsonLd id="json-ld-erp-breadcrumb" data={breadcrumbJsonLd} />
       <JsonLd id="json-ld-erp-service" data={serviceJsonLd} />
+      <JsonLd id="json-ld-erp-video" data={erpLiteVideoLd} />
 
       <div className="px-5 md:px-10">
         <div className="mx-auto max-w-[1120px] py-14 md:py-24">
@@ -194,6 +213,31 @@ export default function ErpLitePage() {
               不是想取代 SAP、Oracle 那種大型 ERP。而是給「真正規模還沒到那裡、但業務已經跑不動」的中小企業，一個能用、能改、能長大的起點。
             </p>
           </div>
+
+          {/* Cover Film */}
+          <section className="py-9 md:py-12" aria-label="ERP-Lite hero film">
+            <div className="grid gap-6 md:gap-20 md:grid-cols-[1fr_2fr] items-baseline mb-7">
+              <div
+                className="text-[11px] tracking-[0.18em] uppercase"
+                style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+              >
+                COVER FILM ↓
+              </div>
+              <div
+                className="text-[11px] tracking-[0.12em] uppercase"
+                style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+              >
+                09 SEC · NO SOUND · LOOP
+              </div>
+            </div>
+            <HeroVideo
+              poster="/services-hero/erp-lite-poster.jpg"
+              webmSrc="/services-hero/erp-lite-1600.webm"
+              mp4Src="/services-hero/erp-lite-1600.mp4"
+              mp4MobileSrc="/services-hero/erp-lite-1280.mp4"
+              ariaLabel="ERP-Lite 自家進銷存系統 hero film"
+            />
+          </section>
 
           {/* Outcomes */}
           <section className="py-12">
