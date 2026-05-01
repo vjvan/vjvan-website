@@ -211,7 +211,7 @@ export default function Case988Page() {
               className="mb-8 text-[11px] tracking-[0.18em] uppercase"
               style={{ fontFamily: "var(--f-mono), monospace", color: "var(--signal)", fontWeight: 500 }}
             >
-              Results · 跑了一年的成績單
+              Results · 跑了 3 個月的成績單
             </div>
             <div
               className="grid gap-x-12 gap-y-10 md:grid-cols-2 py-8"
