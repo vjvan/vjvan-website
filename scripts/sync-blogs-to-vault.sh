@@ -14,7 +14,10 @@
 
 set -euo pipefail
 
-VAULT_DIR="/Users/vjvan/Library/Mobile Documents/iCloud~md~obsidian/Documents/aivan/content/published-blogs"
+# 寫到 ~/aivan canonical (而非 iCloud mirror)，避免被 ~/aivan rsync --delete 沖掉。
+# ~/aivan 自己的 post-commit hook 會把 published-blogs/ 同步到 iCloud mirror，
+# Obsidian / iPhone 透過 iCloud 看得到。
+VAULT_DIR="$HOME/aivan/content/published-blogs"
 BLOG_DIR="$(cd "$(dirname "$0")/.." && pwd)/content/blog"
 
 mkdir -p "$VAULT_DIR"
