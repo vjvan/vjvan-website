@@ -39,26 +39,23 @@ export default function ConsultPage() {
       return;
     }
 
-    const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL;
-    if (scriptUrl) {
-      try {
-        const { website: _hp, ...formData } = form;
-        void _hp;
-        await fetch(scriptUrl, {
-          method: "POST",
-          mode: "no-cors",
-          body: JSON.stringify({
-            ...formData,
-            submitted_at: new Date().toISOString(),
-          }),
-        });
-      } catch {
-        // Still redirect even if save fails
+    let redirectUrl: string = LINE_URL;
+    try {
+      const res = await fetch("/api/consult", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const json = await res.json().catch(() => ({}));
+      if (json && typeof json === "object" && typeof (json as { redirect?: unknown }).redirect === "string") {
+        redirectUrl = (json as { redirect: string }).redirect;
       }
+    } catch {
+      // 即使 API 失敗也跳 LINE，user 還能聯絡
     }
 
     gaEvent("consult_form_submit", { topic: form.topic });
-    window.location.href = LINE_URL;
+    window.location.href = redirectUrl;
   };
 
   const labelStyle: React.CSSProperties = {
