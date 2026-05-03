@@ -19,46 +19,42 @@ export default function Figure({
   priority = false,
   variant = "default",
 }: FigureProps) {
-  const maxWidth =
-    variant === "wide" ? "100%" : variant === "compact" ? "720px" : "960px";
+  const variantStyles: Record<NonNullable<FigureProps["variant"]>, {
+    maxWidth: string;
+    sizes: string;
+  }> = {
+    default: {
+      maxWidth: "960px",
+      sizes: "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 960px",
+    },
+    wide: {
+      maxWidth: "100%",
+      sizes: "(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1280px",
+    },
+    compact: {
+      maxWidth: "720px",
+      sizes: "(max-width: 768px) 100vw, 720px",
+    },
+  };
+
+  const { maxWidth, sizes } = variantStyles[variant];
 
   return (
     <figure
-      className="my-10 mx-auto"
-      style={{ maxWidth }}
+      className="figure-mdx my-10 mx-auto"
+      style={{ maxWidth, marginLeft: "auto", marginRight: "auto" }}
     >
-      <div
-        className="relative w-full overflow-hidden"
-        style={{
-          border: "1px solid var(--rule)",
-          borderRadius: 6,
-          background: "var(--bg-soft, #fafafa)",
-        }}
-      >
-        <Image
-          src={src}
-          alt={alt}
-          width={width}
-          height={height}
-          priority={priority}
-          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 960px"
-          className="w-full h-auto block"
-        />
-      </div>
-      {caption && (
-        <figcaption
-          className="mt-3 text-center"
-          style={{
-            fontFamily: "var(--f-mono), monospace",
-            fontSize: 12,
-            letterSpacing: "0.05em",
-            color: "var(--ink-soft, #666)",
-            lineHeight: 1.5,
-          }}
-        >
-          {caption}
-        </figcaption>
-      )}
+      <Image
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        priority={priority}
+        sizes={sizes}
+        className="w-full h-auto block"
+        style={{ borderRadius: 6 }}
+      />
+      {caption && <figcaption>{caption}</figcaption>}
     </figure>
   );
 }
