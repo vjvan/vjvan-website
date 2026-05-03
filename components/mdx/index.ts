@@ -5,6 +5,7 @@ import CompareCard from "./CompareCard";
 import Highlight from "./Highlight";
 import Timeline from "./Timeline";
 import StatBar from "./StatBar";
+import Figure from "./Figure";
 
 export const mdxComponents = {
   Callout,
@@ -14,4 +15,5 @@ export const mdxComponents = {
   Highlight,
   Timeline,
   StatBar,
+  Figure,
 };
