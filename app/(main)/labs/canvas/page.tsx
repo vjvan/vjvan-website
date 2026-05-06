@@ -27,7 +27,7 @@ const CANVASES: CanvasItem[] = [
     source: "個人戰略文件 (對外脫敏版,客戶案具體價碼模糊化)",
   },
   {
-    src: "/canvases/2026-05-05-client-website-8-steps-flowchart.canvas",
+    src: "/canvases/2026-05-06-client-website-8-steps-public.canvas",
     title: "客戶案建站 8 步驟工作流",
     layout: "flowchart",
     caption:
