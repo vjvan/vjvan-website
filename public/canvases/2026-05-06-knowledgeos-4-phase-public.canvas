@@ -1,0 +1,99 @@
+{
+  "nodes": [
+    {
+      "type": "text",
+      "id": "360fbeeda4604434",
+      "x": 0,
+      "y": -220,
+      "width": 2250,
+      "height": 110,
+      "color": "6",
+      "text": "# KnowledgeOS 4 階段 Roadmap\n*對齊一人公司戰略「越做越輕鬆」終局*"
+    },
+    {
+      "type": "text",
+      "id": "c063c07724a54f92",
+      "x": 0,
+      "y": 0,
+      "width": 540,
+      "height": 400,
+      "color": "4",
+      "text": "## Step 1\n*現在 ~ 3 個月*\n\n- 客戶案結束都產 SOP + 教材\n- SOP 萃取系統 (✅ 已上線)\n- 教材自動產出 (7 平台拆版)\n- 知識整理 routing\n\n> ✅ 進行中 — 視覺化系統 v2 完成"
+    },
+    {
+      "type": "text",
+      "id": "01a5c9d5bcd244d6",
+      "x": 570,
+      "y": 0,
+      "width": 540,
+      "height": 400,
+      "color": "3",
+      "text": "## Step 2\n*3 ~ 6 個月*\n\n- 客戶案模組化 (3 大產品)\n- 進銷存範本\n- B2B 補貨範本 (餐飲業 / 食品業客戶累積中)\n- 提案模組\n\n> ⏳ 等 Step 1 累積足夠案例"
+    },
+    {
+      "type": "text",
+      "id": "6239e4d6aca24cdf",
+      "x": 1140,
+      "y": 0,
+      "width": 540,
+      "height": 400,
+      "color": "5",
+      "text": "## Step 3\n*並行進行 (3-6 月)*\n\n- ==SKOOL 訂閱制啟動==\n- 訂閱制教學 Founding 階段\n- 目標四位數月訂閱被動收入\n- Founding member 階段\n\n> 🎯 一人公司戰略 — 訂閱制被動收入"
+    },
+    {
+      "type": "text",
+      "id": "f447d4501a994f2f",
+      "x": 1710,
+      "y": 0,
+      "width": 540,
+      "height": 400,
+      "color": "6",
+      "text": "## Step 4\n*6 個月 ~ 1 年*\n\n- **三軌並行 + SaaS 化**\n- 客戶案 (中小企業專案)\n- + 訂閱制教學 (五位數美金/月)\n- + 顧問 retainer\n- 知識資產直接 monetize\n\n> 🏁 終局 — 三軌商業模式並行"
+    },
+    {
+      "type": "text",
+      "id": "0e82755aacf94046",
+      "x": 190,
+      "y": -90,
+      "width": 160,
+      "height": 70,
+      "color": "1",
+      "text": "**📍 現在**"
+    }
+  ],
+  "edges": [
+    {
+      "id": "fdf601aaab4b481a",
+      "fromNode": "c063c07724a54f92",
+      "fromSide": "right",
+      "fromEnd": null,
+      "toNode": "01a5c9d5bcd244d6",
+      "toSide": "left",
+      "toEnd": "arrow",
+      "color": "#3b82f6",
+      "label": "→"
+    },
+    {
+      "id": "6a2d33f7cb684c7b",
+      "fromNode": "01a5c9d5bcd244d6",
+      "fromSide": "right",
+      "fromEnd": null,
+      "toNode": "6239e4d6aca24cdf",
+      "toSide": "left",
+      "toEnd": "arrow",
+      "color": "#3b82f6",
+      "label": "→"
+    },
+    {
+      "id": "fafe1739055347ca",
+      "fromNode": "6239e4d6aca24cdf",
+      "fromSide": "right",
+      "fromEnd": null,
+      "toNode": "f447d4501a994f2f",
+      "toSide": "left",
+      "toEnd": "arrow",
+      "color": "#3b82f6",
+      "label": "→"
+    }
+  ]
+}

@@ -19,28 +19,28 @@ interface CanvasItem {
 
 const CANVASES: CanvasItem[] = [
   {
-    src: "/canvases/2026-05-05-solo-company-strategy.canvas",
+    src: "/canvases/2026-05-06-solo-company-strategy-public.canvas",
     title: "一人公司 5 大戰略目標 + 4 階段 Roadmap",
     layout: "center_radial",
     caption:
-      "把一人公司的戰略終局放在中心,5 大目標作為 satellite 環繞,搭配時間軸 + 原則 + 警鈴。center_radial layout。",
-    source: "decisions/log.md 戰略段 + AGENTS.md「越做越輕鬆」4 階段",
+      "用 AI 擴大一人公司編制的 5 個戰略目標,搭配「越做越輕鬆」4 階段 roadmap。中心放射 layout 把核心原則放最中,5 個目標環繞。",
+    source: "個人戰略文件 (對外脫敏版,客戶案具體價碼模糊化)",
   },
   {
     src: "/canvases/2026-05-05-client-website-8-steps-flowchart.canvas",
     title: "客戶案建站 8 步驟工作流",
     layout: "flowchart",
     caption:
-      "從 product-lens 驗證需求到 verify 最終交付,8 步驟硬規則。每跳過一步就會在後段付出代價。flowchart layout。",
-    source: "CLAUDE.md「客戶案建站標準流程」段",
+      "從需求驗證到最終交付的 8 步驟硬規則,每一步跳過都會在後段付出代價。flowchart layout 含分支決策節點。",
+    source: "個人客戶案標準流程",
   },
   {
-    src: "/canvases/2026-05-05-knowledgeos-4-phase-roadmap.canvas",
+    src: "/canvases/2026-05-06-knowledgeos-4-phase-public.canvas",
     title: "KnowledgeOS 4 階段演進",
     layout: "timeline",
     caption:
-      "vault 從現在到 1 年後的演進路徑 — Step 1 SOP+教材 / Step 2 客戶案模組化 / Step 3 訂閱制教學 / Step 4 三軌並行。timeline layout。",
-    source: "AGENTS.md 一人公司戰略規範段",
+      "個人知識作業系統從現在到 1 年後的 4 階段演進 — SOP 累積 / 客戶案模組化 / 訂閱制教學 / 三軌商業模式並行。timeline layout。",
+    source: "個人 KnowledgeOS 系統 (對外脫敏版,客戶名匿名 + 價碼模糊)",
   },
 ];
 

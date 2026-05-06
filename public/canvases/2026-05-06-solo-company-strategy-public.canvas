@@ -1,0 +1,246 @@
+{
+  "nodes": [
+    {
+      "type": "text",
+      "id": "6b124892804f41d3",
+      "x": 0,
+      "y": -440,
+      "width": 2400,
+      "height": 110,
+      "color": "6",
+      "text": "# 一人公司戰略 — 5 個長期目標 + 4 階段 roadmap\n*來源：AGENTS.md「一人公司戰略規範」｜ 視覺化日期：2026-05-05*"
+    },
+    {
+      "type": "text",
+      "id": "58f6c33144904536",
+      "x": 0,
+      "y": -280,
+      "width": 460,
+      "height": 200,
+      "color": "6",
+      "text": "## 目標 1\n**一人公司本身存在形態**\n\n==用 AI 擴大編制==\n*不擴張人力*"
+    },
+    {
+      "type": "text",
+      "id": "5608c14ab4e64650",
+      "x": 485,
+      "y": -280,
+      "width": 460,
+      "height": 200,
+      "color": "4",
+      "text": "## 目標 2\n**客戶案 productize**\n\n現有服務 → 模板化 → 賣解法\n*第 N 個 LIFF 案不從零做*"
+    },
+    {
+      "type": "text",
+      "id": "c191718d48284372",
+      "x": 970,
+      "y": -280,
+      "width": 460,
+      "height": 200,
+      "color": "3",
+      "text": "## 目標 3\n**SKOOL 訂閱制教學**\n\nPremium 月訂閱制\n==被動收入>主動收入=="
+    },
+    {
+      "type": "text",
+      "id": "f86482a1347a4229",
+      "x": 1455,
+      "y": -280,
+      "width": 460,
+      "height": 200,
+      "color": "5",
+      "text": "## 目標 4\n**AI 變成知識教授**\n\nvault 知識傳承給其他一人公司\n*社群價值*"
+    },
+    {
+      "type": "text",
+      "id": "d7d54a143a7c47f2",
+      "x": 1940,
+      "y": -280,
+      "width": 460,
+      "height": 200,
+      "color": "1",
+      "text": "## 目標 5\n**商業終局**\n\n商業模式落地\n==把專業變成可被購買的系統=="
+    },
+    {
+      "type": "text",
+      "id": "bbfba045cd104e7e",
+      "x": 600,
+      "y": -40,
+      "width": 1200,
+      "height": 160,
+      "color": "6",
+      "text": "# 🎯 一人公司用 AI 擴大編制\n\n> 所有戰略對齊「==越做越輕鬆==」原則\n> *不擴張人力，靠系統和知識資產*"
+    },
+    {
+      "type": "text",
+      "id": "bfc695ab12c14481",
+      "x": 400,
+      "y": 160,
+      "width": 1600,
+      "height": 50,
+      "color": "#94a3b8",
+      "text": "—————————————  4 階段 Roadmap：越做越輕鬆  —————————————"
+    },
+    {
+      "type": "text",
+      "id": "66fb5bf8d6a3464e",
+      "x": 0,
+      "y": 240,
+      "width": 540,
+      "height": 200,
+      "color": "4",
+      "text": "## Step 1 ｜ 現在 ~ 3 個月\n\n**客戶案結束都產 SOP + 教材**\n*SOP 萃取系統自動產出*\n\n~~純勞力換錢~~ → ==知識資產=="
+    },
+    {
+      "type": "text",
+      "id": "26d8bee6a2e34a1d",
+      "x": 620,
+      "y": 240,
+      "width": 540,
+      "height": 200,
+      "color": "3",
+      "text": "## Step 2 ｜ 3 ~ 6 個月\n\n**客戶案模組化** (3 大產品)\n進銷存範本 / B2B 補貨範本 / 提案模組\n\n*模板沿用，不從零做*"
+    },
+    {
+      "type": "text",
+      "id": "5b593f54b0a9450d",
+      "x": 1240,
+      "y": 240,
+      "width": 540,
+      "height": 200,
+      "color": "5",
+      "text": "## Step 3 ｜ 並行進行\n\n**SKOOL 訂閱制啟動**\n目標 ==四位數月訂閱被動收入==\n\n*教材自動產出系統*"
+    },
+    {
+      "type": "text",
+      "id": "b3a6a4bf944d4e5b",
+      "x": 1860,
+      "y": 240,
+      "width": 540,
+      "height": 200,
+      "color": "6",
+      "text": "## Step 4 ｜ 6 個月 ~ 1 年\n\n**三軌並行 + SaaS 化**\n客戶案 (中小企業專案)\n+ 訂閱制教學 (五位數美金/月)\n+ 顧問 retainer"
+    },
+    {
+      "type": "text",
+      "id": "09990b3f648c4818",
+      "x": 0,
+      "y": 480,
+      "width": 1180,
+      "height": 300,
+      "color": "#475569",
+      "text": "## 「賺到錢」4 條核心原則\n\n1. **每個客戶案結束都要產 SOP + 教材**\n   ~~沒這個 = 永遠靠勞力換錢~~\n\n2. **客戶案模組化**\n   *第 2 個 LIFF 案不從零做，套第 1 個模板*\n\n3. <u>被動收入 > 主動收入</u>\n   ==SKOOL / SaaS 比客戶案更有 leverage==\n\n4. **自動化 marketing**\n   教材自動產出，Threads / SKOOL / vjvan.com 同步發\n\n---\n\n> 自我檢查：這週是花在 *Code+Media 槓桿*  還是  ~~Labor 勞力~~ ?"
+    }
+  ],
+  "edges": [
+    {
+      "id": "6063f2b570e1438a",
+      "fromNode": "58f6c33144904536",
+      "fromSide": "bottom",
+      "fromEnd": null,
+      "toNode": "bbfba045cd104e7e",
+      "toSide": "top",
+      "toEnd": "none",
+      "color": "#94a3b8",
+      "label": null
+    },
+    {
+      "id": "b9169d7312a04341",
+      "fromNode": "5608c14ab4e64650",
+      "fromSide": "bottom",
+      "fromEnd": null,
+      "toNode": "bbfba045cd104e7e",
+      "toSide": "top",
+      "toEnd": "none",
+      "color": "#94a3b8",
+      "label": null
+    },
+    {
+      "id": "8df63470cd204191",
+      "fromNode": "c191718d48284372",
+      "fromSide": "bottom",
+      "fromEnd": null,
+      "toNode": "bbfba045cd104e7e",
+      "toSide": "top",
+      "toEnd": "none",
+      "color": "#94a3b8",
+      "label": null
+    },
+    {
+      "id": "2d42cc2e511c4cb1",
+      "fromNode": "f86482a1347a4229",
+      "fromSide": "bottom",
+      "fromEnd": null,
+      "toNode": "bbfba045cd104e7e",
+      "toSide": "top",
+      "toEnd": "none",
+      "color": "#94a3b8",
+      "label": null
+    },
+    {
+      "id": "c393fb2c55b24b01",
+      "fromNode": "d7d54a143a7c47f2",
+      "fromSide": "bottom",
+      "fromEnd": null,
+      "toNode": "bbfba045cd104e7e",
+      "toSide": "top",
+      "toEnd": "none",
+      "color": "#94a3b8",
+      "label": null
+    },
+    {
+      "id": "e0f0b84ce2814577",
+      "fromNode": "bbfba045cd104e7e",
+      "fromSide": "bottom",
+      "fromEnd": null,
+      "toNode": "bfc695ab12c14481",
+      "toSide": "top",
+      "toEnd": "none",
+      "color": "#94a3b8",
+      "label": null
+    },
+    {
+      "id": "38b96dfa8a4e4dca",
+      "fromNode": "66fb5bf8d6a3464e",
+      "fromSide": "right",
+      "fromEnd": null,
+      "toNode": "26d8bee6a2e34a1d",
+      "toSide": "left",
+      "toEnd": "arrow",
+      "color": "#3b82f6",
+      "label": "**晉升**"
+    },
+    {
+      "id": "465d1163b87048f0",
+      "fromNode": "26d8bee6a2e34a1d",
+      "fromSide": "right",
+      "fromEnd": null,
+      "toNode": "5b593f54b0a9450d",
+      "toSide": "left",
+      "toEnd": "arrow",
+      "color": "#3b82f6",
+      "label": "**晉升**"
+    },
+    {
+      "id": "ef459e57c422494c",
+      "fromNode": "5b593f54b0a9450d",
+      "fromSide": "right",
+      "fromEnd": null,
+      "toNode": "b3a6a4bf944d4e5b",
+      "toSide": "left",
+      "toEnd": "arrow",
+      "color": "#3b82f6",
+      "label": "**晉升**"
+    },
+    {
+      "id": "fcff29baaf6543cf",
+      "fromNode": "bbfba045cd104e7e",
+      "fromSide": "bottom",
+      "fromEnd": null,
+      "toNode": "09990b3f648c4818",
+      "toSide": "top",
+      "toEnd": "arrow",
+      "color": "6",
+      "label": "*落地*"
+    }
+  ]
+}
