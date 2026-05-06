@@ -1,0 +1,46 @@
+{
+	"nodes":[
+		{"type":"text","id":"360fbeeda4604434","x":0,"y":-220,"width":2250,"height":110,"color":"6","text":"# KnowledgeOS 4 階段 Roadmap\n*對齊一人公司戰略「越做越輕鬆」終局*"},
+		{"type":"text","id":"c063c07724a54f92","x":0,"y":0,"width":540,"height":400,"color":"4","text":"## Step 1\n*現在 ~ 3 個月*\n\n- 客戶案結束都產 SOP + 教材\n- sop-extractor 自動萃取 (✅ 已上線)\n- teaching-multiplier 7 平台拆版\n- vault-curator 整理 routing\n\n> ✅ 進行中 — 5/5 加 --canvas flag 完成"},
+		{"type":"text","id":"01a5c9d5bcd244d6","x":570,"y":0,"width":540,"height":400,"color":"3","text":"## Step 2\n*3 ~ 6 個月*\n\n- 客戶案模組化 (3 大產品)\n- ERP-Lite 範本\n- LIFF B2B 範本 (988 + 鈴揚)\n- 提案三件組 (proposal-kit)\n\n> ⏳ 等 Step 1 累積足夠案例"},
+		{"type":"text","id":"6239e4d6aca24cdf","x":1140,"y":0,"width":540,"height":400,"color":"5","text":"## Step 3\n*並行進行 (3-6 月)*\n\n- ==SKOOL 訂閱制啟動==\n- P2P AI Lab Founding US$49/月\n- 目標 US$4,900/月被動收入\n- 前 100 位 founding member 收滿\n\n> 🎯 一人公司戰略目標 3"},
+		{"type":"text","id":"f447d4501a994f2f","x":1710,"y":0,"width":540,"height":400,"color":"6","text":"## Step 4\n*6 個月 ~ 1 年*\n\n- **三軌並行 + SaaS 化**\n- 客戶案 NT$200k-680k\n- + SKOOL US$5k-20k/月\n- + 顧問 NT$5k-10k/hr\n- vault 知識資產 = 直接賣\n\n> 🏁 終局 — 一人公司 3 軌商業模式"},
+		{"type":"text","id":"0e82755aacf94046","x":190,"y":-90,"width":160,"height":70,"color":"1","text":"**📍 現在**"},
+		{"type":"text","id":"3599ce37699b493c","x":120,"y":440,"width":2010,"height":160,"color":"#475569","text":"## 🧩 戰略對齊提醒\n\n- **Step 1 → Step 2 的關鍵**：客戶案結束*必*產 SOP，沒這個第 N 個案還是從零做\n- **Step 3 並行不等 Step 2 完成**：SKOOL 教材可以從 Step 1 的 SOP 直接拆，不用等模組化\n- **Step 4 SaaS 化**：988 LIFF B2B 是首選，~~純客戶案~~ → ==訂閱制 SaaS==\n\n---\n\n> 失準警鈴：本週是不是只在做客戶案，沒產任何 SOP / 教材？\n> → 觸發 `naval-for-vjvan` skill 自檢\n"}
+	],
+	"edges":[
+		{
+			"id":"fdf601aaab4b481a",
+			"fromNode":"c063c07724a54f92",
+			"fromSide":"right",
+			"fromEnd":null,
+			"toNode":"01a5c9d5bcd244d6",
+			"toSide":"left",
+			"toEnd":"arrow",
+			"color":"#3b82f6",
+			"label":"→"
+		},
+		{
+			"id":"6a2d33f7cb684c7b",
+			"fromNode":"01a5c9d5bcd244d6",
+			"fromSide":"right",
+			"fromEnd":null,
+			"toNode":"6239e4d6aca24cdf",
+			"toSide":"left",
+			"toEnd":"arrow",
+			"color":"#3b82f6",
+			"label":"→"
+		},
+		{
+			"id":"fafe1739055347ca",
+			"fromNode":"6239e4d6aca24cdf",
+			"fromSide":"right",
+			"fromEnd":null,
+			"toNode":"f447d4501a994f2f",
+			"toSide":"left",
+			"toEnd":"arrow",
+			"color":"#3b82f6",
+			"label":"→"
+		}
+	]
+}

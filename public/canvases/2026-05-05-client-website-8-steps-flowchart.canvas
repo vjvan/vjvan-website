@@ -1,0 +1,129 @@
+{
+	"nodes":[
+		{"type":"text","id":"dfd5ad4aab88438a","x":0,"y":-200,"width":2160,"height":110,"color":"6","text":"# 客戶案建站 8 步驟工作流\n*CLAUDE.md 客戶案標準流程 — 跳過任何一步不算完整交付*"},
+		{"type":"text","id":"c0a1314177b04479","x":0,"y":0,"width":480,"height":200,"color":"4","text":"🟢 ## Step 1\n**/product-lens**\n*驗證為什麼要做*"},
+		{"type":"text","id":"ad8bdaf5b8904456","x":560,"y":0,"width":480,"height":200,"color":"5","text":"⚙️ ## Step 2\n**/design-consultation**\n*產 DESIGN.md*"},
+		{"type":"text","id":"e59d73ff119c4d62","x":1120,"y":0,"width":480,"height":200,"color":"5","text":"⚙️ ## Step 3\n**挑設計範本**\n9 套 references/design-systems"},
+		{"type":"text","id":"32f052c07dca43b2","x":1680,"y":0,"width":480,"height":200,"color":"5","text":"⚙️ ## Step 4\n**/design-shotgun**\n生成多視覺變體"},
+		{"type":"text","id":"c2942f0c7ecd4743","x":0,"y":300,"width":480,"height":200,"color":"4","text":"⚙️ ## Step 5\n**/create-website**\nNext.js 16 + Tailwind 4"},
+		{"type":"text","id":"ddbb9b0ba3254b94","x":560,"y":300,"width":480,"height":200,"color":"3","text":"⚙️ ## Step 6\n**/design-review**\n視覺 QA + AI slop 抓"},
+		{"type":"text","id":"e861870f64134b52","x":1120,"y":300,"width":480,"height":200,"color":"3","text":"⚙️ ## Step 7\n**/pre-launch-check**\n10 大類上線前檢查"},
+		{"type":"text","id":"74d05eff9a544816","x":1680,"y":300,"width":480,"height":200,"color":"4","text":"🏁 ## Step 8\n**/verify**\n最終交付驗證"},
+		{"type":"text","id":"3d59a8624fae49ed","x":0,"y":600,"width":480,"height":200,"color":"1","text":"🏁 ## ⚠️ 跳過 Step 1\n設計錯方向\n→ ==重做==\n*~~浪費 2 週~~*"},
+		{"type":"text","id":"e0c85e654a1f4ae2","x":560,"y":600,"width":480,"height":200,"color":"1","text":"🏁 ## ⚠️ 跳過 Step 2\n沒 DESIGN.md\n→ AI slop\n*漸層 hero + stone 色盤*"},
+		{"type":"text","id":"041868c4bf944443","x":1120,"y":600,"width":480,"height":200,"color":"1","text":"🏁 ## ⚠️ 跳過 Step 7\n上線後才發現遺漏\n→ ==印象無法回收==\n*零 analytics, 沒 security headers*"},
+		{"type":"text","id":"249507fec0cc4c05","x":1680,"y":600,"width":480,"height":200,"color":"#475569","text":"⚙️ ## 圖例\n\n🟢 起點 / 終點\n⚙️ 流程節點\n🔀 決策節點\n🏁 終點"}
+	],
+	"edges":[
+		{
+			"id":"17b70b7a2838419b",
+			"fromNode":"c0a1314177b04479",
+			"fromSide":"right",
+			"fromEnd":null,
+			"toNode":"ad8bdaf5b8904456",
+			"toSide":"left",
+			"toEnd":"arrow",
+			"color":"4",
+			"label":"需求驗證"
+		},
+		{
+			"id":"d4d5b074648f4982",
+			"fromNode":"ad8bdaf5b8904456",
+			"fromSide":"right",
+			"fromEnd":null,
+			"toNode":"e59d73ff119c4d62",
+			"toSide":"left",
+			"toEnd":"arrow",
+			"color":"5",
+			"label":"DESIGN.md → 範本"
+		},
+		{
+			"id":"33c4eff5eee34e8e",
+			"fromNode":"e59d73ff119c4d62",
+			"fromSide":"right",
+			"fromEnd":null,
+			"toNode":"32f052c07dca43b2",
+			"toSide":"left",
+			"toEnd":"arrow",
+			"color":"5",
+			"label":"範本 → 變體"
+		},
+		{
+			"id":"7ef08bc18eba4864",
+			"fromNode":"32f052c07dca43b2",
+			"fromSide":"right",
+			"fromEnd":null,
+			"toNode":"c2942f0c7ecd4743",
+			"toSide":"left",
+			"toEnd":"arrow",
+			"color":"5",
+			"label":"客戶選定方向"
+		},
+		{
+			"id":"a94e278e6a5c42d9",
+			"fromNode":"c2942f0c7ecd4743",
+			"fromSide":"right",
+			"fromEnd":null,
+			"toNode":"ddbb9b0ba3254b94",
+			"toSide":"left",
+			"toEnd":"arrow",
+			"color":"4",
+			"label":"建站完成"
+		},
+		{
+			"id":"635b1ee6b90043b8",
+			"fromNode":"ddbb9b0ba3254b94",
+			"fromSide":"right",
+			"fromEnd":null,
+			"toNode":"e861870f64134b52",
+			"toSide":"left",
+			"toEnd":"arrow",
+			"color":"3",
+			"label":"視覺通過"
+		},
+		{
+			"id":"56e4813009a44fd6",
+			"fromNode":"e861870f64134b52",
+			"fromSide":"right",
+			"fromEnd":null,
+			"toNode":"74d05eff9a544816",
+			"toSide":"left",
+			"toEnd":"arrow",
+			"color":"4",
+			"label":"Blocking 修完"
+		},
+		{
+			"id":"064a26689a924472",
+			"fromNode":"c0a1314177b04479",
+			"fromSide":"top",
+			"fromEnd":null,
+			"toNode":"3d59a8624fae49ed",
+			"toSide":"bottom",
+			"toEnd":"arrow",
+			"color":"1",
+			"label":"**跳過**"
+		},
+		{
+			"id":"a87b7c9e4dd44f7f",
+			"fromNode":"ad8bdaf5b8904456",
+			"fromSide":"top",
+			"fromEnd":null,
+			"toNode":"e0c85e654a1f4ae2",
+			"toSide":"bottom",
+			"toEnd":"arrow",
+			"color":"1",
+			"label":"**跳過**"
+		},
+		{
+			"id":"247cf6b348c94f36",
+			"fromNode":"e861870f64134b52",
+			"fromSide":"top",
+			"fromEnd":null,
+			"toNode":"041868c4bf944443",
+			"toSide":"bottom",
+			"toEnd":"arrow",
+			"color":"1",
+			"label":"**跳過**"
+		}
+	]
+}

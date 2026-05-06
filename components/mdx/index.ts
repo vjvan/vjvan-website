@@ -6,6 +6,7 @@ import Highlight from "./Highlight";
 import Timeline from "./Timeline";
 import StatBar from "./StatBar";
 import Figure from "./Figure";
+import CanvasViewer from "./CanvasViewer";
 
 export const mdxComponents = {
   Callout,
@@ -16,4 +17,5 @@ export const mdxComponents = {
   Timeline,
   StatBar,
   Figure,
+  CanvasViewer,
 };

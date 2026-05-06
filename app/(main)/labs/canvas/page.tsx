@@ -1,0 +1,155 @@
+import type { Metadata } from "next";
+import CanvasViewer from "@/components/mdx/CanvasViewer";
+
+export const metadata: Metadata = {
+  title: "Canvas Lab · 互動知識視覺化",
+  description:
+    "允雷用 KnowledgeOS Canvas v2 系統把客戶案事故、戰略地圖、流程圖即時轉成互動式知識圖。每一張 canvas 同時是 Obsidian 原生格式、可被搜尋引擎索引的結構化文件、與可分享的 hard-to-copy 個人品牌資產。",
+  alternates: { canonical: "https://www.vjvan.com/labs/canvas" },
+  robots: { index: true, follow: true },
+};
+
+interface CanvasItem {
+  src: string;
+  title: string;
+  layout: string;
+  caption: string;
+  source: string;
+}
+
+const CANVASES: CanvasItem[] = [
+  {
+    src: "/canvases/2026-05-05-solo-company-strategy.canvas",
+    title: "一人公司 5 大戰略目標 + 4 階段 Roadmap",
+    layout: "center_radial",
+    caption:
+      "把一人公司的戰略終局放在中心,5 大目標作為 satellite 環繞,搭配時間軸 + 原則 + 警鈴。center_radial layout。",
+    source: "decisions/log.md 戰略段 + AGENTS.md「越做越輕鬆」4 階段",
+  },
+  {
+    src: "/canvases/2026-05-05-988-outbox-rescue-v3.canvas",
+    title: "988 outbox 治本記 — 雙寫 sheet bug 三輪修法",
+    layout: "story_narrative",
+    caption:
+      "5/4 佳益排骨訂單 sheet 重複寫入事件,從發現 → 排查 → 治本 v1/v2/v3 演進。story_narrative layout 保留時間軸 + 修法 trade-off。",
+    source: "decisions/log.md 2026-05-05 988 三條治本決策",
+  },
+  {
+    src: "/canvases/2026-05-05-client-website-8-steps-flowchart.canvas",
+    title: "客戶案建站 8 步驟工作流",
+    layout: "flowchart",
+    caption:
+      "從 product-lens 驗證需求到 verify 最終交付,8 步驟硬規則。每跳過一步就會在後段付出代價。flowchart layout。",
+    source: "CLAUDE.md「客戶案建站標準流程」段",
+  },
+  {
+    src: "/canvases/2026-05-05-knowledgeos-4-phase-roadmap.canvas",
+    title: "KnowledgeOS 4 階段演進",
+    layout: "timeline",
+    caption:
+      "vault 從現在到 1 年後的演進路徑 — Step 1 SOP+教材 / Step 2 客戶案模組化 / Step 3 SKOOL 訂閱 / Step 4 三軌並行。timeline layout。",
+    source: "AGENTS.md 一人公司戰略規範段",
+  },
+  {
+    src: "/canvases/2026-05-06-988-architecture.canvas",
+    title: "988 廚房 B2B 補貨系統架構",
+    layout: "flowchart",
+    caption:
+      "5 層架構 (LIFF → Supabase → 通道 → Mac Mini n8n → Sheet/LINE) 12 節點 13 邊。從 architecture.md 抽結構自動產出。flowchart layout。",
+    source: "projects/988-kitchen-b2b/architecture.md",
+  },
+];
+
+export default function CanvasLabPage() {
+  return (
+    <div className="px-5 md:px-10">
+      <div className="mx-auto max-w-[1120px] py-14 md:py-24">
+        <header
+          className="pb-12 mb-12"
+          style={{ borderBottom: "1px solid var(--rule)" }}
+        >
+          <p
+            className="font-mono uppercase tracking-[0.18em] text-[11px] mb-4"
+            style={{ color: "var(--ink-muted)" }}
+          >
+            LABS · KnowledgeOS Canvas v2
+          </p>
+          <h1
+            className="text-[clamp(44px,5.5vw,72px)] leading-[1.1] mb-6"
+            style={{ fontFamily: "var(--f-zh-display)", textWrap: "balance" }}
+          >
+            互動知識視覺化
+          </h1>
+          <p
+            className="text-[18px] leading-[1.7] max-w-[640px]"
+            style={{ color: "var(--ink-muted)" }}
+          >
+            允雷用 5 個月把客戶案事故、戰略地圖、流程圖即時轉成可被搜尋引擎索引的互動 canvas。
+            每一張同時是 Obsidian 原生 JSON 格式、Mermaid 雙語 SEO 對偶、與 hard-to-copy 的個人品牌資產。
+            點擊節點查看完整內容,捲動滾輪縮放,拖曳平移。
+          </p>
+        </header>
+
+        <section className="space-y-20">
+          {CANVASES.map((c) => (
+            <article key={c.src}>
+              <header className="mb-4">
+                <p
+                  className="font-mono uppercase tracking-[0.16em] text-[11px] mb-2"
+                  style={{ color: "var(--ink-muted)" }}
+                >
+                  {c.layout}
+                </p>
+                <h2
+                  className="text-[24px] md:text-[28px] mb-3"
+                  style={{
+                    fontFamily: "var(--f-zh-display)",
+                    fontWeight: 600,
+                    lineHeight: 1.3,
+                  }}
+                >
+                  {c.title}
+                </h2>
+                <p
+                  className="text-[14px] leading-[1.7] max-w-[720px]"
+                  style={{ color: "var(--ink-muted)" }}
+                >
+                  {c.caption}
+                </p>
+                <p
+                  className="font-mono text-[11px] tracking-[0.04em] mt-2"
+                  style={{ color: "var(--ink-muted)" }}
+                >
+                  Source: {c.source}
+                </p>
+              </header>
+              <CanvasViewer src={c.src} height={620} />
+            </article>
+          ))}
+        </section>
+
+        <footer
+          className="mt-24 pt-12"
+          style={{ borderTop: "1px solid var(--rule)" }}
+        >
+          <p
+            className="font-mono uppercase tracking-[0.12em] text-[11px] mb-3"
+            style={{ color: "var(--ink-muted)" }}
+          >
+            About this system
+          </p>
+          <p
+            className="text-[16px] leading-[1.8] max-w-[640px]"
+            style={{ color: "var(--ink)" }}
+          >
+            這套 KnowledgeOS Canvas 系統由 允雷 設計,
+            sop-extractor skill 自動從 SOP markdown 萃取結構,5 種 layout pattern (story_narrative /
+            center_radial / comparison / flowchart / timeline) 涵蓋大部分知識視覺化場景。
+            Pre-commit linter 強制配色語意一致 (綠安全 / 紅危險 / 黃警告 / 青結論 / 紫進階),
+            Mermaid 對偶輸出讓 Blog 同時兼具人類視覺與 SEO 索引雙軌。
+          </p>
+        </footer>
+      </div>
+    </div>
+  );
+}
