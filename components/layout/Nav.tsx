@@ -10,6 +10,7 @@ const navLinks = [
   { href: "/services", zh: "服務", en: "Services" },
   { href: "/courses/prompt-to-pixel", zh: "課程", en: "Courses" },
   { href: "/cases", zh: "案例", en: "Cases" },
+  { href: "/labs/canvas", zh: "實驗室", en: "Labs" },
   { href: "/consult", zh: "諮詢", en: "Consult" },
 ];
 
