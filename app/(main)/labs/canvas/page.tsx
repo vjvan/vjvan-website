@@ -27,14 +27,6 @@ const CANVASES: CanvasItem[] = [
     source: "decisions/log.md 戰略段 + AGENTS.md「越做越輕鬆」4 階段",
   },
   {
-    src: "/canvases/2026-05-05-988-outbox-rescue-v3.canvas",
-    title: "988 outbox 治本記 — 雙寫 sheet bug 三輪修法",
-    layout: "story_narrative",
-    caption:
-      "5/4 佳益排骨訂單 sheet 重複寫入事件,從發現 → 排查 → 治本 v1/v2/v3 演進。story_narrative layout 保留時間軸 + 修法 trade-off。",
-    source: "decisions/log.md 2026-05-05 988 三條治本決策",
-  },
-  {
     src: "/canvases/2026-05-05-client-website-8-steps-flowchart.canvas",
     title: "客戶案建站 8 步驟工作流",
     layout: "flowchart",
@@ -47,16 +39,8 @@ const CANVASES: CanvasItem[] = [
     title: "KnowledgeOS 4 階段演進",
     layout: "timeline",
     caption:
-      "vault 從現在到 1 年後的演進路徑 — Step 1 SOP+教材 / Step 2 客戶案模組化 / Step 3 SKOOL 訂閱 / Step 4 三軌並行。timeline layout。",
+      "vault 從現在到 1 年後的演進路徑 — Step 1 SOP+教材 / Step 2 客戶案模組化 / Step 3 訂閱制教學 / Step 4 三軌並行。timeline layout。",
     source: "AGENTS.md 一人公司戰略規範段",
-  },
-  {
-    src: "/canvases/2026-05-06-988-architecture.canvas",
-    title: "988 廚房 B2B 補貨系統架構",
-    layout: "flowchart",
-    caption:
-      "5 層架構 (LIFF → Supabase → 通道 → Mac Mini n8n → Sheet/LINE) 12 節點 13 邊。從 architecture.md 抽結構自動產出。flowchart layout。",
-    source: "projects/988-kitchen-b2b/architecture.md",
   },
 ];
 
