@@ -147,9 +147,22 @@ export async function GET(req: Request) {
   }> = [];
 
   if (DRIP_PLAN.length === 0) {
+    // 即使 DRIP_PLAN 空也跑一次最小 SELECT 保活 Supabase free tier (避免 7 天無活動觸發 pause)
+    // 5/15 排查發現:DRIP_PLAN 空導致 early return 0 query,觸發 Supabase pause warning
+    let keepaliveCount: number | null = null;
+    try {
+      const supabase = getClient();
+      const { count } = await supabase
+        .from("unified_contacts")
+        .select("*", { count: "exact", head: true });
+      keepaliveCount = count ?? 0;
+    } catch (err) {
+      console.error("[drip] keepalive ping failed", err);
+    }
     return NextResponse.json({
       ok: true,
       message: "DRIP_PLAN is empty (no drip content yet). Cron infra verified.",
+      keepalive_count: keepaliveCount,
       summary,
       duration_ms: Date.now() - startedAt,
     });
