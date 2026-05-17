@@ -156,7 +156,7 @@ export default async function BlogPostPage({ params }: Props) {
       {faqJsonLd && <JsonLd id={`json-ld-faq-${slug}`} data={faqJsonLd} />}
       {howToJsonLd && <JsonLd id={`json-ld-howto-${slug}`} data={howToJsonLd} />}
       <div className="px-5 md:px-10">
-        <div className="mx-auto max-w-[1120px] py-14 md:py-24">
+        <div className="mx-auto max-w-[1320px] py-14 md:py-24">
           <div
             className="mb-12 text-[11px] tracking-[0.14em] uppercase"
             style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
@@ -201,7 +201,7 @@ export default async function BlogPostPage({ params }: Props) {
               </div>
 
               <p
-                className="m-0 mb-12 max-w-[640px]"
+                className="m-0 mb-12 max-w-[880px]"
                 style={{
                   fontFamily: "var(--f-zh-body), sans-serif",
                   fontSize: 19,
