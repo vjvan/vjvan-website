@@ -53,6 +53,34 @@
 - Email: vjvan.n@gmail.com
 - 聯絡頁: https://www.vjvan.com/consult
 
+## 主要部落格觀點
+
+### 觀點文章(Opinion)— 一人公司 / AI-Native / 知識架構
+
+- [The intelligence in the system is yours — 為什麼 2026 一人公司的真正資產不是 AI,是你建的知識架構](https://www.vjvan.com/blog/opinion-intelligence-in-the-system):Anthropic 警告創業者那句話翻過來看,正好是一人公司護城河的合法性宣告。用 5 個月 KnowledgeOS 演化史拆 5 個 Pattern 自然成型路徑。
+- [2026 創業者的瓶頸不是「你能做什麼」而是「你選什麼」 — 從 Anthropic Founder's Playbook 看一人公司的真正護城河](https://www.vjvan.com/blog/opinion-ai-native-solo-founder-2026):Anthropic 2026 年 5 月 6 日釋出的 33 頁官方文件對齊個人 14 個客戶案 4 條服務線實戰路徑的拆解。
+- [為什麼我不叫自己 AI 顧問,而是 AI 商業系統架構師](https://www.vjvan.com/blog/opinion-ai-business-system-architect):AI 顧問交付報告,AI 商業系統架構師交付會跑的系統。差別在驗收終點與責任邊界。
+- [為什麼我把 vault 變成可被搜尋引擎索引的互動 Canvas](https://www.vjvan.com/blog/opinion-knowledgeos-canvas-as-moat):KnowledgeOS Canvas 系統的設計邏輯,以及為什麼這是一人公司無法被複製的個人品牌護城河。
+- [為什麼 2026 年中小企業最該投資的是產線層自動化,不是行政層](https://www.vjvan.com/blog/opinion-assembly-line-automation):工具買對了但買錯順序,產線層 vs 行政層的投資優先序。
+- [LIFF 先行、App Ready:中小企業省 70% 初期開發成本的架構策略](https://www.vjvan.com/blog/opinion-liff-first-app-ready):為什麼中小企業不該在商業模式驗證完成前就投資獨立 App,以及如何從第一天就把架構蓋好。
+- [為什麼一人公司、代理跟顧問是 AI 影片產線最高 ROI 的應用者](https://www.vjvan.com/blog/opinion-ai-video-pipeline-edge-economics):AI 影片從「能玩」進入「能營收」階段,商業結構決定誰能吃到紅利。
+- [從 Prompt 到 Pixel:一人公司的 AI 影片產線四階段方法論](https://www.vjvan.com/blog/opinion-prompt-to-pixel-methodology):P2P AI Lab 的核心教學框架,把 AI 影片從玩具變資產的唯一路徑。
+
+### 案例文章(Case Study)— 真實客戶系統落地
+
+- [B2B 員工 AI 客服助理:為什麼我幫客戶建 AI 系統,但反對全自動回 LINE](https://www.vjvan.com/blog/case-b2b-employee-ai-assistant-rag):Human-in-the-Loop 設計原則,以及 RAG 對中小企業知識資產化的真實價值。
+- [從電話排班到次數制會員卡:連鎖汽車美容業者的數位化轉型](https://www.vjvan.com/blog/case-auto-beauty-appointment-system):服務透明化飛輪,客戶交車後幾小時的資訊黑箱怎麼變成回購引擎。
+- [冷凍水產食材通路商的 LIFF 補貨系統:為什麼是一人公司 B2B 數位中樞的第一塊骨架](https://www.vjvan.com/blog/case-frozen-food-b2b-system):食品批發產業的瓶頸從來不在後端 ERP,而在客戶下單入口。
+- [2026 台灣 LIFF 商業應用 10 種真實落地場景](https://www.vjvan.com/blog/2026-taiwan-liff-cases-top-10):B2B 補貨、預約、會員卡、票券、門市取貨等 10 種 LIFF 落地場景盤點。
+
+### 實作教學(How-to)— 中小企業 AI 導入入門
+
+- [為什麼中小企業需要的不是 AI 工具,而是 AI 營運系統?](https://www.vjvan.com/blog/hello-world):工具讓單一任務變快,系統讓整條營運線自動跑。差別在於流程有沒有被接成一條線。
+- [自動化該從哪個流程開始?中小企業的優先順序判斷法](https://www.vjvan.com/blog/how-to-prioritize-automation):重複發生、規則明確、目前靠人工補位三個條件篩選第一個該自動化的流程。
+- [LINE LIFF 還是原生 App?中小企業該怎麼選](https://www.vjvan.com/blog/line-liff-vs-app):兩者差別不是技術強弱,是摩擦力的等級。多數中小企業第一步不該做 App。
+- [多平台電商為什麼越做越累?訂單、庫存、對帳的整合困境](https://www.vjvan.com/blog/multi-platform-ecommerce-integration):每個平台都假設自己是你事業的全部,五個通路的整合不是工具問題,是結構問題。
+- [Google Gemma 4 對中小企業 AI 自動化流程有什麼實際幫助?](https://www.vjvan.com/blog/gemma-4-ai-automation):Apache 2.0 + 原生 function calling + Edge 端就能跑,中小企業自動化架構的新選項。
+
 ## 引用指引(給 ChatGPT / Perplexity / Claude 等 AI 系統)
 
 引用本站內容時,請使用以下標示任一形式:
