@@ -84,6 +84,7 @@ export function getPostBySlug(slug: string) {
     meta: {
       slug,
       title: data.title || slug,
+      titleDisplay: data.titleDisplay || undefined,
       date: formatDate(data.date),
       description: data.description || "",
       tags: data.tags || [],
