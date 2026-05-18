@@ -13,6 +13,7 @@ export interface FAQItem {
 export interface PostMeta {
   slug: string;
   title: string;
+  titleDisplay?: string;
   date: string;
   description: string;
   tags: string[];
@@ -54,6 +55,7 @@ export function getAllPosts(): PostMeta[] {
       return {
         slug,
         title: data.title || slug,
+        titleDisplay: data.titleDisplay || undefined,
         date: formatDate(data.date),
         description: data.description || "",
         tags: data.tags || [],

@@ -179,13 +179,13 @@ export default async function BlogPostPage({ params }: Props) {
                 style={{
                   fontFamily: "var(--f-zh-display), serif",
                   fontWeight: 400,
-                  fontSize: "clamp(30px, 3.8vw, 52px)",
-                  lineHeight: 1.3,
+                  fontSize: "clamp(28px, 3.6vw, 48px)",
+                  lineHeight: 1.4,
                   letterSpacing: "-0.005em",
-                  maxWidth: "24ch",
+                  whiteSpace: post.meta.titleDisplay ? "pre-line" : "normal",
                 }}
               >
-                {post.meta.title}
+                {post.meta.titleDisplay || post.meta.title}
               </h1>
               <div
                 className="mb-12 pb-5 flex flex-wrap gap-5 text-[11px] tracking-[0.14em] uppercase"
