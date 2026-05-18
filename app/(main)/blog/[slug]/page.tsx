@@ -179,9 +179,10 @@ export default async function BlogPostPage({ params }: Props) {
                 style={{
                   fontFamily: "var(--f-zh-display), serif",
                   fontWeight: 400,
-                  fontSize: "clamp(36px, 5.5vw, 72px)",
-                  lineHeight: 1.1,
-                  letterSpacing: "0.01em",
+                  fontSize: "clamp(30px, 3.8vw, 52px)",
+                  lineHeight: 1.3,
+                  letterSpacing: "-0.005em",
+                  maxWidth: "24ch",
                 }}
               >
                 {post.meta.title}
