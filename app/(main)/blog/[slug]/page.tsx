@@ -10,6 +10,7 @@ import type { FAQItem } from "@/lib/mdx";
 import JsonLd from "@/components/JsonLd";
 import DateRail from "@/components/blog/DateRail";
 import TableOfContents from "@/components/blog/TableOfContents";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 import CtaLink from "@/components/CtaLink";
 
 interface Props {
@@ -65,6 +66,8 @@ export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) notFound();
+
+  const allPosts = getAllPosts();
 
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -221,6 +224,12 @@ export default async function BlogPostPage({ params }: Props) {
                 />
                 <AuthorBox />
               </div>
+
+              <RelatedPosts
+                currentSlug={slug}
+                currentTags={post.meta.tags}
+                allPosts={allPosts}
+              />
 
               <div
                 className="mt-16 pt-10 flex flex-wrap gap-7 text-[12px] tracking-[0.12em] uppercase"
