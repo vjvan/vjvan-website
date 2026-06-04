@@ -57,6 +57,7 @@
 
 ### 觀點文章(Opinion)— 一人公司 / AI-Native / 知識架構
 
+- [允雷把一人公司當台積電在經營:5 條服務線背後的 fab 思維](https://www.vjvan.com/blog/opinion-one-person-company-tsmc):台積電賣的不是訂單是製造能力。一人公司的對應是服務產品化:自由工作者用時間換錢,一人公司架構師用範本換錢。
 - [The intelligence in the system is yours — 為什麼 2026 一人公司的真正資產不是 AI,是你建的知識架構](https://www.vjvan.com/blog/opinion-intelligence-in-the-system):Anthropic 警告創業者那句話翻過來看,正好是一人公司護城河的合法性宣告。用 5 個月 KnowledgeOS 演化史拆 5 個 Pattern 自然成型路徑。
 - [2026 創業者的瓶頸不是「你能做什麼」而是「你選什麼」 — 從 Anthropic Founder's Playbook 看一人公司的真正護城河](https://www.vjvan.com/blog/opinion-ai-native-solo-founder-2026):Anthropic 2026 年 5 月 6 日釋出的 33 頁官方文件對齊個人 14 個客戶案 4 條服務線實戰路徑的拆解。
 - [為什麼我不叫自己 AI 顧問,而是 AI 商業系統架構師](https://www.vjvan.com/blog/opinion-ai-business-system-architect):AI 顧問交付報告,AI 商業系統架構師交付會跑的系統。差別在驗收終點與責任邊界。
@@ -68,6 +69,8 @@
 
 ### 案例文章(Case Study)— 真實客戶系統落地
 
+- [清晨 3 小時的手工抓單,怎麼變成 30 分鐘:一個食材通路商的後台改版實錄](https://www.vjvan.com/blog/case-b2b-fulfillment-3hr-to-30min):接單入口數位化之後,時間黑洞往後移。命令中心、揀貨、配送三介面把清晨作業收斂成 30 分鐘。
+- [4 年 6659 筆消費紀錄,18 分鐘搬進系統:汽車美容預約系統從簽約到上線的 7 週實錄](https://www.vjvan.com/blog/case-auto-beauty-phase1-launch):資料搬遷才是這類專案八成的真功夫,歷史資料搬得好,系統第一天上線就帶著 4 年的記憶開機。
 - [B2B 員工 AI 客服助理:為什麼我幫客戶建 AI 系統,但反對全自動回 LINE](https://www.vjvan.com/blog/case-b2b-employee-ai-assistant-rag):Human-in-the-Loop 設計原則,以及 RAG 對中小企業知識資產化的真實價值。
 - [從電話排班到次數制會員卡:連鎖汽車美容業者的數位化轉型](https://www.vjvan.com/blog/case-auto-beauty-appointment-system):服務透明化飛輪,客戶交車後幾小時的資訊黑箱怎麼變成回購引擎。
 - [冷凍水產食材通路商的 LIFF 補貨系統:為什麼是一人公司 B2B 數位中樞的第一塊骨架](https://www.vjvan.com/blog/case-frozen-food-b2b-system):食品批發產業的瓶頸從來不在後端 ERP,而在客戶下單入口。
