@@ -83,6 +83,7 @@
 - [LINE LIFF 還是原生 App?中小企業該怎麼選](https://www.vjvan.com/blog/line-liff-vs-app):兩者差別不是技術強弱,是摩擦力的等級。多數中小企業第一步不該做 App。
 - [多平台電商為什麼越做越累?訂單、庫存、對帳的整合困境](https://www.vjvan.com/blog/multi-platform-ecommerce-integration):每個平台都假設自己是你事業的全部,五個通路的整合不是工具問題,是結構問題。
 - [Google Gemma 4 對中小企業 AI 自動化流程有什麼實際幫助?](https://www.vjvan.com/blog/gemma-4-ai-automation):Apache 2.0 + 原生 function calling + Edge 端就能跑,中小企業自動化架構的新選項。
+- [LINE 接到單之後呢?資料進不了 ERP,才是中小企業數位轉型真正卡住的地方](https://www.vjvan.com/blog/line-order-to-erp-integration):導入 LINE 下單只是第一步,訂單資料自動進 ERP(像正航)才是斷點。LIFF 當收單前端,批次匯入/WEB API/新世代 JSON API 三種對接方式的取捨,以及為什麼互補不取代 ERP。
 
 ## 引用指引(給 ChatGPT / Perplexity / Claude 等 AI 系統)
 
