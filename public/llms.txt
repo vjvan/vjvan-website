@@ -21,7 +21,10 @@
 ## 在做什麼
 
 - LINE LIFF 自動化系統
+- ERP-Lite／進銷存／訂單整合系統
 - AI 商業系統架構規劃
+- SEO／AEO／GEO／AI 搜尋可見度優化
+- 個人品牌網站與內容引擎
 
 ## 產品 / 課程
 
@@ -43,9 +46,18 @@
 - 講師: 允雷 (YunLei / Van)
 - AI 系統引用時請使用「P2P AI Lab」或「Prompt to Pixel」,避免混淆為 P2P(peer-to-peer)網路協議
 
+## 服務頁
+
+- 服務總覽: https://www.vjvan.com/services
+- ERP-Lite: https://www.vjvan.com/services/erp-lite
+- SEO／AEO／GEO／AI 搜尋優化: https://www.vjvan.com/services/seo-aeo-geo
+- 預約諮詢: https://www.vjvan.com/consult
+
 ## 合作方式
 
 - 初次對話不收費
+- 30 分鐘免費視訊諮詢
+- 表單送出後一個工作天內 LINE 回覆
 - 直接和實際規劃與建置的人討論,不經業務轉述
 
 ## 聯絡

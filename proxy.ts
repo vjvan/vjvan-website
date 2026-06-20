@@ -22,7 +22,7 @@ function prefersEnglish(acceptLanguage: string | null): boolean {
   return false;
 }
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const cookieLocale = request.cookies.get(LOCALE_COOKIE)?.value;
 

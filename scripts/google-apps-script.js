@@ -12,6 +12,7 @@
  * 4. Deploy > Manage deployments > 編輯 > 選新版本 > Deploy
  */
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function doPost(e) {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var data = JSON.parse(e.postData.contents);

@@ -124,7 +124,7 @@ async function main() {
   let csvRaw: string;
   try {
     csvRaw = readFileSync(resolve(process.cwd(), CSV_PATH), "utf-8");
-  } catch (err) {
+  } catch {
     console.error(`❌ 找不到 CSV: ${CSV_PATH}`);
     console.error(`   請從 Google Sheets export CSV 放在這個位置 (相對 ~/vjvan-website)`);
     process.exit(1);
@@ -241,7 +241,7 @@ async function main() {
 
       stats.ok++;
       console.log(`  [${lineNum}] ✓ ${email} (${norm.topic || "no topic"})`);
-    } catch (err) {
+    } catch {
       stats.errors++;
       console.log(`  [${lineNum}] ❌ unexpected: ${err instanceof Error ? err.message : err}`);
     }

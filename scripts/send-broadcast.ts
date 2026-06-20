@@ -72,7 +72,7 @@ const BROADCAST = {
   // HTML 內容 (footer 自動加退訂 link)
   buildHtml: (contact: ContactRow) => `
     <div style="font-family: -apple-system, 'Noto Sans TC', sans-serif; line-height: 1.7; color: #0A0A0A; max-width: 560px; padding: 24px;">
-      <p>嗨,</p>
+      <p>嗨，${contact.name || "你好"}，</p>
       <p>(範本內容,實際使用前必改)</p>
       <p>— 允雷 (Van)<br>vjvan.com</p>
     </div>

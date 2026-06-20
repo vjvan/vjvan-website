@@ -108,6 +108,20 @@ const personJsonLd = {
   },
 };
 
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "VJVAN · 唯捷允雷",
+  alternateName: ["唯捷允雷有限公司", "允雷"],
+  url: "https://www.vjvan.com",
+  inLanguage: "zh-TW",
+  publisher: {
+    "@type": "Organization",
+    name: "唯捷允雷有限公司",
+    url: "https://www.vjvan.com",
+  },
+};
+
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -135,6 +149,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const websiteJson = JSON.stringify(websiteJsonLd).replace(/</g, "\\u003c");
   const personJson = JSON.stringify(personJsonLd).replace(/</g, "\\u003c");
   const organizationJson = JSON.stringify(organizationJsonLd).replace(/</g, "\\u003c");
 
@@ -151,6 +166,11 @@ export default function RootLayout({
             __html:
               "(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();",
           }}
+        />
+        <script
+          id="json-ld-website"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: websiteJson }}
         />
         <script
           id="json-ld-person"

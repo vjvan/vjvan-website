@@ -88,6 +88,7 @@ VJVAN 公開服務體系包含以下六項：
    - 產出重點是能落地的 blueprint，而不只是 PPT。
 
 3. AI 搜尋時代 visibility
+   - 詳細頁：https://www.vjvan.com/services/seo-aeo-geo
    - 目標是讓客戶用 AI 搜尋某個產業問題時，公司能成為被引用、被理解的答案。
    - 這包含內容架構、結構化資料、文章索引、glossary、llms.txt 與可被 LLM 讀懂的網站資訊。
 
@@ -114,6 +115,8 @@ VJVAN 公開服務體系包含以下六項：
 - 初次對話不收費。
 - 諮詢入口：https://www.vjvan.com/consult
 - 聯絡表單送出後，公開頁面描述為一個工作天內 LINE 回覆。
+- 表單可選方向包含 LINE LIFF、ERP-Lite／進銷存／訂單整合、CRM、自動化流程、AI 導入策略、SEO／AEO／GEO／AI 搜尋健檢、個人品牌網站與內容引擎。
+- 第一次諮詢不需要規格書，只要說明生意型態、最花時間的流程、每天大約幾筆訂單／預約／訊息，以及目前使用的工具。
 - 初次諮詢形式為約 30 分鐘免費視訊，不收費，也不綁單。
 - 客戶直接和實際規劃與建置的人討論，不經業務或 PM 層層轉述。
 - VJVAN 偏好小而深的合作，一次專案量以品質優於數量為原則。
@@ -272,6 +275,7 @@ P2P AI Lab 公開規劃為 11 個 Module、49 單元，模組包含：
 - 首頁：https://www.vjvan.com
 - 服務：https://www.vjvan.com/services
 - ERP-Lite：https://www.vjvan.com/services/erp-lite
+- SEO／AEO／GEO：https://www.vjvan.com/services/seo-aeo-geo
 - 案例總覽：https://www.vjvan.com/cases
 - 冷凍食品 B2B 案例：https://www.vjvan.com/cases/988-kitchen-b2b
 - Cloud Integration 中文：https://www.vjvan.com/cases/cloud-integration

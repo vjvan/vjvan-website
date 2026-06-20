@@ -84,10 +84,34 @@ const breadcrumbJsonLd = {
   ],
 };
 
+const serviceCatalogJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "VJVAN 唯捷允雷服務項目",
+  url: "https://www.vjvan.com/services",
+  itemListElement: services.map((service, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    item: {
+      "@type": "Service",
+      name: service.titleZh,
+      description: service.desc,
+      url: "href" in service && service.href ? `https://www.vjvan.com${service.href}` : "https://www.vjvan.com/services",
+      provider: {
+        "@type": "Organization",
+        name: "唯捷允雷有限公司",
+        url: "https://www.vjvan.com",
+      },
+      areaServed: "Taiwan",
+    },
+  })),
+};
+
 export default function ServicesPage() {
   return (
     <>
       <JsonLd id="json-ld-services-breadcrumb" data={breadcrumbJsonLd} />
+      <JsonLd id="json-ld-services-catalog" data={serviceCatalogJsonLd} />
       <JsonLd id="json-ld-services-video" data={servicesVideoLd} />
       <div className="px-5 md:px-10">
         <div className="mx-auto max-w-[1120px] py-14 md:py-24">

@@ -5,11 +5,35 @@ import { gaEvent } from "@/lib/gtag";
 
 const TOPICS = [
   "LINE LIFF 系統建置",
+  "ERP-Lite / 進銷存 / 訂單整合",
   "CRM 管理後台",
   "自動化流程",
   "AI 導入策略",
-  "多平台整合",
+  "SEO / AEO / GEO / AI 搜尋健檢",
+  "個人品牌網站 + 內容引擎",
   "其他",
+];
+
+const FITS = [
+  {
+    label: "LINE 訊息已經管不動",
+    detail: "訂單、預約、客戶狀態散在不同聊天室，需要整理成自助入口與後台。",
+  },
+  {
+    label: "Excel / Google Sheet 開始拖慢營運",
+    detail: "每天有人手動轉抄、核對、追狀態，資料越多越沒人敢改。",
+  },
+  {
+    label: "想導入 AI，但不想只多買工具",
+    detail: "需要先判斷哪些流程值得系統化，哪些任務適合 AI 輔助。",
+  },
+];
+
+const PREP = [
+  "你們是做什麼生意？",
+  "現在最花時間的是接單、出貨、預約、客服還是報表？",
+  "一天大約幾筆訂單／預約／客戶訊息？",
+  "目前用 LINE、Excel、ERP、POS、Notion 或其他系統嗎？",
 ];
 
 const LINE_URL = "https://lin.ee/XjnkG91";
@@ -193,7 +217,7 @@ export default function ConsultPage() {
               填完下面，一個工作天內我會從 LINE 主動聯繫你，約 30 分鐘線上諮詢。不收費，也不綁單。
             </p>
             <p
-              className="m-0 mb-12 max-w-[640px]"
+              className="m-0 mb-10 max-w-[640px]"
               style={{
                 fontFamily: "var(--f-zh-body), sans-serif",
                 fontSize: 19,
@@ -204,7 +228,60 @@ export default function ConsultPage() {
               如果你還沒想清楚，在「簡述你的需求」直接寫「我們是做什麼的、一天幾筆訂單、誰在處理」也可以。
             </p>
 
-            <form onSubmit={handleSubmit} className="max-w-[640px]">
+            <section className="mb-12" aria-label="適合諮詢的狀況">
+              <div
+                className="mb-5 text-[11px] tracking-[0.18em] uppercase"
+                style={{ fontFamily: "var(--f-mono), monospace", color: "var(--signal)", fontWeight: 500 }}
+              >
+                Good fit
+              </div>
+              <div className="grid gap-4 md:grid-cols-3">
+                {FITS.map((item) => (
+                  <article key={item.label} className="p-5" style={{ border: "1px solid var(--rule)" }}>
+                    <h2
+                      className="m-0 mb-3"
+                      style={{ fontFamily: "var(--f-zh-display), serif", fontSize: 20, lineHeight: 1.35, fontWeight: 600 }}
+                    >
+                      {item.label}
+                    </h2>
+                    <p
+                      className="m-0"
+                      style={{ fontFamily: "var(--f-zh-body), sans-serif", fontSize: 14, lineHeight: 1.7, color: "var(--ink-muted)" }}
+                    >
+                      {item.detail}
+                    </p>
+                  </article>
+                ))}
+              </div>
+            </section>
+
+            <section className="mb-12 p-5" style={{ border: "1px solid var(--rule)" }} aria-label="填表前可以準備的資訊">
+              <div
+                className="mb-4 text-[11px] tracking-[0.18em] uppercase"
+                style={{ fontFamily: "var(--f-mono), monospace", color: "var(--signal)", fontWeight: 500 }}
+              >
+                Before you write
+              </div>
+              <p
+                className="m-0 mb-4"
+                style={{ fontFamily: "var(--f-zh-body), sans-serif", fontSize: 15, lineHeight: 1.7, color: "var(--ink-muted)" }}
+              >
+                不需要先整理成規格書，只要回答其中兩三題，我就能判斷第一步該做系統、流程盤點，還是先不要做。
+              </p>
+              <ul className="m-0 p-0 list-none grid gap-2">
+                {PREP.map((item) => (
+                  <li
+                    key={item}
+                    className="pl-4"
+                    style={{ fontFamily: "var(--f-zh-body), sans-serif", fontSize: 15, lineHeight: 1.7, color: "var(--ink)", borderLeft: "2px solid var(--signal)" }}
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            <form onSubmit={handleSubmit} className="max-w-[640px]" aria-label="預約諮詢表單">
               {/* honeypot field */}
               <div className="absolute -left-[9999px]" aria-hidden="true">
                 <label htmlFor="website">Website</label>
@@ -226,6 +303,8 @@ export default function ConsultPage() {
                   id="name"
                   type="text"
                   required
+                  autoComplete="name"
+                  placeholder="你的名字"
                   value={form.name}
                   onChange={(e) => update("name", e.target.value)}
                   style={inputStyle}
@@ -240,6 +319,8 @@ export default function ConsultPage() {
                   id="company"
                   type="text"
                   required
+                  autoComplete="organization"
+                  placeholder="公司或品牌名稱"
                   value={form.company}
                   onChange={(e) => update("company", e.target.value)}
                   style={inputStyle}
@@ -255,6 +336,8 @@ export default function ConsultPage() {
                     id="email"
                     type="email"
                     required
+                    autoComplete="email"
+                    placeholder="you@example.com"
                     value={form.email}
                     onChange={(e) => update("email", e.target.value)}
                     style={inputStyle}
@@ -268,6 +351,8 @@ export default function ConsultPage() {
                     id="phone"
                     type="tel"
                     required
+                    autoComplete="tel"
+                    placeholder="09xx 或公司電話"
                     value={form.phone}
                     onChange={(e) => update("phone", e.target.value)}
                     style={inputStyle}
@@ -332,6 +417,7 @@ export default function ConsultPage() {
                 <button
                   type="submit"
                   disabled={submitting}
+                  aria-busy={submitting}
                   className="disabled:opacity-50"
                   style={{
                     background: "transparent",

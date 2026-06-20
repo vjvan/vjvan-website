@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 type HeroVideoProps = {
@@ -61,19 +62,13 @@ export default function HeroVideo({
 
   return (
     <div className={className} style={{ position: "relative", width: "100%", aspectRatio: "16 / 9" }}>
-      <img
+      <Image
         src={poster}
         alt={ariaLabel ?? ""}
-        width={1600}
-        height={900}
-        loading="eager"
-        decoding="async"
-        fetchPriority="high"
+        fill
+        priority
+        sizes="(min-width: 1120px) 1120px, 100vw"
         style={{
-          position: "absolute",
-          inset: 0,
-          width: "100%",
-          height: "100%",
           objectFit: "cover",
           opacity: shouldLoad ? 0 : 1,
           transition: "opacity 0.4s ease",
