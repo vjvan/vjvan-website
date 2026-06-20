@@ -235,6 +235,169 @@ export default function Home() {
         <JsonLd id="hero-video-jsonld" data={heroVideoLd} />
       </section>
 
+      <section
+        className="mx-auto max-w-[1120px] py-9 md:py-12"
+        style={{ borderTop: "1px solid var(--rule)" }}
+        aria-label="我幫誰"
+      >
+        <div className="grid gap-8 md:gap-20 md:grid-cols-[1fr_2fr]">
+          <div
+            className="text-[11px] tracking-[0.18em] uppercase"
+            style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+          >
+            WHO I HELP →
+          </div>
+          <div>
+            <h2
+              className="m-0 mb-7"
+              style={{
+                fontFamily: "var(--f-zh-display), serif",
+                fontSize: "clamp(30px, 4.2vw, 56px)",
+                lineHeight: 1.08,
+                fontWeight: 400,
+                letterSpacing: "0.01em",
+              }}
+            >
+              我幫正在長大的生意，
+              <br />
+              把日常流程變成系統。
+            </h2>
+            <div className="grid gap-3 md:grid-cols-2">
+              {["食品批發", "汽車美容", "多門市服務業", "一人公司", "中小企業老闆"].map((item) => (
+                <div
+                  key={item}
+                  className="py-3"
+                  style={{ borderTop: "1px solid var(--rule)" }}
+                >
+                  <span
+                    style={{
+                      fontFamily: "var(--f-zh-body), sans-serif",
+                      fontSize: 16,
+                      lineHeight: 1.55,
+                      color: "var(--ink)",
+                    }}
+                  >
+                    {item}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="mx-auto max-w-[1120px] py-9 md:py-12"
+        style={{ borderTop: "1px solid var(--rule)" }}
+        aria-label="我解什麼問題"
+      >
+        <div className="grid gap-8 md:gap-20 md:grid-cols-[1fr_2fr]">
+          <div
+            className="text-[11px] tracking-[0.18em] uppercase"
+            style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+          >
+            OPERATING PROBLEMS →
+          </div>
+          <div className="grid gap-5">
+            {[
+              "LINE 接單混亂，訊息、訂單、客戶狀態散在不同對話裡。",
+              "Google Sheet 管不起來，資料越累積，越沒有人敢改。",
+              "ERP 有，但前端資料進不去，現場仍然靠人工轉抄。",
+              "AI 工具很多，但沒有形成營運系統，最後只是多一堆帳號。",
+            ].map((problem, index) => (
+              <div
+                key={problem}
+                className="grid gap-4 md:grid-cols-[72px_1fr] py-5"
+                style={{ borderTop: index === 0 ? "none" : "1px solid var(--rule)" }}
+              >
+                <div
+                  className="text-[11px] tracking-[0.18em] uppercase"
+                  style={{ fontFamily: "var(--f-mono), monospace", color: "var(--signal)" }}
+                >
+                  0{index + 1}
+                </div>
+                <p
+                  className="m-0"
+                  style={{
+                    fontFamily: "var(--f-zh-body), sans-serif",
+                    fontSize: 18,
+                    lineHeight: 1.75,
+                    color: "var(--ink-muted)",
+                  }}
+                >
+                  {problem}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="mx-auto max-w-[1120px] py-9 md:py-12"
+        style={{ borderTop: "1px solid var(--rule)" }}
+        aria-label="系統成果與諮詢入口"
+      >
+        <div className="grid gap-8 md:gap-20 md:grid-cols-[1fr_2fr]">
+          <div
+            className="text-[11px] tracking-[0.18em] uppercase"
+            style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+          >
+            PROOF BAR →
+          </div>
+          <div>
+            <div className="grid gap-4 md:grid-cols-4 mb-9">
+              {[
+                ["6659", "筆資料搬遷"],
+                ["3H→30M", "抓單時間壓縮"],
+                ["B2B", "補貨系統"],
+                ["3", "門市預約系統"],
+              ].map(([metric, label]) => (
+                <div
+                  key={label}
+                  className="pt-4"
+                  style={{ borderTop: "2px solid var(--signal)" }}
+                >
+                  <div
+                    className="mb-2"
+                    style={{
+                      fontFamily: "var(--f-display), serif",
+                      fontStyle: "italic",
+                      fontSize: "clamp(28px, 3.6vw, 44px)",
+                      lineHeight: 1,
+                      color: "var(--ink)",
+                      letterSpacing: "-0.02em",
+                    }}
+                  >
+                    {metric}
+                  </div>
+                  <div
+                    className="text-[11px] tracking-[0.12em] uppercase"
+                    style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+                  >
+                    {label}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div
+              className="flex flex-wrap gap-7 items-center text-[12px] tracking-[0.12em] uppercase"
+              style={{ fontFamily: "var(--f-mono), monospace" }}
+            >
+              <CtaLink href="/services/erp-lite" variant="primary">
+                LINE LIFF／ERP 整合
+              </CtaLink>
+              <CtaLink href="/services/seo-aeo-geo" arrow="none">
+                SEO／AEO／GEO
+              </CtaLink>
+              <CtaLink href="/glossary/ai-business-system" arrow="none">
+                AI 商業系統
+              </CtaLink>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {latest && (
         <section
           className="mx-auto max-w-[1120px] py-9 md:py-12"

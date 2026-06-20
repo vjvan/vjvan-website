@@ -1,16 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    const current = document.documentElement.getAttribute("data-theme");
-    setTheme(current === "dark" ? "dark" : "light");
-    setMounted(true);
-  }, []);
+  const [theme, setTheme] = useState<"light" | "dark">(() => {
+    if (typeof document === "undefined") return "light";
+    return document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+  });
 
   function toggle() {
     const next = theme === "light" ? "dark" : "light";
@@ -30,7 +26,7 @@ export default function ThemeToggle() {
       style={{ fontFamily: "var(--f-mono), monospace" }}
       suppressHydrationWarning
     >
-      {mounted ? (theme === "light" ? "DARK MODE →" : "LIGHT MODE →") : "DARK MODE →"}
+      {theme === "light" ? "DARK MODE →" : "LIGHT MODE →"}
     </button>
   );
 }

@@ -160,28 +160,35 @@ export default function CanvasViewer({
   const [ty, setTy] = useState(0);
   const [activeNode, setActiveNode] = useState<CanvasNode | null>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const dragState = useRef<{ x: number; y: number; tx: number; ty: number } | null>(null);
 
   useEffect(() => {
     let cancelled = false;
-    setError(null);
-    setData(null);
-    fetch(src, { cache: "force-cache" })
-      .then((r) => {
-        if (!r.ok) throw new Error(`HTTP ${r.status}`);
-        return r.json();
-      })
-      .then((json) => {
-        if (cancelled) return;
-        setData(json);
-      })
-      .catch((e) => {
-        if (cancelled) return;
-        setError(String(e));
-      });
+    const frame = window.requestAnimationFrame(() => {
+      if (cancelled) return;
+      setError(null);
+      setData(null);
+
+      fetch(src, { cache: "force-cache" })
+        .then((r) => {
+          if (!r.ok) throw new Error(`HTTP ${r.status}`);
+          return r.json();
+        })
+        .then((json) => {
+          if (cancelled) return;
+          setData(json);
+        })
+        .catch((e) => {
+          if (cancelled) return;
+          setError(String(e));
+        });
+    });
+
     return () => {
       cancelled = true;
+      window.cancelAnimationFrame(frame);
     };
   }, [src]);
 
@@ -213,7 +220,9 @@ export default function CanvasViewer({
   }, []);
 
   useEffect(() => {
-    if (initialFit) fit();
+    if (!initialFit) return;
+    const frame = window.requestAnimationFrame(() => fit());
+    return () => window.cancelAnimationFrame(frame);
   }, [data, initialFit, fit]);
 
   useEffect(() => {
@@ -240,6 +249,7 @@ export default function CanvasViewer({
   function onMouseDown(e: React.MouseEvent) {
     if ((e.target as HTMLElement).closest("[data-node]")) return;
     dragState.current = { x: e.clientX, y: e.clientY, tx, ty };
+    setIsDragging(true);
   }
 
   function onMouseMove(e: React.MouseEvent) {
@@ -252,6 +262,7 @@ export default function CanvasViewer({
 
   function onMouseUp() {
     dragState.current = null;
+    setIsDragging(false);
   }
 
   const containerStyle: CSSProperties = isFullscreen
@@ -280,7 +291,7 @@ export default function CanvasViewer({
           height="100%"
           viewBox={`${bounds.x} ${bounds.y} ${bounds.w} ${bounds.h}`}
           preserveAspectRatio="xMidYMid meet"
-          style={{ display: "block", cursor: dragState.current ? "grabbing" : "grab" }}
+          style={{ display: "block", cursor: isDragging ? "grabbing" : "grab" }}
         >
           <defs>
             {Object.entries(COLOR_MAP).map(([key, c]) => (

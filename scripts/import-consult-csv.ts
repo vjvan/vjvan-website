@@ -151,7 +151,7 @@ async function main() {
     auth: { persistSession: false, autoRefreshToken: false },
   });
 
-  let stats = { ok: 0, skipped_invalid_email: 0, skipped_existing_source: 0, errors: 0 };
+  const stats = { ok: 0, skipped_invalid_email: 0, skipped_existing_source: 0, errors: 0 };
 
   for (let i = 0; i < rows.length; i++) {
     const norm = normalizeRow(rows[i]);

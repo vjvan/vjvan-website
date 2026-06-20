@@ -52,6 +52,7 @@ const services = [
     titleZh: "AI 搜尋時代",
     titleEn: "visibility",
     desc: "當客戶用 AI 搜尋你的產業時,你的公司要是第一個被引用的答案。",
+    href: "/services/seo-aeo-geo",
   },
   {
     num: "N° 04",

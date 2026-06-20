@@ -26,9 +26,6 @@ export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const cookieLocale = request.cookies.get(LOCALE_COOKIE)?.value;
 
-  const requestHeaders = new Headers(request.headers);
-  requestHeaders.set("x-pathname", pathname);
-
   if (pathname === ZH_PATH) {
     if (cookieLocale === "en") {
       return NextResponse.redirect(new URL(EN_PATH, request.url), 307);
@@ -44,7 +41,7 @@ export function middleware(request: NextRequest) {
     }
   }
 
-  return NextResponse.next({ request: { headers: requestHeaders } });
+  return NextResponse.next();
 }
 
 export const config = {

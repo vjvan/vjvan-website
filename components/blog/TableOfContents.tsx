@@ -19,30 +19,39 @@ export default function TableOfContents() {
   const [activeId, setActiveId] = useState<string>("");
 
   useEffect(() => {
-    const nodes = Array.from(
-      document.querySelectorAll<HTMLHeadingElement>(".article-content h2")
-    );
-    const items = nodes.map((node) => {
-      if (!node.id) node.id = slugify(node.textContent || "");
-      return { id: node.id, text: node.textContent || "" };
+    let observer: IntersectionObserver | null = null;
+
+    const frame = window.requestAnimationFrame(() => {
+      const nodes = Array.from(
+        document.querySelectorAll<HTMLHeadingElement>(".article-content h2")
+      );
+      const items = nodes.map((node) => {
+        if (!node.id) node.id = slugify(node.textContent || "");
+        return { id: node.id, text: node.textContent || "" };
+      });
+
+      setHeadings(items);
+
+      if (items.length === 0) return;
+
+      observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setActiveId(entry.target.id);
+            }
+          });
+        },
+        { rootMargin: "-20% 0% -70% 0%" }
+      );
+
+      nodes.forEach((node) => observer?.observe(node));
     });
-    setHeadings(items);
 
-    if (items.length === 0) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveId(entry.target.id);
-          }
-        });
-      },
-      { rootMargin: "-20% 0% -70% 0%" }
-    );
-
-    nodes.forEach((node) => observer.observe(node));
-    return () => observer.disconnect();
+    return () => {
+      window.cancelAnimationFrame(frame);
+      observer?.disconnect();
+    };
   }, []);
 
   if (headings.length === 0) return null;
