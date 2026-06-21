@@ -5,6 +5,39 @@ import CtaLink from "@/components/CtaLink";
 import HeroVideo from "@/components/HeroVideo";
 import JsonLd from "@/components/JsonLd";
 
+const caseSnapshots = [
+  {
+    id: "b2b-replenishment",
+    eyebrow: "FOOD B2B",
+    title: "食材通路補貨系統",
+    metric: "3H→30M",
+    metricLabel: "抓單時間壓縮",
+    situation: "清晨人工抓單、LINE 訊息與後台資料分散，越忙越容易漏單。",
+    system: "把留資、訂單、出貨與客服資料收回同一條後台流程，讓前線少轉抄、老闆看得到節奏。",
+    href: "/blog/case-b2b-fulfillment-3hr-to-30min",
+  },
+  {
+    id: "auto-beauty-booking",
+    eyebrow: "AUTO BEAUTY",
+    title: "三門市汽車美容預約系統",
+    metric: "6659",
+    metricLabel: "筆資料搬遷",
+    situation: "預約、會員、提醒、回訪原本散在表單與人工流程，門市越多越難管理。",
+    system: "讓客戶在 LINE 內預約，門市用同一個後台管理排程、會員、方案與提醒。",
+    href: "/blog/case-auto-beauty-phase1-launch",
+  },
+  {
+    id: "erp-lite",
+    eyebrow: "ERP-LITE",
+    title: "中小企業自家進銷存",
+    metric: "1 DB",
+    metricLabel: "共用資料源",
+    situation: "ERP、表單、Excel、LINE 各自存資料，前線仍然要人工轉抄。",
+    system: "用自家資料庫把 LIFF、CRM、庫存與報表接成同一個營運底座，先能跑，再逐步長大。",
+    href: "/services/erp-lite",
+  },
+];
+
 export default function Home() {
   const posts = getAllPosts();
   const latest = posts[0];
@@ -25,6 +58,29 @@ export default function Home() {
       name: "唯捷允雷 VJVAN",
       url: "https://www.vjvan.com/",
     },
+  };
+
+  const caseSnapshotsLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "VJVAN 唯捷允雷案例快照",
+    url: "https://www.vjvan.com/",
+    itemListElement: caseSnapshots.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "CreativeWork",
+        name: item.title,
+        description: `${item.situation}${item.system}`,
+        url: `https://www.vjvan.com${item.href}`,
+        about: item.eyebrow,
+        creator: {
+          "@type": "Organization",
+          name: "唯捷允雷有限公司",
+          url: "https://www.vjvan.com",
+        },
+      },
+    })),
   };
 
   return (
@@ -98,9 +154,9 @@ export default function Home() {
                 color: "var(--ink-muted)",
               }}
             >
-              多數中小企業不缺 AI 工具,缺的是
+              多數中小企業不缺 AI 工具，缺的是
               <strong style={{ color: "var(--ink)", fontWeight: 500 }}>讓工具替你工作的系統</strong>
-              。我把散在 LINE、Excel、門市的流程,重組為能自動跑、能長期累積的營運資產。餐飲補貨、汽車美容預約、電商訂單整合,原理都一樣。
+              。我把散在 LINE、Excel、門市的流程，重組為能自動跑、能長期累積的營運資產。餐飲補貨、汽車美容預約、電商訂單整合，原理都一樣。
             </p>
             <div
               className="flex flex-wrap gap-7 items-center text-[12px] tracking-[0.12em] uppercase"
@@ -233,6 +289,7 @@ export default function Home() {
           ariaLabel="唯捷允雷 VJVAN 品牌片頭"
         />
         <JsonLd id="hero-video-jsonld" data={heroVideoLd} />
+        <JsonLd id="case-snapshot-jsonld" data={caseSnapshotsLd} />
       </section>
 
       <section
@@ -393,6 +450,142 @@ export default function Home() {
               <CtaLink href="/glossary/ai-business-system" arrow="none">
                 AI 商業系統
               </CtaLink>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="mx-auto max-w-[1120px] py-9 md:py-12"
+        style={{ borderTop: "1px solid var(--rule)" }}
+        aria-label="案例快照"
+      >
+        <div className="grid gap-8 md:gap-20 md:grid-cols-[1fr_2fr]">
+          <div
+            className="text-[11px] tracking-[0.18em] uppercase"
+            style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+          >
+            CASE SNAPSHOTS →
+          </div>
+          <div>
+            <div className="grid gap-5 md:grid-cols-[1.1fr_0.9fr] md:items-end mb-8">
+              <h2
+                className="m-0"
+                style={{
+                  fontFamily: "var(--f-zh-display), serif",
+                  fontSize: "clamp(30px, 4.2vw, 56px)",
+                  lineHeight: 1.08,
+                  fontWeight: 400,
+                  letterSpacing: "0.01em",
+                }}
+              >
+                不展示功能，
+                <br />
+                展示流程被收回來的樣子。
+              </h2>
+              <p
+                className="m-0"
+                style={{
+                  fontFamily: "var(--f-zh-body), sans-serif",
+                  fontSize: 15,
+                  lineHeight: 1.75,
+                  color: "var(--ink-muted)",
+                }}
+              >
+                案例快照只保留可公開的產業、流程與成果。真正重要的不是用了哪些工具，而是原本散落的人工作業，最後能不能變成一條可以交接、追蹤、優化的系統。
+              </p>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-3">
+              {caseSnapshots.map((item) => (
+                <article
+                  key={item.id}
+                  className="group flex min-h-[360px] flex-col justify-between p-5 md:p-6"
+                  style={{
+                    border: "1px solid var(--rule)",
+                    background: "color-mix(in srgb, var(--paper) 94%, var(--ink) 6%)",
+                  }}
+                >
+                  <div>
+                    <div
+                      className="mb-6 flex items-center justify-between gap-4 text-[10px] tracking-[0.16em] uppercase"
+                      style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+                    >
+                      <span>{item.eyebrow}</span>
+                      <span style={{ color: "var(--signal)" }}>FIELD CASE</span>
+                    </div>
+                    <div
+                      className="mb-4"
+                      style={{
+                        fontFamily: "var(--f-display), var(--f-zh-display), serif",
+                        fontStyle: "italic",
+                        fontSize: "clamp(36px, 5vw, 52px)",
+                        lineHeight: 0.95,
+                        color: "var(--ink)",
+                        letterSpacing: "-0.02em",
+                      }}
+                    >
+                      {item.metric}
+                    </div>
+                    <div
+                      className="mb-7 text-[11px] tracking-[0.12em] uppercase"
+                      style={{ fontFamily: "var(--f-mono), monospace", color: "var(--signal)" }}
+                    >
+                      {item.metricLabel}
+                    </div>
+                    <h3
+                      className="m-0 mb-4"
+                      style={{
+                        fontFamily: "var(--f-zh-display), serif",
+                        fontSize: 24,
+                        lineHeight: 1.25,
+                        fontWeight: 400,
+                        letterSpacing: "0.01em",
+                      }}
+                    >
+                      {item.title}
+                    </h3>
+                    <div className="grid gap-4">
+                      <p
+                        className="m-0"
+                        style={{
+                          fontFamily: "var(--f-zh-body), sans-serif",
+                          fontSize: 14,
+                          lineHeight: 1.65,
+                          color: "var(--ink-muted)",
+                        }}
+                      >
+                        <span style={{ color: "var(--ink)", fontWeight: 500 }}>Before：</span>
+                        {item.situation}
+                      </p>
+                      <p
+                        className="m-0"
+                        style={{
+                          fontFamily: "var(--f-zh-body), sans-serif",
+                          fontSize: 14,
+                          lineHeight: 1.65,
+                          color: "var(--ink-muted)",
+                        }}
+                      >
+                        <span style={{ color: "var(--ink)", fontWeight: 500 }}>System：</span>
+                        {item.system}
+                      </p>
+                    </div>
+                  </div>
+                  <Link
+                    href={item.href}
+                    className="mt-8 inline-flex w-fit text-[11px] tracking-[0.14em] uppercase"
+                    style={{
+                      fontFamily: "var(--f-mono), monospace",
+                      color: "var(--ink)",
+                      borderBottom: "1px solid var(--signal)",
+                      paddingBottom: 2,
+                    }}
+                  >
+                    Open snapshot →
+                  </Link>
+                </article>
+              ))}
             </div>
           </div>
         </div>
