@@ -5,13 +5,13 @@ import { useState } from "react";
 import ThemeToggle from "@/components/ThemeToggle";
 
 const navLinks = [
-  { href: "/about", zh: "關於", en: "About" },
-  { href: "/blog", zh: "觀點", en: "Writing" },
-  { href: "/services", zh: "服務", en: "Services" },
-  { href: "/courses/prompt-to-pixel", zh: "課程", en: "Courses" },
-  { href: "/cases", zh: "案例", en: "Cases" },
-  { href: "/labs/canvas", zh: "實驗室", en: "Labs" },
-  { href: "/consult", zh: "諮詢", en: "Consult" },
+  { href: "/about", label: "關於" },
+  { href: "/blog", label: "觀點" },
+  { href: "/services", label: "服務" },
+  { href: "/courses/prompt-to-pixel", label: "課程" },
+  { href: "/cases", label: "案例" },
+  { href: "/labs/canvas", label: "實驗室" },
+  { href: "/consult", label: "諮詢" },
 ];
 
 export default function Nav() {
@@ -25,7 +25,7 @@ export default function Nav() {
         borderBottom: "1px solid var(--rule)",
       }}
     >
-      <nav className="mx-auto flex max-w-[1120px] items-baseline justify-between px-5 py-6 md:px-10">
+      <nav className="mx-auto flex max-w-[1120px] items-baseline justify-between px-5 py-5 md:px-10">
         <Link
           href="/"
           className="text-[26px] leading-none tracking-[-0.01em]"
@@ -41,24 +41,18 @@ export default function Nav() {
         </Link>
 
         {/* Desktop */}
-        <ul className="hidden items-baseline gap-7 md:flex">
+        <ul className="hidden items-baseline gap-8 md:flex">
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="group relative inline-flex flex-col gap-[3px] pb-[2px]"
+                className="group relative inline-flex pb-[3px]"
               >
                 <span
-                  className="text-[15px] leading-none tracking-[0.04em]"
+                  className="text-[16px] leading-none tracking-[0.08em]"
                   style={{ fontFamily: "var(--f-zh-body), sans-serif", fontWeight: 500 }}
                 >
-                  {link.zh}
-                </span>
-                <span
-                  className="text-[10px] leading-none tracking-[0.14em] uppercase"
-                  style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
-                >
-                  {link.en}
+                  {link.label}
                 </span>
                 <span
                   className="pointer-events-none absolute -bottom-1 left-0 right-0 h-px origin-left scale-x-0 transition-transform duration-200 ease-out group-hover:scale-x-100"
@@ -67,19 +61,19 @@ export default function Nav() {
               </Link>
             </li>
           ))}
-          <li className="ml-4 pl-4" style={{ borderLeft: "1px solid var(--rule)" }}>
+          <li className="ml-3 pl-5" style={{ borderLeft: "1px solid var(--rule)" }}>
             <ThemeToggle />
           </li>
         </ul>
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-[11px] tracking-[0.14em] uppercase"
-          style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink)" }}
+          className="md:hidden text-[13px] tracking-[0.12em]"
+          style={{ fontFamily: "var(--f-zh-body), sans-serif", color: "var(--ink)", fontWeight: 500 }}
           onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
+          aria-label={isOpen ? "關閉選單" : "開啟選單"}
         >
-          {isOpen ? "CLOSE" : "MENU"}
+          {isOpen ? "關閉" : "選單"}
         </button>
       </nav>
 
@@ -97,16 +91,17 @@ export default function Nav() {
                 className="flex items-baseline justify-between"
               >
                 <span
-                  className="text-[18px]"
+                  className="text-[18px] tracking-[0.08em]"
                   style={{ fontFamily: "var(--f-zh-body), sans-serif", fontWeight: 500 }}
                 >
-                  {link.zh}
+                  {link.label}
                 </span>
                 <span
-                  className="text-[10px] tracking-[0.14em] uppercase"
-                  style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+                  aria-hidden="true"
+                  className="text-[14px]"
+                  style={{ color: "var(--ink-muted)" }}
                 >
-                  {link.en}
+                  →
                 </span>
               </Link>
             ))}
