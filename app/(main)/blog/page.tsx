@@ -419,67 +419,75 @@ export default function BlogIndexPage() {
               </section>
 
               <section className="pt-10 md:pt-14" aria-label="所有文章">
-                <div className="grid gap-8 md:gap-20 md:grid-cols-[1fr_2fr]">
+                <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
                   <div
-                    className="text-[11px] tracking-[0.18em] uppercase"
-                    style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+                    className="text-[12px] tracking-[0.08em]"
+                    style={{ fontFamily: "var(--f-zh-body), sans-serif", color: "var(--ink-muted)", fontWeight: 500 }}
                   >
                     所有文章 →
                   </div>
-                  <div>
-                    {posts.map((post, index) => (
-                      <article
-                        key={post.slug}
-                        className="grid gap-4 md:gap-12 md:grid-cols-[140px_1fr] py-8 items-baseline"
-                        style={{ borderTop: index === 0 ? "none" : "1px solid var(--rule)" }}
+                  <p
+                    className="m-0 max-w-[520px]"
+                    style={{ fontFamily: "var(--f-zh-body), sans-serif", fontSize: 14, lineHeight: 1.75, color: "var(--ink-muted)" }}
+                  >
+                    依時間排序，把案例、觀點與系統筆記整理成可回查的知識索引。
+                  </p>
+                </div>
+                <div style={{ borderTop: "1px solid var(--rule)" }}>
+                  {posts.map((post, index) => (
+                    <article
+                      key={post.slug}
+                      className="grid gap-5 md:gap-10 md:grid-cols-[120px_1fr] lg:grid-cols-[148px_1fr] py-8 md:py-9 items-start"
+                      style={{ borderBottom: "1px solid var(--rule)" }}
+                    >
+                      <div
+                        className="text-[12px] tracking-[0.08em]"
+                        style={{ fontFamily: "var(--f-zh-body), sans-serif", color: "var(--ink-muted)", lineHeight: 1.55 }}
                       >
-                        <div
-                          className="text-[11px] tracking-[0.14em] uppercase"
-                          style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
-                        >
-                          <span style={{ color: "var(--signal)" }}>
-                            N° {String(posts.length - index).padStart(3, "0")}
-                          </span>
-                          <br />
-                          {post.date}
-                        </div>
+                        <span style={{ color: "var(--signal)", fontWeight: 500 }}>
+                          N° {String(posts.length - index).padStart(3, "0")}
+                        </span>
+                        <br />
+                        {post.date}
+                      </div>
+                      <div className="grid gap-4 md:grid-cols-[minmax(0,1fr)_220px] md:items-start">
                         <div>
                           <h2
                             className="m-0 mb-3"
                             style={{
                               fontFamily: "var(--f-zh-display), serif",
-                              fontSize: 28,
-                              lineHeight: 1.3,
+                              fontSize: "clamp(26px, 3vw, 40px)",
+                              lineHeight: 1.2,
                               fontWeight: 400,
                               letterSpacing: "0.01em",
                             }}
                           >
-                            <Link href={`/blog/${post.slug}`} className="pb-[2px]" style={{ borderBottom: "1px solid var(--rule)" }}>
+                            <Link href={`/blog/${post.slug}`} className="transition-colors hover:text-[color:var(--signal)]">
                               {post.title}
                             </Link>
                           </h2>
                           <p
-                            className="m-0 mb-4 max-w-[640px]"
+                            className="m-0 max-w-[760px]"
                             style={{
                               fontFamily: "var(--f-zh-body), sans-serif",
                               fontSize: 16,
-                              lineHeight: 1.7,
+                              lineHeight: 1.8,
                               color: "var(--ink-muted)",
                             }}
                           >
                             {post.description}
                           </p>
-                          <div
-                            className="text-[12px] tracking-[0.08em] flex flex-wrap items-baseline gap-x-4 gap-y-2"
-                            style={{ fontFamily: "var(--f-zh-body), sans-serif", color: "var(--ink-muted)" }}
-                          >
-                            <span>{post.readingTime}</span>
-                            <Tags post={post} />
-                          </div>
                         </div>
-                      </article>
-                    ))}
-                  </div>
+                        <div
+                          className="text-[12px] tracking-[0.08em] flex flex-wrap items-baseline gap-x-4 gap-y-2 md:justify-end md:text-right"
+                          style={{ fontFamily: "var(--f-zh-body), sans-serif", color: "var(--ink-muted)" }}
+                        >
+                          <span>{post.readingTime}</span>
+                          <Tags post={post} />
+                        </div>
+                      </div>
+                    </article>
+                  ))}
                 </div>
               </section>
             </>
