@@ -61,7 +61,7 @@ export default function RelatedPosts({ currentSlug, currentTags, allPosts }: Pro
               marginBottom: 28,
             }}
           >
-            繼續閱讀 · Continue
+            延伸閱讀
           </div>
           <div
             style={{
@@ -74,8 +74,8 @@ export default function RelatedPosts({ currentSlug, currentTags, allPosts }: Pro
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                style={{ textDecoration: "none", color: "inherit" }}
-                className="related-card"
+                style={{ textDecoration: "none", color: "inherit", padding: 18 }}
+                className="editorial-card related-card"
               >
                 <div
                   style={{

@@ -34,8 +34,7 @@ export default function NotFound() {
           這個網址不存在，或是頁面被重新整理過了。可以從下面的連結繼續逛。
         </p>
         <div
-          className="flex flex-wrap gap-7 text-[12px] tracking-[0.12em] uppercase"
-          style={{ fontFamily: "var(--f-mono), monospace" }}
+          className="cta-row"
         >
           <CtaLink href="/" variant="primary">
             回首頁

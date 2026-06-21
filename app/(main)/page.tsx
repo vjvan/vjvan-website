@@ -95,7 +95,7 @@ export default function Home() {
               className="text-[11px] tracking-[0.18em] uppercase mb-7"
               style={{ fontFamily: "var(--f-mono), monospace", color: "var(--signal)", fontWeight: 500 }}
             >
-              ISSUE № 01 · EST. 2026 · PINGTUNG
+              屏東發行 · Issue 01 · 2026
             </div>
             <h1
               className="m-0 mb-5"
@@ -159,8 +159,7 @@ export default function Home() {
               。我把散在 LINE、Excel、門市的流程，重組為能自動跑、能長期累積的營運資產。餐飲補貨、汽車美容預約、電商訂單整合，原理都一樣。
             </p>
             <div
-              className="flex flex-wrap gap-7 items-center text-[12px] tracking-[0.12em] uppercase"
-              style={{ fontFamily: "var(--f-mono), monospace" }}
+              className="cta-row"
             >
               <CtaLink href="/consult" variant="primary">
                 預約諮詢
@@ -206,10 +205,10 @@ export default function Home() {
                     className="text-[10px] tracking-[0.18em] uppercase mb-1"
                     style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
                   >
-                    Role
+                    角色
                   </dt>
                   <dd className="m-0" style={{ fontFamily: "var(--f-body), sans-serif", fontSize: 15, lineHeight: 1.5 }}>
-                    AI Systems Architect
+                    AI 商業系統架構師
                   </dd>
                 </div>
                 <div>
@@ -217,7 +216,7 @@ export default function Home() {
                     className="text-[10px] tracking-[0.18em] uppercase mb-1"
                     style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
                   >
-                    Company
+                    公司
                   </dt>
                   <dd className="m-0" style={{ fontFamily: "var(--f-zh-body), sans-serif", fontSize: 15, lineHeight: 1.5 }}>
                     唯捷允雷有限公司 VJVAN
@@ -228,7 +227,7 @@ export default function Home() {
                     className="text-[10px] tracking-[0.18em] uppercase mb-1"
                     style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
                   >
-                    Based in
+                    所在地
                   </dt>
                   <dd className="m-0" style={{ fontFamily: "var(--f-zh-body), sans-serif", fontSize: 15, lineHeight: 1.5 }}>
                     屏東 / Pingtung, Taiwan
@@ -239,7 +238,7 @@ export default function Home() {
                     className="text-[10px] tracking-[0.18em] uppercase mb-1"
                     style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
                   >
-                    Stack
+                    系統範圍
                   </dt>
                   <dd className="m-0" style={{ fontFamily: "var(--f-body), sans-serif", fontSize: 15, lineHeight: 1.5 }}>
                     JAMstack · Serverless · 自動化 · LINE 生態系
@@ -250,7 +249,7 @@ export default function Home() {
                     className="text-[10px] tracking-[0.18em] uppercase mb-1"
                     style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
                   >
-                    Est.
+                    成立
                   </dt>
                   <dd className="m-0" style={{ fontFamily: "var(--f-body), sans-serif", fontSize: 15, lineHeight: 1.5 }}>
                     2026
@@ -263,7 +262,7 @@ export default function Home() {
       </section>
 
       <section
-        className="mx-auto max-w-[1120px] py-9 md:py-12"
+        className="mx-auto max-w-[1120px] py-12 md:py-16"
         style={{ borderTop: "1px solid var(--rule)" }}
         aria-label="品牌片頭"
       >
@@ -272,13 +271,13 @@ export default function Home() {
             className="text-[11px] tracking-[0.18em] uppercase"
             style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
           >
-            COVER FILM ↓
+            品牌片頭 ↓
           </div>
           <div
             className="text-[11px] tracking-[0.12em] uppercase"
             style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
           >
-            08 SEC · NO SOUND · LOOP
+            08 秒 · 無聲 · 循環
           </div>
         </div>
         <HeroVideo
@@ -293,7 +292,7 @@ export default function Home() {
       </section>
 
       <section
-        className="mx-auto max-w-[1120px] py-9 md:py-12"
+        className="mx-auto max-w-[1120px] py-12 md:py-16"
         style={{ borderTop: "1px solid var(--rule)" }}
         aria-label="我幫誰"
       >
@@ -302,7 +301,7 @@ export default function Home() {
             className="text-[11px] tracking-[0.18em] uppercase"
             style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
           >
-            WHO I HELP →
+            服務對象 →
           </div>
           <div>
             <h2
@@ -344,7 +343,7 @@ export default function Home() {
       </section>
 
       <section
-        className="mx-auto max-w-[1120px] py-9 md:py-12"
+        className="mx-auto max-w-[1120px] py-12 md:py-16"
         style={{ borderTop: "1px solid var(--rule)" }}
         aria-label="我解什麼問題"
       >
@@ -353,7 +352,7 @@ export default function Home() {
             className="text-[11px] tracking-[0.18em] uppercase"
             style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
           >
-            OPERATING PROBLEMS →
+            常見斷點 →
           </div>
           <div className="grid gap-5">
             {[
@@ -391,7 +390,7 @@ export default function Home() {
       </section>
 
       <section
-        className="mx-auto max-w-[1120px] py-9 md:py-12"
+        className="mx-auto max-w-[1120px] py-12 md:py-16"
         style={{ borderTop: "1px solid var(--rule)" }}
         aria-label="系統成果與諮詢入口"
       >
@@ -400,7 +399,7 @@ export default function Home() {
             className="text-[11px] tracking-[0.18em] uppercase"
             style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
           >
-            PROOF BAR →
+            實作證據 →
           </div>
           <div>
             <div className="grid gap-4 md:grid-cols-4 mb-9">
@@ -438,8 +437,7 @@ export default function Home() {
               ))}
             </div>
             <div
-              className="flex flex-wrap gap-7 items-center text-[12px] tracking-[0.12em] uppercase"
-              style={{ fontFamily: "var(--f-mono), monospace" }}
+              className="cta-row"
             >
               <CtaLink href="/services/erp-lite" variant="primary">
                 LINE LIFF／ERP 整合
@@ -456,7 +454,7 @@ export default function Home() {
       </section>
 
       <section
-        className="mx-auto max-w-[1120px] py-9 md:py-12"
+        className="mx-auto max-w-[1120px] py-12 md:py-16"
         style={{ borderTop: "1px solid var(--rule)" }}
         aria-label="案例快照"
       >
@@ -465,7 +463,7 @@ export default function Home() {
             className="text-[11px] tracking-[0.18em] uppercase"
             style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
           >
-            CASE SNAPSHOTS →
+            案例快照 →
           </div>
           <div>
             <div className="grid gap-5 md:grid-cols-[1.1fr_0.9fr] md:items-end mb-8">
@@ -500,11 +498,7 @@ export default function Home() {
               {caseSnapshots.map((item) => (
                 <article
                   key={item.id}
-                  className="group flex min-h-[360px] flex-col justify-between p-5 md:p-6"
-                  style={{
-                    border: "1px solid var(--rule)",
-                    background: "color-mix(in srgb, var(--paper) 94%, var(--ink) 6%)",
-                  }}
+                  className="editorial-card group flex min-h-[360px] flex-col justify-between p-5 md:p-6"
                 >
                   <div>
                     <div
@@ -512,7 +506,7 @@ export default function Home() {
                       style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
                     >
                       <span>{item.eyebrow}</span>
-                      <span style={{ color: "var(--signal)" }}>FIELD CASE</span>
+                      <span style={{ color: "var(--signal)" }}>案例筆記</span>
                     </div>
                     <div
                       className="mb-4"
@@ -555,7 +549,7 @@ export default function Home() {
                           color: "var(--ink-muted)",
                         }}
                       >
-                        <span style={{ color: "var(--ink)", fontWeight: 500 }}>Before：</span>
+                        <span style={{ color: "var(--ink)", fontWeight: 500 }}>原本：</span>
                         {item.situation}
                       </p>
                       <p
@@ -567,22 +561,22 @@ export default function Home() {
                           color: "var(--ink-muted)",
                         }}
                       >
-                        <span style={{ color: "var(--ink)", fontWeight: 500 }}>System：</span>
+                        <span style={{ color: "var(--ink)", fontWeight: 500 }}>系統：</span>
                         {item.system}
                       </p>
                     </div>
                   </div>
                   <Link
                     href={item.href}
-                    className="mt-8 inline-flex w-fit text-[11px] tracking-[0.14em] uppercase"
+                    className="mt-8 inline-flex w-fit text-[12px] tracking-[0.08em]"
                     style={{
-                      fontFamily: "var(--f-mono), monospace",
+                      fontFamily: "var(--f-zh-body), sans-serif",
                       color: "var(--ink)",
                       borderBottom: "1px solid var(--signal)",
                       paddingBottom: 2,
                     }}
                   >
-                    Open snapshot →
+                    看案例快照 →
                   </Link>
                 </article>
               ))}
@@ -593,7 +587,7 @@ export default function Home() {
 
       {latest && (
         <section
-          className="mx-auto max-w-[1120px] py-9 md:py-12"
+          className="mx-auto max-w-[1120px] py-12 md:py-16"
           style={{ borderTop: "1px solid var(--rule)" }}
         >
           <div className="grid gap-6 md:gap-20 md:grid-cols-[1fr_2fr] items-baseline">
@@ -634,7 +628,7 @@ export default function Home() {
       )}
 
       <section
-        className="mx-auto max-w-[1120px] py-9 md:py-12"
+        className="mx-auto max-w-[1120px] py-12 md:py-16"
         style={{ borderTop: "1px solid var(--rule)" }}
         aria-label="目前開設的課程"
       >
@@ -643,7 +637,7 @@ export default function Home() {
             className="text-[11px] tracking-[0.18em] uppercase"
             style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
           >
-            NOW TEACHING →
+            目前課程 →
           </div>
           <div>
             <h2
@@ -680,7 +674,7 @@ export default function Home() {
               className="text-[11px] tracking-[0.12em] uppercase"
               style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
             >
-              COURSE · MONTHLY · FOUNDING MEMBER US$49/MO
+              課程 · 每月內容 · Founding Member US$49/月
             </div>
           </div>
         </div>

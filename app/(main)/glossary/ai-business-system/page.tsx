@@ -306,8 +306,7 @@ export default function AiBusinessSystemGlossaryPage() {
           </section>
 
           <div
-            className="mt-12 flex flex-wrap gap-7 text-[12px] tracking-[0.12em] uppercase"
-            style={{ fontFamily: "var(--f-mono), monospace" }}
+            className="cta-row mt-12"
           >
             <CtaLink href="/consult" variant="primary">
               預約系統架構諮詢

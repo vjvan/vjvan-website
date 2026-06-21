@@ -204,7 +204,7 @@ const breadcrumbJsonLd = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "首頁", item: "https://www.vjvan.com" },
-    { "@type": "ListItem", position: 2, name: "Cases", item: "https://www.vjvan.com/cases" },
+    { "@type": "ListItem", position: 2, name: "案例", item: "https://www.vjvan.com/cases" },
     {
       "@type": "ListItem",
       position: 3,
@@ -266,13 +266,13 @@ export default function CloudIntegrationPage() {
             >
               <span style={{ color: "var(--signal)" }}>Cloud Integration</span>
               <span>·</span>
-              <span>Portfolio / 2026</span>
+              <span>案例集 / 2026</span>
               <span>·</span>
               <a
                 href="/en/cases/cloud-integration"
                 style={{ borderBottom: "1px solid var(--rule)" }}
               >
-                English
+                英文版
               </a>
             </div>
             <h1
@@ -445,7 +445,7 @@ export default function CloudIntegrationPage() {
                     borderBottom: "1px solid var(--rule)",
                   }}
                 >
-                  Platforms / Stack
+                  平台與系統範圍
                 </div>
                 <div className="flex flex-wrap gap-x-5 gap-y-2">
                   {c.platforms.map((p) => (
@@ -474,7 +474,7 @@ export default function CloudIntegrationPage() {
                       borderBottom: "1px solid var(--rule)",
                     }}
                   >
-                    Before
+                    原本
                   </div>
                   <ul className="m-0 p-0 list-none flex flex-col gap-3">
                     {c.before.map((item) => (
@@ -513,7 +513,7 @@ export default function CloudIntegrationPage() {
                       borderBottom: "1px solid var(--rule)",
                     }}
                   >
-                    After
+                    導入後
                   </div>
                   <ul className="m-0 p-0 list-none flex flex-col gap-3">
                     {c.after.map((item) => (
@@ -560,7 +560,7 @@ export default function CloudIntegrationPage() {
                 fontWeight: 500,
               }}
             >
-              Capability Summary
+              能力摘要
             </div>
             <h2
               className="m-0 mb-8"
@@ -580,7 +580,7 @@ export default function CloudIntegrationPage() {
                   className="mb-3 text-[11px] tracking-[0.18em] uppercase"
                   style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
                 >
-                  Cloud Platforms
+                  雲端平台
                 </div>
                 <ul className="m-0 p-0 list-none flex flex-col gap-2">
                   {[
@@ -609,7 +609,7 @@ export default function CloudIntegrationPage() {
                   className="mb-3 text-[11px] tracking-[0.18em] uppercase"
                   style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
                 >
-                  Integration Patterns
+                  整合模式
                 </div>
                 <ul className="m-0 p-0 list-none flex flex-col gap-2">
                   {[
@@ -637,10 +637,7 @@ export default function CloudIntegrationPage() {
           </section>
 
           {/* CTA */}
-          <div
-            className="mt-16 flex flex-wrap gap-8 items-center text-[12px] tracking-[0.12em] uppercase"
-            style={{ fontFamily: "var(--f-mono), monospace" }}
-          >
+          <div className="cta-row mt-16">
             <CtaLink href="/consult" variant="primary">
               預約諮詢
             </CtaLink>

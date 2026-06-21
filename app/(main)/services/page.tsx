@@ -170,8 +170,8 @@ function DetailBlock({ label, children }: { label: string; children: React.React
   return (
     <div className="pt-4" style={{ borderTop: "1px solid var(--rule)" }}>
       <div
-        className="mb-3 text-[10px] tracking-[0.16em] uppercase"
-        style={{ fontFamily: "var(--f-mono), monospace", color: "var(--signal)" }}
+        className="mb-3 text-[12px] tracking-[0.08em]"
+        style={{ fontFamily: "var(--f-zh-body), sans-serif", color: "var(--signal)", fontWeight: 500 }}
       >
         {label}
       </div>
@@ -196,7 +196,7 @@ export default function ServicesPage() {
               className="mb-7 text-[11px] tracking-[0.14em] uppercase"
               style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)", fontWeight: 500 }}
             >
-              Services / 2026
+              服務項目 / 2026
             </div>
             <h1
               className="m-0 mb-12 max-w-full"
@@ -229,7 +229,7 @@ export default function ServicesPage() {
           </div>
 
           <section
-            className="py-9 md:py-12"
+            className="py-12 md:py-16"
             aria-label="服務體系總覽影片"
           >
             <div className="grid gap-6 md:gap-20 md:grid-cols-[1fr_2fr] items-baseline mb-7">
@@ -237,13 +237,13 @@ export default function ServicesPage() {
                 className="text-[11px] tracking-[0.18em] uppercase"
                 style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
               >
-                COVER FILM ↓
+                服務總覽影片 ↓
               </div>
               <div
                 className="text-[11px] tracking-[0.12em] uppercase"
                 style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
               >
-                10 SEC · NO SOUND · LOOP
+                10 秒 · 無聲 · 循環
               </div>
             </div>
             <HeroVideo
@@ -260,7 +260,7 @@ export default function ServicesPage() {
               <article
                 key={service.num}
                 id={service.id}
-                className="scroll-mt-24 grid gap-6 md:gap-12 md:grid-cols-[80px_1fr] py-10 md:py-12"
+                className="scroll-mt-24 grid gap-6 md:gap-12 md:grid-cols-[80px_1fr] py-12 md:py-16"
                 style={{ borderBottom: "1px solid var(--rule)" }}
               >
                 <div
@@ -315,7 +315,7 @@ export default function ServicesPage() {
                   </div>
 
                   <div className="grid gap-6 md:grid-cols-4">
-                    <DetailBlock label="Good fit">
+                    <DetailBlock label="適合對象">
                       <p
                         className="m-0"
                         style={{
@@ -329,7 +329,7 @@ export default function ServicesPage() {
                       </p>
                     </DetailBlock>
 
-                    <DetailBlock label="Deliverables">
+                    <DetailBlock label="交付物">
                       <ul
                         className="m-0 grid gap-2 pl-4"
                         style={{
@@ -346,7 +346,7 @@ export default function ServicesPage() {
                       </ul>
                     </DetailBlock>
 
-                    <DetailBlock label="Outcome">
+                    <DetailBlock label="預期成果">
                       <ul
                         className="m-0 grid gap-2 pl-4"
                         style={{
@@ -363,7 +363,7 @@ export default function ServicesPage() {
                       </ul>
                     </DetailBlock>
 
-                    <DetailBlock label="Next step">
+                    <DetailBlock label="下一步">
                       <p
                         className="m-0 mb-5"
                         style={{
@@ -376,8 +376,8 @@ export default function ServicesPage() {
                         {service.nextStep}
                       </p>
                       <div
-                        className="text-[11px] tracking-[0.12em] uppercase"
-                        style={{ fontFamily: "var(--f-mono), monospace" }}
+                        className="text-[12px] tracking-[0.08em]"
+                        style={{ fontFamily: "var(--f-zh-body), sans-serif" }}
                       >
                         <CtaLink href={service.href} variant="primary">
                           {service.ctaLabel}
@@ -391,8 +391,7 @@ export default function ServicesPage() {
           </section>
 
           <div
-            className="mt-12 flex flex-wrap gap-7 text-[12px] tracking-[0.12em] uppercase"
-            style={{ fontFamily: "var(--f-mono), monospace" }}
+            className="cta-row mt-12"
           >
             <CtaLink href="/consult" variant="primary">
               預約諮詢

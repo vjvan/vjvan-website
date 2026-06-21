@@ -127,11 +127,11 @@ export default function Case988Page() {
               className="mb-6 flex flex-wrap gap-x-4 gap-y-1 text-[11px] tracking-[0.14em] uppercase"
               style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)", fontWeight: 500 }}
             >
-              <span style={{ color: "var(--signal)" }}>Case Study</span>
+              <span style={{ color: "var(--signal)" }}>完整案例</span>
               <span>·</span>
               <span>南台灣冷凍食品 B2B</span>
               <span>·</span>
-              <span>3 MONTHS IN PROD</span>
+              <span>已上線 3 個月</span>
             </div>
             <h1
               className="m-0 mb-10"
@@ -181,19 +181,19 @@ export default function Case988Page() {
           </div>
 
           {/* Cover Film */}
-          <section className="py-9 md:py-12" aria-label="案例 22 秒視覺敘事">
+          <section className="py-12 md:py-16" aria-label="案例 22 秒視覺敘事">
             <div className="grid gap-6 md:gap-20 md:grid-cols-[1fr_2fr] items-baseline mb-7">
               <div
                 className="text-[11px] tracking-[0.18em] uppercase"
                 style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
               >
-                COVER FILM ↓
+                案例片頭 ↓
               </div>
               <div
                 className="text-[11px] tracking-[0.12em] uppercase"
                 style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
               >
-                22 SEC · NO SOUND · LOOP · 5 SCENES
+                22 秒 · 無聲 · 循環 · 5 段畫面
               </div>
             </div>
             <HeroVideo
@@ -211,7 +211,7 @@ export default function Case988Page() {
               className="mb-8 text-[11px] tracking-[0.18em] uppercase"
               style={{ fontFamily: "var(--f-mono), monospace", color: "var(--signal)", fontWeight: 500 }}
             >
-              Results · 跑了 3 個月的成績單
+              實際結果 · 跑了 3 個月的成績單
             </div>
             <div
               className="grid gap-x-12 gap-y-10 md:grid-cols-2 py-8"
@@ -260,7 +260,7 @@ export default function Case988Page() {
                 className="mb-6 text-[11px] tracking-[0.18em] uppercase"
                 style={{ fontFamily: "var(--f-mono), monospace", color: "#B22B2B", fontWeight: 500 }}
               >
-                § 01 — Before
+                § 01 — 原本
               </div>
               <h2
                 className="m-0 mb-6"
@@ -296,7 +296,7 @@ export default function Case988Page() {
                 className="mb-6 text-[11px] tracking-[0.18em] uppercase"
                 style={{ fontFamily: "var(--f-mono), monospace", color: "var(--signal)", fontWeight: 500 }}
               >
-                § 02 — After
+                § 02 — 導入後
               </div>
               <h2
                 className="m-0 mb-6"
@@ -335,7 +335,7 @@ export default function Case988Page() {
               className="mb-8 text-[11px] tracking-[0.18em] uppercase"
               style={{ fontFamily: "var(--f-mono), monospace", color: "var(--signal)", fontWeight: 500 }}
             >
-              System · 系統由四層構成
+              系統架構 · 四層構成
             </div>
             <div className="grid gap-y-8 max-w-[920px]">
               {platformLayers.map((s, i) => (
@@ -386,7 +386,7 @@ export default function Case988Page() {
                 lineHeight: 1.2,
               }}
             >
-              這套系統不是 demo，是真的在跑的 production。
+              這套系統不是展示稿，是真的在線上運作的 production。
             </h2>
             <p
               className="m-0 mb-10 max-w-[680px]"
@@ -399,10 +399,7 @@ export default function Case988Page() {
             >
               如果你也是 B2B 補貨型的批發商、餐廳、食材供應商，正在用 LINE 群組接訂單、Excel 抄單對帳，這條產線可以複製到你的場景。一起聊聊。
             </p>
-            <div
-              className="flex flex-wrap gap-7 items-center text-[12px] tracking-[0.12em] uppercase"
-              style={{ fontFamily: "var(--f-mono), monospace" }}
-            >
+            <div className="cta-row">
               <CtaLink href="/consult" variant="primary">
                 預約諮詢
               </CtaLink>

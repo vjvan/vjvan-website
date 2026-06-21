@@ -85,10 +85,9 @@ export default function ConsultPage() {
   const labelStyle: React.CSSProperties = {
     display: "block",
     marginBottom: 8,
-    fontFamily: "var(--f-mono), monospace",
-    fontSize: 10,
-    letterSpacing: "0.18em",
-    textTransform: "uppercase",
+    fontFamily: "var(--f-zh-body), sans-serif",
+    fontSize: 12,
+    letterSpacing: "0.08em",
     color: "var(--ink-muted)",
   };
 
@@ -102,7 +101,6 @@ export default function ConsultPage() {
     fontFamily: "var(--f-zh-body), sans-serif",
     fontSize: 17,
     lineHeight: 1.5,
-    outline: "none",
     transition: "border-color 0.2s ease",
   };
 
@@ -115,7 +113,7 @@ export default function ConsultPage() {
               className="mb-8 text-[11px] tracking-[0.14em] uppercase"
               style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)", fontWeight: 500 }}
             >
-              Consult / Intake
+              諮詢入口 / Intake
             </div>
             <dl className="m-0 flex flex-col gap-6">
               <div>
@@ -123,7 +121,7 @@ export default function ConsultPage() {
                   className="mb-[6px] text-[10px] tracking-[0.18em] uppercase"
                   style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
                 >
-                  Session
+                  方式
                 </dt>
                 <dd className="m-0" style={{ fontFamily: "var(--f-zh-body), sans-serif", fontSize: 16 }}>
                   30 分鐘免費視訊
@@ -134,7 +132,7 @@ export default function ConsultPage() {
                   className="mb-[6px] text-[10px] tracking-[0.18em] uppercase"
                   style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
                 >
-                  Response
+                  回覆
                 </dt>
                 <dd className="m-0" style={{ fontFamily: "var(--f-zh-body), sans-serif", fontSize: 16 }}>
                   一個工作天內 LINE 回覆
@@ -145,7 +143,7 @@ export default function ConsultPage() {
                   className="mb-[6px] text-[10px] tracking-[0.18em] uppercase"
                   style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
                 >
-                  Based in
+                  所在地
                 </dt>
                 <dd className="m-0" style={{ fontFamily: "var(--f-zh-body), sans-serif", fontSize: 16 }}>
                   屏東 / Pingtung, Taiwan
@@ -156,7 +154,7 @@ export default function ConsultPage() {
                   className="mb-[6px] text-[10px] tracking-[0.18em] uppercase"
                   style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
                 >
-                  Direct
+                  Email
                 </dt>
                 <dd className="m-0" style={{ fontFamily: "var(--f-body), sans-serif", fontSize: 16 }}>
                   <a
@@ -173,7 +171,7 @@ export default function ConsultPage() {
                   className="mb-[6px] text-[10px] tracking-[0.18em] uppercase"
                   style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
                 >
-                  Prefer LINE
+                  LINE
                 </dt>
                 <dd className="m-0" style={{ fontFamily: "var(--f-body), sans-serif", fontSize: 16 }}>
                   <a
@@ -233,11 +231,11 @@ export default function ConsultPage() {
                 className="mb-5 text-[11px] tracking-[0.18em] uppercase"
                 style={{ fontFamily: "var(--f-mono), monospace", color: "var(--signal)", fontWeight: 500 }}
               >
-                Good fit
+                適合諮詢
               </div>
               <div className="grid gap-4 md:grid-cols-3">
                 {FITS.map((item) => (
-                  <article key={item.label} className="p-5" style={{ border: "1px solid var(--rule)" }}>
+                  <article key={item.label} className="editorial-card p-5">
                     <h2
                       className="m-0 mb-3"
                       style={{ fontFamily: "var(--f-zh-display), serif", fontSize: 20, lineHeight: 1.35, fontWeight: 600 }}
@@ -255,12 +253,12 @@ export default function ConsultPage() {
               </div>
             </section>
 
-            <section className="mb-12 p-5" style={{ border: "1px solid var(--rule)" }} aria-label="填表前可以準備的資訊">
+            <section className="editorial-card mb-12 p-5" aria-label="填表前可以準備的資訊">
               <div
                 className="mb-4 text-[11px] tracking-[0.18em] uppercase"
                 style={{ fontFamily: "var(--f-mono), monospace", color: "var(--signal)", fontWeight: 500 }}
               >
-                Before you write
+                填表前可以先想
               </div>
               <p
                 className="m-0 mb-4"
@@ -297,7 +295,7 @@ export default function ConsultPage() {
 
               <div className="mb-7">
                 <label htmlFor="name" style={labelStyle}>
-                  Name · 姓名
+                  姓名
                 </label>
                 <input
                   id="name"
@@ -313,7 +311,7 @@ export default function ConsultPage() {
 
               <div className="mb-7">
                 <label htmlFor="company" style={labelStyle}>
-                  Company · 公司 / 品牌
+                  公司 / 品牌
                 </label>
                 <input
                   id="company"
@@ -345,7 +343,7 @@ export default function ConsultPage() {
                 </div>
                 <div>
                   <label htmlFor="phone" style={labelStyle}>
-                    Phone · 電話
+                    電話
                   </label>
                   <input
                     id="phone"
@@ -362,7 +360,7 @@ export default function ConsultPage() {
 
               <div className="mb-7">
                 <label htmlFor="topic" style={labelStyle}>
-                  Topic · 想諮詢的方向
+                  想諮詢的方向
                 </label>
                 <select
                   id="topic"
@@ -393,7 +391,7 @@ export default function ConsultPage() {
 
               <div className="mb-10">
                 <label htmlFor="description" style={labelStyle}>
-                  Description · 簡述你的需求（選填）
+                  簡述你的需求（選填）
                 </label>
                 <textarea
                   id="description"
@@ -410,25 +408,21 @@ export default function ConsultPage() {
                 />
               </div>
 
-              <div
-                className="flex flex-wrap gap-8 items-center text-[12px] tracking-[0.12em] uppercase"
-                style={{ fontFamily: "var(--f-mono), monospace" }}
-              >
+              <div className="cta-row">
                 <button
                   type="submit"
                   disabled={submitting}
                   aria-busy={submitting}
-                  className="disabled:opacity-50"
+                  className="cta-link disabled:opacity-50"
                   style={{
                     background: "transparent",
                     border: "0",
                     color: "var(--signal)",
                     padding: 0,
                     cursor: submitting ? "not-allowed" : "pointer",
-                    fontFamily: "var(--f-mono), monospace",
+                    fontFamily: "var(--f-zh-body), sans-serif",
                     fontSize: 12,
-                    letterSpacing: "0.12em",
-                    textTransform: "uppercase",
+                    letterSpacing: "0.08em",
                     display: "inline-flex",
                     alignItems: "baseline",
                   }}
@@ -439,10 +433,10 @@ export default function ConsultPage() {
                       paddingBottom: 2,
                     }}
                   >
-                    {submitting ? "送出中..." : "送出並加入 LINE"}
+                    {submitting ? "送出中…" : "送出並加 LINE"}
                   </span>
                   {!submitting && (
-                    <span aria-hidden="true" style={{ marginLeft: 6 }}>
+                    <span aria-hidden="true" className="cta-link__arrow cta-link__arrow--right" style={{ marginLeft: 6 }}>
                       →
                     </span>
                   )}
@@ -451,11 +445,8 @@ export default function ConsultPage() {
                   href={LINE_URL}
                   target="_blank"
                   rel="noreferrer"
-                  style={{
-                    color: "var(--ink)",
-                    display: "inline-flex",
-                    alignItems: "baseline",
-                  }}
+                  className="cta-link"
+                  style={{ color: "var(--ink)" }}
                 >
                   <span
                     style={{

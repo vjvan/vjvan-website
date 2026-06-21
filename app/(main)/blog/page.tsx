@@ -236,7 +236,7 @@ export default function BlogIndexPage() {
                         letterSpacing: "0.01em",
                       }}
                     >
-                      <Link href={`/blog/${featured.slug}`} className="pb-[3px]" style={{ borderBottom: "2px solid var(--signal)" }}>
+                      <Link href={`/blog/${featured.slug}`} className="transition-colors hover:text-[color:var(--signal)]">
                         {featured.title}
                       </Link>
                     </h2>
@@ -273,8 +273,7 @@ export default function BlogIndexPage() {
                         <Link
                           key={post.slug}
                           href={`/blog/${post.slug}`}
-                          className="block p-5"
-                          style={{ border: "1px solid var(--rule)", background: "color-mix(in srgb, var(--paper) 96%, var(--ink) 4%)" }}
+                          className="editorial-card block p-5"
                         >
                           <div
                             className="mb-4 text-[10px] tracking-[0.16em] uppercase"
@@ -320,7 +319,7 @@ export default function BlogIndexPage() {
                   </div>
                   <div className="grid gap-4 md:grid-cols-3">
                     {routes.map((route) => (
-                      <article key={route.label} className="p-5" style={{ border: "1px solid var(--rule)" }}>
+                      <article key={route.label} className="editorial-card editorial-card--quiet p-5">
                         <div
                           className="mb-5 text-[10px] tracking-[0.16em] uppercase"
                           style={{ fontFamily: "var(--f-mono), monospace", color: "var(--signal)" }}

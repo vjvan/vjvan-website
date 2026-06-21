@@ -104,7 +104,7 @@ const breadcrumbJsonLd = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "首頁", item: "https://www.vjvan.com" },
-    { "@type": "ListItem", position: 2, name: "Cases", item: "https://www.vjvan.com/cases" },
+    { "@type": "ListItem", position: 2, name: "案例", item: "https://www.vjvan.com/cases" },
   ],
 };
 
@@ -150,7 +150,7 @@ export default function CasesPage() {
               className="mb-6 text-[11px] tracking-[0.14em] uppercase"
               style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)", fontWeight: 500 }}
             >
-              Cases / 2026
+              案例 / 2026
             </div>
             <h1
               className="m-0 mb-10"
@@ -312,7 +312,7 @@ export default function CasesPage() {
                       borderBottom: "1px solid var(--rule)",
                     }}
                   >
-                    Before
+                    原本
                   </div>
                   <ul className="m-0 p-0 list-none flex flex-col gap-3">
                     {c.before.map((item) => (
@@ -351,7 +351,7 @@ export default function CasesPage() {
                       borderBottom: "1px solid var(--rule)",
                     }}
                   >
-                    After
+                    導入後
                   </div>
                   <ul className="m-0 p-0 list-none flex flex-col gap-3">
                     {c.after.map((item) => (
@@ -403,9 +403,9 @@ export default function CasesPage() {
                   className="mb-3 flex flex-wrap items-baseline gap-x-4 gap-y-1 text-[11px] tracking-[0.14em] uppercase"
                   style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
                 >
-                  <span style={{ color: "var(--signal)" }}>Case Study</span>
+                  <span style={{ color: "var(--signal)" }}>完整案例</span>
                   <span>·</span>
-                  <span>3 months in prod</span>
+                  <span>已上線 3 個月</span>
                 </div>
                 <h2
                   className="m-0 mb-4"
@@ -451,10 +451,7 @@ export default function CasesPage() {
                 >
                   客戶是南台灣冷凍食品 B2B 批發商，原本下單散在 LINE 群組、Excel、電話三個地方。整理成一條會自己跑的訂單系統後，3 個月 production 連續穩定運轉，客戶下單到三向通知 0 分鐘，零資料遺失。
                 </p>
-                <div
-                  className="text-[12px] tracking-[0.12em] uppercase"
-                  style={{ fontFamily: "var(--f-mono), monospace" }}
-                >
+                <div className="cta-row">
                   <CtaLink href="/cases/988-kitchen-b2b" variant="primary">
                     閱讀完整案例
                   </CtaLink>
@@ -529,12 +526,9 @@ export default function CasesPage() {
                 >
                   從公司級 Cloud Identity 組織骨架建構、五雲混合架構的 production B2B 系統、OAuth 跨平台自動化 pipeline、Gmail API inbox 分類，到多客戶 Service Account Impersonation 身份隔離架構，五個案例呈現跨平台 AI 應用與任務流程整合能力。
                 </p>
-                <div
-                  className="text-[12px] tracking-[0.12em] uppercase"
-                  style={{ fontFamily: "var(--f-mono), monospace" }}
-                >
+                <div className="cta-row">
                   <CtaLink href="/cases/cloud-integration" variant="primary">
-                    閱讀完整 portfolio
+                    閱讀完整案例集
                   </CtaLink>
                 </div>
               </div>
@@ -542,9 +536,7 @@ export default function CasesPage() {
           </section>
 
           {/* CTA */}
-          <div className="mt-16 flex flex-wrap gap-8 items-center text-[12px] tracking-[0.12em] uppercase"
-            style={{ fontFamily: "var(--f-mono), monospace" }}
-          >
+          <div className="cta-row mt-16">
             <CtaLink href="/consult" variant="primary">
               預約諮詢
             </CtaLink>

@@ -78,7 +78,7 @@ export default function AboutPage() {
                 className="mb-8 text-[11px] tracking-[0.14em] uppercase"
                 style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)", fontWeight: 500 }}
               >
-                About the Author
+                關於允雷
               </div>
               <dl className="m-0 flex flex-col gap-6">
                 <div>
@@ -86,10 +86,10 @@ export default function AboutPage() {
                     className="mb-[6px] text-[10px] tracking-[0.18em] uppercase"
                     style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
                   >
-                    Name
+                    名稱
                   </dt>
                   <dd className="m-0" style={{ fontFamily: "var(--f-body), sans-serif", fontSize: 16, lineHeight: 1.55 }}>
-                    VJVAN
+                    允雷 · VJVAN
                   </dd>
                 </div>
                 <div>
@@ -97,7 +97,7 @@ export default function AboutPage() {
                     className="mb-[6px] text-[10px] tracking-[0.18em] uppercase"
                     style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
                   >
-                    Company
+                    公司
                   </dt>
                   <dd className="m-0" style={{ fontFamily: "var(--f-zh-body), sans-serif", fontSize: 16, lineHeight: 1.55 }}>
                     唯捷允雷有限公司
@@ -108,7 +108,7 @@ export default function AboutPage() {
                     className="mb-[6px] text-[10px] tracking-[0.18em] uppercase"
                     style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
                   >
-                    Practice
+                    專長
                   </dt>
                   <dd className="m-0" style={{ fontFamily: "var(--f-zh-body), sans-serif", fontSize: 16, lineHeight: 1.55 }}>
                     LINE LIFF 自動化、AI 商業系統架構
@@ -119,7 +119,7 @@ export default function AboutPage() {
                     className="mb-[6px] text-[10px] tracking-[0.18em] uppercase"
                     style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
                   >
-                    Working with
+                    服務對象
                   </dt>
                   <dd className="m-0" style={{ fontFamily: "var(--f-zh-body), sans-serif", fontSize: 16, lineHeight: 1.55 }}>
                     台灣中小企業、個人品牌
@@ -130,7 +130,7 @@ export default function AboutPage() {
                     className="mb-[6px] text-[10px] tracking-[0.18em] uppercase"
                     style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
                   >
-                    Also on
+                    社群入口
                   </dt>
                   <dd className="m-0 flex flex-wrap gap-x-3 gap-y-1" style={{ fontFamily: "var(--f-body), sans-serif", fontSize: 16, lineHeight: 1.55 }}>
                     <a
@@ -326,11 +326,7 @@ export default function AboutPage() {
                     {letterPrinciples.map((principle) => (
                       <div
                         key={principle.label}
-                        className="p-5"
-                        style={{
-                          border: "1px solid var(--rule)",
-                          background: "color-mix(in srgb, var(--paper) 96%, var(--ink) 4%)",
-                        }}
+                        className="editorial-card p-5"
                       >
                         <div
                           className="mb-4 text-[10px] tracking-[0.16em] uppercase"
@@ -367,8 +363,7 @@ export default function AboutPage() {
                 </div>
 
                 <div
-                  className="mt-10 flex flex-wrap gap-7 text-[12px] tracking-[0.12em] uppercase"
-                  style={{ fontFamily: "var(--f-mono), monospace" }}
+                  className="cta-row mt-10"
                 >
                   <CtaLink href="/consult" variant="primary">
                     預約一次系統盤點

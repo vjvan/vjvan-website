@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { ComponentProps, ReactNode } from "react";
+import type { ComponentProps, CSSProperties, ReactNode } from "react";
 
 type Variant = "primary" | "default";
 type Arrow = "right" | "left" | "none";
@@ -29,7 +29,7 @@ function Inner({ children, arrow = "right" }: Pick<BaseProps, "children" | "arro
   if (arrow === "left") {
     return (
       <>
-        <span aria-hidden="true" style={{ marginRight: 4 }}>
+        <span aria-hidden="true" className="cta-link__arrow cta-link__arrow--left" style={{ marginRight: 4 }}>
           {arrowChar.left}
         </span>
         <span
@@ -54,7 +54,7 @@ function Inner({ children, arrow = "right" }: Pick<BaseProps, "children" | "arro
         {children}
       </span>
       {arrow === "right" && (
-        <span aria-hidden="true" style={{ marginLeft: 6 }}>
+        <span aria-hidden="true" className="cta-link__arrow cta-link__arrow--right" style={{ marginLeft: 6 }}>
           {arrowChar.right}
         </span>
       )}
@@ -66,12 +66,10 @@ export default function CtaLink(props: CtaLinkProps) {
   const { children, variant = "default", arrow = "right", className = "" } = props;
   const color = variant === "primary" ? "var(--signal)" : "var(--ink)";
 
-  const style: React.CSSProperties = {
-    display: "inline-flex",
-    alignItems: "baseline",
-    color,
-    fontFamily: "inherit",
-  };
+  const linkClassName = ["cta-link", arrow === "left" ? "cta-link--left" : "", className]
+    .filter(Boolean)
+    .join(" ");
+  const style = { "--cta-color": color } as CSSProperties & Record<"--cta-color", string>;
 
   if ("external" in props && props.external) {
     return (
@@ -79,7 +77,7 @@ export default function CtaLink(props: CtaLinkProps) {
         href={props.href}
         target="_blank"
         rel="noreferrer"
-        className={className}
+        className={linkClassName}
         style={style}
       >
         <Inner arrow={arrow}>{children}</Inner>
@@ -88,7 +86,7 @@ export default function CtaLink(props: CtaLinkProps) {
   }
 
   return (
-    <Link href={props.href} className={className} style={style}>
+    <Link href={props.href} className={linkClassName} style={style}>
       <Inner arrow={arrow}>{children}</Inner>
     </Link>
   );

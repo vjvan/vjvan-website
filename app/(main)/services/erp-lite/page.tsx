@@ -215,19 +215,19 @@ export default function ErpLitePage() {
           </div>
 
           {/* Cover Film */}
-          <section className="py-9 md:py-12" aria-label="ERP-Lite hero film">
+          <section className="py-12 md:py-16" aria-label="ERP-Lite hero film">
             <div className="grid gap-6 md:gap-20 md:grid-cols-[1fr_2fr] items-baseline mb-7">
               <div
                 className="text-[11px] tracking-[0.18em] uppercase"
                 style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
               >
-                COVER FILM ↓
+                服務片頭 ↓
               </div>
               <div
                 className="text-[11px] tracking-[0.12em] uppercase"
                 style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
               >
-                09 SEC · NO SOUND · LOOP
+                09 秒 · 無聲 · 循環
               </div>
             </div>
             <HeroVideo
@@ -245,7 +245,7 @@ export default function ErpLitePage() {
               className="mb-8 text-[11px] tracking-[0.18em] uppercase"
               style={{ fontFamily: "var(--f-mono), monospace", color: "var(--signal)", fontWeight: 500 }}
             >
-              What You Get
+              交付成果
             </div>
             <div
               className="grid gap-x-8 gap-y-8 md:grid-cols-4 py-8"
@@ -303,7 +303,7 @@ export default function ErpLitePage() {
               className="mb-5 text-[11px] tracking-[0.18em] uppercase"
               style={{ fontFamily: "var(--f-mono), monospace", color: "var(--signal)", fontWeight: 500 }}
             >
-              Modules
+              核心模組
             </div>
             <h2
               className="m-0 mb-10"
@@ -368,7 +368,7 @@ export default function ErpLitePage() {
               className="mb-5 text-[11px] tracking-[0.18em] uppercase"
               style={{ fontFamily: "var(--f-mono), monospace", color: "var(--signal)", fontWeight: 500 }}
             >
-              Fit Check
+              適合度檢查
             </div>
             <h2
               className="m-0 mb-10"
@@ -490,7 +490,7 @@ export default function ErpLitePage() {
               className="mb-5 text-[11px] tracking-[0.18em] uppercase"
               style={{ fontFamily: "var(--f-mono), monospace", color: "var(--signal)", fontWeight: 500 }}
             >
-              Workflow
+              導入流程
             </div>
             <h2
               className="m-0 mb-10"
@@ -515,7 +515,7 @@ export default function ErpLitePage() {
                     className="text-[12px] tracking-[0.18em]"
                     style={{ fontFamily: "var(--f-mono), monospace", color: "var(--signal)" }}
                   >
-                    Step {f.step}
+                    步驟 {f.step}
                   </div>
                   <div>
                     <h3
@@ -555,7 +555,7 @@ export default function ErpLitePage() {
               className="mb-5 text-[11px] tracking-[0.18em] uppercase"
               style={{ fontFamily: "var(--f-mono), monospace", color: "var(--signal)", fontWeight: 500 }}
             >
-              Pricing
+              報價方式
             </div>
             <h2
               className="m-0 mb-8"
@@ -605,10 +605,7 @@ export default function ErpLitePage() {
           </section>
 
           {/* CTA */}
-          <div
-            className="mt-16 flex flex-wrap gap-8 items-center text-[12px] tracking-[0.12em] uppercase"
-            style={{ fontFamily: "var(--f-mono), monospace" }}
-          >
+          <div className="cta-row mt-16">
             <CtaLink href="/consult" variant="primary">
               預約諮詢
             </CtaLink>

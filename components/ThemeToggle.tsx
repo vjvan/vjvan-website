@@ -22,11 +22,11 @@ export default function ThemeToggle() {
       type="button"
       onClick={toggle}
       aria-label="切換主題"
-      className="font-mono text-[10px] tracking-[0.14em] uppercase text-[color:var(--ink-muted)] hover:text-[color:var(--ink)] transition-colors"
-      style={{ fontFamily: "var(--f-mono), monospace" }}
+      className="text-[12px] tracking-[0.08em] text-[color:var(--ink-muted)] hover:text-[color:var(--ink)] transition-colors"
+      style={{ fontFamily: "var(--f-zh-body), sans-serif" }}
       suppressHydrationWarning
     >
-      {theme === "light" ? "DARK MODE →" : "LIGHT MODE →"}
+      {theme === "light" ? "深色模式 →" : "淺色模式 →"}
     </button>
   );
 }

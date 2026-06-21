@@ -229,9 +229,8 @@ export default async function BlogPostPage({ params }: Props) {
               />
 
               <div
-                className="mt-16 pt-10 flex flex-wrap gap-7 text-[12px] tracking-[0.12em] uppercase"
+                className="cta-row mt-16 pt-10"
                 style={{
-                  fontFamily: "var(--f-mono), monospace",
                   borderTop: "1px solid var(--rule)",
                 }}
               >

@@ -283,7 +283,7 @@ export default function SeoAeoGeoPage() {
               className="mb-8 text-[11px] tracking-[0.18em] uppercase"
               style={{ fontFamily: "var(--f-mono), monospace", color: "var(--signal)", fontWeight: 500 }}
             >
-              Search Stack
+              搜尋架構
             </div>
             <div className="grid gap-x-8 gap-y-8 md:grid-cols-4 py-8" style={{ borderTop: "1px solid var(--rule)", borderBottom: "1px solid var(--rule)" }}>
               {outcomes.map((m) => (
@@ -304,7 +304,7 @@ export default function SeoAeoGeoPage() {
 
           <section className="py-16" style={{ borderTop: "1px solid var(--rule)" }}>
             <div className="mb-5 text-[11px] tracking-[0.18em] uppercase" style={{ fontFamily: "var(--f-mono), monospace", color: "var(--signal)", fontWeight: 500 }}>
-              Fit Check
+              適合對象
             </div>
             <h2 className="m-0 mb-10" style={{ fontFamily: "var(--f-zh-display), serif", fontSize: "clamp(28px, 4vw, 44px)", lineHeight: 1.2, letterSpacing: "0.01em", fontWeight: 400 }}>
               適合誰
@@ -330,7 +330,7 @@ export default function SeoAeoGeoPage() {
 
           <section className="py-16" style={{ borderTop: "1px solid var(--rule)" }}>
             <div className="mb-5 text-[11px] tracking-[0.18em] uppercase" style={{ fontFamily: "var(--f-mono), monospace", color: "var(--signal)", fontWeight: 500 }}>
-              Pain Points
+              常見痛點
             </div>
             <h2 className="m-0 mb-10" style={{ fontFamily: "var(--f-zh-display), serif", fontSize: "clamp(28px, 4vw, 44px)", lineHeight: 1.2, letterSpacing: "0.01em", fontWeight: 400 }}>
               常見痛點
@@ -347,7 +347,7 @@ export default function SeoAeoGeoPage() {
 
           <section className="py-16" style={{ borderTop: "1px solid var(--rule)" }}>
             <div className="mb-5 text-[11px] tracking-[0.18em] uppercase" style={{ fontFamily: "var(--f-mono), monospace", color: "var(--signal)", fontWeight: 500 }}>
-              Deliverables
+              交付物
             </div>
             <h2 className="m-0 mb-10" style={{ fontFamily: "var(--f-zh-display), serif", fontSize: "clamp(28px, 4vw, 44px)", lineHeight: 1.2, letterSpacing: "0.01em", fontWeight: 400 }}>
               交付物
@@ -373,7 +373,7 @@ export default function SeoAeoGeoPage() {
 
           <section className="py-16" style={{ borderTop: "1px solid var(--rule)" }}>
             <div className="mb-5 text-[11px] tracking-[0.18em] uppercase" style={{ fontFamily: "var(--f-mono), monospace", color: "var(--signal)", fontWeight: 500 }}>
-              Workflow
+              導入流程
             </div>
             <h2 className="m-0 mb-10" style={{ fontFamily: "var(--f-zh-display), serif", fontSize: "clamp(28px, 4vw, 44px)", lineHeight: 1.2, letterSpacing: "0.01em", fontWeight: 400 }}>
               導入流程
@@ -382,7 +382,7 @@ export default function SeoAeoGeoPage() {
               {flow.map((f) => (
                 <div key={f.step} className="grid gap-6 md:grid-cols-[80px_1fr] py-5" style={{ borderBottom: "1px solid var(--rule)" }}>
                   <div className="text-[12px] tracking-[0.18em]" style={{ fontFamily: "var(--f-mono), monospace", color: "var(--signal)" }}>
-                    Step {f.step}
+                    步驟 {f.step}
                   </div>
                   <div>
                     <h3 className="m-0 mb-2" style={{ fontFamily: "var(--f-zh-display), serif", fontSize: 22, lineHeight: 1.35, fontWeight: 600 }}>
@@ -399,14 +399,14 @@ export default function SeoAeoGeoPage() {
 
           <section className="py-16" style={{ borderTop: "1px solid var(--rule)" }}>
             <div className="mb-5 text-[11px] tracking-[0.18em] uppercase" style={{ fontFamily: "var(--f-mono), monospace", color: "var(--signal)", fontWeight: 500 }}>
-              Evidence
+              案例證據
             </div>
             <h2 className="m-0 mb-10" style={{ fontFamily: "var(--f-zh-display), serif", fontSize: "clamp(28px, 4vw, 44px)", lineHeight: 1.2, letterSpacing: "0.01em", fontWeight: 400 }}>
               案例證據
             </h2>
             <div className="grid gap-6 md:grid-cols-3">
               {evidence.map((item) => (
-                <article key={item.title} className="p-6" style={{ border: "1px solid var(--rule)" }}>
+                <article key={item.title} className="editorial-card p-6">
                   <h3 className="m-0 mb-3" style={{ fontFamily: "var(--f-zh-display), serif", fontSize: 22, lineHeight: 1.35, fontWeight: 600 }}>
                     {item.title}
                   </h3>
@@ -441,7 +441,7 @@ export default function SeoAeoGeoPage() {
 
           <section className="py-16" style={{ borderTop: "1px solid var(--rule)" }}>
             <div className="mb-5 text-[11px] tracking-[0.18em] uppercase" style={{ fontFamily: "var(--f-mono), monospace", color: "var(--signal)", fontWeight: 500 }}>
-              Principles
+              合作原則
             </div>
             <h2 className="m-0 mb-8" style={{ fontFamily: "var(--f-zh-display), serif", fontSize: "clamp(28px, 4vw, 44px)", lineHeight: 1.2, letterSpacing: "0.01em", fontWeight: 400 }}>
               先講清楚我不做什麼
@@ -456,7 +456,7 @@ export default function SeoAeoGeoPage() {
             </ul>
           </section>
 
-          <div className="mt-16 flex flex-wrap gap-8 items-center text-[12px] tracking-[0.12em] uppercase" style={{ fontFamily: "var(--f-mono), monospace" }}>
+          <div className="cta-row mt-16">
             <CtaLink href="/consult" variant="primary">
               預約 AI 搜尋健檢
             </CtaLink>

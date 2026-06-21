@@ -107,8 +107,7 @@ export default async function UnsubscribedPage({
         )}
 
         <div
-          className="flex flex-wrap gap-7 items-center text-[12px] tracking-[0.12em] uppercase"
-          style={{ fontFamily: "var(--f-mono), monospace" }}
+          className="cta-row"
         >
           <Link
             href="/"
