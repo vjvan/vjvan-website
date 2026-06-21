@@ -121,8 +121,6 @@ export default async function BlogPostPage({ params }: Props) {
     ],
   };
 
-  const readingTimeShort = post.meta.readingTime.replace("分鐘閱讀", "MIN");
-
   const faqJsonLd = post.meta.faq && post.meta.faq.length > 0
     ? {
         "@context": "https://schema.org",
@@ -190,17 +188,17 @@ export default async function BlogPostPage({ params }: Props) {
                 {post.meta.titleDisplay || post.meta.title}
               </h1>
               <div
-                className="mb-12 pb-5 flex flex-wrap gap-5 text-[11px] tracking-[0.14em] uppercase"
+                className="mb-12 pb-5 flex flex-wrap items-baseline gap-x-5 gap-y-2 text-[12px] tracking-[0.08em]"
                 style={{
-                  fontFamily: "var(--f-mono), monospace",
+                  fontFamily: "var(--f-zh-body), sans-serif",
                   color: "var(--ink-muted)",
                   borderBottom: "1px solid var(--rule)",
                 }}
               >
-                <span>ESSAY</span>
+                <span>觀點筆記</span>
                 <span>{post.meta.date}</span>
-                <span>{readingTimeShort} READ</span>
-                <span>BY VJVAN</span>
+                <span>{post.meta.readingTime}</span>
+                <span>允雷撰寫</span>
               </div>
 
               <p

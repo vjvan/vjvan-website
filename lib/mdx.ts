@@ -36,7 +36,7 @@ function formatDate(value: unknown) {
 }
 
 function formatReadingTime(minutes: number) {
-  return `${Math.max(1, Math.round(minutes))} 分鐘閱讀`;
+  return `約 ${Math.max(1, Math.round(minutes))} 分鐘讀完`;
 }
 
 export function getAllPosts(): PostMeta[] {

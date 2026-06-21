@@ -601,7 +601,7 @@ export default function Home() {
               className="text-[11px] tracking-[0.18em] uppercase"
               style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
             >
-              LATEST ESSAY →
+              最新觀點 →
             </div>
             <div>
               <h2
@@ -623,10 +623,10 @@ export default function Home() {
                 </Link>
               </h2>
               <div
-                className="text-[11px] tracking-[0.12em] uppercase"
-                style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+                className="text-[12px] tracking-[0.08em]"
+                style={{ fontFamily: "var(--f-zh-body), sans-serif", color: "var(--ink-muted)" }}
               >
-                FIELD NOTES · {latest.readingTime.replace("分鐘閱讀", "MIN READ")} · {latest.date}
+                觀點筆記 · {latest.readingTime} · {latest.date}
               </div>
             </div>
           </div>

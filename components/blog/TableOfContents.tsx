@@ -63,7 +63,7 @@ export default function TableOfContents() {
       aria-label="文章目錄"
     >
       <div className="mb-4 tracking-[0.18em]" style={{ color: "var(--ink-muted)" }}>
-        IN THIS ESSAY
+        本文重點
       </div>
       <ol className="list-none p-0 m-0 flex flex-col gap-[10px]">
         {headings.map((h, i) => {

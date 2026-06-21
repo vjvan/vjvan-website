@@ -70,14 +70,32 @@ function compactPosts(posts: PostMeta[], slugs: string[]) {
   return slugs.map((slug) => findPost(posts, slug)).filter((post): post is PostMeta => Boolean(post));
 }
 
+function formatTag(tag: string) {
+  return `#${tag.toUpperCase()}`;
+}
+
 function Tags({ post }: { post: PostMeta }) {
-  if (post.tags.length === 0) return null;
+  const tags = post.tags.slice(0, 3);
+  if (tags.length === 0) return null;
+
   return (
-    <span>
-      {post.tags
-        .slice(0, 3)
-        .map((tag) => `#${tag.toUpperCase()}`)
-        .join(" · ")}
+    <span className="inline-flex flex-wrap items-baseline gap-x-2 gap-y-1">
+      {tags.map((tag, index) => (
+        <span key={`${tag}-${index}`} className="inline-flex items-baseline gap-x-2">
+          {index > 0 && <span style={{ color: "var(--rule)" }}>·</span>}
+          <span
+            style={{
+              fontFamily: "var(--f-zh-body), sans-serif",
+              fontSize: 12,
+              lineHeight: 1.45,
+              letterSpacing: "0.04em",
+              color: "var(--ink-muted)",
+            }}
+          >
+            {formatTag(tag)}
+          </span>
+        </span>
+      ))}
     </span>
   );
 }
@@ -234,11 +252,11 @@ export default function BlogIndexPage() {
                       {featured.description}
                     </p>
                     <div
-                      className="text-[11px] tracking-[0.12em] uppercase flex flex-wrap gap-4"
-                      style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+                      className="text-[12px] tracking-[0.08em] flex flex-wrap items-baseline gap-x-4 gap-y-2"
+                      style={{ fontFamily: "var(--f-zh-body), sans-serif", color: "var(--ink-muted)" }}
                     >
                       <span>{featured.date}</span>
-                      <span>{featured.readingTime.replace("分鐘閱讀", "MIN READ")}</span>
+                      <span>{featured.readingTime}</span>
                       <Tags post={featured} />
                     </div>
                   </article>
@@ -276,10 +294,10 @@ export default function BlogIndexPage() {
                             {post.title}
                           </h3>
                           <div
-                            className="text-[11px] tracking-[0.12em] uppercase"
-                            style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+                            className="text-[12px] tracking-[0.08em]"
+                            style={{ fontFamily: "var(--f-zh-body), sans-serif", color: "var(--ink-muted)" }}
                           >
-                            {post.readingTime.replace("分鐘閱讀", "MIN READ")}
+                            {post.readingTime}
                           </div>
                         </Link>
                       ))}
@@ -453,10 +471,10 @@ export default function BlogIndexPage() {
                             {post.description}
                           </p>
                           <div
-                            className="text-[11px] tracking-[0.12em] uppercase flex flex-wrap gap-4"
-                            style={{ fontFamily: "var(--f-mono), monospace", color: "var(--ink-muted)" }}
+                            className="text-[12px] tracking-[0.08em] flex flex-wrap items-baseline gap-x-4 gap-y-2"
+                            style={{ fontFamily: "var(--f-zh-body), sans-serif", color: "var(--ink-muted)" }}
                           >
-                            <span>{post.readingTime.replace("分鐘閱讀", "MIN READ")}</span>
+                            <span>{post.readingTime}</span>
                             <Tags post={post} />
                           </div>
                         </div>
