@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import CtaLink from "@/components/CtaLink";
 import JsonLd from "@/components/JsonLd";
+import SaveToPhotosButton from "@/components/SaveToPhotosButton";
 
 const LINE_URL = "https://lin.ee/XjnkG91";
 const EMAIL = "vjvan.n@gmail.com";
@@ -244,13 +245,7 @@ export default function CardPage() {
               external
             />
             <PrimaryAction kicker="預約諮詢" title="聊聊你想自動化的流程" glyph="→" href="/consult" />
-            <PrimaryAction
-              kicker="存成圖片"
-              title="下載名片圖，存進手機相簿"
-              glyph="↓"
-              href="/vjvan-namecard.png"
-              download="vjvan-namecard.png"
-            />
+            <SaveToPhotosButton />
           </section>
 
           {/* 把名片存進相簿 */}
