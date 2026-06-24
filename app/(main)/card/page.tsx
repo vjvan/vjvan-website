@@ -199,16 +199,32 @@ export default function CardPage() {
                   className="mt-1"
                   style={{ fontFamily: zhBody, fontSize: 13, lineHeight: 1.5, color: "var(--ink-muted)" }}
                 >
-                  唯捷允雷有限公司 · 屏東
+                  林昀志 · 唯捷允雷有限公司 · 屏東
                 </div>
               </div>
             </div>
-            <p
-              className="mt-6 m-0"
-              style={{ fontFamily: zhBody, fontSize: 18, lineHeight: 1.8, color: "var(--ink)" }}
-            >
-              幫企業把散在 LINE、Excel、ERP 的營運流程，整理成能長期自動運行的系統。
-            </p>
+            <div className="mt-6">
+              <span
+                style={{
+                  display: "inline-block",
+                  fontFamily: zhBody,
+                  fontSize: 12.5,
+                  letterSpacing: "0.04em",
+                  color: "var(--signal)",
+                  border: "1px solid color-mix(in srgb, var(--signal) 38%, var(--rule))",
+                  borderRadius: 3,
+                  padding: "4px 11px",
+                }}
+              >
+                企業 AI 自動化導入
+              </span>
+              <p
+                className="mt-3 m-0"
+                style={{ fontFamily: zhBody, fontSize: 18, lineHeight: 1.8, color: "var(--ink)" }}
+              >
+                幫企業把散在 LINE、Excel、ERP 的營運流程，整理成能長期自動運行的系統。
+              </p>
+            </div>
           </section>
 
           {/* 主要行動 */}

@@ -8,8 +8,9 @@ export const dynamic = "force-static";
 const VCARD_LINES = [
   "BEGIN:VCARD",
   "VERSION:3.0",
-  "N:;允雷;;;",
-  "FN:允雷",
+  "N:林;昀志;;;",
+  "FN:允雷（林昀志）",
+  "NICKNAME:VJVAN",
   "ORG:唯捷允雷有限公司",
   "TITLE:AI 商業系統架構師",
   "TEL;TYPE=CELL:+886988067272",
