@@ -4,7 +4,7 @@ export const dynamic = "force-static";
 
 // vCard 3.0：相容性最廣（iOS 通訊錄 / Android / Outlook 都能讀）。
 // 行尾必須是 CRLF，非 ASCII 走 UTF-8（由 Content-Type charset 宣告）。
-// 電話尚未放入：允雷確認要公開手機後，補一行 TEL;TYPE=CELL:+886...
+// 電話用 E.164 國際格式（+886）確保國內外撥號 app 都能正確撥出。
 const VCARD_LINES = [
   "BEGIN:VCARD",
   "VERSION:3.0",
@@ -12,6 +12,7 @@ const VCARD_LINES = [
   "FN:允雷",
   "ORG:唯捷允雷有限公司",
   "TITLE:AI 商業系統架構師",
+  "TEL;TYPE=CELL:+886988067272",
   "EMAIL;TYPE=INTERNET,PREF:vjvan.n@gmail.com",
   "URL:https://www.vjvan.com",
   "ADR;TYPE=WORK:;;;屏東;;;台灣",

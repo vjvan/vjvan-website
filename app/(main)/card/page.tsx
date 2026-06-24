@@ -5,6 +5,8 @@ import JsonLd from "@/components/JsonLd";
 
 const LINE_URL = "https://lin.ee/XjnkG91";
 const EMAIL = "vjvan.n@gmail.com";
+const PHONE_DISPLAY = "0988-067-272";
+const PHONE_TEL = "+886988067272";
 
 export const metadata: Metadata = {
   title: "電子名片 · Card",
@@ -289,6 +291,16 @@ export default function CardPage() {
               聯絡與社群
             </div>
             <dl className="m-0 flex flex-col gap-4">
+              <div className="flex items-baseline gap-4">
+                <dt className="eyebrow" style={{ width: 64, flexShrink: 0 }}>
+                  電話
+                </dt>
+                <dd className="m-0" style={{ fontFamily: zhBody, fontSize: 15 }}>
+                  <a href={`tel:${PHONE_TEL}`} className="link-underline">
+                    {PHONE_DISPLAY}
+                  </a>
+                </dd>
+              </div>
               <div className="flex items-baseline gap-4">
                 <dt className="eyebrow" style={{ width: 64, flexShrink: 0 }}>
                   EMAIL
