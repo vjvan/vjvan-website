@@ -244,6 +244,34 @@ export default function CardPage() {
               external
             />
             <PrimaryAction kicker="預約諮詢" title="聊聊你想自動化的流程" glyph="→" href="/consult" />
+            <PrimaryAction
+              kicker="存成圖片"
+              title="下載名片圖，存進手機相簿"
+              glyph="↓"
+              href="/vjvan-namecard.png"
+              download="vjvan-namecard.png"
+            />
+          </section>
+
+          {/* 把名片存進相簿 */}
+          <section id="save-card" className="mt-14 pt-10" style={{ borderTop: "1px solid var(--rule)" }}>
+            <div className="text-[11px] tracking-[0.16em] uppercase mb-6" style={sectionLabelStyle}>
+              把名片存進相簿
+            </div>
+            <p
+              className="m-0 mb-6"
+              style={{ fontFamily: zhBody, fontSize: 14, lineHeight: 1.8, color: "var(--ink-muted)" }}
+            >
+              怕等一下關掉頁面就找不到我？長按下面這張名片圖，選「加入照片」或「儲存影像」就能存進相簿，隨時找得到。圖上有 QR Code，之後掃一下就能回到這頁。
+            </p>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/vjvan-namecard.png"
+              alt="允雷 VJVAN 數位名片，含電話、Email、網站與 QR Code"
+              className="editorial-card"
+              style={{ width: "100%", maxWidth: 460, height: "auto", display: "block" }}
+              loading="lazy"
+            />
           </section>
 
           {/* 服務 */}
